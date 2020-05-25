@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Booking/BookingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_start.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa-snippet/snippet.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Service/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Service/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Utilities/BuiltInMethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Utilities/BuiltInMethods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/database_types.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/models.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-service-v2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/online-hotel.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/login-customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/temp/login-customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/print-voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/print-voucher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/register-customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/temp/register-customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/tracking-reserve.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/tracking-reserve.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,14 +51,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            <state relative-caret-position="339">
+              <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
               <folding>
                 <element signature="e#40#48#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -261,7 +254,6 @@
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Widget/WidgetController.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room.blade.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Utilities/ItemUtility.php" />
@@ -277,6 +269,7 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -1556,12 +1549,12 @@
       <workItem from="1588764729125" duration="5186000" />
       <workItem from="1588775161811" duration="3527000" />
       <workItem from="1590361428562" duration="8181000" />
-      <workItem from="1590393689581" duration="16159000" />
+      <workItem from="1590393689581" duration="17365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6797793000" />
+    <option name="totallyTimeSpent" value="6798999000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1737,13 +1730,6 @@
     <entry file="file://$PROJECT_DIR$/nestable-locales.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1907,11 +1893,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        <state relative-caret-position="339">
+          <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
           <folding>
             <element signature="e#40#48#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -6,7 +6,8 @@
 /resources/views/templates
 /resources/views/public/themes/alibaba
 /resources/views/public/themes/hotel
-.env
+/config/geoip/GeoLite2-City.mmdb
+#.env
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
