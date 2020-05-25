@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c5cd504e-d05e-4c37-9f6d-ac2f44228870" name="hotelsabouri.com" url="http://hotelsabouri.com">
+        <fileTransfer host="hotelsabouri.com" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" showHiddenFiles="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="5eb92ca1-6845-4c53-9d77-5946187e07ce" name="shop5.ir" url="http://shop5.ir">
+        <fileTransfer host="shop5.ir" port="21" rootFolder="/hotel.shop5.ir">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+routes:data.index-->conditions=>*->width:m3 s3&type:text&group:1&order:1
+||
+routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&group:1&order:1
+
+
+
+routes:services.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+||
+routes:services.index,admin.index-->conditions=>situation:1->actions=>name:change[2|3]&action_style:buttons&where:modal&type:a&icon:ft-eye&&conditions=>situation:5->actions=>name:change[6|7]&action_style:buttons&where:modal&type:a&icon:ft-eye

@@ -1,0 +1,335 @@
+="../../../(.*)"
+="{{asset('$1')}}"
+
+
+
+
+update[situation=7,9]=>days[start-date:end-date]->object>inactive-days
+
+
+
+[{"conditions":{"event": "update","arguments": {"situation":"7,9"}},"actions": {"command": "days","source": ["start-date:end-date"],"destination": "object.inactive-days"}}]
+
+
+[{"conditions":{"event": "store","arguments": []},"actions": {"command": "add","source": ["id"],"destination": "{type}.{id}.price"}}]
+
+
+
+<img class="responsive-img left" id = 'jxlzwlaofukzwlaojzpeoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=146478&p=rfthaodsgvkaaodsjyoemcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=146478&p=nbpdshwlwlbqshwlyndtaqgw' />
+
+<img class="responsive-img left" src="https://trustseal.enamad.ir/logo.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="QGD1iXxIbp7BR99k">
+
+<img class="responsive-img left" id = 'jxlzwlaofukzwlaojzpeoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=146478&p=rfthaodsgvkaaodsjyoemcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=146478&p=nbpdshwlwlbqshwlyndtaqgw' />
+
+ <img class="responsive-img left" src="https://trustseal.enamad.ir/logo.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="QGD1iXxIbp7BR99k">
+
+
+
+<script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="629d6450-a954-425f-966f-9699993b5304";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
+
+
+
+
+<script type="text/javascript">var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();(function () {var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];s1.async = true;s1.src = 'https://embed.tawk.to/5cea6742a667a0210d597b7b/default';s1.charset = 'UTF-8';s1.setAttribute('crossorigin', '*');s0.parentNode.insertBefore(s1, s0);})();</script>
+
+
+aJYxrW99Lc7wjLkxcarq63sMbg/C4l8xrjqgaayMJLY=
+
+
+
+
+
+
+
+
+
+
+3	title		-	text
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"en":"title","fa":"عنوان","ar":"العنوان"}
+1	2	0	0	required	0	0
+routes:data.index-->conditions=>*->width:m3 s3&type:switch&group:1&order:1||routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&group:1&order:1
+0	1	0
+
+
+3	title		-	text
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"en":"title","fa":"عنوان","ar":"العنوان"}
+1	2	0	0	required	0	0
+routes:data.index-->conditions=>*->width:m3 s3&type:switch&group:1&order:1||routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&group:1&order:1
+0	1	0
+
+
+
+
+4	floor		-	select
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"طبقه","en":"floor","ar":"الطبقه"}
+1	2	0	0	required	0	0
+routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&selection_type:single&datasource:values&group:1&order:2
+0	1	0
+
+4	floor		-	select
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"طبقه","en":"floor","ar":"الطبقه"}
+1	2	0	0	required	0	0
+routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&selection_type:single&datasource:values&group:1&order:2
+0	1	0
+
+
+
+5	description		-	text
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"توضیحات","en":"description","ar":"التوضیحات"}
+1	2	0	0	required	0	0
+routes:data.index-->conditions=>*->width:m3 s3&type:switch&group:2&order:1||routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&group:2&order:1
+0	1	0		2019-05-10 20:36:52
+
+5	description		-	text
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"توضیحات","en":"description","ar":"التوضیحات"}
+1	2	0	0	required	0	0
+routes:data.index-->conditions=>*->width:m3 s3&type:switch&group:2&order:1||routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&group:2&order:1
+0	1	0		2019-05-11 05:36:52
+
+
+
+6	internet		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"اینترنت","en":"internet","ar":"الانترنت"}
+2	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:1
+0	1	0		2019-02-17 19:08:55
+
+6	internet		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"اینترنت","en":"internet","ar":"الانترنت"}
+2	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:1
+0	1	0		2019-02-18 02:08:55
+
+
+
+7	parking		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"پارکینگ","en":"parking","ar":"البارکینگ"}
+2	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:2
+0	1	0
+
+7	parking		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"پارکینگ","en":"parking","ar":"البارکینگ"}
+2	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:2
+0	1	0
+
+
+
+
+9	active-days		-	array-date
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"روز های فعال","en":"active days","ar":"الروز های فعال"}
+3	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&group:1&order:5
+0	1	0		2019-05-10 21:19:48
+
+9	active-days		-	array-date
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"روز های فعال","en":"active days","ar":"الروز های فعال"}
+3	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&group:1&order:5
+0	1	0		2019-05-11 06:19:48
+
+
+
+10	inactive-days		-	dates
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"روز های غیر فعال","en":"inactive days","ar":"الروز های غیر فعال"}
+3	2	0	0		0	0		0	1	0		2019-05-10 21:20:19
+
+10	inactive-days		-	array-date
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"روز های غیر فعال","en":"inactive days","ar":"الروز های غیر فعال"}
+3	2	0	0		0	0		0	1	0		2019-05-11 06:20:19
+
+
+
+11	available		1	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"فعال","en":"available","ar":"الفعال"}
+1	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m3 s3&action:change&type:switch&group:4&order:1
+0	1	0
+
+11	available		1	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"فعال","en":"available","ar":"الفعال"}
+1	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m3 s3&action:change&type:switch&group:4&order:1
+0	1	0
+
+
+
+22	slide-images		-	multi-relation-document-images
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"تصاویر اسلاید","en":"slide images","ar":"التصاویر اسلاید"}
+1	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&selection_type:multi&datasource:documents>general&group_title:media&group:5&order:2
+0	1	0
+
+22	slide-images		-	multi-relation-document-images
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"تصاویر اسلاید","en":"slide images","ar":"التصاویر اسلاید"}
+1	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&selection_type:multi&datasource:documents>general&group_title:media&group:5&order:2
+0	1	0
+
+
+
+50	price			relations:price
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"قیمت","en":"price","ar":"القیمت"}
+1	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m2 s2&action:show_modal&action_icon:ft-activity&type:a&group:4&order:2||routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&datasuorce:relations>price&group:8&order:1
+0	1	0
+
+50	price		0	relations:price
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"قیمت","en":"price","ar":"القیمت"}
+1	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m2 s2&action:show_modal&action_icon:ft-activity&type:a&group:4&order:2||routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&datasuorce:relations>price&group:8&order:1
+0	1	0
+
+
+78	content		-	tinymce
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"محتوا","en":"content","ar":"المحتوا"}
+1	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&group:3&order:1
+0	1	0
+
+
+78	content		-	tinymce
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"محتوا","en":"content","ar":"المحتوا"}
+1	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&group:3&order:1
+0	1	0
+
+
+80	featuring-image		-	multi-relation-document-images
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"تصویر شاخص","en":"featuring image","ar":"التصویر الشاخص"}
+1	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m3 s3&type:switch&group:3&order:1||routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&selection_type:single&datasource:documents>general&group_title:media&group:5&order:1
+0	1	0
+
+80	featuring-image		-	multi-relation-document-images
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"مثلث","en":"mosalas","ar":"السهگوش"}
+1	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m3 s3&type:switch&group:3&order:1||routes:data.create,data.edit-->conditions=>*->width:m12 s12&locales&type:text&method:direct&selection_type:single&datasource:documents>general&group_title:media&group:5&order:1
+0	1	0
+
+
+
+81	locked-days		-	dates
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"qqqqqqqqq","en":"wwwwwwwww","ar":"eeeeeeeeeeeeee"}
+3	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m12 s12&action:show_modal&action_icon:ft-arrow-down&display_history_at_modal&type:a&group:4&order:3
+0	1	0		2019-05-10 21:20:19
+
+81	locked-days		-	dates
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"مثلث 2","en":"mosalas","ar":"السهگوش"}
+3	2	0	0		0	0
+routes:data.index-->conditions=>*->width:m12 s12&action:show_modal&action_icon:ft-arrow-down&display_history_at_modal&type:a&group:4&order:3
+0	1	0		2019-05-11 01:50:19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8	Images		-	multi-upload
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"تصاویر","en":"Images","ar":"التصاویر"}
+1	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m6 s12&locales&type:text&method:direct&group:4&order:1
+0	1	0		2019-05-11 06:19:17
+
+
+83	personal-saftybox		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"گاو صندوق شخصی داخل اتاق","en":"personal saftybox","ar":"-"}
+2	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:3
+0	1	0	2019-07-21 11:56:41	2019-07-21 11:56:41
+
+85	side-by-side-refrigerator		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"یخچال ساید بای ساید","en":"side by side refrigerator","ar":"یخچال ساید بای ساید"}
+2	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:5
+0	1	0	2019-07-22 03:37:39	2019-07-22 03:37:39
+
+86	TV		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"تلویزیون","en":"TV","ar":"TV"}
+1	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:6
+0	1	0	2019-07-23 19:17:39	2019-07-23 19:17:39
+
+
+79	tt		-	text
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"ff","en":"tt","ar":"ff"}
+1	2	0	0		0	0
+direct
+0	1	0	2019-08-23 07:33:38	2019-08-23 07:33:38
+
+
+
+82	eeeee2		0	check
+routes:data.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+{"fa":"eee","en":"eeeee2","ar":"eeeeee3"}	2	2	0	0		0	0
+routes:data.create,data.edit-->conditions=>*->width:m3 s12&type:text&method:direct&can_add_same&group_title:facilities&group:6&order:3
+0	1	0	2019-10-11 00:54:11	2019-10-11 00:54:11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

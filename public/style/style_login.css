@@ -1,0 +1,118 @@
+.post-single{
+
+    padding: 30px;
+    min-height: 650px !important;
+
+}
+
+.red-msg {
+
+    background-color: #f3e2e5;
+    border-radius: 6px;
+    min-height: 55px;
+    margin-bottom: 15px;
+
+}
+
+.red-msg span {
+
+    color: #3d3d3d;
+    line-height: 55px;
+}
+
+
+.right-side-cn{
+
+    padding: 30px;
+
+}
+
+.right-side-cn h6{
+
+    margin-right: 0;
+    margin-bottom: 30px;
+
+}
+
+.btn-div{
+
+
+    padding: 0 !important;
+
+}
+
+.btn-log{
+
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: iransans;
+    cursor: pointer !important;
+    padding: 20px;
+    line-height: 0;
+    margin-bottom: 15px;
+
+
+
+}
+
+.dp2{
+
+    margin-bottom: 0 !important;
+    margin-top: 10px !important;
+
+}
+
+.more-inf{
+
+
+
+}
+
+.more-inf a {
+
+    font-size: 14px !important;
+
+}
+
+.more-inf a span{
+
+    color:#cf0809;
+    font-size: 14px !important;
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+    .btn-log{
+
+
+
+        margin-left: 0 !important;
+
+
+    }
+
+    .red-msg{
+
+        text-align: center;
+
+    }
+
+    .contact_us_span{
+
+        margin: 20px;
+
+    }
+
+    .btn-div{
+
+
+        text-align: center;
+
+    }
+
+
+
+}

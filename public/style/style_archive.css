@@ -1,0 +1,25 @@
+/*todo add font family*/
+.posts-archive{
+
+    margin-top: 70px;
+    font-family: iransans;
+
+}
+
+.contact_us_h6_2{
+
+    font-family: iransans;
+    margin-top: 35px;
+    font-weight: bold;
+    color: #9e0809;
+
+
+}
+
+.contact_us_span_2{
+
+    font-family: iransans;
+    font-size: 12px;
+    color: rgba(64, 64, 64, 0.49);
+
+}

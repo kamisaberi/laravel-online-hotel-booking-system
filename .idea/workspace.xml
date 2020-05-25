@@ -1,0 +1,1919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Booking/BookingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_start.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa-snippet/snippet.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Service/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Service/ServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Libraries/Utilities/BuiltInMethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Utilities/BuiltInMethods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/database_types.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/models.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-service-v2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/online-hotel.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/login-customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/temp/login-customer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/print-voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/print-voucher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/register-customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/temp/register-customer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/tracking-reserve.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/tracking-reserve.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="online-hotel" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="56" column="63" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+              <folding>
+                <element signature="e#40#48#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Libraries/Utilities/BuiltInMethods.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+              <folding>
+                <element signature="e#45#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Booking/BookingController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
+              <folding>
+                <element signature="e#48#56#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="183" column="51" selection-start-line="183" selection-start-column="51" selection-end-line="183" selection-end-column="51" />
+              <folding>
+                <element signature="e#13836#18242#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+              <folding>
+                <element signature="e#29289#29327#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>app-asses</find>
+      <find>app-ass</find>
+      <find>app-a</find>
+      <find>admin</find>
+      <find>app</find>
+      <find>app-assets</find>
+      <find>getTableStructure</find>
+      <find>bbd2376e1d60bddce15bad98bfffb19542138cdf.swf</find>
+      <find>mpdf</find>
+      <find>$room-&gt;</find>
+      <find>$p</find>
+      <find>btn-small btn-red btn-submit btn-go-to-step-2</find>
+      <find>room</find>
+      <find>start_date</find>
+      <find>$.each</find>
+      <find>error</find>
+      <find>$application</find>
+      <find>home.history</find>
+      <find>$hotel['phone']</find>
+      <find>home.track</find>
+      <find>$website['enamad']-</find>
+      <find>$website['active-chat-system']</find>
+      <find>home.service</find>
+      <find>$hotel</find>
+      <find>$data-&gt;properties</find>
+      <find>data</find>
+      <find>False</find>
+      <find>'</find>
+      <find>'field'</find>
+      <find>json</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>(-45deg</replace>
+      <replace>=&quot;{{asset('$1')}}&quot;</replace>
+      <replace>type</replace>
+      <replace>$type</replace>
+      <replace>documents</replace>
+      <replace>services</replace>
+      <replace>users</replace>
+      <replace>conversations</replace>
+      <replace>communications</replace>
+      <replace>relations</replace>
+      <replace>navigation</replace>
+      <replace>permissions</replace>
+      <replace>=&quot;{{asset('stack-admin/$1')}}&quot;</replace>
+      <replace>=&quot;{{asset('admin-assets/$1')}}&quot;</replace>
+      <replace>href=&quot;{{route('new2', ['locale'=&gt;App::getLocale(), 'page'=&gt;'$1'])}}&quot;</replace>
+      <replace>../fonts</replace>
+      <replace>--&gt;</replace>
+      <replace>http://</replace>
+      <replace>shop5.ir</replace>
+      <replace>http://hotel.shop5.ir/</replace>
+      <replace>'</replace>
+      <replace>http://hotel.shop5.ir</replace>
+      <replace>#</replace>
+      <replace>=&gt;</replace>
+      <replace>field</replace>
+      <replace>false</replace>
+      <replace>&quot;</replace>
+      <replace>&quot;field&quot;</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\xampp\htdocs\online-hotel\public</dir>
+      <dir>C:\xampp\htdocs\online-service\public\vvveb\</dir>
+      <dir>C:\xampp\htdocs\online-service\public\vvveb</dir>
+      <dir>C:\xampp\htdocs\online-service\resources\views\public\themes\hotel-new</dir>
+      <dir>C:\xampp\htdocs\online-service\resources\views\public\themes\hotel</dir>
+      <dir>C:\xampp\htdocs\online-service\vendor\pragmarx</dir>
+      <dir>C:\xampp\htdocs\online-service\resources\views\stack-admin\views\rtl</dir>
+      <dir>C:\xampp\htdocs\online-service\resources\views</dir>
+      <dir>C:\xampp\htdocs\online-service-v.2\resources\views\admin\items\widgets\temp</dir>
+      <dir>C:\xampp\htdocs\online-service-v.2\resources</dir>
+      <dir>C:\xampp\htdocs\online-service-v.2\public\admin-assets</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/public/admin-assets/css-rtl/components.min.css" />
+        <option value="$PROJECT_DIR$/app/Libraries/Utilities/DatabaseUtilities/TableUtility.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/items/widgets/room.blade.php" />
+        <option value="$PROJECT_DIR$/app/Libraries/Utilities/CodeUtilities/MethodUtility.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/.env.example" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php" />
+        <option value="$PROJECT_DIR$/public/style/style_information_step2-ltr.css" />
+        <option value="$PROJECT_DIR$/public/style/style_information_step2-rtl.css" />
+        <option value="$PROJECT_DIR$/public/style/style_information-ltr.css" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/user_booking_form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/booking.script.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/service-t.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/service.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/payout_booking_form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/booking_script.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/register-customer/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/waiting_for_room_verification_booking_form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/open_booking_form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/booking.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login-costomer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/login-costomer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/register-costomer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/register-customer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/tracking-reserve.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/print-voucher.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public2.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/scripts/mapbox.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index2.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Widget/WidgetController.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room.blade.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" />
+        <option value="$PROJECT_DIR$/app/Libraries/Utilities/ItemUtility.php" />
+        <option value="$PROJECT_DIR$/base/models.json" />
+        <option value="$PROJECT_DIR$/base/database_types.json" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Service/ServiceController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Service/BookingController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Booking/BookingController.php" />
+        <option value="$PROJECT_DIR$/app/Libraries/Utilities/BuiltInMethods.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_start.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/../../php/PEAR" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/laravel/slack-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/laravel/nexmo-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/jeremeamia/SuperClosure" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpexcel" />
+      <path value="$PROJECT_DIR$/vendor/jimmyjs/laravel-report-generator" />
+      <path value="$PROJECT_DIR$/vendor/morilog/jalali" />
+      <path value="$PROJECT_DIR$/vendor/beberlei/assert" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/niklasravnsborg/laravel-pdf" />
+      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/vendor/patrickschur/language-detection" />
+      <path value="$PROJECT_DIR$/vendor/econea/nusoap" />
+      <path value="$PROJECT_DIR$/vendor/larabook/gateway" />
+      <path value="$PROJECT_DIR$/vendor/paypal/rest-api-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/larabook - Copy/gateway" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-hmac" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-key-mgmt" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-none" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-ecdsa" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-eddsa" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-core" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-rsa" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-util-ecc" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature" />
+      <path value="$PROJECT_DIR$/vendor/minishlink/web-push" />
+      <path value="$PROJECT_DIR$/vendor/spomky-labs/base64url" />
+      <path value="$PROJECT_DIR$/vendor/laravel-notification-channels/webpush" />
+      <path value="$PROJECT_DIR$/vendor/fgrosse/phpasn1" />
+      <path value="$PROJECT_DIR$/vendor/kavenegar/laravel" />
+      <path value="$PROJECT_DIR$/vendor/kavenegar/php" />
+      <path value="$PROJECT_DIR$/vendor/chriskonnertz/string-calc" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/crawler" />
+      <path value="$PROJECT_DIR$/vendor/spatie/browsershot" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-sitemap" />
+      <path value="$PROJECT_DIR$/vendor/spatie/robots-txt" />
+      <path value="$PROJECT_DIR$/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
+      <path value="$PROJECT_DIR$/vendor/nicmart/tree" />
+      <path value="$PROJECT_DIR$/vendor/tightenco/collect" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/snowplow/referer-parser" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/datatables" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/tracker" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/support" />
+      <path value="$PROJECT_DIR$/vendor/ua-parser/uap-php" />
+      <path value="$PROJECT_DIR$/vendor/geoip2/geoip2" />
+      <path value="$PROJECT_DIR$/vendor/maxmind/web-service-common" />
+      <path value="$PROJECT_DIR$/vendor/maxmind-db/reader" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="705" />
+    <option name="y" value="-19" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <autoscrollToSource ProjectPane="false" />
+      <autoscrollFromSource ProjectPane="false" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Item" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Libraries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Utilities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="booking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="htmlspecialchars&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\services\booking" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\temp" />
+      <recent name="C:\xampp\htdocs\online-hotel\app\Http\Controllers\Booking" />
+      <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\services" />
+      <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\subviews" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\services\booking" />
+      <recent name="C:\xampp\htdocs\online-hotel\app\Http\Controllers\Service" />
+      <recent name="C:\xampp\htdocs\online-service-v.2\base" />
+      <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\services" />
+      <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\subviews\booking" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1569321183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6ImZSZGVJWmM0WXZPR24rZEs1MmhIMlE9PSIsInZhbHVlIjoiYjhyWnQ2XC90alBzK2dMQlBoV1YzU0FJUEZuUEpWTXh1TkxiWnBheERcLzAwMmJZcHZCbzVwQnNydTEzd3IxemdxIiwibWFjIjoiOTBiMmZiNDZjMjAxZmVhY2MzYmE0ZTk4NGFkNGNlYjE0ZjhlZmQwZTllNjM5NmIyZjgyZmEzMWE4ZTM3OTdkYiJ9" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1569321183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6Ijk5OWFaY2NwXC9BcTVYSEFNZVBSTnJRPT0iLCJ2YWx1ZSI6ImdKUjloQXhkYTFlYzF6R0NNdzY2REwwYitCeVBNdjNaYjU3STN0MlY3RnBvMmVBeFhMK090QWxhQks2dCtCSG8iLCJtYWMiOiJkY2RiMmQ0NTQwN2EzMzc0NTA4ZmE1ZjhlZWRiZDE0ZGJiODkzMjA4MjZmMzg5NmQ0MTVhZmFjMzcyMzhhMDhiIn0%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://hamrahcard.efarda.net" />
+          <option name="urlPath" value="/hc/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="X-CSRF-TOKEN" />
+                <option name="value" value="1ODJ16LmsQlYeNJvZFsbGORmb11vLmVs067O7ihE" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1569321183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6ImZSZGVJWmM0WXZPR24rZEs1MmhIMlE9PSIsInZhbHVlIjoiYjhyWnQ2XC90alBzK2dMQlBoV1YzU0FJUEZuUEpWTXh1TkxiWnBheERcLzAwMmJZcHZCbzVwQnNydTEzd3IxemdxIiwibWFjIjoiOTBiMmZiNDZjMjAxZmVhY2MzYmE0ZTk4NGFkNGNlYjE0ZjhlZmQwZTllNjM5NmIyZjgyZmEzMWE4ZTM3OTdkYiJ9" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1569321183000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6Ijk5OWFaY2NwXC9BcTVYSEFNZVBSTnJRPT0iLCJ2YWx1ZSI6ImdKUjloQXhkYTFlYzF6R0NNdzY2REwwYitCeVBNdjNaYjU3STN0MlY3RnBvMmVBeFhMK090QWxhQks2dCtCSG8iLCJtYWMiOiJkY2RiMmQ0NTQwN2EzMzc0NTA4ZmE1ZjhlZWRiZDE0ZGJiODkzMjA4MjZmMzg5NmQ0MTVhZmFjMzcyMzhhMDhiIn0%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/admin/services/reserve/68" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="X-CSRF-TOKEN" />
+                <option name="value" value="1ODJ16LmsQlYeNJvZFsbGORmb11vLmVs067O7ihE" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1569320991000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IkpuWXQ0YXc1T3pnaHBpNENaQWFLTkE9PSIsInZhbHVlIjoiQndQcExFUnk3RHFBRmQ3b25FUklvSEZNZFJpTTQwUGNSY29UbjFMXC9CWkRCQUUyTldcL3hRb1M1XC8wcWUyUmlpUSIsIm1hYyI6Ijc1OWU2NGU4YWFkYjFiMTNiNTc1ODEyZjk2ZTkzZjdhMGZjMDIzMjZhM2IxZjYxNTRlN2Y1YTVmYjY0MDBhYTYifQ%3D%3D" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1569320991000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IjExV2liTEhncU9JTTczQnlzaHBnQWc9PSIsInZhbHVlIjoibEs0QTVmYlpwS2hyU2diOXBpNE9YY29OSDdqd1l4XC9BWTRyREhWRDVXMDVXbUhSbVdvaWFUN1EzTzB3N2ppNGQiLCJtYWMiOiJjODY3MWFlZDQyYjlmZDU2N2Y3MjVkNTJhYjljZWMwZjEzN2YyMWMzYTBkY2NhOWI2ZjBiMDhhOGYwOTFjMDQzIn0%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/admin/services/reserve/68" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1569320910000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IkxCXC9oUGZGbGdlTCthU2RTYmNRV1VnPT0iLCJ2YWx1ZSI6Ild5MGhzRmE5bUFyZTZISGE1VVZBVDhkamV4eUNJeG90bE9rSWl2OGc1VWRVOEk1N3dNaktPZHY5b3dNa0l3S2MiLCJtYWMiOiI5MmQ5N2I4M2ZmMmNlNmE4OGVlODcyNmI2YzUwM2M0YzZmMDM0M2U2N2ZiNWM1ZWNhNmU0MzRhMDg3MzhmMGZkIn0%3D" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1569320910000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IlFCSUJNRXYxbjVNKzJxUmZSeVFnc0E9PSIsInZhbHVlIjoiWkFuRGVKSHBRM1JydGFWdXo2RVc5cXB1VFVPRllFVEhmQ0pFRFUrMm51MHU4b0FcL085Q0FDT09ENXVVT1JPenoiLCJtYWMiOiJhNTMxNGVhMmY4ZjBhZDVhYWIwODkyMDFmNzZkMjkzZGRhYjg5NmNkYmJmYzZhZmEzYjE3NmFkZjNiNTRiMWY2In0%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/admin/services/reserve/68" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1569320838000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IkFtNEU2U2JxSVwvV2FoUVhIbW9Yekh3PT0iLCJ2YWx1ZSI6Iitvd1Y5NXo5Y2Q5c0V1S2ZVVUd6aXhBU0NsdUhkZmlZWjRsSk9ud3dBMXl4RW92N2J3a0FtalwvUCtFZ3Z4Q2gzIiwibWFjIjoiY2RlNGRlNmUxNjM4MTkzMDJkNGE1ZWQ0OTRkNmZiZTg4NGQ1Y2FlMzgxMmY2M2Y0YTIwNzY4MWVjMzRiMDc0MyJ9" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1569320838000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IjJCVE15UkhHOEJzWlk2RGFDd1Y1M1E9PSIsInZhbHVlIjoicFNXRTgrb2ZDZEV6QWJVeXd5ek9XZ0VCUDdUc24wXC9ZVUFzd0RoNlhUdUVUXC9YbXg4WFRVSk8ydUMybTZaXC9TKyIsIm1hYyI6IjAxYjk3NDM4YTMzMTYzODU1MzM1Mzg3NDUyYjdkNWI3NjQzNWM4YjdhNTYwNDU1NGViNDlkOTQzYTYzYjg2MjQifQ%3D%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/admin/services/reserve/68" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1568717031000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6Iis2NDZEajREdG94cjJsRkVyUWljamc9PSIsInZhbHVlIjoiWjVOWTQ5eFBndVA2XC9xdzJvcThJVDQ1VTN4ckVKMHl0dDFFT2hNa000OUNtS2gxTFJMdTNLcjF3T3hNK3dtR0wiLCJtYWMiOiJjNDcwZTkyMjYyNjM4NDQ5MTE0YjkyYjlmZjIzZmE3ODdlMDcxODBjOGI4Yzk5M2M1MmNhMzdlMzIxOGIzMDNiIn0%3D" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1568717017000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IjBXVys4RzhPNkQ2UXI2Tjgxa2NDYVE9PSIsInZhbHVlIjoiUEs4QlFpbERaTVh3cDlWak05czJ1VEpHczhrYkJaaWFvT1JiR0lIZTZYOFR1YThnVmd2OGt0N0ZnUTFhQTVTaiIsIm1hYyI6ImVmMjAwMjhhYTY0YmI4OTVkYzc2ZjdkZDI3ODA2MDFhNjQ2ZjRjYmNjMjViODc4ZjkzNzIwNzRmNGM1MjM0NGIifQ%3D%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/admin/services/reserve/68" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1568717031000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6Iis2NDZEajREdG94cjJsRkVyUWljamc9PSIsInZhbHVlIjoiWjVOWTQ5eFBndVA2XC9xdzJvcThJVDQ1VTN4ckVKMHl0dDFFT2hNa000OUNtS2gxTFJMdTNLcjF3T3hNK3dtR0wiLCJtYWMiOiJjNDcwZTkyMjYyNjM4NDQ5MTE0YjkyYjlmZjIzZmE3ODdlMDcxODBjOGI4Yzk5M2M1MmNhMzdlMzIxOGIzMDNiIn0%3D" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1568717017000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IjBXVys4RzhPNkQ2UXI2Tjgxa2NDYVE9PSIsInZhbHVlIjoiUEs4QlFpbERaTVh3cDlWak05czJ1VEpHczhrYkJaaWFvT1JiR0lIZTZYOFR1YThnVmd2OGt0N0ZnUTFhQTVTaiIsIm1hYyI6ImVmMjAwMjhhYTY0YmI4OTVkYzc2ZjdkZDI3ODA2MDFhNjQ2ZjRjYmNjMjViODc4ZjkzNzIwNzRmNGM1MjM0NGIifQ%3D%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/vp/tpath" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1568717017000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6Im9La2FtUTYwemVVcWFhVjFKV3VFSEE9PSIsInZhbHVlIjoiVjZFQWd2UzdHeWt0Y3g2VHNKNk14eFwvNDFGVnN4TXQrZzNheXVjcm13cERERVhHczR1Mno0RndsRXErWjNrck8iLCJtYWMiOiIzODg3ZWFjMmY1YjUyMzBhMWNmZmEwZDY2ODU4MjE3OWE3NWM1NjE1ZDBjNDMxYzdmNTVjM2I0NDk4M2Y3M2MxIn0%3D" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1568717017000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IjBXVys4RzhPNkQ2UXI2Tjgxa2NDYVE9PSIsInZhbHVlIjoiUEs4QlFpbERaTVh3cDlWak05czJ1VEpHczhrYkJaaWFvT1JiR0lIZTZYOFR1YThnVmd2OGt0N0ZnUTFhQTVTaiIsIm1hYyI6ImVmMjAwMjhhYTY0YmI4OTVkYzc2ZjdkZDI3ODA2MDFhNjQ2ZjRjYmNjMjViODc4ZjkzNzIwNzRmNGM1MjM0NGIifQ%3D%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/vp/tpath" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1568716842000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IjJpeWMrVUFuN3BIME13aFF6d1FYRXc9PSIsInZhbHVlIjoiZm1cL0x0N1E1cndROFlGSEdKVjBvakJUcVF3TzBuK1p3bU9BMmFtTG1ubXBxbDZsSm1sanJNcE9DUHFlZkhNMWQiLCJtYWMiOiI5NmNjZTNiYjI4N2Y1MTkwZTlmYTI3OGI1NTc3MmI1NjhjNjA4NGY5YWE5MDEyMjc2MjUwYjQ4YWY3NDFkYjU3In0%3D" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1568716842000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6Ikh2SE5NbzJlS01UVEcyT0cxdWN1TlE9PSIsInZhbHVlIjoidjVXVUxWaUlDS0JXNVFOd25keDdDVGRXKzN1aTJMRFp4dlRaMzJcL2h3b0RPMDd4T0prbUdFcDNlcVwvUVhjS0hTIiwibWFjIjoiOGI0MzZjYTc3NmVhNjEwY2ZiMzY3NDYwZmZmMmFiOTJiOWYzODNhOTcxYzBhNTMyZGY0M2ZjMmVjOWExMjRjNiJ9" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/vp/tpath" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1568716811000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6Ik15Y0picEk3eGdsYW5UK2xuc0NOMVE9PSIsInZhbHVlIjoidUVOQ1FPNG8weVQ2Q2pnY0hqTCt0VHl2S2thVEVSMUZtU0NzUTZjNkFmTDg3aTR6TWtZWFZxeDFTZGNMdTc4NSIsIm1hYyI6ImU3ZmEyODViNjAzMzE2MGYxNzA4YThjNGU4NTc2OGExYTBiMzljMTZjOWUxNDc1ODI0NTI5NGQxMzcwMmYzN2QifQ%3D%3D" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1568716811000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6ImRIZyt1ZGNQYmhNdWZua3RmR3RyQXc9PSIsInZhbHVlIjoiakhhcEt6YUxqQ2R6a0hUUTIwWGQrdGcyTGpZZUQwOEgyc0lTanRqZ0RyTlVLTytjTUE4VXhnVTZFTnNNUlNONCIsIm1hYyI6IjE4OWZmZTBlM2NjMzYxNjU4YzAxYTU0ZTBjNmEwZTM3ODJhM2RkNjlmNWZmMjBjZWQ2MWRhMDJhMzU4MTExZTgifQ%3D%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/vp/tpath" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1568716791000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6ImgxbVVhZVwvZFp0NVowXC9odGxZME52UT09IiwidmFsdWUiOiJ6cXdRK2x4NFRqWHd0ZjhZKzlUbDV6R2ZkMzlVQUlic0NwSG01M2I0RmNaTUZEdmpZOFBpVXFnOFRzU3dDc2FsIiwibWFjIjoiZjg2NDA3NTg2NGQyMmZjMzYzNWFiOTY5NjZlZDFhY2RmZTJlYzFkOTdjYzIyNWNmMmM1MTc5YWY5MjVkZTViYyJ9" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/vp/tpath" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1568716780000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6ImxFWFg4VzVGOGxPUlBnZGpWWlhUZmc9PSIsInZhbHVlIjoiazZPZFpBVTZaK3kyWkQ5Zk1mcXNvUXlsNEY2ZVJucDF4T2VTd2RJS0l6NjhEa2dIT2xiUkVsRHAwK055U1NtcyIsIm1hYyI6ImFkNTdjZTZmMTVkM2U5NWZjNzRjMzVmYmQ0ZDNkOTZkZDBjZTVjMWI2NDQ4NTQ1MTExZWI2OTAyNmMzMjg4MDkifQ%3D%3D" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/vp/tpath" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1551152392000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IkdcL3A1T1BSbm9nSWNxN09aUGtoSitRPT0iLCJ2YWx1ZSI6IitwalIxcDZ1eENzY3MrSDdGRU10TExxWk1tUDl5dW9LN0lORXJjXC94c0VEeVY5ZXp0TkhnbDBWQk5UM2JITHBvIiwibWFjIjoiNDZlZWQ5N2JjMTI4NjBjODM3NDQxOTY2MmQ5YzEyNWJlNzY3YzFkNTc4YjNkMGRjNGM1MDA4OTRiNzFjMjlhMyJ9" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-service/vp/tpath" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tpost" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="type" />
+                <option name="value" value="tget" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1551152392000" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="laravel_session" />
+                <option name="path" value="/" />
+                <option name="value" value="eyJpdiI6IkdcL3A1T1BSbm9nSWNxN09aUGtoSitRPT0iLCJ2YWx1ZSI6IitwalIxcDZ1eENzY3MrSDdGRU10TExxWk1tUDl5dW9LN0lORXJjXC94c0VEeVY5ZXp0TkhnbDBWQk5UM2JITHBvIiwibWFjIjoiNDZlZWQ5N2JjMTI4NjBjODM3NDQxOTY2MmQ5YzEyNWJlNzY3YzFkNTc4YjNkMGRjNGM1MDA4OTRiNzFjMjlhMyJ9" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-hotel/public/admin/relations/ajax/get" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-hotel/public/admin/relations/ajax/get" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost" />
+          <option name="urlPath" value="/online-hotel/public/admin/relations/ajax/get" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="" />
+      <created>1548404930355</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548404930355</updated>
+      <workItem from="1548404934850" duration="7079000" />
+      <workItem from="1548418895740" duration="15230000" />
+      <workItem from="1548572741883" duration="98732000" />
+      <workItem from="1549235354010" duration="4044000" />
+      <workItem from="1549377410261" duration="16633000" />
+      <workItem from="1549632507307" duration="13778000" />
+      <workItem from="1549718677517" duration="16731000" />
+      <workItem from="1549978275426" duration="21696000" />
+      <workItem from="1550064968731" duration="36103000" />
+      <workItem from="1550343361000" duration="98803000" />
+      <workItem from="1550781090526" duration="9863000" />
+      <workItem from="1551056779921" duration="6612000" />
+      <workItem from="1551104346916" duration="36429000" />
+      <workItem from="1551253204125" duration="15478000" />
+      <workItem from="1551466090998" duration="12066000" />
+      <workItem from="1551584899398" duration="17460000" />
+      <workItem from="1551653264825" duration="18232000" />
+      <workItem from="1551772213186" duration="15813000" />
+      <workItem from="1551835851234" duration="21229000" />
+      <workItem from="1552044656507" duration="45276000" />
+      <workItem from="1552282479149" duration="47422000" />
+      <workItem from="1552474749625" duration="14802000" />
+      <workItem from="1552640769718" duration="10987000" />
+      <workItem from="1552666986827" duration="39337000" />
+      <workItem from="1552919939106" duration="10978000" />
+      <workItem from="1553178322997" duration="688000" />
+      <workItem from="1553276896221" duration="19927000" />
+      <workItem from="1553533257818" duration="11836000" />
+      <workItem from="1553611684779" duration="7460000" />
+      <workItem from="1553674516912" duration="9091000" />
+      <workItem from="1553718444819" duration="16079000" />
+      <workItem from="1553808616824" duration="11314000" />
+      <workItem from="1553880628217" duration="11600000" />
+      <workItem from="1553988333564" duration="16495000" />
+      <workItem from="1554092863954" duration="9157000" />
+      <workItem from="1554158474132" duration="6751000" />
+      <workItem from="1554198164260" duration="10988000" />
+      <workItem from="1554265546923" duration="8605000" />
+      <workItem from="1554298306101" duration="18732000" />
+      <workItem from="1554384785059" duration="9324000" />
+      <workItem from="1554612960249" duration="12584000" />
+      <workItem from="1554700666035" duration="17909000" />
+      <workItem from="1554784955684" duration="16228000" />
+      <workItem from="1554823971369" duration="1596000" />
+      <workItem from="1554872538618" duration="15255000" />
+      <workItem from="1554905598127" duration="3524000" />
+      <workItem from="1555007679444" duration="2852000" />
+      <workItem from="1555045093791" duration="6921000" />
+      <workItem from="1555074815808" duration="33172000" />
+      <workItem from="1555234754096" duration="16536000" />
+      <workItem from="1555334718483" duration="26284000" />
+      <workItem from="1555609122045" duration="16686000" />
+      <workItem from="1555713876107" duration="14834000" />
+      <workItem from="1555904927295" duration="2319000" />
+      <workItem from="1555909309301" duration="598000" />
+      <workItem from="1555941745024" duration="36614000" />
+      <workItem from="1556107281072" duration="20986000" />
+      <workItem from="1556204803404" duration="88442000" />
+      <workItem from="1556517713465" duration="76099000" />
+      <workItem from="1556864694118" duration="114266000" />
+      <workItem from="1557220360098" duration="53377000" />
+      <workItem from="1557355526993" duration="4371000" />
+      <workItem from="1557423755425" duration="18824000" />
+      <workItem from="1557498121292" duration="97611000" />
+      <workItem from="1557749675079" duration="222101000" />
+      <workItem from="1558422048431" duration="57232000" />
+      <workItem from="1558562375279" duration="14756000" />
+      <workItem from="1558673646959" duration="63281000" />
+      <workItem from="1558812252690" duration="37849000" />
+      <workItem from="1558931179044" duration="12713000" />
+      <workItem from="1558957947088" duration="58576000" />
+      <workItem from="1559123764322" duration="23088000" />
+      <workItem from="1559279389197" duration="159421000" />
+      <workItem from="1560101020742" duration="28735000" />
+      <workItem from="1560194548251" duration="46974000" />
+      <workItem from="1560385967385" duration="65860000" />
+      <workItem from="1560717990407" duration="488000" />
+      <workItem from="1560718631832" duration="10000" />
+      <workItem from="1560718825821" duration="599000" />
+      <workItem from="1560719530250" duration="1136000" />
+      <workItem from="1560721002809" duration="19380000" />
+      <workItem from="1560742634719" duration="50220000" />
+      <workItem from="1560895389291" duration="52214000" />
+      <workItem from="1561005880218" duration="13049000" />
+      <workItem from="1561072859988" duration="7029000" />
+      <workItem from="1561086663556" duration="33221000" />
+      <workItem from="1561188473023" duration="1671000" />
+      <workItem from="1561199857257" duration="29833000" />
+      <workItem from="1561344742223" duration="18267000" />
+      <workItem from="1561393719530" duration="4023000" />
+      <workItem from="1561405955194" duration="7934000" />
+      <workItem from="1561432525795" duration="39493000" />
+      <workItem from="1561574700206" duration="71698000" />
+      <workItem from="1561823876528" duration="41968000" />
+      <workItem from="1561981663263" duration="80493000" />
+      <workItem from="1562401604510" duration="10010000" />
+      <workItem from="1562440487658" duration="12709000" />
+      <workItem from="1562504806762" duration="119207000" />
+      <workItem from="1563062864360" duration="7567000" />
+      <workItem from="1563127867735" duration="33191000" />
+      <workItem from="1563259470286" duration="9637000" />
+      <workItem from="1563519559291" duration="3835000" />
+      <workItem from="1563657081582" duration="24060000" />
+      <workItem from="1563947483244" duration="2254000" />
+      <workItem from="1563954444885" duration="63490000" />
+      <workItem from="1564219914217" duration="73542000" />
+      <workItem from="1564475334489" duration="61922000" />
+      <workItem from="1564749919143" duration="25471000" />
+      <workItem from="1564838418819" duration="1682000" />
+      <workItem from="1564850522911" duration="142198000" />
+      <workItem from="1565303039707" duration="54018000" />
+      <workItem from="1565446625083" duration="57038000" />
+      <workItem from="1565578737316" duration="16307000" />
+      <workItem from="1565646800221" duration="10729000" />
+      <workItem from="1565672241721" duration="25882000" />
+      <workItem from="1565757136873" duration="52015000" />
+      <workItem from="1565961026035" duration="805000" />
+      <workItem from="1565962039127" duration="5671000" />
+      <workItem from="1565974167399" duration="11621000" />
+      <workItem from="1566015540718" duration="9541000" />
+      <workItem from="1566060564671" duration="735000" />
+      <workItem from="1566069140618" duration="875000" />
+      <workItem from="1566102357650" duration="20994000" />
+      <workItem from="1566145068221" duration="16755000" />
+      <workItem from="1566167117107" duration="400000" />
+      <workItem from="1566168492732" duration="2792000" />
+      <workItem from="1566171900928" duration="24575000" />
+      <workItem from="1566261276274" duration="209000" />
+      <workItem from="1566261540517" duration="86108000" />
+      <workItem from="1566449237161" duration="14623000" />
+      <workItem from="1566481891743" duration="77814000" />
+      <workItem from="1566748949318" duration="21971000" />
+      <workItem from="1566839560073" duration="30094000" />
+      <workItem from="1566905698869" duration="4001000" />
+      <workItem from="1566911596216" duration="2853000" />
+      <workItem from="1566915079941" duration="136000" />
+      <workItem from="1566917029427" duration="167756000" />
+      <workItem from="1567343548320" duration="53123000" />
+      <workItem from="1567459102836" duration="2007000" />
+      <workItem from="1567464733252" duration="4578000" />
+      <workItem from="1567474653837" duration="109795000" />
+      <workItem from="1567759654712" duration="7775000" />
+      <workItem from="1567787211495" duration="1453000" />
+      <workItem from="1567805215058" duration="1979000" />
+      <workItem from="1567863859518" duration="45466000" />
+      <workItem from="1567998412799" duration="39182000" />
+      <workItem from="1568139446577" duration="33720000" />
+      <workItem from="1568310759111" duration="88282000" />
+      <workItem from="1568582665246" duration="89289000" />
+      <workItem from="1568810342792" duration="27435000" />
+      <workItem from="1568979350155" duration="8353000" />
+      <workItem from="1568998036604" duration="4172000" />
+      <workItem from="1569126087858" duration="16600000" />
+      <workItem from="1569229725080" duration="7383000" />
+      <workItem from="1569259264076" duration="73250000" />
+      <workItem from="1569461519368" duration="56918000" />
+      <workItem from="1569692220094" duration="20585000" />
+      <workItem from="1569749610966" duration="4980000" />
+      <workItem from="1569758527910" duration="53537000" />
+      <workItem from="1570097643733" duration="40750000" />
+      <workItem from="1570151876932" duration="248614000" />
+      <workItem from="1570884147616" duration="19016000" />
+      <workItem from="1570976455641" duration="71059000" />
+      <workItem from="1571311328197" duration="9625000" />
+      <workItem from="1571378253738" duration="42791000" />
+      <workItem from="1571498293040" duration="28407000" />
+      <workItem from="1571576489794" duration="928000" />
+      <workItem from="1571577628934" duration="108375000" />
+      <workItem from="1572029292506" duration="13985000" />
+      <workItem from="1572085194652" duration="10934000" />
+      <workItem from="1572133212731" duration="46554000" />
+      <workItem from="1572316421196" duration="373000" />
+      <workItem from="1572372808419" duration="18788000" />
+      <workItem from="1572449139122" duration="9532000" />
+      <workItem from="1572538052418" duration="148482000" />
+      <workItem from="1573020130900" duration="29848000" />
+      <workItem from="1573115969524" duration="42505000" />
+      <workItem from="1573271937506" duration="133356000" />
+      <workItem from="1573905292268" duration="38923000" />
+      <workItem from="1574013308468" duration="30537000" />
+      <workItem from="1574104840688" duration="54918000" />
+      <workItem from="1574359624496" duration="82432000" />
+      <workItem from="1574856774113" duration="34884000" />
+      <workItem from="1575138391893" duration="18118000" />
+      <workItem from="1575353496096" duration="104568000" />
+      <workItem from="1576043062506" duration="41040000" />
+      <workItem from="1576837439731" duration="10641000" />
+      <workItem from="1576964629734" duration="6984000" />
+      <workItem from="1577851298342" duration="884000" />
+      <workItem from="1578090093187" duration="35000" />
+      <workItem from="1578145417091" duration="3427000" />
+      <workItem from="1578620954325" duration="5401000" />
+      <workItem from="1582581424944" duration="3127000" />
+      <workItem from="1582923942430" duration="69515000" />
+      <workItem from="1583301510114" duration="1752000" />
+      <workItem from="1583310626928" duration="4080000" />
+      <workItem from="1583522516894" duration="78304000" />
+      <workItem from="1583884354342" duration="21451000" />
+      <workItem from="1584075287964" duration="11501000" />
+      <workItem from="1584087545777" duration="21588000" />
+      <workItem from="1585887781065" duration="10737000" />
+      <workItem from="1585992925273" duration="16599000" />
+      <workItem from="1586061776558" duration="17026000" />
+      <workItem from="1586149395469" duration="8858000" />
+      <workItem from="1586167132003" duration="7632000" />
+      <workItem from="1586186423911" duration="41443000" />
+      <workItem from="1586335142455" duration="26857000" />
+      <workItem from="1586415380727" duration="5398000" />
+      <workItem from="1586515361418" duration="94213000" />
+      <workItem from="1586901729710" duration="11837000" />
+      <workItem from="1588726231345" duration="19093000" />
+      <workItem from="1588764729125" duration="5186000" />
+      <workItem from="1588775161811" duration="3527000" />
+      <workItem from="1590361428562" duration="8181000" />
+      <workItem from="1590393689581" duration="16159000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6797793000" />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19189766" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4968017" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5117271" side_tool="true" weight="0.22751896" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.48827294" visible="true" weight="0.22751896" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49733475" weight="0.23726977" />
+      <window_info active="true" anchor="bottom" id="REST Client" order="10" sideWeight="0.4978678" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="14" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.13486141" />
+      <window_info anchor="right" id="Notes" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.16151386" />
+      <window_info anchor="right" id="Structure" order="6" visible="true" weight="0.1119403" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/open_booking_form.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/waiting_for_room_verification_booking_form.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking-t/user_booking_form.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking-t/payout_booking_form.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking-t/finish_booking_form.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/booking_script.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/service.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="32" lean-forward="true" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login-costomer_script.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/register-customer/register.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/register-customer/register-costomer_script.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/public/temp/register-customer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#340#386#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/temp/login-customer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="57" column="22" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="57" selection-end-column="22" />
+          <folding>
+            <element signature="e#492#3061#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/tracking.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="209" lean-forward="true" selection-start-line="209" selection-end-line="209" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#section#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/print-voucher.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/tracking-reserve.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <element signature="e#137#183#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="178" column="32" lean-forward="true" selection-start-line="178" selection-start-column="32" selection-end-line="178" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Base/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/slider-txt.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/post1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/dinner.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/image.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/slider1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/scripts/mapbox.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="448" lean-forward="true" selection-start-line="448" selection-end-line="448" />
+          <folding>
+            <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nestable-locales.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="543" column="11" selection-start-line="543" selection-start-column="11" selection-end-line="543" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Widget/WidgetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="66" column="41" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/database_types.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/models.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Utilities/ItemUtility.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#45#104#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Service.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/ServicePropertyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/ServiceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1921">
+          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+          <folding>
+            <element signature="e#48#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="273" selection-start-line="268" selection-end-line="273" />
+          <folding>
+            <element signature="e#45#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Utilities/BuiltInMethods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding>
+            <element signature="e#45#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_start.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
+          <folding>
+            <element signature="e#6505#6535#0#HTML" expanded="true" />
+            <element signature="e#32712#33135#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Booking/BookingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+          <folding>
+            <element signature="e#48#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="183" column="51" selection-start-line="183" selection-start-column="51" selection-end-line="183" selection-end-column="51" />
+          <folding>
+            <element signature="e#13836#18242#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding>
+            <element signature="e#29289#29327#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="56" column="63" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

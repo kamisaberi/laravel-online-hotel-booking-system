@@ -1,0 +1,38 @@
+[
+  {
+    "title": "fa:غذا,en:Food,ar:Food",
+    "id": "1"
+  },
+  {
+    "title": "fa:رایانه,en:Computers,ar:Computers",
+    "id": "2",
+    "children": [
+      {
+        "title": "fa:لپتاپ,en:Laptops,ar:Laptops",
+        "id": "3"
+      },
+      {
+        "title": "fa:پی سی,en:PC,ar:PC",
+        "id": "4"
+      },
+      {
+        "title": "fa:اجزاء,en:Parts,ar:Parts",
+        "id": "5",
+        "children": [
+          {
+            "title": "fa:مادر بورد,en:MB,ar:MB",
+            "id": "6"
+          },
+          {
+            "title": "fa:سی پی یو,en:CPU,ar:CPU",
+            "id": "7"
+          },
+          {
+            "title": "fa:رم,en:RAM,ar:RAM",
+            "id": "8"
+          }
+        ]
+      }
+    ]
+  }
+]

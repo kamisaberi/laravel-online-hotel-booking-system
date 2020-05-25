@@ -1,0 +1,30 @@
+[
+  {
+    "conditions": {
+      "event": "update",
+      "arguments": [
+        "situation==7,9"
+      ]
+    },
+    "actions": {
+      "command": "add",
+      "source": [
+        "[start-date:end-date]"
+      ],
+      "destination": "object.inactive-days"
+    }
+  },
+  {
+    "conditions": {
+      "event": "store",
+      "arguments": []
+    },
+    "actions": {
+      "command": "add",
+      "source": [
+        "id"
+      ],
+      "destination": "{type}.{id}.price"
+    }
+  }
+]

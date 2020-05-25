@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/iransans.eot');
+    src: url('../fonts/iransans.woff') format('woff'), url('../fonts/iransans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/IRANSansWeb_Bold.eot');
+    src: url('../fonts/IRANSansWeb_Bold.woff') format('woff'), url('../fonts/IRANSansWeb_Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.main {
+
+    font-family: iransans;
+
+    width: 960px;
+    min-height: 900px;
+    margin: 0 auto;
+
+}
+
+.img-logo {
+
+    display: block;
+    height: 150px;
+    margin: 20px auto;
+
+}
+
+.h6-title {
+
+    text-align: center;
+    font-size: 18px;
+    margin: 5px;
+
+}
+
+.line {
+
+    background-color: #000;
+    height: 4px;
+    width: 960px;
+    margin: 20px auto;
+
+}
+
+.description-box {
+
+    width: 97%;
+    min-height: 110px;
+    border: solid black 1px;
+    margin: 0 auto;
+
+}
+
+.span-desc {
+
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.rtl-direction {
+
+    direction: rtl;
+
+}
+
+.input-box {
+
+    width: 290px;
+    padding: 15px;
+
+    float: left;
+
+}
+
+.input-box-div {
+
+    width: 100%;
+    min-height: 50px;
+    border: solid black 1px;
+
+}
+
+.top-of-box {
+
+    height: 40px;
+
+    width: 100%;
+
+}
+
+.bottom-of-box {
+
+    height: 40px;
+    border-top: solid black 1px;
+    width: 100%;
+
+}
+
+.right-side {
+
+    float: right;
+    padding: 0 10px;
+    line-height: 40px;
+
+}
+
+.content-font {
+    font-size: small;
+    font-weight: 600;
+}
+
+.title-font {
+    font-size: small;
+}
+
+.left-side {
+
+    float: left;
+    padding: 0 10px;
+    line-height: 40px;
+}
+
+.input-box-address {
+
+    width: 97%;
+    min-height: 20px;
+    border: solid black 1px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.margin-top {
+
+    margin-top: 345px;
+
+}
+
+.left-side-div {
+
+    width: 478px;
+    min-height: 150px;
+    border-right: solid black 2px;;
+    clear: both;
+    float: left;
+    margin-bottom: 15px;
+
+}
+
+.right-side-div {
+
+    width: 478px;
+    min-height: 150px;
+    border-left: solid black 2px;;
+    float: right;
+    margin-bottom: 15px;
+
+}
+
+.top-of-box-2 {
+
+    min-height: 100px;
+
+    width: 100%;
+
+}
+
+.bottom-of-box-2 {
+
+    min-height: 15px;
+
+    width: 100%;
+
+}
+
+.margin-top-2 {
+
+    margin-top: 217px;
+
+}
+
+.price-box {
+
+    width: 100%;
+    background-color: #000;
+    min-height: 40px;
+    margin: 0 auto;
+    color: #fff;
+    padding-top: 25px;
+    text-align: center;
+
+}
+
+.span-price {
+
+    margin: 0 15px;
+
+}
+

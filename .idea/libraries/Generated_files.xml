@@ -1,0 +1,97 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/demo/offcanvas/offcanvas.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/gulpfile.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/js/bootstrap.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/js/bootstrap.min.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/js/jquery.hotkeys.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/js/jquery.min.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/components-bootstrap4.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/components-server.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/components-widgets.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/inputs.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-bootstrap-colorpicker.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-codemirror.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-google-fonts.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-jszip.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/undo.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/codemirror/lib/codemirror.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/codemirror/lib/formatting.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/codemirror/lib/xml.min.js" />
+        <item url="file://$PROJECT_DIR$/VvvebJs-master/libs/jszip/jszip.min.min.js" />
+        <item url="file://$PROJECT_DIR$/jquery-cropper-master/babel.config.min.js" />
+        <item url="file://$PROJECT_DIR$/jquery-cropper-master/dist/jquery-cropper.common.min.js" />
+        <item url="file://$PROJECT_DIR$/jquery-cropper-master/dist/jquery-cropper.min.js" />
+        <item url="file://$PROJECT_DIR$/jquery-cropper-master/docs/js/jquery-cropper.min.js" />
+        <item url="file://$PROJECT_DIR$/jquery-cropper-master/docs/js/main.min.js" />
+        <item url="file://$PROJECT_DIR$/public/admin-assets/js/mine/form-action.min.js" />
+        <item url="file://$PROJECT_DIR$/public/admin-assets/js/mine/items.min.js" />
+        <item url="file://$PROJECT_DIR$/public/admin-assets/js/mine/select-image.min.js" />
+        <item url="file://$PROJECT_DIR$/public/admin-assets/js/scripts/pages/app-contacts.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/gulpfile.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/js/sb-admin-2.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/datatables/jquery.dataTables.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/jquery/jquery.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/jquery/jquery.min.min.js" />
+        <item url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/jquery/jquery.slim.min.js" />
+        <item url="file://$PROJECT_DIR$/public/vvveb/demo/startbootstrap-landing-page/vendor/jquery/jquery.min.min.js" />
+        <item url="file://$PROJECT_DIR$/public/vvveb/libs/builder/components-server.min.js" />
+        <item url="file://$PROJECT_DIR$/vendor/league/glide/docs/custom.min.js" />
+        <item url="file://$PROJECT_DIR$/vendor/snowplow/referer-parser/nodejs/index.min.js" />
+        <item url="file://$PROJECT_DIR$/vendor/snowplow/referer-parser/nodejs/test/test.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/demo/offcanvas/offcanvas.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/gulpfile.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/js/bootstrap.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/js/bootstrap.min.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/js/jquery.hotkeys.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/js/jquery.min.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/components-bootstrap4.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/components-server.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/components-widgets.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/inputs.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-bootstrap-colorpicker.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-codemirror.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-google-fonts.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/plugin-jszip.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/builder/undo.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/codemirror/lib/codemirror.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/codemirror/lib/formatting.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/codemirror/lib/xml.min.js" />
+      <root url="file://$PROJECT_DIR$/VvvebJs-master/libs/jszip/jszip.min.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-cropper-master/babel.config.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-cropper-master/dist/jquery-cropper.common.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-cropper-master/dist/jquery-cropper.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-cropper-master/docs/js/jquery-cropper.min.js" />
+      <root url="file://$PROJECT_DIR$/jquery-cropper-master/docs/js/main.min.js" />
+      <root url="file://$PROJECT_DIR$/public/admin-assets/js/mine/form-action.min.js" />
+      <root url="file://$PROJECT_DIR$/public/admin-assets/js/mine/items.min.js" />
+      <root url="file://$PROJECT_DIR$/public/admin-assets/js/mine/select-image.min.js" />
+      <root url="file://$PROJECT_DIR$/public/admin-assets/js/scripts/pages/app-contacts.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/gulpfile.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/js/sb-admin-2.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/datatables/jquery.dataTables.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/jquery/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/jquery/jquery.min.min.js" />
+      <root url="file://$PROJECT_DIR$/public/templates/sb-admin-2/vendor/jquery/jquery.slim.min.js" />
+      <root url="file://$PROJECT_DIR$/public/vvveb/demo/startbootstrap-landing-page/vendor/jquery/jquery.min.min.js" />
+      <root url="file://$PROJECT_DIR$/public/vvveb/libs/builder/components-server.min.js" />
+      <root url="file://$PROJECT_DIR$/vendor/league/glide/docs/custom.min.js" />
+      <root url="file://$PROJECT_DIR$/vendor/snowplow/referer-parser/nodejs/index.min.js" />
+      <root url="file://$PROJECT_DIR$/vendor/snowplow/referer-parser/nodejs/test/test.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,131 @@
+GET https://hamrahcard.efarda.net/hc/
+Accept: */*
+Cache-Control: no-cache
+X-CSRF-TOKEN: 1ODJ16LmsQlYeNJvZFsbGORmb11vLmVs067O7ihE
+
+<> 2019-12-26T104229.200.json
+
+###
+
+GET https://hamrahcard.efarda.net/hc/
+Accept: */*
+Cache-Control: no-cache
+X-CSRF-TOKEN: 1ODJ16LmsQlYeNJvZFsbGORmb11vLmVs067O7ihE
+
+<> 2019-12-26T104159.200.json
+
+###
+
+GET http://localhost/online-service/admin/services/reserve/68
+Accept: */*
+Cache-Control: no-cache
+X-CSRF-TOKEN: 1ODJ16LmsQlYeNJvZFsbGORmb11vLmVs067O7ihE
+
+<> 2019-09-24T120430.200.html
+
+###
+
+GET http://localhost/online-service/admin/services/reserve/68
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-24T120303.200.html
+
+###
+
+GET http://localhost/online-service/admin/services/reserve/68
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-24T115951.200.html
+
+###
+
+GET http://localhost/online-service/admin/services/reserve/68?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-24T115830.200.html
+
+###
+
+GET http://localhost/online-service/admin/services/reserve/68?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-24T115718.200.html
+
+###
+
+GET http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T011408.200.html
+
+###
+
+GET http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T011401.405.html
+
+###
+
+POST http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T011351.419.html
+
+###
+
+GET http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T011338.200.html
+
+###
+
+GET http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T011042.500.html
+
+###
+
+GET http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T011011.500.html
+
+###
+
+POST http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T010951.419.html
+
+###
+
+POST http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T010941.419.html
+
+###
+
+POST http://localhost/online-service/vp/tpath?type=tpost&type=tget
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-09-17T010841.405.html
+
+###
+

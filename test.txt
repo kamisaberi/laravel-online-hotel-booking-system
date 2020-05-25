@@ -1,0 +1,83 @@
+routes:all->
+|
+routes:data.index->width:m3 s3&action:change&type:switch&group:4&order:1
+|
+routes:data.create,data.edit->width:m6 s12&locales&type:text&method:direct&group:1&order:1
+
+
+routes:services.properties.index
+-->
+conditions=>*->actions=>edit,destroy,translations
+||
+routes:services.index
+-->
+conditions=>situation:1->actions=>change[2|3]&action_style:buttons&where:modal&type:a&icon:ft-eye
+&&
+conditions=>situation:5->actions=>change[6|7]&action_style:buttons&where:modal&type:a&icon:ft-eye
+
+
+
+
+
+
+http://localhost/online-service/admin/relations/price/store?type=room&id=9
+
+
+routes:services.properties.index-->conditions=>*->actions=>name:edit,name:destroy,name:translations
+||
+routes:services.index-->conditions=>situation:1->actions=>name:change[2|3]&action_style:buttons&where:modal&type:a&icon:ft-eye
+&&
+conditions=>situation:5->actions=>name:change[6|7]&action_style:buttons&where:modal&type:a&icon:ft-eye
+
+
+<a href="#" data-backdrop="true" data-toggle="modal" data-target="#mdl-reserve-actions" onclick="$('#mdl-reserve-actions input[name=mdl-download-info-url]').val('http://localhost/online-service/admin/services/reserve/68');
+                                               $('#mdl-reserve-actions input[name=mdl-actions]').val('name:change[2|3],action_style:buttons);
+                                               $('#mdl-reserve-actions input[name=mdl-update-url]').val('http://localhost/online-service/admin/services/reserve/68/update');" class="purple edit mr-1">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+
+
+<a href="#" data-backdrop="true" data-toggle="modal" data-target="#mdl-reserve-actions" onclick="$('#mdl-reserve-actions input[name=mdl-download-info-url]').val('http://localhost/online-service/admin/services/reserve/68');
+                                               $('#mdl-reserve-actions input[name=mdl-actions]').val('name:change[2|3],action_style:buttons');
+                                               $('#mdl-reserve-actions input[name=mdl-update-url]').val('http://localhost/online-service/admin/services/reserve/68/update');" class="purple edit mr-1">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+
+
+
+
+
+
+
+
+
+
+
+routes:services.properties.index-->
+conditions=>*->actions=>name:edit,name:destroy,name:translations
+||
+routes:services.index,admin.index-->
+conditions=>situation:1->actions=>name:change[2|3]&action_style:buttons&where:modal&type:a&icon:ft-eye
+&&
+conditions=>situation:5->actions=>name:change[6|7]&action_style:buttons&where:modal&type:a&icon:ft-eye
+&&
+conditions=>situation:[7|9]->actions=>name:route[]&action_style:link&type:a&icon:ft-eye
+
+
+
+
+
+
+
+http://localhost/online-service/admin/services/reserve/a%3A1%3A%7Bs%3A9%3A%22situation%22%3Ba%3A2%3A%7Bi%3A0%3Bi%3A1%3Bi%3A1%3Bi%3A5%3B%7D%7D?type=reserve
+
+
+
+<img class="responsive-img left"  src="https://trustseal.enamad.ir/logo.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="QGD1iXxIbp7BR99k">
+
+
+<img class="responsive-img left" id = 'jxlzwlaofukzwlaojzpeoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=146478&p=rfthaodsgvkaaodsjyoemcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=146478&p=nbpdshwlwlbqshwlyndtaqgw' />
+
+http://localhost/online-service/admin/services/reserve/%7B%22situation%22%3A%7B%22values%22%3A%5B1%2C5%5D%2C%22operator%22%3A%22in%22%7D%7D
+
+

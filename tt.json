@@ -1,0 +1,1 @@
+{"operate": "condition","custom_function": "check_login","conditions": [{"condition": true,"output": {"next": 7}},{"condition": false,"output": {"next": 4}}]}

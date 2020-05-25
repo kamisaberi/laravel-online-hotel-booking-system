@@ -1,0 +1,878 @@
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/iransans.eot');
+    src: url('../fonts/iransans.woff') format('woff'), url('../fonts/iransans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/IRANSansWeb_Bold.eot');
+    src: url('../fonts/IRANSansWeb_Bold.woff') format('woff'), url('../fonts/IRANSansWeb_Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.main {
+
+}
+
+/*Todo font for menu*/
+
+.sidenav {
+
+    font-family: iransans;
+
+}
+
+.headerm {
+
+    font-family: iransans;
+    background-color: #4c1b18 !important;
+    background-image: url("../images/head_bg.png");
+
+}
+
+.content {
+
+    min-height: 500px;
+    background-color: snow;
+
+}
+
+.dd {
+
+    background-color: #81c784;
+}
+
+.logo-bg {
+
+    background-image: linear-gradient(#d2a744, #ecca7c);
+
+    width: 100px;
+    height: 115px;
+
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+.mini-menu {
+
+    background-color: #9d0808;
+    width: 100% !important;
+    height: 65px;
+    font-family: iransans;
+
+}
+
+.important-inf {
+
+    color: #dab662;
+    line-height: 65px;
+    font-size: 12px;
+
+}
+
+.important-txt {
+
+    color: #fff;
+    line-height: 65px;
+    font-size: 12px;
+
+}
+
+.nav-links {
+
+    width: 300px !important;
+
+}
+
+.flaticon-phone-1 {
+
+    margin-left: 15px;
+    font-size: 5px !important;
+    width: 10px;
+    height: 10px;
+
+}
+
+.img-flag {
+
+    width: 30px;
+    height: 30px;
+
+}
+
+.flags {
+
+    padding-top: 10px;
+
+}
+
+.img-logo {
+
+    width: 90px;
+
+}
+
+.icon10 {
+
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+
+}
+
+.mini-menu-left-side {
+
+    color: #fff;
+    line-height: 65px;
+    float: right !important;
+
+}
+
+.mini-phone-left-side {
+    float: right !important;
+}
+
+.track-booking-span {
+
+    margin-left: 15px;
+}
+
+.main-menu {
+
+    background-color: #f4eee5;
+    width: 100% !important;
+    height: 90px;
+    font-family: iransans;
+
+}
+
+.main-menu img {
+
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    margin: auto 0;
+    top: 0;
+    left: 10px;
+    right: 0;
+    bottom: 0;
+
+}
+
+.main-menu a {
+
+    color: #38110e;
+
+}
+
+.main-menu span {
+
+    color: #8e8e8e;
+
+}
+
+.main-menu-parent {
+
+    position: relative;
+    height: 90px;
+    display: inline-block;
+
+}
+
+.main-menu-child {
+
+    position: absolute;
+
+    left: 70px;
+    /*right: 70px;*/
+    top: 50%;
+    height: 46px;
+    margin-top: -23px;
+
+}
+
+.main-menu-child a {
+
+    font-size: 12px;
+
+}
+
+.main-menu-child span {
+
+    font-size: 10px;
+
+}
+
+.menu-hover {
+
+    transition: background-color 1s;
+
+}
+
+.menu-hover:hover {
+
+    background-color: #e4dcd1;
+
+}
+
+.in-slide-img {
+
+    position: absolute;
+    z-index: 2;
+    width: 450px;
+    right: 50%;
+    margin-right: -230px;
+    top: 50%;
+    margin-top: -65px;
+
+}
+
+.content-sb {
+
+    min-height: 250px;
+    background-color: #fff;
+    font-family: iransans;
+    text-align: center;
+
+}
+
+.content-sb span {
+    text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    color: #a18c8b;
+}
+
+.content-sb h5 {
+
+    text-align: center;
+    color: #9d0808;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+    border-bottom: solid #d2a744 3px;
+
+}
+
+.posts {
+
+    width: 100%;
+
+}
+
+/*Todo chenge*/
+
+.post {
+
+    font-family: iransans;
+    position: relative;
+    line-height: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+
+}
+
+.post img {
+
+    height: 100%;
+    width: 100%;
+
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #d2a744;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+
+}
+
+.post:hover .overlay {
+    height: 100%;
+}
+
+.text-overlay {
+
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+
+    /*todo unchanged */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+
+.text-overlay span {
+
+    border-bottom: solid #ab803a 3px;
+    line-height: 80px;
+
+}
+
+.facilities {
+
+    font-family: iransans;
+    min-height: 355px;
+    background-color: #f4eee5;
+
+    background-image: url("../images/pattern-bg.jpg");
+}
+
+.facilities-part {
+
+    margin-top: 25px;
+    text-align: center;
+
+}
+
+.facilities-part h5 {
+
+    color: #9d0808;
+    font-weight: bold;
+
+}
+
+.facilities-part h6 {
+
+    color: #a18c8b;
+    font-size: 14px;
+    text-align: center;
+    border-top: solid #d2a744 3px;
+    line-height: 30px;
+    display: inline-block;
+    transition: color 1s;
+
+}
+
+.facilities-part h6:hover {
+
+    color: #7b6665;
+    cursor: pointer;
+
+}
+
+.facilities-img {
+
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.reservation {
+
+    text-align: center;
+    font-family: iransans;
+    width: 100%;
+    min-height: 600px;
+    background-color: #fff;
+
+}
+
+.reservation .row {
+
+    margin-top: 70px;
+
+}
+
+.reservation span {
+    text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    color: #a18c8b;
+    padding: 0 !important;
+}
+
+.reservation h5 {
+
+    text-align: center;
+    color: #9d0808;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+    border-bottom: solid #d2a744 3px;
+
+}
+
+.reservation-div-1 {
+
+    height: 200px;
+    border-radius: 5px;
+    padding: 5px;
+
+    width: 100%;
+    margin-bottom: 55px;
+
+}
+
+.reservation-div {
+
+    background-color: #f4eee5;
+    height: 180px;
+    border-radius: 5px;
+    padding: 5px;
+
+    position: relative;
+    z-index: 1;
+    margin-bottom: 5px;
+
+}
+
+/*Todo*/
+
+.reservation-div h6 {
+
+    text-align: center;
+    position: absolute;
+    top: 90px;
+
+    width: 100%;
+
+    font-weight: bold;
+    color: #3d3d3d;
+    font-size: 12px;
+    right: 0;
+
+}
+
+.reservation-div h5 {
+
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    font-weight: bold;
+    color: #ff1d2c;
+    font-size: 12px;
+    left: 0;
+
+}
+
+
+
+.reservation-btn {
+
+    text-align: center;
+    position: absolute;
+    top: 140px;
+    right: 10px;
+    background-color: #9d0808;
+    border-radius: 15px;
+    height: 25px;
+    font-size: 14px;
+    width: 70px;
+    color: #fff;
+    line-height: 25px;
+    transition: background-color 1s;
+
+}
+
+.reservation-btn:hover {
+
+    background-color: #f4eee5;
+    border: solid #9d0808 1px;
+    color: #404040;
+    cursor: pointer;
+
+}
+
+.more-information {
+
+    text-align: center;
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    color: #404040;
+    font-size: 12px;
+    line-height: 8px;
+    margin-right: -83px;
+
+}
+
+.more-information img {
+
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    margin-left: 5px;
+
+}
+
+.reservation-img {
+
+    height: 110px;
+    position: absolute;
+    border-radius: 5px;
+
+    width: 96.2%;
+
+    padding: 10px;
+    bottom: 100px;
+    background-image: url("../images/post1.jpg");
+    background-position: center; /* Center the image */
+    background-size: cover;
+    z-index: 2;
+
+}
+
+.restaurant {
+
+    height: 300px;
+
+}
+
+.restaurant span {
+
+    color: #fff;
+    font-family: iransans;
+
+}
+
+.restaurant-img {
+
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+    height: 400px;
+    margin-top: 60px;
+
+}
+
+.address {
+
+    background-color: #f4eee5;
+    min-height: 186px;
+    font-family: iransans;
+    width: 100%;
+
+}
+
+.address h6 {
+
+    font-weight: bold;
+    color: #664242;
+
+}
+
+.address span {
+
+    color: #3d3d3d;
+    font-size: 13px;
+
+}
+
+.address-part {
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+
+.address-bar {
+
+    background-color: #9d0808;
+    min-height: 60px;
+    line-height: 60px;
+    font-family: iransans;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+.address-bar img {
+
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+    vertical-align: middle;
+
+}
+
+.footer {
+
+    background-color: #431714;
+    min-height: 400px;
+    width: 100%;
+    font-family: iransans;
+
+}
+
+.footer h5 {
+
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+    border-bottom: solid #d2a744 3px;
+
+}
+
+.footer ul {
+
+    margin-top: 25px;
+
+}
+
+.footer ul li {
+
+    font-size: 12px;
+    margin-bottom: 15px;
+
+}
+
+.footer ul li a {
+
+    color: #fff;
+    transition: color 1s;
+
+}
+
+.footer ul li a:hover {
+
+    color: #d2a744;
+
+}
+
+.footer input {
+
+    color: #fff;
+    border-bottom: solid #8a312b 1px !important;
+
+}
+
+.footer input:active, .footer input:hover, .footer input:focus, .footer input:after, .footer input:before {
+
+    color: #d2a744 !important;
+    border-bottom: solid #d2a744 3px !important;
+}
+
+.btn-send {
+    background-color: #9d0808;
+    width: 50px !important;
+    height: 50px !important;
+    float: right !important;
+}
+
+
+.btn-send:hover, .btn-send:active, .btn-send:after, .btn-send:focus {
+
+    background-color: #d2a744;
+
+}
+
+.footer-sup {
+
+    height: 40px;
+    line-height: 40px;
+    margin-top: 50px;
+
+}
+
+.footer-sup img {
+
+    width: 35px;
+    vertical-align: middle;
+    float: right !important;
+
+}
+
+.footer-sup span {
+
+    margin-right: 8px;
+
+}
+
+.footer-sup span[dir="ltr"] {
+float: right;
+}
+
+.namad {
+
+    margin-top: 25px;
+
+}
+
+.btn-red-200 {
+
+    font-family: iransans;
+    font-size: 14px;
+    box-shadow: none;
+    border-radius: 25px !important;
+    color: #fff;
+    background-color: #9d0808;
+    margin-bottom: 50px;
+
+}
+
+.btn-red-200:hover, .btn-red-200:focus {
+
+    font-size: 14px;
+    box-shadow: none;
+    border-radius: 25px;
+    color: #38110e;
+    background-color: #f4eee5;
+
+}
+
+/*Todo*/
+
+@media screen and (max-width: 900px) {
+
+    #reservation10, #reservation11, #reservation12, #reservation13, #reservation14, #reservation15 {
+
+        width: 98%;
+
+    }
+
+    #in-slide-img {
+
+        width: 250px;
+        right: 50%;
+        margin-right: -130px;
+        top: 50%;
+        margin-top: -65px;
+
+    }
+
+    #about-us-p {
+
+        margin-bottom: 35px;
+
+    }
+
+    #map-img {
+
+        margin-bottom: 35px !important;
+
+    }
+
+    #in-parallax-img {
+
+        width: 250px;
+
+    }
+
+    #in-parallax-span {
+
+        font-size: 12px;
+
+    }
+
+    #namad {
+
+        margin-bottom: 30px;
+        display: inline;
+        text-align: center;
+
+    }
+
+}
+
+/*Todo*/
+
+@media screen and (max-width: 600px) {
+
+    #reservation10, #reservation11, #reservation12, #reservation13, #reservation14, #reservation15 {
+
+        width: 97%;
+
+    }
+
+    #in-slide-img {
+
+        width: 250px;
+        right: 50%;
+        margin-right: -130px;
+        top: 50%;
+        margin-top: -65px;
+
+    }
+
+    #about-us-p {
+
+        margin-bottom: 35px;
+
+    }
+
+    #map-img {
+
+        margin-bottom: 35px;
+
+    }
+
+    #in-parallax-img {
+
+        width: 250px;
+
+    }
+
+    #in-parallax-span {
+
+        font-size: 12px;
+
+    }
+
+    #namad {
+
+        margin-bottom: 30px;
+        display: inline;
+        text-align: center;
+
+    }
+
+}
+.marker-green {
+    background-image: url('../images/marker_green.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    /*border-radius: 50%;*/
+    cursor: pointer;
+}
+.marker-pink {
+    background-image: url('../images/marker_pink_right.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    /*border-radius: 50%;*/
+    cursor: pointer;
+}
+
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: irsans;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}

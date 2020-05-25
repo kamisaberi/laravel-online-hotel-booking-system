@@ -1,0 +1,1 @@
+cd /path_of_public_html/ && /usr/bin/php-cli artisan schedule:run >> /dev/null 2>&1
