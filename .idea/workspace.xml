@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/room.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/rooms.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_finish.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_payout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_start.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/print-voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/print-voucher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/tracking-reserve.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/tracking-reserve.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,23 +53,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="63" column="83" selection-start-line="63" selection-start-column="83" selection-end-line="63" selection-end-column="83" />
+            <state relative-caret-position="356">
+              <caret line="195" column="40" lean-forward="true" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
+              <folding>
+                <element signature="e#40#48#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/user.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="194" column="55" lean-forward="true" selection-start-line="194" selection-start-column="55" selection-end-line="194" selection-end-column="55" />
-              <folding>
-                <element signature="e#40#48#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -156,10 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Libraries/Utilities/DatabaseUtilities/TableUtility.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/items/widgets/room.blade.php" />
-        <option value="$PROJECT_DIR$/app/Libraries/Utilities/CodeUtilities/MethodUtility.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/.env.example" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php" />
         <option value="$PROJECT_DIR$/public/style/style_information_step2-ltr.css" />
@@ -186,7 +212,6 @@
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/scripts/mapbox.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index2.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Widget/WidgetController.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room.blade.php" />
@@ -204,9 +229,14 @@
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/rooms.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/room.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       </list>
     </option>
   </component>
@@ -484,7 +514,7 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
@@ -493,38 +523,18 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
               <item name="widgets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="booking" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
@@ -552,25 +562,25 @@
     <property name="add_unversioned_files" value="true" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views" />
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\services\booking" />
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\temp" />
       <recent name="C:\xampp\htdocs\online-hotel\app\Http\Controllers\Booking" />
       <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\services" />
-      <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\subviews" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views\data" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views\users" />
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\services\booking" />
       <recent name="C:\xampp\htdocs\online-hotel\app\Http\Controllers\Service" />
       <recent name="C:\xampp\htdocs\online-service-v.2\base" />
-      <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\services" />
-      <recent name="C:\xampp\htdocs\online-service-v.2\resources\views\public\themes\hotel-new\subviews\booking" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -1505,12 +1515,12 @@
       <workItem from="1588764729125" duration="5186000" />
       <workItem from="1588775161811" duration="3527000" />
       <workItem from="1590361428562" duration="8181000" />
-      <workItem from="1590393689581" duration="19428000" />
+      <workItem from="1590393689581" duration="22263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6801062000" />
+    <option name="totallyTimeSpent" value="6803897000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1559,53 +1569,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking-t/user_booking_form.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking-t/payout_booking_form.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking-t/finish_booking_form.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/booking_script.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/service.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="32" lean-forward="true" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login-costomer_script.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/register-customer/register.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/register-customer/register-costomer_script.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/public/temp/register-customer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#340#386#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/temp/login-customer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="57" column="22" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="57" selection-end-column="22" />
-          <folding>
-            <element signature="e#492#3061#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/tracking.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="209" lean-forward="true" selection-start-line="209" selection-end-line="209" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#section#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/tracking-reserve.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/tracking-reserve.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
@@ -1657,24 +1621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="448" lean-forward="true" selection-start-line="448" selection-end-line="448" />
-          <folding>
-            <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nestable-locales.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1696,13 +1642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="43" selection-start-column="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -1778,7 +1717,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_start.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_start.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
@@ -1789,7 +1728,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_payout.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_payout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
@@ -1806,17 +1745,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_confirm.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="183" column="51" selection-start-line="183" selection-start-column="51" selection-end-line="183" selection-end-column="51" />
-          <folding>
-            <element signature="e#13836#18242#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/print-voucher.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/print-voucher.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
@@ -1846,14 +1775,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="63" column="83" selection-start-line="63" selection-start-column="83" selection-end-line="63" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking/booking_finish.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_finish.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
@@ -1880,10 +1802,127 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_confirm.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/user.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/reserve.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-end-line="100" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3094">
+          <caret line="207" selection-start-line="207" selection-end-line="207" />
+          <folding>
+            <element signature="e#3157#3203#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/voucher.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/rooms.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room_widget.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/rooms.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="448" lean-forward="true" selection-end-line="505" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/room.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/rules.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/gallery.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="194" column="55" lean-forward="true" selection-start-line="194" selection-start-column="55" selection-end-line="194" selection-end-column="55" />
+        <state relative-caret-position="356">
+          <caret line="195" column="40" lean-forward="true" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
           <folding>
             <element signature="e#40#48#0#PHP" expanded="true" />
           </folding>

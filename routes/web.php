@@ -58,7 +58,6 @@ Route::get('/booking/finish/{code}', 'HomeController@finishBooking')->name('home
 
 
 
-Route::get('/user/{type}/enter', 'HomeController@showEnterPage')->name('home.user.enter');
 Route::get('/user/{type}/login', 'HomeController@showLoginPage')->name('home.user.login');
 Route::get('/user/{type}/register', 'HomeController@showRegisterPage')->name('home.user.register');
 Route::get('/documents/ajax/voucher/{code?}', 'HomeController@printVoucher')->name('home.voucher.print');

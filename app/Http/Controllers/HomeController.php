@@ -35,15 +35,11 @@ class HomeController extends Controller
         $data['facility_links'] = NavigationController::getNavigation('facility-links');
         $data['navigations'] = NavigationController::getNavigation('public');
         $data['mobile_navigations'] = NavigationController::getNavigation('mobile');
-
-
         $data['website'] = ItemUtility::getItems('website')[0];
         $data['hotel'] = ItemUtility::getItems('hotel')[0];
-//        dd($data['hotel']);
         $data['application'] = ItemUtility::getItems('application')[0];
         $data['map'] = ItemUtility::getItems('map')[0];
         $data['map_locations'] = ItemUtility::getItems('map_locations');
-
         $data['current_date'] = DateUtility::toJalali();
         $visits = [];
         $visits['today'] = TrackerUtility::getTodayVisitorsCount();
@@ -77,6 +73,7 @@ class HomeController extends Controller
     }
 
 
+    //################## BOOKING START ##################//
     public function startBooking(Request $request, $room)
     {
         $data = [];
@@ -84,7 +81,7 @@ class HomeController extends Controller
         self::getBaseInformation($data);
         $data ['room'] = ItemUtility::getItem('room', $room);
 
-        return view("public.themes.hotel-new.services.booking.booking_start", $data);
+        return view("public.themes.hotel-new.views.booking.booking_start", $data);
     }
 
     public function updatePrices(Request $request, $type = 'room')
@@ -109,7 +106,7 @@ class HomeController extends Controller
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        return view("public.themes.hotel-new.services.booking.booking_confirm", $data);
+        return view("public.themes.hotel-new.views.booking.booking_confirm", $data);
     }
 
     public function checkRoomVerification()
@@ -122,7 +119,7 @@ class HomeController extends Controller
         $data = [];
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        return view("public.themes.hotel-new.services.booking.booking_payout", $data);
+        return view("public.themes.hotel-new.views.booking.booking_payout", $data);
     }
 
 
@@ -164,23 +161,18 @@ class HomeController extends Controller
             return $gateway->redirect();
 
         } catch (Exception $e) {
-
             echo $e->getMessage();
         }
-
-
     }
 
     public function returnFromBank($code)
     {
-
         try {
             $gateway = Gateway::verify();
             $trackingCode = $gateway->trackingCode();
             $refId = $gateway->refId();
             $cardNumber = $gateway->cardNumber();
             return redirect()->route('home.booking.finish', ['code' => $code]);
-
         } catch (Exception $e) {
             echo $e->getMessage();
         }
@@ -192,9 +184,10 @@ class HomeController extends Controller
         $data = [];
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        return view("public.themes.hotel-new.services.booking.booking_finish", $data);
+        return view("public.themes.hotel-new.views.booking.booking_finish", $data);
     }
 
+    //##################BOOKING END ##################//
 
     public function showItems($type)
     {
@@ -205,7 +198,6 @@ class HomeController extends Controller
         $data ['widgets'] = WidgetController::getWidgets("public.data", $type);
 //        return $data;
         return view('public.themes.hotel-new.views.data', $data);
-
     }
 
     public function showItem($type, $id)
@@ -220,39 +212,22 @@ class HomeController extends Controller
     }
 
 
-    public function showEnterPage($type)
-    {
-        $data = BaseController::createBaseInformations();
-        self::getBaseInformation($data);
-
-        $data ['type'] = $type;
-
-        $data ['widgets'] = WidgetController::getWidgets2("public.user", 'user', $type, Route::currentRouteName());
-        return view("public.themes.hotel-new.views.user", $data);
-    }
-
-
     public function showLoginPage($type)
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-
         $data ['type'] = $type;
-
-        $data ['widgets'] = WidgetController::getWidgets2("public.user", 'user', $type, Route::currentRouteName());
-        return view("public.themes.hotel-new.views.user", $data);
+        return view("public.themes.hotel-new.views.users.login", $data);
     }
 
     public function showRegisterPage($type)
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-
         $data ['type'] = $type;
-
-        $data ['widgets'] = WidgetController::getWidgets2("public.user", 'user', $type, Route::currentRouteName());
-        return view("public.themes.hotel-new.views.user", $data);
+        return view("public.themes.hotel-new.views.users.register", $data);
     }
+
 
     public function saveCheck(Request $request)
     {
@@ -277,32 +252,15 @@ class HomeController extends Controller
     }
 
 
-    public function saveService(Request $request)
-    {
-
-
-    }
-
     public function printVoucher($code = null)
     {
 
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-
         return view('public.themes.hotel-new.views.voucher', $data);
 
     }
 
-    public function cancelService(Request $request)
-    {
-
-        $service_id = $request->input('service_id');
-        $service = Service::find($service_id);
-        $service->delete();
-
-        return response()->json(['error' => false, 'message' => $service_id]);
-
-    }
 
 
 }
