@@ -25,7 +25,7 @@ use Kavenegar;
 use PragmaRX\Tracker\Vendor\Laravel\Facade as Tracker;
 
 
-class HomeController extends Controller
+class HomeTController extends Controller
 {
 
     public static function getBaseInformation(&$data)
@@ -206,6 +206,30 @@ class HomeController extends Controller
         $data['object'] = ItemUtility::getItem('room', $id);
         return view('public.themes.hotel-new.views.data.room', $data);
     }
+
+
+    public function showItems($type)
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+
+        $data['datas'] = ItemUtility::getItems('room');
+        $data ['widgets'] = WidgetController::getWidgets("public.data", $type);
+
+        return view('public.themes.hotel-new.views.data', $data);
+    }
+
+    public function showItem($type, $id)
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data['object'] = ItemUtility::getItem('room', $id);
+        $data ['widgets'] = WidgetController::getWidgets2("public.data", Route::currentRouteName(), $type);
+        return view('public.themes.hotel-new.views.data', $data);
+    }
+
 
     public function showLoginPage($type)
     {

@@ -42,6 +42,9 @@ Route::get('/items/{type}', 'HomeController@showItems')->name('home.item.all');
 Route::get('/items/{type}/{id}', 'HomeController@showItem')->name('home.item.show');
 
 
+Route::get('/rooms', 'HomeController@showRooms')->name('home.room.all');
+Route::get('/rooms/{id}', 'HomeController@showRoom')->name('home.room.show');
+
 
 
 Route::get('/booking/start/{room}', 'HomeController@startBooking')->name('home.booking.start');

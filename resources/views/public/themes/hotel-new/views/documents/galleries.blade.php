@@ -48,10 +48,39 @@
 
 @section('container')
 
-    @if(count($widgets) > 0 and $widgets[0]->type == 'main')
-        @include($widgets[0]->name, ['datas'=>$datas])
-    @endif
 
+
+    <h6 class="center contact_us_h6">
+        @if(isset($id))
+            @foreach($datas as $data)
+                @if($data->id == $id)
+                    {{$data->properties['title']->value}}
+                @endif
+            @endforeach
+        @else
+            {{__('layout.pages.hotel gallery')}}
+        @endif
+    </h6>
+    <span class="center contact_us_span" style="display: block">
+    {{__('layout.pages.enjoy to see hotel pictures')}}
+</span>
+
+
+    <div class="container center" style="margin-top: 35px; margin-bottom: 35px;">
+
+        <div class="row">
+
+            @foreach($datas as $data)
+                <div class="col l3 m3 s12">
+                    <a href="{{route('home.document' , ['type' =>$type,'id'=>$data->id])}}">
+                        <img src="{{$data->properties['slide-images']->value[0]->value}}" style="width: 100%">
+                    </a>
+                    <p style=" text-align:center; color: #18006a;">{{$data->properties['title']->value }}</p>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
 
 
 @endsection
@@ -204,14 +233,10 @@
 
                 },
                 error: function (result) {
-                   alert("error code :" + result.status);
+                    alert("error code :" + result.status);
                 }
             });
         });
-
-
-
-
 
 
         $("#btn-send-complaint-contact").click(function () {
