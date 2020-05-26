@@ -207,6 +207,75 @@ class HomeController extends Controller
         return view('public.themes.hotel-new.views.data.room', $data);
     }
 
+    public function showNewses()
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data['datas'] = ItemUtility::getItems('room');
+        return view('public.themes.hotel-new.views.data.rooms', $data);
+    }
+
+    public function showNews($id)
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data['object'] = ItemUtility::getItem('room', $id);
+        return view('public.themes.hotel-new.views.data.room', $data);
+    }
+
+
+    public function showGalleries()
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data['datas'] = ItemUtility::getItems('room');
+        return view('public.themes.hotel-new.views.data.rooms', $data);
+    }
+
+    public function showGallery($id)
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data['object'] = ItemUtility::getItem('room', $id);
+        return view('public.themes.hotel-new.views.data.room', $data);
+    }
+
+    public function sendComplaint(Request $request)
+    {
+        if ($request->getMethod() == "GET") {
+
+
+            $data = BaseController::createBaseInformations();
+            self::getBaseInformation($data);
+            return view('public.themes.hotel-new.views.documents.complaints', $data);
+
+
+        } elseif ($request->getMethod() == "POST") {
+
+        }
+    }
+
+    public function sendContact(Request $request)
+    {
+        if ($request->getMethod() == "GET") {
+            $data = BaseController::createBaseInformations();
+            self::getBaseInformation($data);
+            return view('public.themes.hotel-new.views.documents.contact_us', $data);
+        } elseif ($request->getMethod() == "POST") {
+
+        }
+    }
+
+    public function showPage(Request $request, $id)
+    {
+
+    }
+
+
     public function showLoginPage($type)
     {
         $data = BaseController::createBaseInformations();
@@ -222,6 +291,14 @@ class HomeController extends Controller
         $data ['type'] = $type;
         return view("public.themes.hotel-new.views.users.register", $data);
     }
+
+    public function showHistory(Request $request)
+    {
+        if (!\Auth::check()) {
+            return response()->redirectToRoute("home.index2");
+        }
+    }
+
 
     public function saveCheck(Request $request)
     {

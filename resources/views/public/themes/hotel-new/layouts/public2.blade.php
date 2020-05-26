@@ -168,7 +168,7 @@
 
                     <div class="mini-menu-left-side ">
                         @if(Auth::check() ==false)
-                            <a href="{{route('home.user.login' , ['user_type'=>'customer'])}}">
+                            <a href="{{route('home.customer.login')}}">
                                 <span>{{__('layout.public.login or register')}}</span>
                             </a>
                             <img class="icon10 responsive-img"

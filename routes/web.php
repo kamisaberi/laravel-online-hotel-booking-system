@@ -45,6 +45,22 @@ Route::get('/items/{type}/{id}', 'HomeController@showItem')->name('home.item.sho
 Route::get('/rooms', 'HomeController@showRooms')->name('home.room.all');
 Route::get('/rooms/{id}', 'HomeController@showRoom')->name('home.room.show');
 
+Route::get('/news', 'HomeController@showNewses')->name('home.news.all');
+Route::get('/news/{id}', 'HomeController@showNews')->name('home.news.show');
+
+
+Route::get('/galleries', 'HomeController@showGalleries')->name('home.gallery.all');
+Route::get('/galleries/{id}', 'HomeController@showGallery')->name('home.gallery.show');
+
+
+Route::get('/complaints/send', 'HomeController@sendComplaint')->name('home.complaint.send');
+Route::post('/complaints/send', 'HomeController@sendComplaint')->name('home.complaint.send');
+
+Route::get('/contact/send', 'HomeController@sendContact')->name('home.contact.send');
+Route::post('/contact/send', 'HomeController@sendContact')->name('home.contact.send');
+
+
+Route::get('/page/{id}', 'HomeController@showPage')->name('home.page.show');
 
 
 Route::get('/booking/start/{room}', 'HomeController@startBooking')->name('home.booking.start');
@@ -53,19 +69,18 @@ Route::post('/booking/save/{room}', 'HomeController@saveBooking')->name('home.bo
 Route::get('/booking/confirm/{code}', 'HomeController@confirmBooking')->name('home.booking.confirm');
 Route::post('/booking/check/room_verification', 'HomeController@checkRoomVerification')->name('home.booking.check.room');
 Route::get('/booking/payout/{code}', 'HomeController@payoutBooking')->name('home.booking.payout');
-
 Route::get('/booking/bank/{code?}', 'HomeController@payout')->name('home.booking.to.bank');
 Route::any('/booking/returnFromBank/{code?}', 'HomeController@returnFromBank')->name('home.return.from.bank');
-
 Route::get('/booking/finish/{code}', 'HomeController@finishBooking')->name('home.booking.finish');
 
 
+Route::get('/customer/login', 'HomeController@showLoginPage')->name('home.customer.login');
+Route::get('/customer/register', 'HomeController@showRegisterPage')->name('home.customer.register');
+Route::get('/customer/history', 'HomeController@showHistory')->name('home.customer.history');
 
-Route::get('/user/{type}/login', 'HomeController@showLoginPage')->name('home.user.login');
-Route::get('/user/{type}/register', 'HomeController@showRegisterPage')->name('home.user.register');
+
 Route::get('/documents/ajax/voucher/{code?}', 'HomeController@printVoucher')->name('home.voucher.print');
 //Route::get('/services/payout/{code?}', 'HomeController@payout')->name('home.payout');
-
 
 
 Route::middleware(['auth', 'authAdmin'])->group(function () {

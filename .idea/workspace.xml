@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/page.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/static_pages/about_us.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/static_pages/rules.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/history.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-hotel.sql" beforeDir="false" afterPath="$PROJECT_DIR$/online-hotel.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/tracking-reserve.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/tracking.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/about_us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/about_us.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/history.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/rules.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/rules.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/tracking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/tracking.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+            <state relative-caret-position="-1">
+              <caret line="51" column="83" selection-start-line="51" selection-start-column="83" selection-end-line="51" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -63,20 +58,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="201" column="57" lean-forward="true" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
+            <state relative-caret-position="339">
+              <caret line="254" selection-start-line="254" selection-end-line="254" />
               <folding>
                 <element signature="e#40#48#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/page.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
             </state>
           </provider>
         </entry>
@@ -93,7 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>app-asses</find>
       <find>app-ass</find>
       <find>app-a</find>
       <find>admin</find>
@@ -123,6 +108,7 @@
       <find>'</find>
       <find>'field'</find>
       <find>json</find>
+      <find>home.user.login</find>
     </findStrings>
     <replaceStrings>
       <replace>(-45deg</replace>
@@ -175,15 +161,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/booking/booking.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/subviews/login-customer/login-costomer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/login-costomer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/register-costomer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/register-customer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/tracking-reserve.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/print-voucher.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public2.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/services/booking.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/scripts/mapbox.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index2.blade.php" />
@@ -191,7 +174,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Widget/WidgetController.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/room.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Utilities/ItemUtility.php" />
         <option value="$PROJECT_DIR$/base/models.json" />
         <option value="$PROJECT_DIR$/base/database_types.json" />
@@ -210,10 +192,8 @@
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/rooms.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/room.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/users/login.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController-t.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeTController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/newses.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/news.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/contact_us.blade.php" />
@@ -226,6 +206,12 @@
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/widgets/about_us.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/static_pages/about_us.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/static_pages/rules.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public2.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel/layouts/public.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/themes/hotel/layouts/public2.blade.php" />
       </list>
     </option>
   </component>
@@ -401,7 +387,7 @@
       <path value="$PROJECT_DIR$/vendor/maxmind-db/reader" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="705" />
     <option name="y" value="-19" />
     <option name="width" value="960" />
@@ -546,6 +532,18 @@
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+              <item name="static_pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-hotel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel-new" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -591,11 +589,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views\booking" />
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views\temp" />
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views\documents" />
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views" />
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\services\booking" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\temp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\hotel-new\views\documents\static_pages" />
@@ -1537,12 +1535,12 @@
       <workItem from="1588764729125" duration="5186000" />
       <workItem from="1588775161811" duration="3527000" />
       <workItem from="1590361428562" duration="8181000" />
-      <workItem from="1590393689581" duration="27953000" />
+      <workItem from="1590393689581" duration="34939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6809587000" />
+    <option name="totallyTimeSpent" value="6816573000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1554,6 +1552,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19189766" />
       <window_info id="npm" order="1" side_tool="true" />
@@ -1590,33 +1589,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/ServicePropertyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/ServiceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1921">
-          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
-          <folding>
-            <element signature="e#48#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="273" selection-start-line="268" selection-end-line="273" />
-          <folding>
-            <element signature="e#45#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/booking_start.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1642,13 +1614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/print-voucher.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1725,7 +1690,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/voucher.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/voucher.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data.blade.php">
@@ -1807,13 +1772,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/reserve.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/contact_us.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1918,16 +1876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="201" column="57" lean-forward="true" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
-          <folding>
-            <element signature="e#40#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/page.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1979,8 +1927,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/documents/page.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="1088">
+          <caret line="64" column="39" lean-forward="true" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/maintenance.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/service-t.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/temp/service.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/booking/print-voucher.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="254" selection-start-line="254" selection-end-line="254" />
+          <folding>
+            <element signature="e#40#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="51" column="83" selection-start-line="51" selection-start-column="83" selection-end-line="51" selection-end-column="83" />
         </state>
       </provider>
     </entry>

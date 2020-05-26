@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 100128
  Source Host           : localhost:3306
- Source Schema         : online-service-v2
+ Source Schema         : online-hotel
 
  Target Server Type    : MySQL
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 25/05/2020 05:24:58
+ Date: 26/05/2020 19:07:42
 */
 
 SET NAMES utf8mb4;
@@ -813,17 +813,11 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (18, 5, 4, 'gallery', N
 INSERT INTO `navigation_item_assigned_properties` VALUES (19, 6, 1, '{\"en\":\"Home\",\"fa\":\"صفحه اصلی\",\"ar\":\"الصفحة الرئيسية\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (20, 6, 2, 'home.index2', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (21, 7, 1, '{\"en\":\"Rooms\",\"fa\":\"فهرست اتاق ها\",\"ar\":\"غرف\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (22, 7, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (23, 7, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (24, 7, 4, 'room', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (22, 7, 2, 'home.room.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (25, 8, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (26, 8, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (27, 8, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (28, 8, 4, 'gallery', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (26, 8, 2, 'home.gallery.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (29, 9, 1, '{\"en\":\"Register Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"تسجيل الشكاوى\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (30, 9, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (31, 9, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (32, 9, 4, 'complaints', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (30, 9, 2, 'home.complaint.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (33, 10, 1, '{\"en\":\"Navigation\",\"fa\":\"منوها\",\"ar\":\"التنقل\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (34, 10, 2, 'navigation.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (37, 11, 1, '{\"en\":\"Room Properties\",\"fa\":\"خاصیت های اتاق ها\",\"ar\":\"خصائص الغرفة\"}', NULL, NULL);
@@ -849,45 +843,19 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (56, 15, 4, 'second-sli
 INSERT INTO `navigation_item_assigned_properties` VALUES (57, 16, 1, '{\"en\":\"Home\",\"fa\":\"صفحه اصلی\",\"ar\":\"الصفحة الرئيسية\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (58, 16, 2, 'home.index2', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (61, 17, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (62, 17, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (63, 17, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (64, 17, 4, 'gallery', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (62, 17, 2, 'home.gallery.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (65, 18, 1, '{\"en\":\"Contact Us\",\"fa\":\"تماس با ما\",\"ar\":\"اتصل بنا\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (66, 18, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (67, 18, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (68, 18, 4, 'contact-us', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (66, 18, 2, 'home.contact.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (73, 20, 1, '{\"en\":\"Website Settings\",\"fa\":\"تنظیمات وبسایت\",\"ar\":\"إعدادات الفندق\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (74, 20, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (75, 20, 3, 'data_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (76, 20, 4, 'website', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (77, 21, 1, '{\"en\":\"Rules\",\"fa\":\"قوانین و مقررات\",\"ar\":\"قواعد\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (78, 21, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (79, 21, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (80, 21, 4, 'rules', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (81, 22, 1, '{\"en\":\"Contact Us\",\"fa\":\"تماس با ما\",\"ar\":\"اتصل بنا\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (82, 22, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (83, 22, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (84, 22, 4, 'contact-us', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (82, 22, 2, 'home.contact.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (85, 23, 1, '{\"en\":\"Rooms\",\"fa\":\"فهرست اتاق ها\",\"ar\":\"غرف\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (86, 23, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (87, 23, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (88, 23, 4, 'room', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (89, 24, 1, '{\"en\":\"About Us\",\"fa\":\"درباره ما\",\"ar\":\"معلومات عنا\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (90, 24, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (91, 24, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (92, 24, 4, 'about-us', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (86, 23, 2, 'home.room.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (93, 25, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (94, 25, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (95, 25, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (96, 25, 4, 'gallery', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (97, 26, 1, '{\"en\":\"Coffee Shop\",\"fa\":\"آلاچیق و کافی شاپ\",\"ar\":\"مقهى\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (98, 26, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (99, 26, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (100, 26, 4, 'coffee-shop', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (101, 27, 1, '{\"en\":\"Restaurant & Fast Food\",\"fa\":\"رستوران و فست فود\",\"ar\":\"مطعم و وجبات سريعة\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (102, 27, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (103, 27, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (104, 27, 4, 'restaurant', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (94, 25, 2, 'home.gallery.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (121, 1, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (122, 2, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (123, 3, 9, '1', NULL, NULL);
@@ -910,7 +878,6 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (139, 20, 9, '1', NULL,
 INSERT INTO `navigation_item_assigned_properties` VALUES (140, 21, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (141, 22, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (142, 23, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (143, 24, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (144, 25, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (145, 26, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (146, 27, 9, '1', NULL, NULL);
@@ -929,9 +896,7 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (158, 30, 3, 'data_type
 INSERT INTO `navigation_item_assigned_properties` VALUES (159, 30, 4, 'hotel', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (160, 30, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (161, 31, 1, '{\"en\":\"Register Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"تسجيل الشكاوى\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (162, 31, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (163, 31, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (164, 31, 4, 'complaints', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (162, 31, 2, 'home.complaint.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (165, 31, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (166, 32, 1, '{\"en\":\"User Properties\",\"fa\":\"خاصیت های کاربر\",\"ar\":\"خصائص الکابر\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (167, 32, 2, 'users.properties.index', NULL, NULL);
@@ -959,11 +924,6 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (188, 36, 2, 'items.ind
 INSERT INTO `navigation_item_assigned_properties` VALUES (189, 36, 3, 'document_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (190, 36, 4, 'pages', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (191, 36, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (197, 38, 1, '{\"en\":\"Test Page 4\",\"fa\":\"صفحه تست 4\",\"ar\":\"البرگ تست 4\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (198, 38, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (199, 38, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (200, 38, 4, 'test-page-4', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (201, 38, 9, '0', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (202, 39, 1, '{\"en\":\"Messages\",\"fa\":\"پیام ها\",\"ar\":\"رسائل\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (203, 39, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (204, 39, 3, 'conversation_type', NULL, NULL);
@@ -1004,42 +964,24 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (238, 46, 2, 'items.pro
 INSERT INTO `navigation_item_assigned_properties` VALUES (239, 46, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (240, 46, 4, 'rating', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (241, 46, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (249, 48, 1, '{\"fa\":\"صفحه تست 10\",\"en\":\"test page 10\",\"ar\":\"الصفحه التست 10\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (250, 48, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (251, 48, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (252, 48, 4, 'page-title-10', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (253, 48, 9, '0', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (254, 49, 1, '{\"en\":\"Permissions\",\"fa\":\"سطح دسترسی\",\"ar\":\"أذونات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (255, 49, 2, 'permissions.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (256, 49, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (257, 50, 1, '{\"en\":\"Home\",\"fa\":\"صفحه اصلی\",\"ar\":\"الصفحة الرئيسية\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (258, 50, 2, 'home.index2', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (259, 51, 1, '{\"en\":\"Rooms\",\"fa\":\"اتاق ها\",\"ar\":\"غرف\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (260, 51, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (261, 51, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (262, 51, 4, 'room', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (260, 51, 2, 'home.room.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (263, 52, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر\",\"ar\":\"صالة عرض\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (264, 52, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (265, 52, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (266, 52, 4, 'gallery', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (264, 52, 2, 'home.gallery.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (267, 53, 1, '{\"en\":\"Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"شكاوي\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (268, 53, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (269, 53, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (270, 53, 4, 'complaints', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (268, 53, 2, 'home.complaint.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (271, 50, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (272, 51, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (273, 52, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (274, 53, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (275, 54, 1, '{\"en\":\"Contact Us\",\"fa\":\"تماس با ما\",\"ar\":\"اتصل بنا\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (276, 54, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (277, 54, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (278, 54, 4, 'contact-us', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (276, 54, 2, 'home.contact.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (279, 54, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (280, 55, 1, '{\"en\":\"About Us\",\"fa\":\"درباره ما\",\"ar\":\"معلومات عنا\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (281, 55, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (282, 55, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (283, 55, 4, 'about-us', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (284, 55, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (285, 56, 1, '{\"fa\":\"نقشه ها\",\"en\":\"Maps\",\"ar\":\"النقشه ها\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (286, 56, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (287, 56, 3, 'data_type', NULL, NULL);
@@ -1134,9 +1076,7 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (375, 68, 3, 'data_type
 INSERT INTO `navigation_item_assigned_properties` VALUES (376, 68, 4, 'news', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (377, 68, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (378, 69, 1, '{\"en\":\"News\",\"fa\":\"اخبار\",\"ar\":\"الاخبار\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (379, 69, 2, 'home.item.all', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (380, 69, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (381, 69, 4, 'news', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (379, 69, 2, 'home.news.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (382, 69, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (386, 71, 11, '{\"en\":\"22\",\"fa\":\"22\",\"ar\":\"22\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (387, 71, 12, 'http://localhost/online-service/document/pages/217', NULL, NULL);
@@ -1283,13 +1223,10 @@ INSERT INTO `navigation_items` VALUES (16, 3, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (17, 3, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (18, 3, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (20, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (21, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (22, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (23, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (24, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (25, 4, 'route', NULL, 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (26, 5, 'route', NULL, 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (27, 5, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (28, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (29, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (30, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:3', 0, NULL, NULL);
@@ -1299,7 +1236,6 @@ INSERT INTO `navigation_items` VALUES (33, 1, 'route', 'section:main_info|g_orde
 INSERT INTO `navigation_items` VALUES (34, 1, 'route', 'section:main_info|g_order:3&g_name:reserve&g_icon:book|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (35, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:4', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (36, 1, 'route', 'section:pages|g_order:13&g_name:pages|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (38, 4, 'route', NULL, 0, '2019-05-21 02:16:20', '2019-05-21 02:16:20');
 INSERT INTO `navigation_items` VALUES (39, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (40, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (41, 1, 'route', 'section:conversations|g_order:8&g_name:comments&g_icon:comment|order:1', 0, NULL, NULL);
@@ -1308,14 +1244,12 @@ INSERT INTO `navigation_items` VALUES (43, 1, 'route', 'section:conversations|g_
 INSERT INTO `navigation_items` VALUES (44, 1, 'route', 'section:conversations|g_order:9&g_name:complaints&g_icon:mode_comment|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (45, 1, 'route', 'section:conversations|g_order:10&g_name:rating&g_icon:rate_review|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (46, 1, 'route', 'section:conversations|g_order:10&g_name:rating&g_icon:rate_review|order:2', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (48, 5, 'route', NULL, 0, '2019-05-26 23:10:35', '2019-05-26 23:10:35');
 INSERT INTO `navigation_items` VALUES (49, 1, 'route', 'section:permissions|g_order:14&g_name:permissions|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (50, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (51, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (52, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (53, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (54, 6, 'route', NULL, 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (55, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (56, 1, 'route', 'section:extra_info|g_order:15&g_name:map&g_icon:map|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (57, 1, 'route', 'section:extra_info|g_order:15&g_name:map&g_icon:map|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (58, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:3', 0, NULL, NULL);
@@ -2014,14 +1948,16 @@ CREATE TABLE `reserves`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of reserves
 -- ----------------------------
-INSERT INTO `reserves` VALUES (53, '1399/01/20', '1399/02/02', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
-INSERT INTO `reserves` VALUES (54, '1399/01/20', '1399/01/24', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
-INSERT INTO `reserves` VALUES (55, '1399/01/20', '1399/03/21', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (58, '1399/01/20', '1399/03/05', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (59, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (60, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (61, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (62, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -2936,144 +2872,6 @@ INSERT INTO `routes` VALUES (59, 'items.index', '{\"type\":\"website\"}');
 INSERT INTO `routes` VALUES (60, 'items.index', '{\"type\":\"application\"}');
 
 -- ----------------------------
--- Table structure for running_services
--- ----------------------------
-DROP TABLE IF EXISTS `running_services`;
-CREATE TABLE `running_services`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `service` bigint(255) NULL DEFAULT NULL,
-  `session` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `step_no` int(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of running_services
--- ----------------------------
-INSERT INTO `running_services` VALUES (1, 1, '14252145214521', 11);
-
--- ----------------------------
--- Table structure for service_commands
--- ----------------------------
-DROP TABLE IF EXISTS `service_commands`;
-CREATE TABLE `service_commands`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `service` int(255) NULL DEFAULT NULL,
-  `step_no` int(11) NULL DEFAULT NULL,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `input` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `operation` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `output` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of service_commands
--- ----------------------------
-INSERT INTO `service_commands` VALUES (1, 1, 1, 'open reserve form', '-', '{\"operate\": \"open\",\"action\": \"\",\"next\": 2}', '-', NULL);
-INSERT INTO `service_commands` VALUES (2, 1, 2, 'store reserve', '-', '{\"operate\":\"create\",\"route\":\"public.booking.open_booking_form\", \"table\":\"reserves\",\"next\":3}', '-', NULL);
-INSERT INTO `service_commands` VALUES (3, 1, 3, 'wait for room verification', '-', '{\"operate\": \"open\",\"action\": \"\",\"next\": 4}', '-', NULL);
-INSERT INTO `service_commands` VALUES (4, 1, 4, 'check login', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_login\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 9}},{\"condition\": false,\"output\": {\"next\": 5}}]}', '-', NULL);
-INSERT INTO `service_commands` VALUES (5, 1, 5, 'open user form', '-', '{\"operate\": \"open\",\"action\": \"\",\"next\": 6}', '-', NULL);
-INSERT INTO `service_commands` VALUES (6, 1, 6, 'check user exists', '-', '{\"operate\": \"condition\",\"custom_function\": \"is_customer_exists\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 8}},{\"condition\": false,\"output\": {\"next\": 7}}]}', '-', NULL);
-INSERT INTO `service_commands` VALUES (7, 1, 7, 'create user', '-', '{\"operate\":\"create\",\"route\":\"public.booking.open_booking_form\", \"table\":\"customers\",\"next\":8}', '-', NULL);
-INSERT INTO `service_commands` VALUES (8, 1, 8, 'login', '-', '{\"operate\":\"do\",\"custom_function\": \"login\",\"route\":\"public.booking.open_booking_form\", \"table\":\"customers\",\"next\":9}', '-', NULL);
-INSERT INTO `service_commands` VALUES (9, 1, 9, 'open payout page', '-', '{\"operate\": \"open\",\"action\": \"\",\"next\":10}', '-', NULL);
-INSERT INTO `service_commands` VALUES (10, 1, 10, 'update reserve', '-', '{\"operate\":\"update\",\"route\":\"public.themes.hotel-new.subviews.booking.open_booking_form\", \"table\":\"reserves\",\"next\":11}', '-', NULL);
-INSERT INTO `service_commands` VALUES (11, 1, 11, 'finish page', '-', '{\"operate\": \"open\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands` VALUES (12, 2, 1, 'open login page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.login-customer.login\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands` VALUES (13, 2, 2, 'check login', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_login\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 0}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands` VALUES (14, 3, 1, 'open register page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands` VALUES (15, 3, 2, 'register', '-', '{\"operate\": \"condition\",\"custom_function\": \"register\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 0}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands` VALUES (16, 4, 1, 'open tracking search page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands` VALUES (17, 4, 2, 'check reserve code', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_booking\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 3}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands` VALUES (18, 4, 3, 'open tracking page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":0}', '-', NULL);
-INSERT INTO `service_commands` VALUES (19, 5, 1, 'open voucher search page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands` VALUES (20, 5, 2, 'check voucher code', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_booking\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 3}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands` VALUES (21, 5, 3, 'open voucher page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":0}', '-', NULL);
-INSERT INTO `service_commands` VALUES (22, 6, 1, 'open booking history page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.login-customer.login\",\"action\": \"\",\"next\":0}', '-', NULL);
-INSERT INTO `service_commands` VALUES (23, 7, 1, 'open send message page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.login-customer.login\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands` VALUES (24, 7, 2, 'send message', '-', '{\"operate\": \"do\",\"custom_function\":\"send_message\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands` VALUES (25, 8, 1, 'get data', '-', '{\"operate\": \"do\",\"custom_function\":\"calculate_price\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands` VALUES (26, 9, 1, 'is room availale', '-', '{\"operate\": \"do\",\"custom_function\":\"is_room_available\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands` VALUES (27, 10, 1, 'prepare payout', '-', '{\"operate\": \"do\",\"custom_function\":\"prepare_for_payout\",\"action\": \"\",\"next\": 2}', '-', NULL);
-INSERT INTO `service_commands` VALUES (28, 10, 2, 'get returned data', '-', '{\"operate\": \"do\",\"custom_function\":\"return_from_payout\",\"action\": \"\",\"next\": 0, \"back_to_running_service\":1}', '-', NULL);
-
--- ----------------------------
--- Table structure for service_commands_old
--- ----------------------------
-DROP TABLE IF EXISTS `service_commands_old`;
-CREATE TABLE `service_commands_old`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `service` int(255) NULL DEFAULT NULL,
-  `step_no` int(11) NULL DEFAULT NULL,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `input` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `operation` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `output` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of service_commands_old
--- ----------------------------
-INSERT INTO `service_commands_old` VALUES (1, 1, 1, 'open reserve form', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.booking.open_booking_form\",\"action\": \"\",\"next\": 2}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (2, 1, 2, 'store reserve', '-', '{\"operate\":\"create\",\"route\":\"public.booking.open_booking_form\", \"table\":\"reserves\",\"next\":3}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (3, 1, 3, 'wait for room verification', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.booking.waiting_for_room_verification_booking_form\",\"action\": \"\",\"next\": 4}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (4, 1, 4, 'check login', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_login\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 9}},{\"condition\": false,\"output\": {\"next\": 5}}]}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (5, 1, 5, 'open user form', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.booking.user_booking_form\",\"action\": \"\",\"next\": 6}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (6, 1, 6, 'check user exists', '-', '{\"operate\": \"condition\",\"custom_function\": \"is_customer_exists\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 8}},{\"condition\": false,\"output\": {\"next\": 7}}]}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (7, 1, 7, 'create user', '-', '{\"operate\":\"create\",\"route\":\"public.booking.open_booking_form\", \"table\":\"customers\",\"next\":8}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (8, 1, 8, 'login', '-', '{\"operate\":\"do\",\"custom_function\": \"login\",\"route\":\"public.booking.open_booking_form\", \"table\":\"customers\",\"next\":9}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (9, 1, 9, 'open payout page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.booking.payout_booking_form\",\"action\": \"\",\"next\":10}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (10, 1, 10, 'update reserve', '-', '{\"operate\":\"update\",\"route\":\"public.themes.hotel-new.subviews.booking.open_booking_form\", \"table\":\"reserves\",\"next\":11}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (11, 1, 11, 'finish page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.booking.finish_booking_form\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (12, 2, 1, 'open login page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.login-customer.login\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (13, 2, 2, 'check login', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_login\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 0}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (14, 3, 1, 'open register page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (15, 3, 2, 'register', '-', '{\"operate\": \"condition\",\"custom_function\": \"register\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 0}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (16, 4, 1, 'open tracking search page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (17, 4, 2, 'check reserve code', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_booking\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 3}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (18, 4, 3, 'open tracking page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":0}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (19, 5, 1, 'open voucher search page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (20, 5, 2, 'check voucher code', '-', '{\"operate\": \"condition\",\"custom_function\": \"check_booking\",\"conditions\": [{\"condition\": true,\"output\": {\"next\": 3}},{\"condition\": false,\"output\": {\"next\": 1}}]}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (21, 5, 3, 'open voucher page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.register-customer.register\",\"action\": \"\",\"next\":0}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (22, 6, 1, 'open booking history page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.login-customer.login\",\"action\": \"\",\"next\":0}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (23, 7, 1, 'open send message page', '-', '{\"operate\": \"open\",\"form\": \"public.themes.hotel-new.subviews.login-customer.login\",\"action\": \"\",\"next\":2}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (24, 7, 2, 'send message', '-', '{\"operate\": \"do\",\"custom_function\":\"send_message\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (25, 8, 1, 'get data', '-', '{\"operate\": \"do\",\"custom_function\":\"calculate_price\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (26, 9, 1, 'is room availale', '-', '{\"operate\": \"do\",\"custom_function\":\"is_room_available\",\"action\": \"\",\"next\": 0}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (27, 10, 1, 'prepare payout', '-', '{\"operate\": \"do\",\"custom_function\":\"prepare_for_payout\",\"action\": \"\",\"next\": 2}', '-', NULL);
-INSERT INTO `service_commands_old` VALUES (28, 10, 2, 'get returned data', '-', '{\"operate\": \"do\",\"custom_function\":\"return_from_payout\",\"action\": \"\",\"next\": 0}', '-', NULL);
-
--- ----------------------------
--- Table structure for services
--- ----------------------------
-DROP TABLE IF EXISTS `services`;
-CREATE TABLE `services`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `output` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of services
--- ----------------------------
-INSERT INTO `services` VALUES (1, 'booking', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (2, 'login-customer', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (3, 'register-customer', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (4, 'tracking-reserve', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (5, 'print-voucher', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (6, 'get-booking-history', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (7, 'send-message', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (8, 'update-booking-data', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (9, 'check-room-available', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-INSERT INTO `services` VALUES (10, 'online-payout', '{\"conditions\": [{\"condition\": \"all_commands_succeed\",\"output\": {\"return\": true}},{\"condition\": \"any_command_failed\",\"output\": {\"return\":false}}]}');
-
--- ----------------------------
 -- Table structure for slides
 -- ----------------------------
 DROP TABLE IF EXISTS `slides`;
@@ -3454,7 +3252,7 @@ CREATE TABLE `tracker_log`  (
   CONSTRAINT `tracker_log_query_id_foreign` FOREIGN KEY (`query_id`) REFERENCES `tracker_queries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_session_id_foreign` FOREIGN KEY (`session_id`) REFERENCES `tracker_sessions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 9202 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 9300 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_log
@@ -12625,6 +12423,104 @@ INSERT INTO `tracker_log` VALUES (9198, 37, 167, NULL, 'GET', 167, 0, 0, 0, 0, N
 INSERT INTO `tracker_log` VALUES (9199, 37, 170, NULL, 'GET', 170, 0, 0, 0, 0, NULL, '2020-05-25 00:46:51', '2020-05-25 00:46:51', 108);
 INSERT INTO `tracker_log` VALUES (9200, 37, 164, NULL, 'GET', 163, 0, 0, 0, 0, NULL, '2020-05-25 00:46:54', '2020-05-25 00:46:54', 112);
 INSERT INTO `tracker_log` VALUES (9201, 37, 156, NULL, 'GET', 145, 0, 0, 0, 0, NULL, '2020-05-25 00:46:56', '2020-05-25 00:46:56', NULL);
+INSERT INTO `tracker_log` VALUES (9202, 37, 175, NULL, 'GET', 176, 0, 0, 0, 0, NULL, '2020-05-25 18:25:50', '2020-05-25 18:25:51', NULL);
+INSERT INTO `tracker_log` VALUES (9203, 37, 175, NULL, 'GET', 176, 0, 0, 0, 0, NULL, '2020-05-25 18:26:31', '2020-05-25 18:26:31', NULL);
+INSERT INTO `tracker_log` VALUES (9204, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 18:29:10', '2020-05-25 18:29:11', NULL);
+INSERT INTO `tracker_log` VALUES (9205, 37, 157, NULL, 'POST', 146, 1, 0, 0, 0, NULL, '2020-05-25 18:34:44', '2020-05-25 18:34:44', 113);
+INSERT INTO `tracker_log` VALUES (9206, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 18:40:41', '2020-05-25 18:40:41', NULL);
+INSERT INTO `tracker_log` VALUES (9207, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 18:40:45', '2020-05-25 18:40:45', 113);
+INSERT INTO `tracker_log` VALUES (9208, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 18:40:50', '2020-05-25 18:40:50', NULL);
+INSERT INTO `tracker_log` VALUES (9209, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 18:40:55', '2020-05-25 18:40:56', 113);
+INSERT INTO `tracker_log` VALUES (9210, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 18:44:55', '2020-05-25 18:44:55', NULL);
+INSERT INTO `tracker_log` VALUES (9211, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 18:45:06', '2020-05-25 18:45:06', 113);
+INSERT INTO `tracker_log` VALUES (9212, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 18:45:28', '2020-05-25 18:45:28', NULL);
+INSERT INTO `tracker_log` VALUES (9213, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 18:45:33', '2020-05-25 18:45:33', 113);
+INSERT INTO `tracker_log` VALUES (9214, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:18:45', '2020-05-25 19:18:45', NULL);
+INSERT INTO `tracker_log` VALUES (9215, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 19:18:49', '2020-05-25 19:18:49', 113);
+INSERT INTO `tracker_log` VALUES (9216, 37, 144, NULL, 'POST', 138, 0, 0, 0, 0, NULL, '2020-05-25 19:18:51', '2020-05-25 19:18:51', 113);
+INSERT INTO `tracker_log` VALUES (9217, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:20:08', '2020-05-25 19:20:09', NULL);
+INSERT INTO `tracker_log` VALUES (9218, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:20:10', '2020-05-25 19:20:11', NULL);
+INSERT INTO `tracker_log` VALUES (9219, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 19:20:14', '2020-05-25 19:20:14', 113);
+INSERT INTO `tracker_log` VALUES (9220, 37, 177, NULL, 'POST', 179, 0, 0, 0, 0, NULL, '2020-05-25 19:20:17', '2020-05-25 19:20:18', 113);
+INSERT INTO `tracker_log` VALUES (9221, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 19:20:19', '2020-05-25 19:20:19', 113);
+INSERT INTO `tracker_log` VALUES (9222, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:20:42', '2020-05-25 19:20:42', NULL);
+INSERT INTO `tracker_log` VALUES (9223, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:20:44', '2020-05-25 19:20:44', NULL);
+INSERT INTO `tracker_log` VALUES (9224, 37, 177, NULL, 'POST', 179, 0, 0, 0, 0, NULL, '2020-05-25 19:20:48', '2020-05-25 19:20:48', 113);
+INSERT INTO `tracker_log` VALUES (9225, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 19:20:48', '2020-05-25 19:20:49', 113);
+INSERT INTO `tracker_log` VALUES (9226, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:20:51', '2020-05-25 19:20:51', NULL);
+INSERT INTO `tracker_log` VALUES (9227, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 19:20:52', '2020-05-25 19:20:52', 113);
+INSERT INTO `tracker_log` VALUES (9228, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:20:53', '2020-05-25 19:20:54', NULL);
+INSERT INTO `tracker_log` VALUES (9229, 37, 179, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:20:54', '2020-05-25 19:20:54', NULL);
+INSERT INTO `tracker_log` VALUES (9230, 37, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-05-25 19:20:55', '2020-05-25 19:20:56', 114);
+INSERT INTO `tracker_log` VALUES (9231, 37, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-05-25 19:20:56', '2020-05-25 19:20:56', 115);
+INSERT INTO `tracker_log` VALUES (9232, 37, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-05-25 19:20:57', '2020-05-25 19:20:57', 115);
+INSERT INTO `tracker_log` VALUES (9233, 37, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:20:59', '2020-05-25 19:20:59', 115);
+INSERT INTO `tracker_log` VALUES (9234, 37, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:20:59', '2020-05-25 19:20:59', 115);
+INSERT INTO `tracker_log` VALUES (9235, 37, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:21:00', '2020-05-25 19:21:00', 115);
+INSERT INTO `tracker_log` VALUES (9236, 37, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:21:01', '2020-05-25 19:21:01', 115);
+INSERT INTO `tracker_log` VALUES (9237, 37, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:21:01', '2020-05-25 19:21:01', 115);
+INSERT INTO `tracker_log` VALUES (9238, 37, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:21:02', '2020-05-25 19:21:02', 115);
+INSERT INTO `tracker_log` VALUES (9239, 37, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-05-25 19:21:07', '2020-05-25 19:21:07', 114);
+INSERT INTO `tracker_log` VALUES (9240, 37, 179, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 19:21:08', '2020-05-25 19:21:08', NULL);
+INSERT INTO `tracker_log` VALUES (9241, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:21:08', '2020-05-25 19:21:08', NULL);
+INSERT INTO `tracker_log` VALUES (9242, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 19:21:09', '2020-05-25 19:21:09', 113);
+INSERT INTO `tracker_log` VALUES (9243, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:21:15', '2020-05-25 19:21:15', NULL);
+INSERT INTO `tracker_log` VALUES (9244, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 19:21:20', '2020-05-25 19:21:20', 113);
+INSERT INTO `tracker_log` VALUES (9245, 37, 177, NULL, 'POST', 179, 0, 0, 0, 0, NULL, '2020-05-25 19:21:21', '2020-05-25 19:21:21', 113);
+INSERT INTO `tracker_log` VALUES (9246, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 19:21:22', '2020-05-25 19:21:22', 113);
+INSERT INTO `tracker_log` VALUES (9247, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 19:33:20', '2020-05-25 19:33:20', 113);
+INSERT INTO `tracker_log` VALUES (9248, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 19:59:30', '2020-05-25 19:59:30', 113);
+INSERT INTO `tracker_log` VALUES (9249, 37, 180, 32, 'POST', 181, 1, 0, 0, 0, NULL, '2020-05-25 19:59:38', '2020-05-25 19:59:38', 116);
+INSERT INTO `tracker_log` VALUES (9250, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:59:45', '2020-05-25 19:59:45', NULL);
+INSERT INTO `tracker_log` VALUES (9251, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 19:59:48', '2020-05-25 19:59:48', NULL);
+INSERT INTO `tracker_log` VALUES (9252, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 20:00:52', '2020-05-25 20:00:52', NULL);
+INSERT INTO `tracker_log` VALUES (9253, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 20:00:56', '2020-05-25 20:00:56', 113);
+INSERT INTO `tracker_log` VALUES (9254, 37, 177, NULL, 'POST', 179, 0, 0, 0, 0, NULL, '2020-05-25 20:00:58', '2020-05-25 20:00:58', 113);
+INSERT INTO `tracker_log` VALUES (9255, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 20:00:59', '2020-05-25 20:00:59', 113);
+INSERT INTO `tracker_log` VALUES (9256, 37, 180, 32, 'POST', 181, 1, 0, 0, 0, NULL, '2020-05-25 20:01:05', '2020-05-25 20:01:05', 116);
+INSERT INTO `tracker_log` VALUES (9257, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 20:01:10', '2020-05-25 20:01:10', NULL);
+INSERT INTO `tracker_log` VALUES (9258, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 20:01:46', '2020-05-25 20:01:46', NULL);
+INSERT INTO `tracker_log` VALUES (9259, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 20:01:56', '2020-05-25 20:01:57', 113);
+INSERT INTO `tracker_log` VALUES (9260, 37, 177, NULL, 'POST', 179, 0, 0, 0, 0, NULL, '2020-05-25 20:02:00', '2020-05-25 20:02:00', 113);
+INSERT INTO `tracker_log` VALUES (9261, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 20:02:00', '2020-05-25 20:02:01', 113);
+INSERT INTO `tracker_log` VALUES (9262, 37, 180, 32, 'POST', 181, 1, 0, 0, 0, NULL, '2020-05-25 20:02:08', '2020-05-25 20:02:08', 116);
+INSERT INTO `tracker_log` VALUES (9263, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 20:02:41', '2020-05-25 20:02:41', 113);
+INSERT INTO `tracker_log` VALUES (9264, 37, 180, 32, 'POST', 181, 1, 0, 0, 0, NULL, '2020-05-25 20:02:47', '2020-05-25 20:02:48', 116);
+INSERT INTO `tracker_log` VALUES (9265, 37, 181, NULL, 'GET', 182, 0, 0, 0, 0, NULL, '2020-05-25 20:02:48', '2020-05-25 20:02:49', 116);
+INSERT INTO `tracker_log` VALUES (9266, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 20:03:13', '2020-05-25 20:03:13', NULL);
+INSERT INTO `tracker_log` VALUES (9267, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 20:03:18', '2020-05-25 20:03:18', 113);
+INSERT INTO `tracker_log` VALUES (9268, 37, 177, NULL, 'POST', 179, 0, 0, 0, 0, NULL, '2020-05-25 20:03:21', '2020-05-25 20:03:21', 113);
+INSERT INTO `tracker_log` VALUES (9269, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 20:03:21', '2020-05-25 20:03:22', 113);
+INSERT INTO `tracker_log` VALUES (9270, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 20:03:25', '2020-05-25 20:03:25', 113);
+INSERT INTO `tracker_log` VALUES (9271, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 20:03:26', '2020-05-25 20:03:26', NULL);
+INSERT INTO `tracker_log` VALUES (9272, 37, 175, NULL, 'GET', 177, 0, 0, 0, 0, NULL, '2020-05-25 21:55:17', '2020-05-25 21:55:17', NULL);
+INSERT INTO `tracker_log` VALUES (9273, 37, 176, NULL, 'POST', 178, 1, 0, 0, 0, NULL, '2020-05-25 21:55:22', '2020-05-25 21:55:22', 113);
+INSERT INTO `tracker_log` VALUES (9274, 37, 177, NULL, 'POST', 179, 0, 0, 0, 0, NULL, '2020-05-25 21:55:24', '2020-05-25 21:55:24', 113);
+INSERT INTO `tracker_log` VALUES (9275, 37, 178, NULL, 'GET', 180, 0, 0, 0, 0, NULL, '2020-05-25 21:55:25', '2020-05-25 21:55:25', 113);
+INSERT INTO `tracker_log` VALUES (9276, 37, 180, 32, 'POST', 181, 1, 0, 0, 0, NULL, '2020-05-25 21:55:32', '2020-05-25 21:55:32', 116);
+INSERT INTO `tracker_log` VALUES (9277, 37, 182, NULL, 'GET', 183, 0, 0, 0, 0, NULL, '2020-05-25 21:55:33', '2020-05-25 21:55:33', 116);
+INSERT INTO `tracker_log` VALUES (9278, 37, 182, NULL, 'GET', 183, 0, 0, 0, 0, NULL, '2020-05-25 21:58:22', '2020-05-25 21:58:22', 116);
+INSERT INTO `tracker_log` VALUES (9279, 37, 183, NULL, 'GET', 184, 0, 0, 0, 0, NULL, '2020-05-26 00:21:20', '2020-05-26 00:21:21', 117);
+INSERT INTO `tracker_log` VALUES (9280, 37, 139, NULL, 'GET', 162, 0, 0, 0, 0, NULL, '2020-05-26 00:25:45', '2020-05-26 00:25:46', 118);
+INSERT INTO `tracker_log` VALUES (9281, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-26 04:01:05', '2020-05-26 04:01:05', NULL);
+INSERT INTO `tracker_log` VALUES (9282, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:01:12', '2020-05-26 04:01:12', 119);
+INSERT INTO `tracker_log` VALUES (9283, 37, 139, NULL, 'GET', 162, 0, 0, 0, 0, NULL, '2020-05-26 04:01:16', '2020-05-26 04:01:16', 120);
+INSERT INTO `tracker_log` VALUES (9284, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:06:29', '2020-05-26 04:06:29', 119);
+INSERT INTO `tracker_log` VALUES (9285, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:06:52', '2020-05-26 04:06:52', 119);
+INSERT INTO `tracker_log` VALUES (9286, 37, 184, NULL, 'GET', 185, 0, 0, 0, 0, NULL, '2020-05-26 04:06:55', '2020-05-26 04:06:56', 120);
+INSERT INTO `tracker_log` VALUES (9287, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:06:59', '2020-05-26 04:06:59', 119);
+INSERT INTO `tracker_log` VALUES (9288, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:08:41', '2020-05-26 04:08:41', 119);
+INSERT INTO `tracker_log` VALUES (9289, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:11:01', '2020-05-26 04:11:01', 119);
+INSERT INTO `tracker_log` VALUES (9290, 37, 185, NULL, 'GET', 186, 0, 0, 0, 0, NULL, '2020-05-26 04:11:06', '2020-05-26 04:11:06', 120);
+INSERT INTO `tracker_log` VALUES (9291, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:11:09', '2020-05-26 04:11:09', 119);
+INSERT INTO `tracker_log` VALUES (9292, 37, 186, NULL, 'GET', 187, 0, 0, 0, 0, NULL, '2020-05-26 04:11:12', '2020-05-26 04:11:12', 120);
+INSERT INTO `tracker_log` VALUES (9293, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:11:15', '2020-05-26 04:11:15', 119);
+INSERT INTO `tracker_log` VALUES (9294, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 04:17:09', '2020-05-26 04:17:10', 119);
+INSERT INTO `tracker_log` VALUES (9295, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 13:40:54', '2020-05-26 13:40:55', 119);
+INSERT INTO `tracker_log` VALUES (9296, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 13:50:09', '2020-05-26 13:50:09', 119);
+INSERT INTO `tracker_log` VALUES (9297, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 14:27:53', '2020-05-26 14:27:54', 119);
+INSERT INTO `tracker_log` VALUES (9298, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 14:29:10', '2020-05-26 14:29:10', 119);
+INSERT INTO `tracker_log` VALUES (9299, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-26 14:29:58', '2020-05-26 14:29:58', 119);
 
 -- ----------------------------
 -- Table structure for tracker_paths
@@ -12639,7 +12535,7 @@ CREATE TABLE `tracker_paths`  (
   INDEX `tracker_paths_created_at_index`(`created_at`) USING BTREE,
   INDEX `tracker_paths_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_paths_path_index`(`path`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 175 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 187 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_paths
@@ -12818,6 +12714,18 @@ INSERT INTO `tracker_paths` VALUES (171, 'items/room/2', '2020-05-06 09:04:01', 
 INSERT INTO `tracker_paths` VALUES (172, 'items/room/1', '2020-05-06 12:53:08', '2020-05-06 12:53:08');
 INSERT INTO `tracker_paths` VALUES (173, 'items/gallery', '2020-05-25 00:13:21', '2020-05-25 00:13:21');
 INSERT INTO `tracker_paths` VALUES (174, 'services/booking/3', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
+INSERT INTO `tracker_paths` VALUES (175, 'booking/start/1', '2020-05-25 18:25:50', '2020-05-25 18:25:50');
+INSERT INTO `tracker_paths` VALUES (176, 'booking/update/price/room', '2020-05-25 18:40:45', '2020-05-25 18:40:45');
+INSERT INTO `tracker_paths` VALUES (177, 'booking/save/1', '2020-05-25 19:20:17', '2020-05-25 19:20:17');
+INSERT INTO `tracker_paths` VALUES (178, 'booking/confirm/1111111', '2020-05-25 19:20:18', '2020-05-25 19:20:18');
+INSERT INTO `tracker_paths` VALUES (179, 'booking/1', '2020-05-25 19:20:54', '2020-05-25 19:20:54');
+INSERT INTO `tracker_paths` VALUES (180, 'booking/check/room_verification', '2020-05-25 19:59:37', '2020-05-25 19:59:37');
+INSERT INTO `tracker_paths` VALUES (181, 'booking/finish/BME1111', '2020-05-25 20:02:48', '2020-05-25 20:02:48');
+INSERT INTO `tracker_paths` VALUES (182, 'booking/payout/BME1111', '2020-05-25 21:55:33', '2020-05-25 21:55:33');
+INSERT INTO `tracker_paths` VALUES (183, 'items/complaints', '2020-05-26 00:21:20', '2020-05-26 00:21:20');
+INSERT INTO `tracker_paths` VALUES (184, 'rooms', '2020-05-26 04:06:55', '2020-05-26 04:06:55');
+INSERT INTO `tracker_paths` VALUES (185, 'complaints/send', '2020-05-26 04:11:06', '2020-05-26 04:11:06');
+INSERT INTO `tracker_paths` VALUES (186, 'galleries', '2020-05-26 04:11:12', '2020-05-26 04:11:12');
 
 -- ----------------------------
 -- Table structure for tracker_queries
@@ -12832,7 +12740,7 @@ CREATE TABLE `tracker_queries`  (
   INDEX `tracker_queries_created_at_index`(`created_at`) USING BTREE,
   INDEX `tracker_queries_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_queries_query_index`(`query`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_queries
@@ -12868,6 +12776,7 @@ INSERT INTO `tracker_queries` VALUES (28, 'step=2|code=SBR1578889429', '2020-01-
 INSERT INTO `tracker_queries` VALUES (29, 'step=2|code=SBR1578893090', '2020-01-13 05:24:51', '2020-01-13 05:24:51');
 INSERT INTO `tracker_queries` VALUES (30, 'step=2|code=SBR1578893232', '2020-01-13 05:27:13', '2020-01-13 05:27:13');
 INSERT INTO `tracker_queries` VALUES (31, '}=', '2020-03-14 06:31:33', '2020-03-14 06:31:33');
+INSERT INTO `tracker_queries` VALUES (32, 'code=BME1111', '2020-05-25 19:59:37', '2020-05-25 19:59:37');
 
 -- ----------------------------
 -- Table structure for tracker_query_arguments
@@ -12887,7 +12796,7 @@ CREATE TABLE `tracker_query_arguments`  (
   INDEX `tracker_query_arguments_argument_index`(`argument`) USING BTREE,
   INDEX `tracker_query_arguments_value_index`(`value`) USING BTREE,
   CONSTRAINT `tracker_query_arguments_query_id_foreign` FOREIGN KEY (`query_id`) REFERENCES `tracker_queries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 126 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 127 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_query_arguments
@@ -13017,6 +12926,7 @@ INSERT INTO `tracker_query_arguments` VALUES (122, 29, 'code', 'SBR1578893090', 
 INSERT INTO `tracker_query_arguments` VALUES (123, 30, 'step', '2', '2020-01-13 05:27:13', '2020-01-13 05:27:13');
 INSERT INTO `tracker_query_arguments` VALUES (124, 30, 'code', 'SBR1578893232', '2020-01-13 05:27:13', '2020-01-13 05:27:13');
 INSERT INTO `tracker_query_arguments` VALUES (125, 31, '}', '', '2020-03-14 06:31:33', '2020-03-14 06:31:33');
+INSERT INTO `tracker_query_arguments` VALUES (126, 32, 'code', 'BME1111', '2020-05-25 19:59:37', '2020-05-25 19:59:37');
 
 -- ----------------------------
 -- Table structure for tracker_referers
@@ -13041,7 +12951,7 @@ CREATE TABLE `tracker_referers`  (
   INDEX `tracker_referers_source_index`(`source`) USING BTREE,
   INDEX `tracker_referers_search_terms_hash_index`(`search_terms_hash`) USING BTREE,
   CONSTRAINT `tracker_referers_domain_id_foreign` FOREIGN KEY (`domain_id`) REFERENCES `tracker_domains` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 113 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 121 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_referers
@@ -13158,6 +13068,14 @@ INSERT INTO `tracker_referers` VALUES (109, 1, 'http://localhost/online-service-
 INSERT INTO `tracker_referers` VALUES (110, 1, 'http://localhost/online-service-v.2/items/room', 'localhost', '2020-05-06 09:03:59', '2020-05-06 09:03:59', NULL, NULL, NULL);
 INSERT INTO `tracker_referers` VALUES (111, 1, 'http://localhost/online-service-v.2/items/gallery', 'localhost', '2020-05-25 00:13:28', '2020-05-25 00:13:28', NULL, NULL, NULL);
 INSERT INTO `tracker_referers` VALUES (112, 1, 'http://localhost/online-service-v.2/services/booking/3', 'localhost', '2020-05-25 00:46:44', '2020-05-25 00:46:44', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (113, 1, 'http://localhost/online-hotel/booking/start/1', 'localhost', '2020-05-25 18:34:44', '2020-05-25 18:34:44', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (114, 1, 'http://localhost/online-hotel/admin', 'localhost', '2020-05-25 19:20:55', '2020-05-25 19:20:55', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (115, 1, 'http://localhost/online-hotel/login/user', 'localhost', '2020-05-25 19:20:56', '2020-05-25 19:20:56', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (116, 1, 'http://localhost/online-hotel/booking/confirm/1111111', 'localhost', '2020-05-25 19:59:37', '2020-05-25 19:59:37', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (117, 1, 'http://localhost/online-hotel/booking/payout/BME1111', 'localhost', '2020-05-26 00:21:20', '2020-05-26 00:21:20', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (118, 1, 'http://localhost/online-hotel/items/complaints', 'localhost', '2020-05-26 00:25:43', '2020-05-26 00:25:43', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (119, 1, 'http://localhost/online-hotel/', 'localhost', '2020-05-26 04:01:12', '2020-05-26 04:01:12', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (120, 1, 'http://localhost/online-hotel/home', 'localhost', '2020-05-26 04:01:15', '2020-05-26 04:01:15', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for tracker_referers_search_terms
@@ -13199,7 +13117,7 @@ CREATE TABLE `tracker_route_path_parameters`  (
   INDEX `tracker_route_path_parameters_parameter_index`(`parameter`) USING BTREE,
   INDEX `tracker_route_path_parameters_value_index`(`value`) USING BTREE,
   CONSTRAINT `tracker_route_path_parameters_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 236 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 244 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_path_parameters
@@ -13439,6 +13357,14 @@ INSERT INTO `tracker_route_path_parameters` VALUES (232, 173, 'type', 'gallery',
 INSERT INTO `tracker_route_path_parameters` VALUES (233, 174, 'type', 'message', '2020-05-25 00:30:54', '2020-05-25 00:30:54');
 INSERT INTO `tracker_route_path_parameters` VALUES (234, 175, 'type', 'booking', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
 INSERT INTO `tracker_route_path_parameters` VALUES (235, 175, 'step', '3', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
+INSERT INTO `tracker_route_path_parameters` VALUES (236, 176, 'room', '1', '2020-05-25 18:25:50', '2020-05-25 18:25:50');
+INSERT INTO `tracker_route_path_parameters` VALUES (237, 177, 'room', '1', '2020-05-25 18:29:11', '2020-05-25 18:29:11');
+INSERT INTO `tracker_route_path_parameters` VALUES (238, 178, 'type', 'room', '2020-05-25 18:40:45', '2020-05-25 18:40:45');
+INSERT INTO `tracker_route_path_parameters` VALUES (239, 179, 'room', '1', '2020-05-25 19:20:18', '2020-05-25 19:20:18');
+INSERT INTO `tracker_route_path_parameters` VALUES (240, 180, 'code', '1111111', '2020-05-25 19:20:19', '2020-05-25 19:20:19');
+INSERT INTO `tracker_route_path_parameters` VALUES (241, 182, 'code', 'BME1111', '2020-05-25 20:02:49', '2020-05-25 20:02:49');
+INSERT INTO `tracker_route_path_parameters` VALUES (242, 183, 'code', 'BME1111', '2020-05-25 21:55:33', '2020-05-25 21:55:33');
+INSERT INTO `tracker_route_path_parameters` VALUES (243, 184, 'type', 'complaints', '2020-05-26 00:21:21', '2020-05-26 00:21:21');
 
 -- ----------------------------
 -- Table structure for tracker_route_paths
@@ -13456,7 +13382,7 @@ CREATE TABLE `tracker_route_paths`  (
   INDEX `tracker_route_paths_route_id_index`(`route_id`) USING BTREE,
   INDEX `tracker_route_paths_path_index`(`path`) USING BTREE,
   CONSTRAINT `tracker_route_paths_route_id_foreign` FOREIGN KEY (`route_id`) REFERENCES `tracker_routes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 176 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 188 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_paths
@@ -13636,6 +13562,18 @@ INSERT INTO `tracker_route_paths` VALUES (172, 64, 'items/room/1', '2020-05-06 1
 INSERT INTO `tracker_route_paths` VALUES (173, 62, 'items/gallery', '2020-05-25 00:13:22', '2020-05-25 00:13:22');
 INSERT INTO `tracker_route_paths` VALUES (174, 50, 'admin/items/message', '2020-05-25 00:30:54', '2020-05-25 00:30:54');
 INSERT INTO `tracker_route_paths` VALUES (175, 56, 'services/booking/3', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
+INSERT INTO `tracker_route_paths` VALUES (176, 65, 'booking/start/1', '2020-05-25 18:25:50', '2020-05-25 18:25:50');
+INSERT INTO `tracker_route_paths` VALUES (177, 66, 'booking/start/1', '2020-05-25 18:29:11', '2020-05-25 18:29:11');
+INSERT INTO `tracker_route_paths` VALUES (178, 67, 'booking/update/price/room', '2020-05-25 18:40:45', '2020-05-25 18:40:45');
+INSERT INTO `tracker_route_paths` VALUES (179, 68, 'booking/save/1', '2020-05-25 19:20:18', '2020-05-25 19:20:18');
+INSERT INTO `tracker_route_paths` VALUES (180, 69, 'booking/confirm/1111111', '2020-05-25 19:20:19', '2020-05-25 19:20:19');
+INSERT INTO `tracker_route_paths` VALUES (181, 70, 'booking/check/room_verification', '2020-05-25 19:59:38', '2020-05-25 19:59:38');
+INSERT INTO `tracker_route_paths` VALUES (182, 71, 'booking/finish/BME1111', '2020-05-25 20:02:48', '2020-05-25 20:02:48');
+INSERT INTO `tracker_route_paths` VALUES (183, 72, 'booking/payout/BME1111', '2020-05-25 21:55:33', '2020-05-25 21:55:33');
+INSERT INTO `tracker_route_paths` VALUES (184, 62, 'items/complaints', '2020-05-26 00:21:21', '2020-05-26 00:21:21');
+INSERT INTO `tracker_route_paths` VALUES (185, 73, 'rooms', '2020-05-26 04:06:56', '2020-05-26 04:06:56');
+INSERT INTO `tracker_route_paths` VALUES (186, 74, 'complaints/send', '2020-05-26 04:11:06', '2020-05-26 04:11:06');
+INSERT INTO `tracker_route_paths` VALUES (187, 75, 'galleries', '2020-05-26 04:11:12', '2020-05-26 04:11:12');
 
 -- ----------------------------
 -- Table structure for tracker_routes
@@ -13652,7 +13590,7 @@ CREATE TABLE `tracker_routes`  (
   INDEX `tracker_routes_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_routes_name_index`(`name`) USING BTREE,
   INDEX `tracker_routes_action_index`(`action`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 76 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_routes
@@ -13721,6 +13659,17 @@ INSERT INTO `tracker_routes` VALUES (61, 'home.index2', 'App\\Http\\Controllers\
 INSERT INTO `tracker_routes` VALUES (62, 'home.item.all', 'App\\Http\\Controllers\\HomeController@showItems', '2020-04-14 21:59:57', '2020-04-14 21:59:57');
 INSERT INTO `tracker_routes` VALUES (63, 'home.index', 'App\\Http\\Controllers\\HomeController@index', '2020-05-06 00:52:41', '2020-05-06 00:52:41');
 INSERT INTO `tracker_routes` VALUES (64, 'home.item.show', 'App\\Http\\Controllers\\HomeController@showItem', '2020-05-06 09:04:02', '2020-05-06 09:04:02');
+INSERT INTO `tracker_routes` VALUES (65, 'home.booking.launch', 'App\\Http\\Controllers\\Booking\\BookingController@start', '2020-05-25 18:25:50', '2020-05-25 18:25:50');
+INSERT INTO `tracker_routes` VALUES (66, 'home.booking.start', 'App\\Http\\Controllers\\HomeController@startBooking', '2020-05-25 18:29:10', '2020-05-25 18:29:10');
+INSERT INTO `tracker_routes` VALUES (67, 'home.booking.update.price', 'App\\Http\\Controllers\\HomeController@updatePrices', '2020-05-25 18:40:45', '2020-05-25 18:40:45');
+INSERT INTO `tracker_routes` VALUES (68, 'home.booking.save', 'App\\Http\\Controllers\\HomeController@saveBooking', '2020-05-25 19:20:17', '2020-05-25 19:20:17');
+INSERT INTO `tracker_routes` VALUES (69, 'home.booking.confirm', 'App\\Http\\Controllers\\HomeController@confirmBooking', '2020-05-25 19:20:19', '2020-05-25 19:20:19');
+INSERT INTO `tracker_routes` VALUES (70, 'home.booking.check.room', 'App\\Http\\Controllers\\HomeController@checkRoomVerification', '2020-05-25 19:59:38', '2020-05-25 19:59:38');
+INSERT INTO `tracker_routes` VALUES (71, 'home.booking.finish', 'App\\Http\\Controllers\\HomeController@finishBooking', '2020-05-25 20:02:48', '2020-05-25 20:02:48');
+INSERT INTO `tracker_routes` VALUES (72, 'home.booking.payout', 'App\\Http\\Controllers\\HomeController@payoutBooking', '2020-05-25 21:55:33', '2020-05-25 21:55:33');
+INSERT INTO `tracker_routes` VALUES (73, 'home.room.all', 'App\\Http\\Controllers\\HomeController@showRooms', '2020-05-26 04:06:55', '2020-05-26 04:06:55');
+INSERT INTO `tracker_routes` VALUES (74, 'home.complaint.send', 'App\\Http\\Controllers\\HomeController@sendComplaint', '2020-05-26 04:11:06', '2020-05-26 04:11:06');
+INSERT INTO `tracker_routes` VALUES (75, 'home.gallery.all', 'App\\Http\\Controllers\\HomeController@showGalleries', '2020-05-26 04:11:12', '2020-05-26 04:11:12');
 
 -- ----------------------------
 -- Table structure for tracker_sessions
@@ -13799,7 +13748,7 @@ INSERT INTO `tracker_sessions` VALUES (33, '4d6da350-f56a-4755-9961-bd47441e82c5
 INSERT INTO `tracker_sessions` VALUES (34, '7f1cba7a-ed56-4dd1-8dc8-0fc83ec0db6b', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-05 04:38:48', '2020-04-06 12:58:12', 1);
 INSERT INTO `tracker_sessions` VALUES (35, '58426c97-776d-4c37-9d98-837f78a083ff', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-06 16:08:03', '2020-04-10 17:49:11', 1);
 INSERT INTO `tracker_sessions` VALUES (36, '1cec468f-b60f-4733-80fb-316cedff8c8d', NULL, 1, 7, '::1', NULL, NULL, NULL, 0, '2020-05-06 00:52:40', '2020-05-06 12:58:07', 1);
-INSERT INTO `tracker_sessions` VALUES (37, '2a8c6c2c-9928-4183-befd-48a94b1a1639', NULL, 3, 8, '::1', NULL, NULL, NULL, 0, '2020-05-24 23:28:54', '2020-05-25 00:46:56', 3);
+INSERT INTO `tracker_sessions` VALUES (37, '2a8c6c2c-9928-4183-befd-48a94b1a1639', NULL, 3, 8, '::1', 120, NULL, NULL, 0, '2020-05-24 23:28:54', '2020-05-26 14:29:58', 3);
 
 -- ----------------------------
 -- Table structure for tracker_sql_queries
