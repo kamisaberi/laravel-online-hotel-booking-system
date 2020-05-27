@@ -1,13 +1,12 @@
 <?php
 
 
-namespace App\Libraries\MyLib;
-
+namespace App\Libraries\Utilities;
 
 use Illuminate\Support\Pluralizer;
 use LanguageDetection\Language;
 
-class MyPluralizer extends Pluralizer
+class PluralUtility extends Pluralizer
 {
 
     public static function plural($value, $count = 2)

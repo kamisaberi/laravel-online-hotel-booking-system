@@ -8,6 +8,7 @@ use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Widget\WidgetController;
+use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\NavigationUtility;
 use App\Video;
@@ -22,69 +23,16 @@ class VideoController extends Controller
     public function index(Request $request, $type, $filters = null)
     {
 
-        $filts = $filters == null ? null : json_decode(urldecode($filters));
-        $data = BaseController::createBaseInformations();
-        $data['navigations'] = NavigationUtility::createNavigations($type);
-
-        $data['type'] = $type;
-
-        $data['page_title'] = trans('messages.list of') . Str::plural($type);
-        $data['breadcrumbs'] = [
-            [
-                'title' => trans('messages.navigation_titles.dashboard'),
-                'url' => route('admin.index')
-            ],
-            [
-                'title' => Str::plural($type),
-                'url' => ''
-            ]
-        ];
-        $data ['widgets'] = 'admin.items.widgets.video';
-
-
-        $data['urls'] = ItemUtility::getUrls($type);
-        $data['permissions'] = ItemUtility::getPermissions($type);
+        $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = ItemUtility::getItems($type);
-
         return view("admin.items.views.subviews.video", $data);
     }
 
     public function create($type)
     {
-        $data = BaseController::createBaseInformations();
-        $data['navigations'] = NavigationUtility::createNavigations($type);
-
-//        self::checkType($type);
-//        self::checkTables();
-
-//        dd(self::$property_table_structure);
-
+        $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-//        dd($data['groups']);
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-
-        $data['type'] = $type;
-        $data['urls'] = ItemUtility::getUrls($type);
-
-        $data['permissions'] = ItemUtility::getPermissions($type);
-        $data['page_title'] = trans('messages.list of') . Str::plural($type);
-        $data['breadcrumbs'] = [
-            [
-                'title' => trans('messages.navigation_titles.dashboard'),
-                'url' => route('admin.index')
-            ],
-            [
-                'title' => Str::plural($type),
-                'url' => route('items.index', ['type' => $type])
-            ],
-            [
-                'title' => trans('messages.create new item'),
-                'url' => ''
-            ]
-        ];
-
-//        return  route("data.properties.update", ['type' => 'news', 'id'=>93]);
-//        return $data;
         return view("admin.items.views.create", $data);
 
     }
@@ -151,37 +99,9 @@ class VideoController extends Controller
      */
     public function edit($type, $id)
     {
-
-        $data = BaseController::createBaseInformations();
-        $data['navigations'] = NavigationUtility::createNavigations($type);
-
-//        self::checkType($type);
-//        self::checkTables();
-
+        $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        $data['type'] = $type;
-        $data['id'] = $id;
-
-        $data['urls'] = ItemUtility::getUrls($type, $id);
-        $data['permissions'] = ItemUtility::getPermissions($type);
-        $data['page_title'] = trans('messages.list of') . Str::plural($type);
-        $data['breadcrumbs'] = [
-            [
-                'title' => trans('messages.navigation_titles.dashboard'),
-                'url' => route('admin.index')
-            ],
-            [
-                'title' => Str::plural($type),
-                'url' => route('items.index', ['type' => $type])
-            ],
-            [
-                'title' => trans('messages.edit existing item'),
-                'url' => ''
-            ]
-        ];
-//        return $data;
         return view("admin.items.views.edit", $data);
-
     }
 
     /**

@@ -9,7 +9,7 @@ use App\Http\Controllers\Base\PropertyController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\Widget\WidgetController;
-use App\Libraries\MyLib\MyPluralizer;
+use App\Libraries\MyLib\PluralUtility;
 use App\Libraries\Utilities\TextUtility;
 use App\Libraries\Utilities\TypeUtility;
 use App\User;
@@ -532,7 +532,7 @@ class UserController extends Controller
             $data['urls'] = self::getUrls($type, $bt_id->actions);
             $data['actions'] = $bt_id->actions;
 
-            $data['page_title'] = trans('messages.list of') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+            $data['page_title'] = trans('messages.list of') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
             $data['breadcrumbs'] = [
                 [
@@ -540,7 +540,7 @@ class UserController extends Controller
                     'url' => route('admin.index')
                 ],
                 [
-                    'title' => MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                    'title' => PluralUtility::plural($bt_id->locales[App::getLocale()]),
                     'url' => ''
                 ]
             ];
@@ -631,7 +631,7 @@ class UserController extends Controller
 //        return $data;
 
 
-        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+        $data['page_title'] = trans('messages.list of') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
         $data['breadcrumbs'] = [
             [
@@ -639,7 +639,7 @@ class UserController extends Controller
                 'url' => route('admin.index')
             ],
             [
-                'title' => MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                'title' => PluralUtility::plural($bt_id->locales[App::getLocale()]),
                 'url' => route('users.index', ['type' => $type])
             ],
             [
@@ -746,7 +746,7 @@ class UserController extends Controller
             $data ['widgets'] = WidgetController::getWidgets("users.show", 'user', $type);
 
 
-            $data['page_title'] = trans('messages.list of') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+            $data['page_title'] = trans('messages.list of') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
             $data['breadcrumbs'] = [
                 [
@@ -754,7 +754,7 @@ class UserController extends Controller
                     'url' => route('admin.index')
                 ],
                 [
-                    'title' => MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                    'title' => PluralUtility::plural($bt_id->locales[App::getLocale()]),
                     'url' => ''
                 ]
             ];
@@ -881,7 +881,7 @@ class UserController extends Controller
         $data['urls'] = self::getUrls($type, $bt_id->actions, $id);
 
 
-        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+        $data['page_title'] = trans('messages.list of') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
         $data['breadcrumbs'] = [
             [
@@ -889,7 +889,7 @@ class UserController extends Controller
                 'url' => route('admin.index')
             ],
             [
-                'title' => MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                'title' => PluralUtility::plural($bt_id->locales[App::getLocale()]),
                 'url' => route('users.index', ['type' => $type])
             ],
             [

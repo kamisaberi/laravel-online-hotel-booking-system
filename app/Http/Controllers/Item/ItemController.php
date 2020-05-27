@@ -16,7 +16,7 @@ use App\Http\Controllers\Navigation\NavigationController;
 //use App\Http\Controllers\Relation\RelationController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Widget\WidgetController;
-use App\Libraries\MyLib\MyPluralizer;
+use App\Libraries\MyLib\PluralUtility;
 use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TextUtility;
 use App\Libraries\Utilities\TypeUtility;

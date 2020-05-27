@@ -12,7 +12,7 @@ use App\Http\Controllers\Item\ItemController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Widget\WidgetController;
-use App\Libraries\MyLib\MyPluralizer;
+use App\Libraries\MyLib\PluralUtility;
 use App\Libraries\Utilities\BuiltInMethods;
 use App\Libraries\Utilities\CarbonDateUtility;
 use App\Libraries\Utilities\CodeUtilities\MethodUtility;

@@ -8,7 +8,7 @@ use App\Http\Controllers\Base\PropertyController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\Widget\WidgetController;
-use App\Libraries\MyLib\MyPluralizer;
+use App\Libraries\MyLib\PluralUtility;
 use App\Translation;
 use App\User;
 use App\UserProperty;
@@ -193,7 +193,7 @@ class UserPropertyController extends Controller
         $urls['update'] = route("users.settings.update", ['type' => $type]);
         $data['urls'] = $urls;
 
-        $data['page_title'] = trans('messages.list of') . trans('messages.settings') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+        $data['page_title'] = trans('messages.list of') . trans('messages.settings') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
         $data['breadcrumbs'] = [
             [
@@ -201,7 +201,7 @@ class UserPropertyController extends Controller
                 'url' => route('admin.index')
             ],
             [
-                'title' => trans('messages.settings') . MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                'title' => trans('messages.settings') . PluralUtility::plural($bt_id->locales[App::getLocale()]),
                 'url' => ''
             ]
         ];
@@ -272,7 +272,7 @@ class UserPropertyController extends Controller
         $bt_id = UserType::where('title', '=', $type)->first();
         $bt_id->locales= (array)json_decode($bt_id->locales);
 
-        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
         $data['breadcrumbs'] = [
             [
@@ -280,7 +280,7 @@ class UserPropertyController extends Controller
                 'url' => route('admin.index')
             ],
             [
-                'title' => trans('messages.properties') . MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                'title' => trans('messages.properties') . PluralUtility::plural($bt_id->locales[App::getLocale()]),
                 'url' => ''
             ]
         ];
@@ -309,7 +309,7 @@ class UserPropertyController extends Controller
 
         $bt_id = UserType::where('title', '=', $type)->first();
         $bt_id->locales= (array)json_decode($bt_id->locales);
-        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
         $data['breadcrumbs'] = [
             [
@@ -317,7 +317,7 @@ class UserPropertyController extends Controller
                 'url' => route('admin.index')
             ],
             [
-                'title' => trans('messages.properties') . MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                'title' => trans('messages.properties') . PluralUtility::plural($bt_id->locales[App::getLocale()]),
                 'url' => route('data.properties.index', ['type' => $type])
             ],
             [
@@ -501,7 +501,7 @@ class UserPropertyController extends Controller
         $bt_id = UserType::where('title', '=', $type)->first();
         $bt_id->locales= (array)json_decode($bt_id->locales);
 
-        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural($bt_id->locales[App::getLocale()]);
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
 
         $data['breadcrumbs'] = [
             [
@@ -509,7 +509,7 @@ class UserPropertyController extends Controller
                 'url' => route('admin.index')
             ],
             [
-                'title' => trans('messages.properties') . MyPluralizer::plural($bt_id->locales[App::getLocale()]),
+                'title' => trans('messages.properties') . PluralUtility::plural($bt_id->locales[App::getLocale()]),
                 'url' => route('data.properties.index', ['type' => $type])
             ],
             [
