@@ -5,8 +5,10 @@ namespace App\Libraries\Utilities;
 
 
 use App\Libraries\Utilities\DatabaseUtilities\TableUtility;
+use App\Rules\CheckLanguage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Route;
 
 class ItemUtility
 {
@@ -346,6 +348,124 @@ class ItemUtility
 
         return $actions;
     }
+
+    public static function getPermissions($type)
+    {
+        $permissions = [];
+        $permissions['index'] = "items.index" . ":" . $type;
+        $permissions['show'] = "items.show" . ":" . $type;
+        $permissions['create'] = "items.create" . ":" . $type;
+        $permissions['store'] = "items.store" . ":" . $type;
+        $permissions['update'] = "items.update" . ":" . $type;
+        $permissions['edit'] = "items.edit" . ":" . $type;
+        $permissions['change'] = "items.change" . ":" . $type;
+        $permissions['destroy'] = "items.destroy" . ":" . $type;
+        $permissions['properties.store'] = "items.properties.store" . ":" . $type;
+        $permissions['settings.edit'] = "items.settings" . ":" . $type;
+
+        return $permissions;
+
+    }
+
+    public static function getUrls($type, $id = 0, $route_name = "current", $route_parameters = null)
+    {
+
+        if ($route_name == "current") {
+            $actions = ItemUtility::getItemActions(Route::currentRouteName(), Route::current()->parameters());
+        } else {
+            $actions = ItemUtility::getItemActions($route_name, $route_parameters);
+        }
+
+        $urls = [];
+        $urls['index'] = route("items.index", ['type' => $type]);
+        if (!is_null($actions) && in_array('create', $actions)) {
+            $urls['create'] = route("items.create", ['type' => $type]);
+        }
+
+        $urls['store'] = route("items.store", ['type' => $type]);
+        $urls['update'] = route("items.update", ['type' => $type, 'id' => $id]);
+        $urls['change'] = route("items.change", ['type' => $type]);
+
+        if (!is_null($actions) && in_array('destroy', $actions)) {
+            $urls['destroy'] = route("items.destroy", ['type' => $type]);
+        }
+
+        $urls['properties.store'] = route("items.properties.store", ['type' => $type]);
+        $urls['settings.edit'] = route("items.settings.edit", ['type' => $type]);
+
+        return $urls;
+
+    }
+
+
+    public static function getItemsValidationRules($route = "current", $parameters = null)
+    {
+
+        if ($route == "current") {
+            $route = DB::table('routes')
+                ->where('name', '=', Route::currentRouteName())
+                ->where('parameters', '=', json_encode(Route::current()->parameters))->get();
+        } else {
+            $route = DB::table('routes')
+                ->where('name', '=', $route)
+                ->where('parameters', '=', json_encode($parameters))->get();
+        }
+
+
+        if (count($route) == 0 || count($route) >= 2) {
+            return [];
+        }
+
+        $groups = DB::table('validation_groups')
+            ->join('validation_group_items', 'validation_group_items.group', '=', 'validation_groups.id')
+            ->join('validation_items', 'validation_items.id', '=', 'validation_group_items.item')
+            ->where('validation_groups.route', '=', $route[0]->id)
+            ->get(['validation_items.*']);
+
+        $rules = [];
+        foreach ($groups as $prop) {
+            if ($prop->rules != '') {
+                $final_arr = [];
+                $arr = explode('|', $prop->rules);
+                foreach ($arr as $ar) {
+                    if ($ar == 'app_unique') {
+//                        $final_arr [] = new AppUnique($base_type, $id, $prop->id);
+                    } elseif (TextUtility::startsWith($ar, 'check_language')) {
+                        $final_arr [] = new CheckLanguage(['fa', 'en', 'ar'], 'fa');
+                    } elseif (TextUtility::startsWith($ar, 'required_for_login')) {
+
+                    } else {
+                        $final_arr [] = $ar;
+                    }
+                }
+
+                $rules[$prop->field] = $final_arr;
+            }
+        }
+        return $rules;
+
+    }
+
+
+    public static function getRequiredComponents($groups)
+    {
+        $components = [];
+        foreach ($groups as $group) {
+            foreach ($group->properties as $property) {
+
+                if ($property->rules['type'] == "select-image" and !isset($components['files']['images'])) {
+                    $components['files']['images'] = DB::table('images')->get(['id', 'title', 'path']);
+                } elseif ($property->rules['type'] == "select-video" and !isset($components['files']['videos'])) {
+                    $components['files']['videos'] = DB::table('videos')->get(['id', 'title', 'path']);
+                } elseif ($property->rules['type'] == "select-flash" and !isset($components['files']['flashes'])) {
+                    $components['files']['flashes'] = DB::table('flashes')->get(['id', 'title', 'path']);
+                }
+            }
+        }
+        return $components;
+    }
+
+
 
 
 }

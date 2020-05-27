@@ -8,7 +8,6 @@ use App\Http\Controllers\Base\ComponentController;
 use App\Http\Controllers\Base\PropertyController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Navigation\NavigationController;
-use App\Http\Controllers\Service\ServiceController;
 use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\MyLib\MyPluralizer;
 use App\Libraries\Utilities\TextUtility;

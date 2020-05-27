@@ -6,13 +6,8 @@
     @else
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/vendors.min.css')}}">
     @endif
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/responsive.dataTables.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/icheck.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/custom.css')}}">
-    <!-- END: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/toggle/switchery.min.css')}}">
+
+
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/extensions/sweetalert.css')}}">
 
     @yield('sub-vendor-css')
@@ -21,18 +16,28 @@
 @section("header")
 
     @if(in_array(App::getLocale(),config('base.rtl_locales')))
+        <!-- BEGIN: Page CSS-->
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/core/menu/menu-types/vertical-menu-modern.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/core/colors/palette-gradient.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/pages/app-contacts.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/plugins/forms/switch.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/pages/gallery.min.css')}}">
+        <!-- END: Page CSS-->
+
+        <!-- BEGIN: Custom CSS-->
         <link rel="stylesheet" type="text/css" href="../../../assets/css/style-rtl.css">
+        <!-- END: Custom CSS-->
     @else
+        <!-- BEGIN: Page CSS-->
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/core/menu/menu-types/vertical-menu-modern.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/core/colors/palette-gradient.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/pages/app-contacts.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/plugins/forms/switch.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/pages/gallery.min.css')}}">
+        <!-- END: Page CSS-->
+
+        <!-- BEGIN: Custom CSS-->
         <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+        <!-- END: Custom CSS-->
+
     @endif
+
 
     @yield('sub-header')
 
@@ -40,128 +45,29 @@
 @endsection
 @section("main")
 
+    <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-wrapper">
             @include('admin.layouts.widgets.breadcrumbs', ['page_title'=>$page_title , 'breadcrumbs'=> $breadcrumbs])
-            <div class="content-detached content-right">
-                <div class="content-body">
-                    <div class="content-overlay"></div>
-                    <section class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="bug-list-search">
-                                        <div class="bug-list-search-content">
-                                            <div class="sidebar-toggle d-block d-lg-none"><i class="ft-menu font-large-1"></i></div>
-                                            <form action="#">
-                                                <div class="position-relative">
-                                                    <input type="search" id="search-contacts" class="form-control" placeholder="Search contacts...">
-                                                    <div class="form-control-position">
-                                                        <i class="fa fa-search text-size-base text-muted la-rotate-270"></i>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="row all-contacts">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-{{--                                            @include('admin.items.widgets.room')--}}
-                                            @if(isset($widgets))
-                                                @include($widgets,['datas'=>$datas])
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div class="sidebar-detached sidebar-left">
-                <div class="sidebar">
-                    <div class="bug-list-sidebar-content">
-                        <!-- Predefined Views -->
-                        <div class="card">
-                            <div class="card-head">
-                                <div class="media p-1">
-                                    <div class="media-left pr-1">
-                                    </div>
-                                    <div class="media-body media-middle">
-                                        <h5 class="media-heading">{{$page_title}}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <p class="lead">اطلاعات:</p>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-<span class="badge badge-primary badge-pill float-right">
-{{count($datas)}}
-</span>
-                                        <a href="#">
-                                            تعداد آیتم ها
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-body ">
-                                <p class="lead">عملیات:</p>
-                                <ul class="list-group">
-                                    @can($permissions['create'])
-                                        @if(isset($urls['create']))
-                                            <li><a href="{{$urls['create']}}" class="list-group-item">جدید</a></li>
-                                        @endif
-                                    @endcan
-                                </ul>
-                            </div>
-                            <div class="card-body ">
-                                <p class="lead">فیلتر ها:</p>
-                                <ul class="list-group">
-                                    @isset($filters)
-                                        @foreach($filters as $filter1)
-                                            @foreach($filter1['properties'] as $property)
-                                                @foreach($property->filters as $filter)
-                                                    @if($filter['type'] == 'a')
-                                                        <li>
-                                                            <a href="{{$filter['url']}}" class="list-group-item">
-                                                                {{isset($filter['title'][App::getLocale()]) ? $filter['title'][App::getLocale()] : '' }}
-                                                            </a>
-                                                        </li>
-                                                    @endif
-                                                @endforeach
-                                            @endforeach
-                                        @endforeach
-                                    @endisset
-                                </ul>
+            <div class="content-body">
+                <section id="hover-effects" class="card">
+                    <div class="card-content collapse show">
+                        <div class="card-body my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                            <div class="grid-hover row">
+                                @foreach($datas as $data)
+                                    @if(isset($widgets))
+                                        @include($widgets, ['data'=>$data])
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
+    <!-- END: Content-->
 
-
-    @isset($modals)
-        @foreach($modals as $modal)
-            @include('admin.components.modal-form', ['modal'=>$modal])
-        @endforeach
-    @endisset
-
-    @include('admin.components.modal-reserve-action')
-    @include('admin.components.mdl-show-check')
-
-
-    {{--    @yield('sub-main')--}}
 
 @endsection
 @section('vendor-js')
@@ -172,15 +78,8 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('admin-assets/vendors/js/tables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('admin-assets/vendors/js/extensions/jquery.raty.js')}}"></script>
-    <script src="{{asset('admin-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('admin-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
-    <script src="{{asset('admin-assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js')}}"></script>
-    <script src="{{asset('admin-assets/vendors/js/forms/icheck/icheck.min.js')}}"></script>
-    <!-- END: Page Vendor JS-->
-    <script src="{{asset('admin-assets/vendors/js/forms/toggle/switchery.min.js')}}"></script>
     <script src="{{asset('admin-assets/vendors/js/extensions/sweetalert.min.js')}}"></script>
+    <!-- END: Page Vendor JS-->
 
 
     @yield('sub-vendor-js')
@@ -199,11 +98,6 @@
 
 @section("footer")
 
-    <!-- BEGIN: Page JS-->
-    <script src="{{asset('admin-assets/js/scripts/pages/app-contacts.min.js')}}"></script>
-    <!-- END: Page JS-->
-
-    <script src="{{asset('admin-assets/js/scripts/forms/switch.min.js')}}"></script>
 
     @yield('sub-footer')
 

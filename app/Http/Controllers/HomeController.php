@@ -211,8 +211,8 @@ class HomeController extends Controller
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data['datas'] = ItemUtility::getItems('room');
-        return view('public.themes.hotel-new.views.data.rooms', $data);
+        $data['datas'] = ItemUtility::getItems('news');
+        return view('public.themes.hotel-new.views.data.newses', $data);
     }
 
     public function showNews($id)
@@ -221,8 +221,8 @@ class HomeController extends Controller
         self::getBaseInformation($data);
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data['object'] = ItemUtility::getItem('room', $id);
-        return view('public.themes.hotel-new.views.data.room', $data);
+        $data['object'] = ItemUtility::getItem('news', $id);
+        return view('public.themes.hotel-new.views.data.news', $data);
     }
 
 

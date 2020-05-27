@@ -96,14 +96,6 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     /////////////***************ADMIN**********************
 
     //***************ITEM**********************
-    //TYPE
-    Route::get('/admin/items', 'Item\ItemTypeController@index')->name('items.types.index');
-    Route::get('/admin/items/{id}', 'Item\ItemTypeController@show')->name('items.types.show')->where('id', '[0-9]+');
-    Route::get('/admin/items/create', 'Item\ItemTypeController@create')->name('items.types.create');
-    Route::get('/admin/items/{id?}/edit', 'Item\ItemTypeController@edit')->name('items.types.edit');
-    Route::post('/admin/items/store', 'Item\ItemTypeController@store')->name('items.types.store');
-    Route::post('/admin/items/{id}/update', 'Item\ItemTypeController@update')->name('items.types.update');
-    Route::post('/admin/items/destroy', 'Item\ItemTypeController@destroy')->name('items.types.destroy');
     //PROPERTY
     Route::get('/admin/items/{type}/properties', 'Item\ItemPropertyController@index')->name('items.properties.index');
     Route::get('/admin/items/{type}/properties/{id}', 'Item\ItemPropertyController@show')->name('items.properties.show')->where('id', '[0-9]+');
@@ -128,14 +120,6 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     /////////////***************ITEM**********************
 
     //***************USERS**********************
-    //TYPE
-    Route::get('/admin/users', 'User\UserTypeController@index')->name('users.types.index');
-    Route::get('/admin/users/{id}', 'User\UserTypeController@show')->name('users.types.show')->where('id', '[0-9]+');
-    Route::get('/admin/users/create', 'User\UserTypeController@create')->name('users.types.create');
-    Route::get('/admin/users/{id?}/edit', 'User\UserTypeController@edit')->name('users.types.edit');
-    Route::post('/admin/users/store', 'User\UserTypeController@store')->name('users.types.store');
-    Route::post('/admin/users/{id}/update', 'User\UserTypeController@update')->name('users.types.update');
-    Route::post('/admin/users/destroy', 'User\UserTypeController@destroy')->name('users.types.destroy');
 
     //PROPERTY
     Route::get('/admin/users/{type}/properties', 'User\UserPropertyController@index')->name('users.properties.index');
@@ -195,15 +179,6 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
 
     //***************SERVICES**********************
 
-
-    //TYPE
-    Route::get('/admin/services', 'Service\ServiceTypeController@index')->name('services.types.index');
-    Route::get('/admin/services/{id}', 'Service\ServiceTypeController@show')->name('services.types.show')->where('id', '[0-9]+');
-    Route::get('/admin/services/create', 'Service\ServiceTypeController@create')->name('services.types.create');
-    Route::get('/admin/services/{id?}/edit', 'Service\ServiceTypeController@edit')->name('services.types.edit');
-    Route::post('/admin/services/store', 'Service\ServiceTypeController@store')->name('services.types.store');
-    Route::post('/admin/services/{id}/update', 'Service\ServiceTypeController@update')->name('services.types.update');
-    Route::post('/admin/services/destroy', 'Service\ServiceTypeController@destroy')->name('services.types.destroy');
 
     //PROPERTY
     Route::get('/admin/services/{type}/properties', 'Service\ServicePropertyController@index')->name('services.properties.index');
