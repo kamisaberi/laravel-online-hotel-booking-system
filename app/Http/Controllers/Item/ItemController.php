@@ -43,6 +43,8 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CustomerController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "image") {
             return ((new App\Http\Controllers\ImageController())->index($request, $type, $filters));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "video") {
             return ((new App\Http\Controllers\VideoController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "flash") {
@@ -87,6 +89,8 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CustomerController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "image") {
             return ((new App\Http\Controllers\ImageController())->create($type));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "video") {
             return ((new App\Http\Controllers\VideoController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "flash") {
@@ -138,6 +142,8 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CustomerController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "image") {
             return ((new App\Http\Controllers\ImageController())->store($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "video") {
             return ((new App\Http\Controllers\VideoController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "flash") {
@@ -208,6 +214,8 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CustomerController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "image") {
             return ((new App\Http\Controllers\ImageController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->edit($type,$id));
         } elseif (Str::lower(Str::singular($type)) == "video") {
             return ((new App\Http\Controllers\VideoController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "flash") {
@@ -253,6 +261,8 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CustomerController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "image") {
             return ((new App\Http\Controllers\ImageController())->update($request, $type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "video") {
             return ((new App\Http\Controllers\VideoController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "flash") {
@@ -304,6 +314,8 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CustomerController())->destroy($request , $type));
         } elseif (Str::lower(Str::singular($type)) == "image") {
             return ((new App\Http\Controllers\ImageController())->destroy($request , $type));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "video") {
             return ((new App\Http\Controllers\VideoController())->destroy($request , $type));
         } elseif (Str::lower(Str::singular($type)) == "flash") {
