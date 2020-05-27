@@ -16,7 +16,7 @@
                 </td>
                 <td>
                     {{$data->title}}
-                </td>
+                </td>a
 
                 <td>
 

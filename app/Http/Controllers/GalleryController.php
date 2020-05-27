@@ -42,7 +42,7 @@ class GalleryController extends Controller
         $data['permissions'] = ItemUtility::getPermissions($type);
         $data ['datas'] = ItemUtility::getItems($type);
 
-        return view("admin.items.views.index", $data);
+        return view("admin.items.views.subviews.gallery", $data);
     }
 
 

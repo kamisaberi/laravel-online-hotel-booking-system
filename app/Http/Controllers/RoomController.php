@@ -44,12 +44,11 @@ class RoomController extends Controller
 
         $data ['widgets'] = 'admin.items.widgets.room';
 
-
         $data['urls'] = ItemUtility::getUrls($type);
         $data['permissions'] = ItemUtility::getPermissions($type);
         $data ['datas'] = ItemUtility::getItems($type);
 
-        return view("admin.items.views.index", $data);
+        return view("admin.items.views.subviews.room", $data);
     }
 
 

@@ -28,33 +28,25 @@ class ReserveController extends Controller
 
         $data['type'] = $type;
 
-        if (!\Request::ajax()) {
+        $data['page_title'] = trans('messages.list of') . Str::plural($type);
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => Str::plural($type),
+                'url' => ''
+            ]
+        ];
 
-            $data['page_title'] = trans('messages.list of') . Str::plural($type);
-            $data['breadcrumbs'] = [
-                [
-                    'title' => trans('messages.navigation_titles.dashboard'),
-                    'url' => route('admin.index')
-                ],
-                [
-                    'title' => Str::plural($type),
-                    'url' => ''
-                ]
-            ];
-
-            $data ['widgets'] = 'admin.items.widgets.reserve';
-
-        }
+        $data ['widgets'] = 'admin.items.widgets.reserve';
 
         $data['urls'] = ItemUtility::getUrls($type);
         $data['permissions'] = ItemUtility::getPermissions($type);
         $data ['datas'] = ItemUtility::getItems($type);
 
-        if (!\Request::ajax()) {
-            return view("admin.items.views.index", $data);
-        } else {
-            return response()->json(['error' => 0, 'message' => $data]);
-        }
+        return view("admin.items.views.subviews.reserve", $data);
     }
 
     public function create($type)
