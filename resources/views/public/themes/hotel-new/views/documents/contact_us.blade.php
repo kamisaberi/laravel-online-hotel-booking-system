@@ -77,7 +77,7 @@
                     <br>
                     <br>
                     <p style="margin: 0 !important; padding: 0 20px !important; " class="col s12 center">
-                        {{$application['description']->value}}
+                        {{$website->description}}
                     </p>
 
 

@@ -80,7 +80,7 @@
                     <h6>{{__('layout.public.get to know us a bit')}}</h6>
                     <span>
                         {{--{{$data['description']->title}}--}}
-                        {{$application->description}}
+                        {{$website->description}}
     </span>
                 </div>
                 <div class="col s12 l7">

@@ -62,19 +62,28 @@
                                     <div class="card-body">
                                         <form method="post" class="form-horizontal form-simple" action="{{route('auth.login', ['type'=>$type->title])}}" novalidate>
                                             {{csrf_field()}}
-                                            @foreach($properties as $property)
-                                                <fieldset class="form-group position-relative has-icon-left mb-1">
-                                                    <input type="{{$property->input_type}}"
-                                                           class="form-control form-control-lg"
-                                                           id="{{$property->title}}"
-                                                           name="{{$property->title}}"
-                                                           placeholder="{{isset($property->locales[App::getLocale()]) ? $property->locales[App::getLocale()]:$property->title}}"
-                                                           required>
-                                                    <div class="form-control-position">
-                                                        <i class="ft-user"></i>
-                                                    </div>
-                                                </fieldset>
-                                            @endforeach
+                                            <fieldset class="form-group position-relative has-icon-left mb-1">
+                                                <input type="text"
+                                                       class="form-control form-control-lg"
+                                                       id="mobile"
+                                                       name="mobile"
+                                                       placeholder="mobile or email"
+                                                       required>
+                                                <div class="form-control-position">
+                                                    <i class="ft-user"></i>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left mb-1">
+                                                <input type="password"
+                                                       class="form-control form-control-lg"
+                                                       id="password"
+                                                       name="password"
+                                                       placeholder="password"
+                                                       required>
+                                                <div class="form-control-position">
+                                                    <i class="ft-user"></i>
+                                                </div>
+                                            </fieldset>
                                             <div class="form-group row">
                                                 <div class="col-sm-6 col-12 text-center text-sm-left" hidden>
                                                     <fieldset>

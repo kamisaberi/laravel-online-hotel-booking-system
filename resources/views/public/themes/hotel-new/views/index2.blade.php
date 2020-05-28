@@ -173,9 +173,8 @@
                 <div class="col s12 l5 address-part center-on-small-only ">
                     <h6>کمی با ما آشنا شوید</h6>
                     <span>
-{{$application->description}}
-
-    </span>
+                        {{$website->description}}
+                    </span>
                 </div>
                 <div class="col s12 l7">
                     <div id='map' style='width: 100%; height: 370px;'></div>

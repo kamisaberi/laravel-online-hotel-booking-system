@@ -481,7 +481,7 @@ class UserController extends Controller
         if (Auth::check() == false)
             return null;
         $user = User::find(Auth::id());
-        $user->properties = UserController::getDataProperties3('user', Auth::id());
+//        $user->properties = User::find(Auth::id());
         return $user;
 
     }

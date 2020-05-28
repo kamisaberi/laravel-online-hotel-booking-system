@@ -14,7 +14,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Validator;
 
-class AuthController extends Controller
+class AuthTController extends Controller
 {
     use  RedirectsUsers;
 
@@ -49,31 +49,85 @@ class AuthController extends Controller
      */
     public function login(Request $request, $type)
     {
-        $mobile = $request->input('mobile');
-        $password = $request->input('password');
-        $rules = ['mobile' => 'required', 'password' => 'required'];
+
+        $bt_id = UserType::where('title', '=', $type)->first();
+        $bt_id->actions = PropertyController::parseTypeActions($bt_id->actions);
+        $bt_id->triggers = TypeUtility::parseTriggers($bt_id->triggers);
+        $bt_id->locales = (array)json_decode($bt_id->locales);
+        $props = UserController::getProperties($type);
+
+        $rules = [];
+        $prperties = [];
+//        $non_pass_prop_id = 0;
+        $possible_user_id = 0;
+        foreach ($props as $prop) {
+            if (is_array($prop->validation_rules)) {
+                if (in_array('required_for_login', $prop->validation_rules)) {
+                    $rules[$prop->title] = 'required';
+                    $prperties[] = $prop;
+                    if ($prop->input_type != 'password')
+                        $non_pass_prop_id = $prop;
+
+                }
+            } else {
+                if ($prop->validation_rules == 'required_for_login') {
+                    $rules[$prop->title] = 'required';
+                    $prperties[] = $prop;
+                    if ($prop->input_type != 'password')
+                        $non_pass_prop_id = $prop;
+
+                }
+            }
+        }
+
+//        dd($rules);
         $validate = Validator::make($request->all(), $rules);
 
         if ($validate->passes()) {
 
-            $user = User::where('mobile', '=', $mobile)->get();
-            if (Hash::check($password, $user[0]->password) == true) {
+
+            $prp_ids = [];
+            foreach ($prperties as $prperty) {
+                $prp_ids [] = $prperty->id;
+            }
+//            dd($prp_ids);
+            $assgnds = DB::table('user_assigned_properties')
+                ->whereIn('property', $prp_ids)
+                ->get();
+
+            foreach ($assgnds as $assgnd) {
+                if ($assgnd->property == $non_pass_prop_id->id && $assgnd->value == $request->input($non_pass_prop_id->title))
+                    $possible_user_id = $assgnd->user;
+            }
+
+//            dd($possible_user_id);
+            $can_login = false;
+//                $can_login = true;
+            foreach ($prperties as $prperty) {
+                if ($prperty->input_type == 'password') {
+                    foreach ($assgnds as $assgnd) {
+                        if ($assgnd->property == $prperty->id) {
+                            if (Hash::check($request->input($prperty->title), $assgnd->value) == true && $assgnd->user == $possible_user_id) {
+                                $can_login = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            if ($can_login) {
+                $user = User::where('id', '=', $possible_user_id)->get();
                 \Auth::login($user[0]);
                 return redirect()->intended($this->redirectPath());
             } else {
                 return redirect("/login/$type")->with('error', 'Invalid Email address or Password');
             }
-
-        } else {
-            return redirect("/login/$type")->with('error', 'Invalid Email address or Password');
         }
     }
 
-
     /* GET
     */
-    public
-    function logout(Request $request)
+    public function logout(Request $request)
     {
         if (\Auth::check()) {
             \Auth::logout();
@@ -84,9 +138,8 @@ class AuthController extends Controller
     }
 
     /* GET
-    */
-    public
-    function registrationForm($type)
+*/
+    public function registrationForm($type)
     {
         $data = [];
         $bt_id = UserType::where('title', '=', $type)->first();
@@ -122,5 +175,5 @@ class AuthController extends Controller
     }
 
 
-//
+    //
 }

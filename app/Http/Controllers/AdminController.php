@@ -48,40 +48,19 @@ class AdminController extends Controller
 
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-
         $data['customer_count'] = 0;
         $data['user_count'] = 0;
-//        $data['gallery_count'] = DocumentController::getDocumentsCount(config('base.document_types.gallery'));
-
-//        $d = ServiceController::getServices('reserve');
-//        return $d;
-//        $data = array_merge($data, $d);
-
-        $data['users'] = UserController::get('user');
-        $data['customers'] = UserController::getItems('customer');
-
-//        ItemController::checkType('room');
-//        ItemController::checkTables();
+        $data['users'] = ItemUtility::getItems('user');
+        $data['customers'] = ItemUtility::getItems('customer');
         $data ['rooms'] = ItemUtility::getItems('room');
-
-//        $data['rooms'] = ItemController::getItems('room');
-
         $d = date('d');
         $m = date('m');
         $y = date('Y');
-
         $gr_st_date = new DateTime("$m/$d/$y");
         $today_timestamp = round($gr_st_date->getTimestamp() * 1000, 0);
-
         $data['today'] = $d . "-" . $m . '-' . $y;
-
-//        $bt_id = ServiceType::where('title', '=', 'reserve')->first();
-//        $bt_id->actions = PropertyController::parseTypeActions($bt_id->actions);
-//        $bt_id->triggers = TypeUtility::parseTriggers($bt_id->triggers);
-
         $data ['reserves'] = [];
         $data['service_type'] = "reserves";
-
 //        return $data;
         return view('admin.index', $data);
     }

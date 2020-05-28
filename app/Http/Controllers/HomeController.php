@@ -35,9 +35,10 @@ class HomeController extends Controller
         $data['facility_links'] = NavigationController::getNavigation('facility-links');
         $data['navigations'] = NavigationController::getNavigation('public');
         $data['mobile_navigations'] = NavigationController::getNavigation('mobile');
+
         $data['website'] = ItemUtility::getItems('website')[0];
+
         $data['hotel'] = ItemUtility::getItems('hotel')[0];
-        $data['application'] = ItemUtility::getItems('application')[0];
         $data['map'] = ItemUtility::getItems('map')[0];
         $data['map_locations'] = ItemUtility::getItems('map_locations');
         $data['current_date'] = DateUtility::toJalali();
@@ -64,11 +65,14 @@ class HomeController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
+
         self::getBaseInformation($data);
+
         $data['home_page_middle_navigations'] = NavigationController::getNavigation('home-page-middle');
         $data['rooms'] = ItemUtility::getItems('room');
 //        $data ['slides'] = DocumentController::getItems3('second-slide-show');
 //        $data ['galleries'] = DocumentController::getItems3('gallery');
+//        return $data;
         return view('public.themes.hotel-new.views.index2', $data);
     }
 

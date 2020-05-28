@@ -44,37 +44,6 @@
 
 
 
-
-
-    <script>
-        $(function () {
-
-            $('.weather-temperature').openWeather({
-                lang: 'ru',
-                city: 'Los Angeles',
-                placeTarget: '.weather-place',
-                units: 'c',
-                windSpeedUnit: 'Mps',
-                descriptionTarget: '.weather-description',
-                minTemperatureTarget: '.weather-min-temperature',
-                maxTemperatureTarget: '.weather-max-temperature',
-                windSpeedTarget: '.weather-wind-speed',
-                humidityTarget: '.weather-humidity',
-                sunriseTarget: '.weather-sunrise',
-                sunsetTarget: '.weather-sunset',
-                iconTarget: '.weather-icon',
-                customIcons: '/img/icons/weather/',
-                success: function () {
-                    $('.weather-temperature').show();
-                },
-                error: function (message) {
-                    console.log(message);
-                }
-            });
-
-        });
-    </script>
-
     <script>
 
         $(document).ready(function () {
@@ -399,10 +368,6 @@
         });
 
     </script>
-
-
-
-
 
 
 @endsection

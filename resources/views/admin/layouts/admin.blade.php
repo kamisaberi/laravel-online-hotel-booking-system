@@ -362,7 +362,7 @@
                                     <span class="avatar avatar-online">
                                         <img src="{{asset('admin-assets/images/portrait/small/avatar-s-1.png')}}" alt="avatar"><i></i>
                                     </span>
-                                    <span class="user-name">{{$user->properties['name']->value}}</span>
+                                    <span class="user-name">{{$user->name}} {{$user->last_name}}</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#" hidden>
