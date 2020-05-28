@@ -22,6 +22,7 @@
         "jenssegers/agent": "^2.6",
         "jimmyjs/laravel-report-generator": "^1.1",
         "kavenegar/laravel": "^1.1",
+        "larabook/gateway": "^3.4",
         "laravel-notification-channels/webpush": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
