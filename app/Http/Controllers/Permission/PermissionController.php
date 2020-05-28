@@ -86,9 +86,8 @@ class PermissionController extends Controller
 
         $data['navs'] = $navs;
 
-        $pages = DocumentType::where('parent', '=', 5)->get();
-
-        $data['pages'] = $pages;
+//        $pages = DocumentType::where('parent', '=', 5)->get();
+//        $data['pages'] = $pages;
 
 
         $data['page_title'] = trans('messages.list of') . 'سطح دسترسی';

@@ -171,7 +171,7 @@
                                                 <select class="form-control" id="pages" name="pages">
                                                     <option value="" disabled selected>انتخاب برگه</option>
                                                     @foreach($pages as $page)
-                                                        <option value="{{$page->id}}">{{$page->properties['title']->value}}</option>
+                                                        <option value="{{$page->id}}">{{$page->title}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -185,7 +185,7 @@
                                                     <option value="filter">ایجاد فیلتر</option>
                                                     <optgroup title="انتخاب خبر" label="انتخاب خبر">
                                                         @foreach($news as $new)
-                                                            <option value="{{$new->id}}">{{$new->properties['title']->value}}</option>
+                                                            <option value="{{$new->id}}">{{$new->title}}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
@@ -212,7 +212,7 @@
                                                 <select class="form-control" id="rooms" name="rooms">
                                                     <option value="" disabled selected>انتخاب اتاق</option>
                                                     @foreach($rooms as $room)
-                                                        <option value="{{$room->id}}">{{$room->properties['title']->value}}</option>
+                                                        <option value="{{$room->id}}">{{$room->title}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -325,7 +325,7 @@
 
     <script>
         var selected_properties = '';
-        var news_properties = @JSON($news_properties);
+        {{--var news_properties = @JSON($news_properties);--}}
         var base_locale = '{{App::getLocale()}}';
         @php($filter_operators= config('filter.operators'))
         var filter_operators = @JSON($filter_operators);
@@ -335,62 +335,62 @@
         var filter_operators_locale=@JSON($filter_operators_locale);
     </script>
 
-    @foreach($news_properties as $property)
-        @if($property->input_type == 'nestable')
+{{--    @foreach($news_properties as $property)--}}
+{{--        @if($property->input_type == 'nestable')--}}
 
-            <script>
-                NESTABLE_ACTION.init({'nestable': "#nestable3", 'url_update': "{{$property->url}}"});
-            </script>
+{{--            <script>--}}
+{{--                NESTABLE_ACTION.init({'nestable': "#nestable3", 'url_update': "{{$property->url}}"});--}}
+{{--            </script>--}}
 
-            <script>
-                var lastId = 0;
-                $(document).ready(function () {
-                    var obj = '{{$property->values}}';
-                    var obj = obj.replace(/&quot;/g, '\"');
-                    var output = '';
+{{--            <script>--}}
+{{--                var lastId = 0;--}}
+{{--                $(document).ready(function () {--}}
+{{--                    var obj = '{{$property->values}}';--}}
+{{--                    var obj = obj.replace(/&quot;/g, '\"');--}}
+{{--                    var output = '';--}}
 
-                    function buildItem(item) {
+{{--                    function buildItem(item) {--}}
 
-                        lastId = Math.max(item.id, lastId);
+{{--                        lastId = Math.max(item.id, lastId);--}}
 
-                        $ttles = item.title.split(',');
-                        $title_to_print = '';
-                        $.each($ttles, function (indx, val) {
-                            $ttl = val.split(':');
-                            if ($ttl[0] == base_locale) {
-                                $title_to_print = $ttl[1];
-                            }
-                        });
+{{--                        $ttles = item.title.split(',');--}}
+{{--                        $title_to_print = '';--}}
+{{--                        $.each($ttles, function (indx, val) {--}}
+{{--                            $ttl = val.split(':');--}}
+{{--                            if ($ttl[0] == base_locale) {--}}
+{{--                                $title_to_print = $ttl[1];--}}
+{{--                            }--}}
+{{--                        });--}}
 
-                        var html = "<li class='dd-item dd3-item' data-id='" + item.id + "' data-title='" + item.title + "'>";
-                        html += "<div class='dd-handle dd3-handle'></div>";
-                        html += `<div class="dd3-content" name="1"><div class="row"><div class="col col-md-1"><a href="#" class="delete-item"><i class="fa fa-remove"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-edit-category" data-backdrop="true" class="edit-item"><i class="fa fa-edit"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-add-category" data-backdrop="true"class="add-item"><i class="fa fa-plus"></i></a></div><div class="col col-md-9 item" style="text-align: left">${$title_to_print}</div></div></div>`;
+{{--                        var html = "<li class='dd-item dd3-item' data-id='" + item.id + "' data-title='" + item.title + "'>";--}}
+{{--                        html += "<div class='dd-handle dd3-handle'></div>";--}}
+{{--                        html += `<div class="dd3-content" name="1"><div class="row"><div class="col col-md-1"><a href="#" class="delete-item"><i class="fa fa-remove"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-edit-category" data-backdrop="true" class="edit-item"><i class="fa fa-edit"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-add-category" data-backdrop="true"class="add-item"><i class="fa fa-plus"></i></a></div><div class="col col-md-9 item" style="text-align: left">${$title_to_print}</div></div></div>`;--}}
 
-                        if (item.children) {
+{{--                        if (item.children) {--}}
 
-                            html += "<ol class='dd-list outer'>";
-                            $.each(item.children, function (index, sub) {
-                                html += buildItem(sub);
-                            });
-                            html += "</ol>";
+{{--                            html += "<ol class='dd-list outer'>";--}}
+{{--                            $.each(item.children, function (index, sub) {--}}
+{{--                                html += buildItem(sub);--}}
+{{--                            });--}}
+{{--                            html += "</ol>";--}}
 
-                        }
+{{--                        }--}}
 
-                        html += "</li>";
+{{--                        html += "</li>";--}}
 
-                        return html;
-                    }
+{{--                        return html;--}}
+{{--                    }--}}
 
-                    $.each(JSON.parse(obj), function (index, item) {
-                        output += buildItem(item);
-                    });
+{{--                    $.each(JSON.parse(obj), function (index, item) {--}}
+{{--                        output += buildItem(item);--}}
+{{--                    });--}}
 
-                    $('#nestable3 > .dd-list.dd3-list').html(output);
-                    $('#nestable3').nestable();
-                });
-            </script>
-        @endif
-    @endforeach
+{{--                    $('#nestable3 > .dd-list.dd3-list').html(output);--}}
+{{--                    $('#nestable3').nestable();--}}
+{{--                });--}}
+{{--            </script>--}}
+{{--        @endif--}}
+{{--    @endforeach--}}
 
 
 

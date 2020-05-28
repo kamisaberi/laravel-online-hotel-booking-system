@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Navigation;
 use App\DocumentType;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Data\DataController;
-use App\Http\Controllers\Document\DocumentController;
 use App\Http\Controllers\User\UserController;
+use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TextUtility;
 use App\Navigation;
 use App\NavigationItem;
@@ -305,11 +304,11 @@ class NavigationController extends Controller
         $data['navs'] = $navs;
 
 
-        $data['news'] = DataController::getItems3('news');
-        $data['pages'] = DocumentController::getItems3('pages');
-        $data['rooms'] = DataController::getItems3('room');
+        $data['news'] = ItemUtility::getItems('news');
+        $data['pages'] = ItemUtility::getItems('page');
+        $data['rooms'] = ItemUtility::getItems('room');
 
-        $data['news_properties'] = DataController::getProperties('news');
+//        $data['news_properties'] = DataController::getProperties('news');
 
 //        dd($data['pages'][0]->id);
 

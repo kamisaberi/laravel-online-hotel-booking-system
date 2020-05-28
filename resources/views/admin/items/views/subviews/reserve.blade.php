@@ -50,7 +50,13 @@
                                                     <tr>
                                                         <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
                                                         <th>
-                                                            title
+                                                            start date
+                                                        </th>
+                                                        <th>
+                                                            end date
+                                                        </th>
+                                                        <th>
+                                                            price
                                                         </th>
                                                         <th>Actions</th>
                                                     </tr>
@@ -62,7 +68,15 @@
                                                                 <input type="checkbox" class="input-chk check">
                                                             </td>
                                                             <td>
-                                                                {{$data->title}}
+                                                                {{$data->start_date}}
+                                                            </td>
+
+                                                            <td>
+                                                                {{$data->end_date}}
+                                                            </td>
+
+                                                            <td>
+                                                                {{$data->price}}
                                                             </td>
 
                                                             <td>
@@ -99,7 +113,13 @@
                                                     <tr>
                                                         <th></th>
                                                         <th>
-                                                            title
+                                                            start date
+                                                        </th>
+                                                        <th>
+                                                            end date
+                                                        </th>
+                                                        <th>
+                                                            price
                                                         </th>
 
                                                         <th>Actions</th>
