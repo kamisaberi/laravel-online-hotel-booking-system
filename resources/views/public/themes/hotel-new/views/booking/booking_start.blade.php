@@ -75,16 +75,16 @@
                                     <div id="app" class="col l6 s12">
                                         <input type="text"
                                                class="col l12 s11 dp2"
-                                               id="start_date"
-                                               name="start_date"
-                                               placeholder="تاریخ را انتخاب نمایید">
+                                               id="name"
+                                               name="name"
+                                               placeholder="نامو نام خانوادگی">
                                     </div>
                                     <div class="col l6 s12">
                                         <input type="text"
                                                class="col l12 s11 dp2"
-                                               id="start_date"
-                                               name="start_date"
-                                               placeholder="تاریخ را انتخاب نمایید">
+                                               id="mobile"
+                                               name="mobile"
+                                               placeholder="شماره همراه">
                                     </div>
                                 </div>
 
@@ -92,19 +92,20 @@
                                     <div id="app" class="col l6 s12">
                                         <input type="text"
                                                class="col l12 s11 dp2"
-                                               id="start_date"
-                                               name="start_date"
-                                               placeholder="تاریخ را انتخاب نمایید">
+                                               style="margin-top: 0 !important;"
+                                               id="ssn"
+                                               name="ssn"
+                                               placeholder="کد ملی">
                                     </div>
                                     <div class="col l6 s12">
                                         <input type="text"
+                                               style="margin-top: 0 !important;"
                                                class="col l12 s11 dp2"
-                                               id="start_date"
-                                               name="start_date"
-                                               placeholder="تاریخ را انتخاب نمایید">
+                                               id="email"
+                                               name="email"
+                                               placeholder="ایمیل">
                                     </div>
                                 </div>
-
 
                                 <input id="end_date" name="end_date" type="hidden" class="dp2 col l11 s11"
                                        placeholder="end date"

@@ -97,7 +97,19 @@ class HomeController extends Controller
 
     public function saveBooking(Request $request, $room)
     {
+
         $received_data = $request->toArray();
+
+        $c = new App\Customer();
+        $c->name = $received_data['name'];
+        $c->email = $received_data['email'];
+        $c->mobile = $received_data['mobile'];
+        $c->phone = $received_data['mobile'];
+        $c->ssn = $received_data['ssn'];
+        $c->password = bcrypt("1234");
+        $c->save();
+
+
         $received_data['room'] = $room;
         $separated_data = ItemUtility::separateReceivedData("reserve", $received_data);
         ItemUtility::storeData("reserve", $separated_data['item'], $separated_data['property']);
