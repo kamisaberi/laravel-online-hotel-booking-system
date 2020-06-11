@@ -62,6 +62,50 @@
                                                class="btn-small btn-red btn-submit btn-go-to-step-2">
                                     </div>
                                 </div>
+                                <hr>
+                                <div class="row">
+                                    <div id="app" class="col l12 s12">
+                                        <h5>
+                                            اطلاعات رزرو کننده
+                                        </h5>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div id="app" class="col l6 s12">
+                                        <input type="text"
+                                               class="col l12 s11 dp2"
+                                               id="start_date"
+                                               name="start_date"
+                                               placeholder="تاریخ را انتخاب نمایید">
+                                    </div>
+                                    <div class="col l6 s12">
+                                        <input type="text"
+                                               class="col l12 s11 dp2"
+                                               id="start_date"
+                                               name="start_date"
+                                               placeholder="تاریخ را انتخاب نمایید">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div id="app" class="col l6 s12">
+                                        <input type="text"
+                                               class="col l12 s11 dp2"
+                                               id="start_date"
+                                               name="start_date"
+                                               placeholder="تاریخ را انتخاب نمایید">
+                                    </div>
+                                    <div class="col l6 s12">
+                                        <input type="text"
+                                               class="col l12 s11 dp2"
+                                               id="start_date"
+                                               name="start_date"
+                                               placeholder="تاریخ را انتخاب نمایید">
+                                    </div>
+                                </div>
+
+
                                 <input id="end_date" name="end_date" type="hidden" class="dp2 col l11 s11"
                                        placeholder="end date"
                                        value="1399/02/05">
