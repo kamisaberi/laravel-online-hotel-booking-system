@@ -20,28 +20,9 @@ class AuthController extends Controller
 
     public function loginForm($type)
     {
+
         $data = [];
-        $bt_id = UserType::where('title', '=', $type)->first();
-        $bt_id->actions = PropertyController::parseTypeActions($bt_id->actions);
-        $bt_id->triggers = TypeUtility::parseTriggers($bt_id->triggers);
-        $bt_id->locales = (array)json_decode($bt_id->locales);
-
-        $data['type'] = $bt_id;
-        $props = UserController::getProperties($type);
-
-        $properties = [];
-        foreach ($props as $prop) {
-            if (is_array($prop->validation_rules)) {
-                if (in_array('required_for_login', $prop->validation_rules)) {
-                    $properties[] = $prop;
-                }
-            } else {
-                if ($prop->validation_rules == 'required_for_login') {
-                    $properties[] = $prop;
-                }
-            }
-        }
-        $data['properties'] = $properties;
+        $data['type'] = $type;
         return view('custom_auth.login', $data);
     }
 

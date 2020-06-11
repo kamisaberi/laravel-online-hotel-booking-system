@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form method="post" class="form-horizontal form-simple" action="{{route('auth.login', ['type'=>$type->title])}}" novalidate>
+                                        <form method="post" class="form-horizontal form-simple" action="{{route('auth.login', ['type'=>$type])}}" novalidate>
                                             {{csrf_field()}}
                                             <fieldset class="form-group position-relative has-icon-left mb-1">
                                                 <input type="text"
@@ -111,7 +111,7 @@
                                             </a>
                                         </p>
                                         <p class="float-sm-right text-center m-0">
-                                            <a href="{{route('auth.register.form', ['type'=>$type->title])}}" class="card-link" hidden>
+                                            <a href="{{route('auth.register.form', ['type'=>$type])}}" class="card-link" hidden>
                                                 {{__('messages.register')}}
                                             </a>
                                         </p>

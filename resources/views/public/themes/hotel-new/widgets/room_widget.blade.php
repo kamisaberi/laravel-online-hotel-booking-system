@@ -1,5 +1,5 @@
 <div class="col s12 l4">
-    <a href="{{route('home.item.show' , ['type'=>'room' , 'id'=>$data->id])}}">
+    <a href="{{route('home.room.show' , ['id'=>$data->id])}}">
         <div class="card small" style="border-top-right-radius: 10px !important;  border-top-left-radius: 10px !important;">
             <div class="card-image" style="border-top-right-radius: 10px !important;  border-top-left-radius: 10px !important;">
                 @if(isset($data->properties['featuring-image']->value[0]->value))

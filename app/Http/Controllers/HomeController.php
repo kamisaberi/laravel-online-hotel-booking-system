@@ -208,6 +208,7 @@ class HomeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
         $data['object'] = ItemUtility::getItem('room', $id);
+//        return $data;
         return view('public.themes.hotel-new.views.data.room', $data);
     }
 

@@ -63,23 +63,23 @@
             <div class="row">
                 <div class="col l6 m12 s12 center-on-small-only">
                     <h6 class="title-post" id="title-h6">
-                        {{$data->title}}
+                        {{$object->title}}
                     </h6>
-                    @if( isset($data->properties['price']) )
+                    @if( isset($object->properties['price']) )
                         <span class="span-post" id="span-post">
                                 {{__('layout.room.price per night')}}
 
-                            @isset($data->properties['price']->value)
-                                @if(count($data->properties['price']->value[$current_date]) == 2
-                                &&  $data->properties['price']->value[$current_date][0] < $data->properties['price']->value[$current_date][1] )
+                            @isset($object->properties['price']->value)
+                                @if(count($object->properties['price']->value[$current_date]) == 2
+                                &&  $object->properties['price']->value[$current_date][0] < $object->properties['price']->value[$current_date][1] )
                                     <span>
-                                    {{number_format($data->properties['price']->value[$current_date][0])}}
+                                    {{number_format($object->properties['price']->value[$current_date][0])}}
                                 </span>
                                     <span style="text-decoration: line-through;">
-                                    {{number_format($data->properties['price']->value[$current_date][1])}}
+                                    {{number_format($object->properties['price']->value[$current_date][1])}}
                             </span>
-                                @elseif(count($data->properties['price']->value) == 1)
-                                    {{isset($data->properties['price']->value[$current_date][0]) ? number_format($data->properties['price']->value[$current_date][0]) : '0'}}
+                                @elseif(count($object->properties['price']->value) == 1)
+                                    {{isset($object->properties['price']->value[$current_date][0]) ? number_format($object->properties['price']->value[$current_date][0]) : '0'}}
                                 @endif
                             @endisset
 
@@ -92,7 +92,7 @@
                 <div class="col l6 m12 s12 center-on-small-only" style="padding-left: 10px !important;">
 
 
-                    @if(isset($data->properties['available']) and ($data->properties['available']->value ==1 or $data->properties['available']->value ==0))
+                    @if(isset($object->properties['available']) and ($object->properties['available']->value ==1 or $object->properties['available']->value ==0))
                         <a href="#modal1" class="btn-small btn-cream margin-top modal-trigger" id="btn-res">
                             {{__('layout.room.reserve it')}}
                         </a>
@@ -102,13 +102,13 @@
                         </a>
                     @endif
 
-                    @if(isset($data->properties['video-file']->value[0]->value))
+                    @if(isset($object->properties['video-file']->value[0]->value))
                         <div class="modal" id="modal-video" style="z-index: -1 !important;">
                             <div class="modal-content" style="z-index: -1 !important;">
 
                                 <video poster="{{asset('videos/poster.png')}}" id="player" playsinline controls
                                        style="margin-top: 16px !important;">
-                                    <source src="{{$data->properties['video-file']->value[0]->value}}" type="video/mp4"/>
+                                    <source src="{{$object->properties['video-file']->value[0]->value}}" type="video/mp4"/>
 
                                     {{--                            <!-- Captions are optional -->--}}
                                     {{--                            <track kind="captions"--}}
@@ -123,10 +123,10 @@
                         </div>
                     @endif
 
-                    @if(isset($data->properties['flash-file']->value[0]->value))
+                    @if(isset($object->properties['flash-file']->value[0]->value))
                         <div class="modal" id="modal-360" style="z-index: -1 !important;">
                             <div class="modal-content" style="z-index: -1 !important;">
-                                <embed src="{{$data->properties['flash-file']->value[0]->value}}" style="width: 100%; height: 600px;"
+                                <embed src="{{$object->properties['flash-file']->value[0]->value}}" style="width: 100%; height: 600px;"
                                        quality="high" pluginspage="http://www.macromedia.com/go/getfashplayer"
                                        type="application/x-shockwave-flash">
                             </div>
@@ -190,7 +190,7 @@
                                         <input style="z-index: 5 !important; display: block;" type="hidden"
                                                name="type" value="room"/>
                                         <input style="z-index: 5 !important; display: block;" type="hidden"
-                                               name="object" value="{{$data->id}}"/>
+                                               name="object" value="{{$object->id}}"/>
 
                                     </div>
                                     <div class="col l4 s12 height100">
@@ -305,10 +305,10 @@
             <div class="img-gallery" id="image-gallery">
 
                 <ul id="lightSlider">
-                    @if(isset($data->properties['slide-images']) == true
-                    and isset($data->properties['slide-images']->value)
-                    and count($data->properties['slide-images']->value)>0)
-                        @foreach( $data->properties['slide-images']->value as $slide)
+                    @if(isset($object->properties['slide-images']) == true
+                    and isset($object->properties['slide-images']->value)
+                    and count($object->properties['slide-images']->value)>0)
+                        @foreach( $object->properties['slide-images']->value as $slide)
                             <li data-thumb="{{$slide->value}}">
                                 <img src="{{$slide->value}}"/>
                             </li>
@@ -323,7 +323,7 @@
                 <div class="row" style="margin-top: 8px">
                     <div class="col m6 left">
 
-                        @if(isset($data->properties['video-file']->value[0]->value))
+                        @if(isset($object->properties['video-file']->value[0]->value))
                             <a href="#modal-video" class="modal-trigger left">
                                 <img src="{{asset('images/video-512.png')}}" width="32">
                             </a>
@@ -332,7 +332,7 @@
 
                     </div>
                     <div class="col m6">
-                        @if(isset($data->properties['flash-file']->value[0]->value))
+                        @if(isset($object->properties['flash-file']->value[0]->value))
                             <a href="#modal-360" class="modal-trigger right">
                                 <img src="{{asset('images/360-512.png')}}" width="32">
                             </a>
@@ -435,7 +435,7 @@
             </div>
 
 
-            @if(isset($data->content))
+            @if(isset($object->content))
                 <div class="row" style="margin: 0 !important; height: 150px">
                     <div class="col l12 s12  special-service hide-on-med-and-down">
                         <div>
@@ -443,7 +443,7 @@
                      </span>
                         </div>
                         <p class="special-service-description">
-                            {!! $data->content !!}
+                            {!! $object->content !!}
                         </p>
                     </div>
                 </div>
@@ -460,7 +460,7 @@
                     <div class="options-title-txt-bg">
                             <span class="options-title-txt">
                 {{__('layout.room.facilities')}}
-                                {{$data->title}}
+                                {{$object->title}}
                             </span>
                         <br>
                         <span class="options-title-desc">hotel options</span>
@@ -469,7 +469,7 @@
 
 
                 @php($hotel_t= [])
-                @foreach($data->properties as $v)
+                @foreach($object->properties as $v)
                     @if($v->input_type== 'check' and $v->value == '1')
                         @php($hotel_t[$v->title]=$v->value)
                     @endif
@@ -492,7 +492,7 @@
 
                 <div class="col l6 s12">
                     <ul class="collection table-of-options" id="table-of-options">
-                        @foreach($data->properties as $v)
+                        @foreach($object->properties as $v)
                             @if($v->input_type=='text')
                                 <li class="collection-item">
                                     <div>
@@ -516,18 +516,18 @@
                     <div class="col l7 s7 height110">
                         <h6>
                             {{__('layout.room.reserve')}}
-                            {{$data->title}}
+                            {{$object->title}}
                         </h6>
                         <span>
-                            {{$data->description}}
+                            {{$object->description}}
                         </span>
                     </div>
                     <div class="col l5 s5 height110">
                         {{--<a href="#" class="btn-small left btn-cream btn-reserve2">رزرو کنید</a>--}}
-                        @if( isset($data->properties['price']) )
+                        @if( isset($object->properties['price']) )
                             <a href="#" class="btn-small btn-red btn-price">
                                 {{__('layout.room.per night price')}}
-                                {{isset($data->properties['price']->value[$current_date][0]) ? number_format($data->properties['price']->value[$current_date][0]) : '0'}}
+                                {{isset($object->properties['price']->value[$current_date][0]) ? number_format($object->properties['price']->value[$current_date][0]) : '0'}}
                                 {{__('layout.room.tooman')}}
                             </a>
                         @endif
@@ -568,7 +568,7 @@
                 <div class="col s12 l5 address-part center-on-small-only ">
                     <h6>{{__('layout.public.get to know us a bit')}}</h6>
                     <span>
-                        {{--{{$data['description']->title}}--}}
+                        {{--{{$object['description']->title}}--}}
                         {{$website->description}}
     </span>
                 </div>
