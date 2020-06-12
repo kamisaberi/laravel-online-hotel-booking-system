@@ -86,13 +86,13 @@
             <div class="nav-wrapper container">
 
 
-                <a id="logo-container" href="{{route('home.index2')}}" class="brand-logo center logo-bg"><img
-                            class="responsive-img img-logo"
-                            src="{{asset('images/main_logo.png')}}"></a>
+                <a id="logo-container" href="{{route('home.index2')}}" class="brand-logo center logo-bg">
+{{--                    <img class="responsive-img img-logo" src="{{asset('images/main_logo.png')}}">--}}
+                </a>
 
 
                 <div class="mini-phone-left-side hide-on-med-and-down">
-                        <span dir="ltr">hotel mobile</span>
+                    <span dir="ltr">hotel mobile</span>
                     <img class="icon10 responsive-img" src="{{asset('images/telephone.png')}}">
 
                 </div>
@@ -287,7 +287,6 @@
                         @php($a++)
 
                     @endforeach
-
 
 
                 </div>

@@ -57,7 +57,6 @@
     </div>
     <!--todo media screen-->
     <div class="content2 " id="content-2">
-
         <div class="post-single container">
             <!--todo baraye class h6 va span class va id sakhte shod -->
             <div class="row">
@@ -91,30 +90,16 @@
 
                 <div class="col l6 m12 s12 center-on-small-only" style="padding-left: 10px !important;">
 
-
-                    @if(isset($object->properties['available']) and ($object->properties['available']->value ==1 or $object->properties['available']->value ==0))
-                        <a href="#modal1" class="btn-small btn-cream margin-top modal-trigger" id="btn-res">
-                            {{__('layout.room.reserve it')}}
-                        </a>
-                    @else
-                        <a href="#" class="btn-small btn-cream margin-top modal-trigger" id="btn-res">
-                            {{__('layout.room.you cant reserve it right now')}}
-                        </a>
-                    @endif
+                    <a href="{{route('home.booking.start' , ['room'=>$object->id ])}}" class="btn-small btn-cream margin-top modal-trigger" id="btn-res">
+                        {{__('layout.room.reserve it')}}
+                    </a>
 
                     @if(isset($object->properties['video-file']->value[0]->value))
                         <div class="modal" id="modal-video" style="z-index: -1 !important;">
                             <div class="modal-content" style="z-index: -1 !important;">
-
                                 <video poster="{{asset('videos/poster.png')}}" id="player" playsinline controls
                                        style="margin-top: 16px !important;">
                                     <source src="{{$object->properties['video-file']->value[0]->value}}" type="video/mp4"/>
-
-                                    {{--                            <!-- Captions are optional -->--}}
-                                    {{--                            <track kind="captions"--}}
-                                    {{--                                   label="English captions" src="{{asset('images/gallary/18.png')}}"--}}
-                                    {{--                                   srclang="en"--}}
-                                    {{--                                   default/>--}}
                                 </video>
                             </div>
                             <div class="modal-footer container">

@@ -11,7 +11,7 @@
 
 
     <div class="slide">
-        <img id="in-slide-img" src="{{asset('images/slider-txt.png')}}" class="in-slide-img responsive-img">
+{{--        <img id="in-slide-img" src="{{asset('images/slider-txt.png')}}" class="in-slide-img responsive-img">--}}
         <ul>
 
             @if(isset($slides ))

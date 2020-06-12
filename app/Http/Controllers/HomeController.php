@@ -356,19 +356,19 @@ class HomeController extends Controller
     }
 
 
-    public function showLoginPage($type)
+    public function showLoginPage()
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data ['type'] = $type;
+        $data ['type'] = 'customer';
         return view("public.themes.hotel-new.views.users.login", $data);
     }
 
-    public function showRegisterPage($type)
+    public function showRegisterPage()
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data ['type'] = $type;
+        $data ['type'] = 'customer';
         return view("public.themes.hotel-new.views.users.register", $data);
     }
 

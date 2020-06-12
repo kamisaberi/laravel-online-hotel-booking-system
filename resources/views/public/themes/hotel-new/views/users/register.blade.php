@@ -25,7 +25,6 @@
                 }
 
 
-
             });
 
 
@@ -131,7 +130,7 @@
 
                     <div id="right-side-content" class="col l6 s12  right-side-cn " style="padding: 15px !important;">
                         <h6 class="col s12 center-on-small-only">{{__('layout.user.register')}}</h6>
-                        <form method="post" action="{{ route('register')}}">
+                        <form method="post" action="{{ route('home.customer.register')}}">
                             {{csrf_field()}}
                             <input type="hidden" name="type" value="2" id="type">
 
@@ -180,9 +179,9 @@
                         </form>
 
                         <div id="more-inf" class="more-inf center-on-small-only" style="margin-right: 0 !important;">
-                            <a href="{{route('home.document', ['type'=>'rules'])}}">
-                                {{__('layout.user.check website rules')}}
-                            </a>
+{{--                            <a href="{{route('home.document', ['type'=>'rules'])}}">--}}
+{{--                                {{__('layout.user.check website rules')}}--}}
+{{--                            </a>--}}
                             <img class="responsive-img" src="{{asset('images/left-arrow.png')}}">
                         </div>
 

@@ -179,7 +179,7 @@
                         </div>
 
                         <div id="more-inf" class="more-inf center-on-small-only" style="margin-right: 0 !important;">
-                            <a href="{{route('home.user.register',['user_type'=>'customer'])}}">
+                            <a href="{{route('home.customer.register')}}">
                                 {{__('layout.user.register')}}
                             </a>
                             <img class="responsive-img" src="{{asset('images/left-arrow.png')}}">

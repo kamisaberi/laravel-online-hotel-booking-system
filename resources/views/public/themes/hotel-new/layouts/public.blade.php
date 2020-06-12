@@ -53,7 +53,7 @@
             <div class="nav-wrapper container">
 
                 <a id="logo-container" href="{{route('home.index2')}}" class="brand-logo center logo-bg">
-                    <img class="responsive-img img-logo" src="{{asset('images/main_logo.png')}}">
+{{--                    <img class="responsive-img img-logo" src="{{asset('images/main_logo.png')}}">--}}
                 </a>
 
 
