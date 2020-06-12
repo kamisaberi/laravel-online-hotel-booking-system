@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+use App\Customer;
 use App\Data;
 use App\DataType;
 use App\Http\Controllers\Base\BaseController;
@@ -20,6 +21,7 @@ use http\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Larabookir\Gateway\Sadad\Sadad;
+use PHPUnit\Framework\Constraint\Count;
 use Route;
 use Kavenegar;
 use PragmaRX\Tracker\Vendor\Laravel\Facade as Tracker;
@@ -100,17 +102,25 @@ class HomeController extends Controller
 
         $received_data = $request->toArray();
 
-        $c = new App\Customer();
-        $c->name = $received_data['name'];
-        $c->email = $received_data['email'];
-        $c->mobile = $received_data['mobile'];
-        $c->phone = $received_data['mobile'];
-        $c->ssn = $received_data['ssn'];
-        $c->password = bcrypt("1234");
-        $c->save();
-
+        $mobile = $received_data['mobile'];
+        $cc = DB::table('customers')->where('mobile', '=', $mobile)->get();
+        $c_id = 0;
+        if (count($cc) > 0) {
+            $c_id = $cc[0]->id;
+        } else {
+            $c = new Customer();
+            $c->name = $received_data['name'];
+            $c->email = $received_data['email'];
+            $c->mobile = $received_data['mobile'];
+            $c->phone = $received_data['mobile'];
+            $c->ssn = $received_data['ssn'];
+            $c->password = bcrypt("1234");
+            $c->save();
+            $c_id = $c->id;
+        }
 
         $received_data['room'] = $room;
+        $received_data['customer'] = $c_id;
         $separated_data = ItemUtility::separateReceivedData("reserve", $received_data);
         ItemUtility::storeData("reserve", $separated_data['item'], $separated_data['property']);
 
