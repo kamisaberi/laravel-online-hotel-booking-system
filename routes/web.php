@@ -206,6 +206,19 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     /////////////***************SERVICES**********************
 
     Route::post('/admin/ajax/service/{type}/refresh', 'Service\ServiceController@refresh')->name('services.refresh');
+    Route::get('/admin/reserves/get/{situations}', 'ReserveController@getReserves')->name('admin.reserves.get.with.situations');
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+

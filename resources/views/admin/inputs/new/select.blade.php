@@ -8,11 +8,17 @@
             <option value="none" selected="" disabled="">
                 {{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->field}}
             </option>
-            @isset($property->values)
+
+            @if(isset($property->values) && count($property->values) >0)
                 @foreach($property->values as $value)
                     <option value="{{$value->value}}" {{$value->value==$property->assigned?"selected":""}} >{{$value->value}}</option>
                 @endforeach
-            @endisset
+
+            @else
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            @endif
 
         </select>
     </div>

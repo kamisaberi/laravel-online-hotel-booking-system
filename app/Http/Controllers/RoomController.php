@@ -29,7 +29,7 @@ class RoomController extends Controller
     public function index(Request $request, $type, $filters = null)
     {
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Room::all();
         return view("admin.items.views.subviews.room", $data);
     }
 
@@ -49,12 +49,36 @@ class RoomController extends Controller
      */
     public function store(Request $request, $type)
     {
-
         $validator = Validator::make($request->all(), ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters()));
         if ($validator->passes()) {
             $received_data = $request->toArray();
+            $received_data['available'] = 1;
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+
+//            foreach ($separated_data['item'] as $k => $v) {
+//                if (!is_array($v)) {
+//                    $items[$k] = "'$v'";
+//                } else {
+//                    $items[$k] = "'0'";
+//                }
+//            }
+
+            $r = new Room();
+            $r->title = $request->input('title');
+            $r->description = $request->input('description');
+            $r->content = $request->input('content');
+            $r->floor = $request->input('floor');
+            $r->image = 0;
+            $r->video = 0;
+            $r->flash = 0;
+            $r->price = 0;
+            $r->hotel = 1;
+            $r->available = 1;
+            $r->save();
+            $r_id = $r->id;
+
+            ItemUtility::storeProperties($type, $separated_data['property'], 1);
+//            ItemUtility::storeData($type, $items, $separated_data['property']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }

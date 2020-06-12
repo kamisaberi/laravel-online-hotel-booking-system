@@ -87,7 +87,7 @@
 
                     },
                     error: function (result) {
-                        alert(result.status);
+                        // alert(result.status);
                     }
 
                 });
@@ -122,7 +122,7 @@
 
                     },
                     error: function (result) {
-                        alert(result.status);
+                        // alert(result.status);
                     }
                 });
 
@@ -159,7 +159,7 @@
 
                     },
                     error: function (result) {
-                        alert(result.status);
+                        // alert(result.status);
                     }
                 });
 
@@ -174,63 +174,30 @@
                 });
 
                 $.ajax({
-                    url: "{{ route('services.index', ['type'=>'reserve', 'filters'=> urlencode(json_encode(['situation' =>['values'=>[1, 5],'operator'=>'in']]))])}}",
+                    url: '{{route('admin.reserves.get.with.situations', ['situations'=> '1,5'])}}',
                     method: 'get',
                     data: {
                         type: 'reserve'
                     },
                     success: function (result) {
-                        var oo = result.message.waiting_reserves;
 
-                        var resreves = result.message.datas;
 
-                        console.log(resreves);
-
-                        var situations = result.message.situations;
-
-                        var tbody = $("#recent-orders tbody");
-                        var thead = $("#recent-orders thead");
+                        tbody = $('#recent-orders tbody');
                         tbody.html("");
-
-                        $("#p-waiting-reserve-count").html(resreves.length + " عدد");
-                        $("#spn-waiting-reserves").html(resreves.length);
-                        // console.log(result.message.reserves);
-
+                        var resreves = result.reserves;
                         $.each(resreves, function (index, value) {
-
                             to_print = "<tr>";
-                            $.each(value.properties[1], function (p_index, p_value) {
-                                if (p_value.title === 'situation') {
-                                    to_print += `<td class="text-truncate">${situations[p_value.assigned]}</td>`;
-                                } else if (p_value.input_type === 'date') {
-                                    to_print += `<td class="text-truncate">${p_value.assigned['ja']}</td>`;
-                                } else {
-                                    to_print += `<td class="text-truncate">${p_value.assigned}</td>`;
-                                }
-                            });
+                            to_print += `<td>${value.code}</td>`;
+                            to_print += `<td>${value.start_date}</td>`;
+                            to_print += `<td>${value.end_date}</td>`;
 
-                            to_print += `<td>`;
-                            $.each(value.properties, function (p_index, gr_value) {
-                                $.each(gr_value, function ($pr_index, $pr_value) {
-                                    $.each($pr_value.actions, function ($ac_index, $ac_value) {
-                                        to_print += `<a href="#" data-backdrop="true" data-toggle="modal" data-target="#mdl-reserve-actions"
-                                                   onclick="$('#mdl-reserve-actions input[name=mdl-download-info-url]').val('${value.urls['show']}');
-                                                           $('#mdl-reserve-actions input[name=mdl-actions]').val('name:${$ac_value['name']},action_style:buttons');
-                                                           $('#mdl-reserve-actions input[name=mdl-update-url]').val('${value.urls['update']}');"
-                                                   class="purple edit mr-1">
-                                                    <i class="fa fa-eye"></i>
-                                                </a>`;
-                                    });
-                                });
-                            });
-
-                            to_print += `</td>`;
                             to_print += "</tr>";
                             tbody.append(to_print);
                         });
+
                     },
                     error: function (result) {
-                        alert(result.status);
+                        // alert(result.status);
                     }
                 });
             };
@@ -241,12 +208,8 @@
     </script>
 
     <script>
-
-
         $('#mdl-reserve-actions').on('show.bs.modal', function (e) {
-
             var action_titles = {2: 'عدم تایید اتاق', 3: 'تایید اتاق', 6: 'عدم تایید فیش بانکی', 7: 'تایید فیش بانکی'};
-
             // alert("sdaasdasd");
             var url = $('input[name=mdl-download-info-url]', this).val();
             var actions = $('input[name=mdl-actions]', this).val();
@@ -261,13 +224,19 @@
             });
 
             $.ajax({
-                url: url,
+                url: '{{route('admin.reserves.get.with.situations', ['situations'=> '1,4'])}}',
                 method: 'get',
                 data: {},
                 success: function (result) {
 
-                    console.log(result);
+                    var ress = result.reserves;
+                    $.each(ress, function (index, res) {
 
+
+                    });
+
+
+                    console.log(result);
                     var groups = result.message.groups;
 
                     console.log(groups);
@@ -275,11 +244,8 @@
                     modalfooter.html("");
 
                     $.each(groups, function (index, group) {
-
-
                         modalbody.append("<div class='row'>");
                         $.each(group, function (index, value) {
-
                             modalbody.append("<div class='col col-md-12'>");
                             modalbody.append((value.locales['fa'] === undefined ? value.title : value.locales['fa']) + ":");
                             if (value.input_type === 'date') {
@@ -324,7 +290,7 @@
 
                 },
                 error: function (result) {
-                    alert(result.status);
+                    // alert(result.status);
                 }
             });
 

@@ -221,7 +221,6 @@
     @foreach($groups as $group)
         @foreach($group->properties as $property)
             @if($property->rules['type'] == 'cropper')
-
                 <script type="text/javascript" src="{{asset('vendors/cropper/cropper.js')}}"></script>
                 <script type="text/javascript" src="{{asset('vendors/cropper/jquery-cropper.js')}}"></script>
 

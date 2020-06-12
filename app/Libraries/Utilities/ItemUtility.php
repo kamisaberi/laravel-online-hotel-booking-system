@@ -16,6 +16,8 @@ class ItemUtility
     public static function getItems($type, $search = null)
     {
 
+
+
         $item_table_names = TableUtility::getTablesName($type);
         $item_table = null;
         $item_table_structure = null;
@@ -76,6 +78,7 @@ class ItemUtility
                 }
             }
         }
+
 
         if (!is_null($property_table) && !is_null($assigned_property_table)) {
             $properties = DB::table($property_table)->get();
@@ -209,6 +212,7 @@ class ItemUtility
             abort("500");
 
         if ($id == 0) {
+
             $id = DB::table($item_table)->insertGetId($items_data);
         } else {
             DB::table($item_table)->where('id', '=', $id)->update($items_data);
@@ -464,8 +468,6 @@ class ItemUtility
         }
         return $components;
     }
-
-
 
 
 }

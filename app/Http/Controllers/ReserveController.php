@@ -91,6 +91,7 @@ class ReserveController extends Controller
         //
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -199,4 +200,13 @@ class ReserveController extends Controller
 
         return response()->json(["error" => 0, 'message' => 'success']);
     }
+
+    public function getReserves($situations)
+    {
+        $sits = explode(',', $situations);
+        $ress = DB::table('reserves')->whereIn('situation', $sits)->get();
+        return response()->json(["error" => 0, 'message' => 'success' , 'reserves'=>$ress]);
+
+    }
+
 }

@@ -24,7 +24,8 @@ class WebsiteController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Website::all();
+//        $data ['datas'] = ItemUtility::getItems($type);
         return view("admin.items.views.subviews.website", $data);
     }
 

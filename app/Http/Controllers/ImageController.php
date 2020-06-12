@@ -22,9 +22,9 @@ class ImageController extends Controller
 {
     public function index(Request $request, $type, $filters = null)
     {
-
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+//        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Image::all();
         return view("admin.items.views.subviews.image", $data);
     }
 

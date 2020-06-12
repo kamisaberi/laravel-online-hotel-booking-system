@@ -23,7 +23,8 @@ class HotelController extends Controller
     public function index(Request $request, $type, $filters = null)
     {
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+//        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Hotel::all();
         return view("admin.items.views.subviews.hotel", $data);
     }
 
