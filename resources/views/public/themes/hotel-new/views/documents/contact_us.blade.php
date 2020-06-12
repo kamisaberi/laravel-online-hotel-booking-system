@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="{{asset('style/style_contact.css')}}">
 
 
-
     <link rel="stylesheet" href="{{asset('style/lc_lightbox.css')}}">
     <link rel="stylesheet" href="{{asset('style/dark.css')}}">
     <link rel="stylesheet" href="{{asset('style/light.css')}}">
@@ -71,7 +70,7 @@
 
                     <h6>
                         {{__('layout.pages.manager')}}
-                        فریبرز صبوری ویشکایی
+                        -
                     </h6>
                     <br>
                     <br>
@@ -84,21 +83,19 @@
                     <div id="btn-mail" class="col l5 s12 btn-mail-address center">
 
                         <img class="mail-icon" src="{{asset('images/main-address.png')}}">
-                        <span>{{$hotel['email']->value}}</span>
+                        <span>{{$hotel->email}}</span>
 
                     </div>
 
                     <div id="btn-number" class="col l5 offset-l1 s12 btn-mail-address center">
 
                         <img class="mail-icon" src="{{asset('images/telephone.png')}}">
-                        @foreach($hotel['phone']->value as $t)
-                            <span dir="ltr">{{$t}}</span>
-                        @endforeach
+                        <span dir="ltr">{{$hotel->phone}}</span>
 
                     </div>
 
                     <div class="col s12 spn-address">
-                        <span> {{$hotel['address']->value}}</span>
+                        <span> {{$hotel->address}}</span>
                     </div>
 
                 </div>
@@ -107,65 +104,37 @@
                 <div id="left-side-content2" class="col l6 s12  content-left-side center">
 
                     <form id="frm-send-message">
-
-
                         <input type="text" id="input-name" name="input-name" class="input-cu dp4 col s12 left"
                                placeholder="نام و نام خانوادگی">
-
                         <span id="spn-name-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>
-                            {{__('layout.pages.enter your name')}}
-</strong>
-                    </span>
+                            <strong>{{__('layout.pages.enter your name')}}</strong>
+                        </span>
                         <br>
-
-
                         <input type="email" id="input-email" name="input-email" class="input-cu col s12 left"
                                placeholder="آدرس ایمیل">
-
                         <span id="spn-email-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>
-                                                {{__('layout.pages.enter your email')}}
-                        </strong>
-                    </span>
+                            <strong>{{__('layout.pages.enter your email')}}</strong>
+                        </span>
                         <br>
-
-
                         <input type="text" id="input-mobile" name="input-mobile" class="input-cu col s12 left"
                                onkeypress="return isNumberKey(event)"
                                oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                maxlength="13"
                                minlength="10"
-                               placeholder="شماره تماس">
+                               placeholder="شماره همراه">
                         <span id="spn-mobile-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>
-                                                {{__('layout.pages.enter your mobile number')}}
-
-                        </strong>
-                    </span>
+                            <strong>{{__('layout.pages.enter your mobile number')}}</strong>
+                        </span>
                         <br>
-
-
-
-                        <textarea id="txt-area" name="txt-area" class="txt-area col s12 left"
-                                  placeholder="درخواستی از هتل دارید؟ اینجا بنویسید."></textarea>
-
-
+                        <textarea id="txt-area" name="txt-area" class="txt-area col s12 left" placeholder="درخواستی از هتل دارید؟ اینجا بنویسید."></textarea>
                         <span id="spn-content-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>
-                                                {{__('layout.pages.write your message')}}
-                        </strong>
-                    </span>
+                            <strong>{{__('layout.pages.write your message')}}</strong>
+                        </span>
                         <br>
 
                         <input id="btn-send-message-contact" type="button" class="btn-small btn-sendd left"
                                value="{{__('layout.pages.send')}}">
                     </form>
-
-
-                    <!--content-left-side-->
-
-
                 </div>
 
 
@@ -250,7 +219,6 @@
 //            return;
 
             var error = false;
-
             var input_email = $('#input-email');
             var input_name = $('#input-name');
             var input_mobile = $('#input-mobile');
@@ -313,7 +281,7 @@
 //            return;
 
             $.ajax({
-                url: "{{url("/documents/ajax/save")}}",
+                url: "{{route("home.contact.send")}}",
                 timeout: 30000,
                 method: 'post',
                 data: {
@@ -321,7 +289,6 @@
                     'name': name,
                     'mobile': mobile,
                     'content': content,
-                    'type': 'message'
                 },
                 success: function (result) {
                     input_email.val("");
@@ -333,14 +300,10 @@
 
                 },
                 error: function (result) {
-                   alert("error code :" + result.status);
+                    alert("error code :" + result.status);
                 }
             });
         });
-
-
-
-
 
 
         $("#btn-send-complaint-contact").click(function () {
@@ -412,7 +375,7 @@
 //            return;
 
             $.ajax({
-                url: "{{url("/documents/ajax/save")}}",
+                url: "{{route("home.complaint.send")}}",
                 timeout: 30000,
                 method: 'post',
                 data: {
@@ -420,14 +383,12 @@
                     'name': name,
                     'mobile': mobile,
                     'content': content,
-                    'type': 'complaint'
                 },
                 success: function (result) {
                     input_email.val("");
                     input_name.val("");
                     input_mobile.val("");
                     txt_area.val("");
-
                     alert("پیغام با موفقیت ارسال شد");
 
                 },

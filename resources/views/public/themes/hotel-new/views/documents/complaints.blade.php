@@ -69,7 +69,7 @@
                     <img class="logo_cu responsive-img" src="{{asset('images/main_logo_cu.png')}}">
                     <h6>
                         {{__('layout.pages.manager')}}
-                        فریبرز صبوری ویشکایی
+                        -
                     </h6>
 
                     <br>
@@ -83,21 +83,19 @@
                     <div id="btn-mail" class="col l5 s12 btn-mail-address center">
 
                         <img class="mail-icon" src="{{asset('images/main-address.png')}}">
-                        <span>{{$hotel['email']->value}}</span>
+                        <span>{{$hotel->email}}</span>
 
                     </div>
 
                     <div id="btn-number" class="col l5 offset-l1 s12 btn-mail-address center">
 
                         <img class="mail-icon" src="{{asset('images/telephone.png')}}">
-                        @foreach($hotel['phone']->value as $t)
-                            <span dir="ltr">{{$t}}</span>
-                        @endforeach
+                        <span dir="ltr">{{$hotel->phone}}</span>
 
                     </div>
 
                     <div class="col s12 spn-address">
-                        <span> {{$hotel['address']->value}}</span>
+                        <span> {{$hotel->address}}</span>
                     </div>
 
                 </div>
@@ -135,7 +133,7 @@
                                oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                maxlength="13"
                                minlength="10"
-                               placeholder="شماره تماس">
+                               placeholder="شماره همراه">
                         <span id="spn-mobile-alert" class="invalid-feedback" role="alert" hidden>
                         <strong>
                                                 {{__('layout.pages.enter your mobile number')}}
@@ -328,14 +326,10 @@
 
                 },
                 error: function (result) {
-                   alert("error code :" + result.status);
+                    alert("error code :" + result.status);
                 }
             });
         });
-
-
-
-
 
 
         $("#btn-send-complaint-contact").click(function () {

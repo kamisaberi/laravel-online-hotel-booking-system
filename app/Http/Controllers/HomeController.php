@@ -14,6 +14,7 @@ use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\DateUtility;
 use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TrackerUtility;
+use App\Reserve;
 use App\Service;
 use App\ServiceProperty;
 use Gateway;
@@ -122,9 +123,22 @@ class HomeController extends Controller
         $received_data['room'] = $room;
         $received_data['customer'] = $c_id;
         $separated_data = ItemUtility::separateReceivedData("reserve", $received_data);
+
+
         ItemUtility::storeData("reserve", $separated_data['item'], $separated_data['property']);
 
-        return response()->redirectToRoute('home.booking.confirm', ['code' => "1111111"]);
+        $code = "BME" . rand(1000, 9999);
+        $r = new Reserve();
+        $r->code = $code;
+        $r->start_date = $received_data ['start_date'];
+        $r->end_date = $received_data ['end_date'];
+        $r->price = $received_data ['price'];
+        $r->situation = 1;
+        $r->active = 0;
+        $r->check = null;
+        $r->save();
+
+        return response()->redirectToRoute('home.booking.confirm', ['code' => $code]);
     }
 
 
@@ -273,14 +287,32 @@ class HomeController extends Controller
     public function sendComplaint(Request $request)
     {
         if ($request->getMethod() == "GET") {
-
-
             $data = BaseController::createBaseInformations();
             self::getBaseInformation($data);
             return view('public.themes.hotel-new.views.documents.complaints', $data);
-
-
         } elseif ($request->getMethod() == "POST") {
+
+            $cc = Customer::where('mobile', '=', $request->mobile)->get();
+            if (count($cc) > 0) {
+                $c_id = $cc [0]->id;
+
+            } else {
+
+                $c = new Customer();
+                $c->phone = $request->input('mobile');
+                $c->mobile = $request->input('mobile');
+                $c->email = $request->input('email');
+                $c->password = bcrypt("1234");
+                $c->save();
+                $c_id = $c->id;
+
+            }
+            $m = new App\Complaint();
+            $m->sender = $c_id;
+            $m->content = $request->input('content');
+            $m->reply_to = 0;
+            $m->save();
+            return response()->json(['error' => false, 'message' => 'success']);
 
         }
     }
@@ -292,6 +324,28 @@ class HomeController extends Controller
             self::getBaseInformation($data);
             return view('public.themes.hotel-new.views.documents.contact_us', $data);
         } elseif ($request->getMethod() == "POST") {
+
+            $cc = Customer::where('mobile', '=', $request->mobile)->get();
+            if (count($cc) > 0) {
+                $c_id = $cc [0]->id;
+
+            } else {
+
+                $c = new Customer();
+                $c->phone = $request->input('mobile');
+                $c->mobile = $request->input('mobile');
+                $c->email = $request->input('email');
+                $c->password = bcrypt("1234");
+                $c->save();
+                $c_id = $c->id;
+
+            }
+            $m = new App\Message();
+            $m->sender = $c_id;
+            $m->content = $request->input('content');
+            $m->reply_to = 0;
+            $m->save();
+            return response()->json(['error' => false, 'message' => 'success']);
 
         }
     }

@@ -57,7 +57,6 @@
         </div>
     </div>
 
-
     <div class="restaurant">
         <div class="parallax-container">
             <div class="container center">

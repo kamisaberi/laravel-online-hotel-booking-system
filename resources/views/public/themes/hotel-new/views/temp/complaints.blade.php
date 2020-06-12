@@ -19,7 +19,7 @@
                 <img class="logo_cu responsive-img" src="{{asset('images/main_logo_cu.png')}}">
                 <h6>
                     {{__('layout.pages.manager')}}
-                    فریبرز صبوری ویشکایی
+                    -
                 </h6>
 
                 <br>
