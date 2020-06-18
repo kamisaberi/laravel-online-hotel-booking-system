@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Complaint;
 use App\Data;
 use App\DataProperty;
 use App\Flash;
@@ -46,27 +47,23 @@ class FlashController extends Controller
     public function store(Request $request, $type)
     {
 
-//        self::checkType($type);
-//        self::checkTables();
-
-//        $ruels = self::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters());
-//        dd($ruels);
         $validator = Validator::make(
             $request->all(),
             ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
         );
         if ($validator->passes()) {
 
-//            dd($request->toArray());
             $received_data = $request->toArray();
-//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Flash();
+            $r->path = $request->input('path');
+            $r->save();
+            $r_id = $r->id;
 
-//            dd($separated_data);
 
-            //            return response()->json(['success' => 'Added new records.']);
+//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -124,9 +121,12 @@ class FlashController extends Controller
         if ($validator->passes()) {
 
             $received_data = $request->toArray();
-//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+            $r = Flash::find($id);
+            $r->path = $request->input('path');
+            $r->save();
+            $r_id = $r->id;
+
 
 //            dd($separated_data);
 

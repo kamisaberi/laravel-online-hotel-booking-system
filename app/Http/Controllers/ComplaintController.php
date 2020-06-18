@@ -8,13 +8,10 @@ use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -45,28 +42,23 @@ class ComplaintController extends Controller
      */
     public function store(Request $request, $type)
     {
-
-//        self::checkType($type);
-//        self::checkTables();
-
-//        $ruels = self::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters());
-//        dd($ruels);
-        $validator = Validator::make(
-            $request->all(),
-            ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
+        $validator = Validator::make($request->all(), ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
         );
         if ($validator->passes()) {
 
-//            dd($request->toArray());
             $received_data = $request->toArray();
-//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Complaint();
+            $r->content = $request->input('content');
+            $r->sender = $request->input('sender');
+            $r->date = $request->input('date');
+            $r->hotel = $request->input('hotel');
+            $r->reply_to = $request->input('reply_to');
+            $r->save();
+            $r_id = $r->id;
 
-//            dd($separated_data);
 
-            //            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -126,7 +118,16 @@ class ComplaintController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+            $r = Complaint::find($id);
+            $r->content = $request->input('content');
+            $r->sender = $request->input('sender');
+            $r->date = $request->input('date');
+            $r->hotel = $request->input('hotel');
+            $r->reply_to = $request->input('reply_to');
+            $r->save();
+            $r_id = $r->id;
+
+//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
 
 //            dd($separated_data);
 

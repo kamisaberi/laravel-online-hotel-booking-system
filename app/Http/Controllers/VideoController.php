@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Data;
 use App\DataProperty;
+use App\Flash;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
@@ -61,12 +62,12 @@ class VideoController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
+            $r = new Video();
+            $r->path = $request->input('path');
+            $r->save();
+            $r_id = $r->id;
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
 
-//            dd($separated_data);
-
-            //            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -126,9 +127,11 @@ class VideoController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+            $r = Video::find($id);
+            $r->path = $request->input('path');
+            $r->save();
+            $r_id = $r->id;
 
-//            dd($separated_data);
 
             return response()->json(['success' => 'Added new records.']);
         }

@@ -7,14 +7,11 @@ use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use App\Website;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -58,16 +55,27 @@ class WebsiteController extends Controller
         );
         if ($validator->passes()) {
 
-//            dd($request->toArray());
             $received_data = $request->toArray();
-//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Website();
+            $r->title = $request->input('title');
+            $r->base_locale = $request->input('base_locale');
+            $r->title = $request->input('title');
+            $r->description = $request->input('description');
+            $r->mata_description = $request->input('mata_description');
+            $r->meta_keywords = $request->input('meta_keywords');
+            $r->telegram = $request->input('telegram');
+            $r->instagram = $request->input('instagram');
+            $r->enamad = $request->input('enamad');
+            $r->samandehi = $request->input('samandehi');
+            $r->active_chat_system = $request->input('active_chat_system');
+            $r->save();
+            $r_id = $r->id;
 
-//            dd($separated_data);
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
 
-            //            return response()->json(['success' => 'Added new records.']);
+
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -127,7 +135,20 @@ class WebsiteController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+            $r = Website::find($id);
+            $r->title = $request->input('title');
+            $r->base_locale = $request->input('base_locale');
+            $r->title = $request->input('title');
+            $r->description = $request->input('description');
+            $r->mata_description = $request->input('mata_description');
+            $r->meta_keywords = $request->input('meta_keywords');
+            $r->telegram = $request->input('telegram');
+            $r->instagram = $request->input('instagram');
+            $r->enamad = $request->input('enamad');
+            $r->samandehi = $request->input('samandehi');
+            $r->active_chat_system = $request->input('active_chat_system');
+            $r->save();
+            ItemUtility::storeProperties($type, $separated_data['property'], $id);
 
 //            dd($separated_data);
 

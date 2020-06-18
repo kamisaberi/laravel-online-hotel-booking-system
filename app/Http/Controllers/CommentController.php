@@ -8,13 +8,10 @@ use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -43,7 +40,17 @@ class CommentController extends Controller
         if ($validator->passes()) {
             $received_data = $request->toArray();
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Comment();
+            $r->content = $request->input('content');
+            $r->sender = $request->input('sender');
+            $r->date = $request->input('date');
+            $r->room = $request->input('room');
+            $r->reply_to = $request->input('reply_to');
+            $r->save();
+            $r_id = $r->id;
+
+
+//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -72,7 +79,15 @@ class CommentController extends Controller
         if ($validator->passes()) {
             $received_data = $request->toArray();
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+
+            $r = Comment::find($id);
+            $r->content = $request->input('content');
+            $r->sender = $request->input('sender');
+            $r->date = $request->input('date');
+            $r->room = $request->input('room');
+            $r->reply_to = $request->input('reply_to');
+            $r->save();
+//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
             return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);

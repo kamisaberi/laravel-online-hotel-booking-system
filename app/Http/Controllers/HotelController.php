@@ -8,13 +8,10 @@ use App\Hotel;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -61,7 +58,18 @@ class HotelController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Hotel();
+            $r->title = $request->input('title');
+            $r->description = $request->input('description');
+            $r->address = $request->input('address');
+            $r->phone = $request->input('phone');
+            $r->mobile = $request->input('mobile');
+            $r->email = $request->input('email');
+            $r->manager = $request->input('manager');
+            $r->save();
+            $r_id = $r->id;
+
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
 
 //            dd($separated_data);
 
@@ -125,9 +133,19 @@ class HotelController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
 
-//            dd($separated_data);
+            $r = Hotel::find($id);
+            $r->title = $request->input('title');
+            $r->description = $request->input('description');
+            $r->address = $request->input('address');
+            $r->phone = $request->input('phone');
+            $r->mobile = $request->input('mobile');
+            $r->email = $request->input('email');
+            $r->manager = $request->input('manager');
+            $r->save();
+
+            ItemUtility::storeProperties($type, $separated_data['property'], $id);
+
 
             return response()->json(['success' => 'Added new records.']);
         }

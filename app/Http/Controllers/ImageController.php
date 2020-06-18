@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Data;
 use App\DataProperty;
+use App\Flash;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
@@ -62,7 +63,12 @@ class ImageController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Image();
+            $r->path = $request->input('path');
+            $r->save();
+            $r_id = $r->id;
+
+//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
 
 //            dd($separated_data);
 
@@ -113,10 +119,6 @@ class ImageController extends Controller
      */
     public function update(Request $request, $type, $id)
     {
-
-//        self::checkType($type);
-//        self::checkTables();
-
         $validator = Validator::make(
             $request->all(),
             ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
@@ -124,12 +126,11 @@ class ImageController extends Controller
         if ($validator->passes()) {
 
             $received_data = $request->toArray();
-//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
-
-//            dd($separated_data);
-
+            $r = Image::find($id);
+            $r->path = $request->input('path');
+            $r->save();
+            $r_id = $r->id;
             return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
