@@ -2,7 +2,7 @@
     <p style="text-align: right; direction: rtl;">
         {{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->field}}
     </p>
-    <textarea class="tinymce" id="{{$property->field}}" name="{{$property->field}}">{{isset($property->assigned) ? $property->assigned : ""}}</textarea>
+    <textarea class="tinymce" id="{{$property->field}}" name="{{$property->field}}">{{isset($property->value) ? $property->value : ""}}</textarea>
 
 </div>
 

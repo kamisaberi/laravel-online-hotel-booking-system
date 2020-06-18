@@ -10,6 +10,7 @@ use App\Http\Controllers\Service\ServiceController;
 use App\Http\Controllers\User\UserController;
 use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TypeUtility;
+use App\Room;
 use App\ServiceType;
 use DateTime;
 use Route;
@@ -52,7 +53,7 @@ class AdminController extends Controller
         $data['user_count'] = 0;
         $data['users'] = ItemUtility::getItems('user');
         $data['customers'] = ItemUtility::getItems('customer');
-        $data ['rooms'] = ItemUtility::getItems('room');
+        $data ['rooms'] =  Room::all();
         $d = date('d');
         $m = date('m');
         $y = date('Y');

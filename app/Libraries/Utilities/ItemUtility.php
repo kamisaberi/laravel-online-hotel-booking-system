@@ -17,7 +17,6 @@ class ItemUtility
     {
 
 
-
         $item_table_names = TableUtility::getTablesName($type);
         $item_table = null;
         $item_table_structure = null;
@@ -302,8 +301,13 @@ class ItemUtility
         DB::table($assigned_property_table)->where('item', '=', $id)->delete();
     }
 
-    public static function getPropertiesForInput($route, $parameters)
+    public static function getPropertiesForInput($route, $parameters, $id = 0)
     {
+
+        $t = $parameters['type'];
+        $parameters = [];
+        $parameters['type'] = $t;
+
         $route = DB::table('routes')
             ->where('name', '=', $route)
             ->where('parameters', '=', json_encode($parameters))->get();
@@ -317,15 +321,29 @@ class ItemUtility
             ->where('route_filling_group.route', '=', $route[0]->id)
             ->get(['filling_groups.*']);
 
+
         foreach ($groups as &$group) {
             $items = DB::table('filling_items')->where('group', '=', $group->id)->get();
             foreach ($items as &$item) {
                 $item->rules = json_decode($item->rules, true);
             }
+
             $group->properties = $items;
         }
 
-//        dd($groups);
+        if ($id != 0) {
+            $exs_data = DB::table(Str::plural($parameters['type']))->where('id', '=', $id)->get();
+            foreach ($groups as &$group) {
+                foreach ($items as &$item) {
+                    foreach ($exs_data as $datum) {
+                        if (isset($datum->{$item->field})) {
+                            $item->value = $datum->{$item->field};
+                        }
+                    }
+                }
+            }
+        }
+
         return $groups;
 
     }

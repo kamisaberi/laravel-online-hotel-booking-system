@@ -3,7 +3,7 @@
         <label for="{{$property->field}}">
             {{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->field}}
         </label>
-        <input type="text" id="{{$property->field}}" class="form-control" value="{{isset($property->assigned) ? $property->assigned : '' }}"
+        <input type="text" id="{{$property->field}}" class="form-control" value="{{isset($property->value) ? $property->value : '' }}"
                placeholder="{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->field}}"
                {{isset($property->fillation_rules['disabled']) &&  $property->fillation_rules['disabled'] == true ? 'disabled' : ''  }}
                name="{{$property->field}}">

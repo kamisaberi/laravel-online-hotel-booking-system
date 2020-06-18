@@ -66,31 +66,7 @@
                                                             </td>
 
                                                             <td>
-
-                                                                @isset($data->urls['edit'])
-                                                                    @can($permissions['edit'])
-                                                                        <a href="{{$data->urls['edit']}}" class="primary edit mr-1">
-                                                                            <i class="fa fa-pencil"></i>
-                                                                        </a>
-                                                                    @endcan
-                                                                @endisset
-                                                                @isset($actions['show'])
-                                                                    @isset($data->urls['show'])
-                                                                        @can($permissions['show'])
-                                                                            <a href="{{$data->urls['show']}}" class="primary show mr-1">
-                                                                                <i class="fa fa-eye"></i>
-                                                                            </a>
-                                                                        @endcan
-                                                                    @endisset
-                                                                @endisset
-                                                                @isset($urls['destroy'])
-                                                                    @can($permissions['destroy'])
-                                                                        <a class="danger delete mr-1" id="del-{{$data->id}}">
-                                                                            <i class="fa fa-trash-o"></i>
-                                                                        </a>
-                                                                    @endcan
-                                                                @endisset
-
+                                                                @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'website'])
                                                             </td>
                                                         </tr>
                                                     @endforeach

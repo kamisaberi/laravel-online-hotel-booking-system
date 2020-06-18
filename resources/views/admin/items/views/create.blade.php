@@ -205,12 +205,7 @@
     <script>
 
 
-        FILE_MANAGER.init({
-            'selector': $("#file-1"),
-            'upload_url': "",
-            'allowed_file_extensions': ['jpg', 'png', 'bmp']
-        });
-
+        FILE_MANAGER.init({'selector': $("#file-1"),'upload_url': "",'allowed_file_extensions': ['jpg', 'png', 'bmp']});
         FORM_ACTION.init({'form': "#form", 'url_index': "{{$urls['index']}}", 'url_destroy': "{{isset($urls['destroy']) ? $urls['destroy'] : ''}}"});
 
         // FILE_MANAGER.launch();

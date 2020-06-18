@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/responsive.dataTables.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/icheck.css')}}">
+{{--    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/icheck.css')}}">--}}
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/custom.css')}}">
     <!-- END: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/toggle/switchery.min.css')}}">
@@ -25,13 +25,13 @@
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/core/colors/palette-gradient.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/pages/app-contacts.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/plugins/forms/switch.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="../../../assets/css/style-rtl.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/assets/css/style-rtl.css')}}">
     @else
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/core/menu/menu-types/vertical-menu-modern.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/core/colors/palette-gradient.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/pages/app-contacts.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/plugins/forms/switch.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/assets/css/style.css')}}">
     @endif
 
     @yield('sub-header')
@@ -40,7 +40,7 @@
 @endsection
 @section("main")
 
-        @yield('sub-main')
+    @yield('sub-main')
 
 @endsection
 @section('vendor-js')
@@ -71,7 +71,8 @@
     {{--        <script src="https://cdn.jsdelivr.net/npm/moment"></script>--}}
     <script src="{{asset('vendors/moment/min/moment.min.js')}}"></script>
     <script src="{{asset('vendors/moment-jalaali/build/moment-jalaali.js')}}"></script>
-    <script src="{{asset('vendors/vue-persian-datetime-picker-master/dist/vue-persian-datetime-picker-browser.js')}}"></script>
+    <script
+        src="{{asset('vendors/vue-persian-datetime-picker-master/dist/vue-persian-datetime-picker-browser.js')}}"></script>
 
 
 @endsection
@@ -79,7 +80,7 @@
 @section("footer")
 
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('admin-assets/js/scripts/pages/app-contacts.min.js')}}"></script>
+    <script src="{{asset('admin-assets/js/scripts/pages/app-contacts.js')}}"></script>
     <!-- END: Page JS-->
 
     <script src="{{asset('admin-assets/js/scripts/forms/switch.min.js')}}"></script>
@@ -395,39 +396,23 @@
                 @endforeach
             @endforeach
         @endforeach
-
-
-
     @endisset
-
-
 
     @can($permissions['destroy'])
         @isset($urls['destroy'])
-
             <script>
-
                 $("[id^=del-]").click(function (e) {
                     e.preventDefault();
-
                     var th = $(this);
-//                alert($(this).attr('id'));
-//                return;
-
                     if (confirm("Are you sure?")) {
-
                         var s = $(this).attr('id');
                         var ss = s.split('-');
-
                         var did = ss[ss.length - 1];
-
                         $.ajaxSetup({
                             headers: {
                                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                             }
                         });
-
-
                         $.ajax({
                             url: "{{ $urls['destroy'] }}",
                             method: 'post',
@@ -435,81 +420,18 @@
                                 id: did
                             },
                             success: function (result) {
-//                        alert(result.message);
-
                                 $('#card-' + did).remove();
                                 th.parent().parent().remove();
-                                // $('#container-' + did).hide('normal', function () {
-                                //     $('#container-' + did).remove();
-                                // });
                             },
                             error: function (result) {
                                 alert("error");
-
                             }
                         });
                     }
                 });
-
             </script>
         @endisset
     @endcan
-
-    {{--    <script>--}}
-    {{--        $("form").submit(function (e) {--}}
-    {{--            var form = this;--}}
-    {{--            e.preventDefault();--}}
-
-    {{--            var submit = $('button[type="submit"]', this);--}}
-    {{--            submit.html('در حال ارسال');--}}
-    {{--            submit.prop('disabled', true);--}}
-
-    {{--            $.ajaxSetup({--}}
-    {{--                headers: {--}}
-    {{--                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')--}}
-    {{--                }--}}
-    {{--            });--}}
-    {{--            $.ajax({--}}
-    {{--                url: $(this).attr('action'),--}}
-    {{--                method: $(this).attr('method'),--}}
-    {{--                data: $(this).serialize(),--}}
-    {{--                success: function (result) {--}}
-    {{--                    if ($.isEmptyObject(result.error)) {--}}
-
-    {{--                        submit.html('پایان');--}}
-    {{--                        submit.prop('disabled', false);--}}
-    {{--//                        alert(result.success);--}}
-    {{--                        window.location = "{{$urls['index']}}";--}}
-
-    {{--                    } else {--}}
-    {{--//                        alert(result.error);--}}
-
-    {{--                        submit.html('ذخیره');--}}
-    {{--                        submit.prop('disabled', false);--}}
-
-
-    {{--                        $(".print-error-msg").find("ul").html('');--}}
-    {{--                        $(".print-error-msg").css('display', 'block');--}}
-    {{--                        $.each(result.error, function (key, value) {--}}
-    {{--                            $(".print-error-msg").find("ul").append('<li>' + value + '</li>');--}}
-    {{--                        });--}}
-    {{--                    }--}}
-
-
-    {{--                },--}}
-    {{--                error: function (result) {--}}
-    {{--                    alert(result.status);--}}
-
-    {{--                }--}}
-    {{--            });--}}
-
-    {{--        });--}}
-
-
-    {{--    </script>--}}
-
-
-
     @if($type == 'hotel' or  $type == 'website')
         @foreach($datas as $data)
             @foreach($data->properties as $property)

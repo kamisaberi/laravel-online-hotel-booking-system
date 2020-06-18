@@ -5,7 +5,7 @@
         </label>
         <textarea id="{{$property->field}}" rows="5"
                   placeholder="{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->field}}"
-                  class="form-control" name="{{$property->field}}">{{isset($property->assigned) ? $property->assigned : ''}}</textarea>
+                  class="form-control" name="{{$property->field}}">{{isset($property->value) ? $property->value : ''}}</textarea>
 
     </div>
 </div>
