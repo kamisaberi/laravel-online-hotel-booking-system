@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Navigation;
 
-use App\DocumentType;
-use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\UserController;
-use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TextUtility;
 use App\Navigation;
 use App\NavigationItem;
 use App\NavigationItemProperty;
+use App\News;
+use App\Page;
+use App\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -130,7 +130,6 @@ class NavigationController extends Controller
                 $items[$i]->properties = $obj;
                 $ex_items[] = $items[$i];
             }
-
 
 //            return $properties;
 //            $items[$i]->properties = $obj;
@@ -259,10 +258,8 @@ class NavigationController extends Controller
     public
     function index()
     {
-//        return "asdasdsad";
         $data = [];
         $navs = NavigationController::getNavigation('admin', true);
-
         foreach ($navs as $k => $nav) {
             foreach ($nav as $k1 => $nav1) {
                 if (in_array($nav1->properties->route, config('base.routes.navigation.items'))) {
@@ -303,38 +300,9 @@ class NavigationController extends Controller
 
         $data['navs'] = $navs;
 
-
-        $data['news'] = ItemUtility::getItems('news');
-        $data['pages'] = ItemUtility::getItems('page');
-        $data['rooms'] = ItemUtility::getItems('room');
-
-//        $data['news_properties'] = DataController::getProperties('news');
-
-//        dd($data['pages'][0]->id);
-
-//        $routes = Route::getRoutes();
-//        foreach ($routes as $route) {
-//            /** @var \Illuminate\Routing\Route $route */
-//            echo "<hr>";
-//            echo $route->uri . PHP_EOL;
-//            echo "<br>";
-//            echo $route->getName();
-//            echo "<br>";
-//            echo $route->getPrefix();
-//            echo "<br>";
-//            echo $route->getActionMethod();
-//        }
-
-
-//        return $routes;
-
-
-//        return $data;
-
-
-//        $pages = DocumentType::where('parent', '=', 5)->get();
-//        $data['pages'] = $pages;
-
+        $data['news'] = News::all();
+        $data['pages'] = Page::all();
+        $data['rooms'] = Room::all();
 
         $data['page_title'] = trans('messages.list of') . 'منو ها';
         $data['breadcrumbs'] = [
@@ -348,7 +316,6 @@ class NavigationController extends Controller
             ]
         ];
 
-//        return $data;
         return view("admin.navigation.index", $data);
         //
     }

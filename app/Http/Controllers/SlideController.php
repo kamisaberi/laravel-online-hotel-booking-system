@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Data;
 use App\DataProperty;
+use App\Gallery;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
@@ -62,11 +63,13 @@ class SlideController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Slide();
+            $r->title = $request->input('title');
+            $r->save();
+            $r_id = $r->id;
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
 
-//            dd($separated_data);
-
-            //            return response()->json(['success' => 'Added new records.']);
+            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -126,11 +129,14 @@ class SlideController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
-
-//            dd($separated_data);
+            $r = Slide::find($id);
+            $r->title = $request->input('title');
+            $r->save();
+            $r_id = $r->id;
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
 
             return response()->json(['success' => 'Added new records.']);
+
         }
         return response()->json(['error' => $validator->errors()->all()]);
 //        return redirect()->route("data.index", ['type' => $type]);

@@ -43,11 +43,6 @@ class MapLocationController extends Controller
     public function store(Request $request, $type)
     {
 
-//        self::checkType($type);
-//        self::checkTables();
-
-//        $ruels = self::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters());
-//        dd($ruels);
         $validator = Validator::make(
             $request->all(),
             ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
@@ -59,11 +54,15 @@ class MapLocationController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new MapLocation();
+            $r->title = $request->input('title');
+            $r->description = $request->input('description');
+            $r->lat = $request->input('lat');
+            $r->lng = $request->input('lng');
+            $r->save();
+            $r_id = $r->id;
+            return response()->json(['success' => 'Added new records.']);
 
-//            dd($separated_data);
-
-            //            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -123,10 +122,13 @@ class MapLocationController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
 
-//            dd($separated_data);
-
+            $r = MapLocation::find($id);
+            $r->title = $request->input('title');
+            $r->description = $request->input('description');
+            $r->lat = $request->input('lat');
+            $r->lng = $request->input('lng');
+            $r->save();
             return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);

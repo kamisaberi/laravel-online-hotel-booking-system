@@ -59,11 +59,19 @@ class ReserveController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Reserve();
+            $r->date = $request->input('date');
+            $r->start_date = $request->input('start_date');
+            $r->end_date = $request->input('end_date');
+            $r->price = $request->input('price');
+            $r->active = $request->input('active');
+            $r->code = $request->input('code');
+            $r->situation = $request->input('situation');
+            $r->check = $request->input('check');
+            $r->save();
+            $r_id = $r->id;
+            return response()->json(['success' => 'Added new records.']);
 
-//            dd($separated_data);
-
-            //            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -124,7 +132,17 @@ class ReserveController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+            $r = Reserve::find($id);
+            $r->date = $request->input('date');
+            $r->start_date = $request->input('start_date');
+            $r->end_date = $request->input('end_date');
+            $r->price = $request->input('price');
+            $r->active = $request->input('active');
+            $r->code = $request->input('code');
+            $r->situation = $request->input('situation');
+            $r->check = $request->input('check');
+            $r->save();
+            return response()->json(['success' => 'Added new records.']);
 
 //            dd($separated_data);
 

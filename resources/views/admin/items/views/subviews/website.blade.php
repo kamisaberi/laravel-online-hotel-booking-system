@@ -44,7 +44,6 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="table-responsive">
-
                                             <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
                                                 <thead>
                                                     <tr>
@@ -77,13 +76,10 @@
                                                         <th>
                                                             title
                                                         </th>
-
                                                         <th>Actions</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +151,6 @@
             </div>
         </div>
     </div>
-
 
     @isset($modals)
         @foreach($modals as $modal)

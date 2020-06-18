@@ -67,9 +67,7 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\HotelController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "news") {
             return ((new App\Http\Controllers\NewsController())->index($request, $type, $filters));
-        } elseif (Str::lower(Str::singular($type)) == "map") {
-            return ((new App\Http\Controllers\MapController())->index($request, $type, $filters));
-        } elseif (Str::lower(Str::singular($type)) == "map_location") {
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
             return ((new App\Http\Controllers\MapLocationController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "page") {
             return ((new App\Http\Controllers\PageController())->index($request, $type, $filters));
@@ -113,9 +111,7 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\HotelController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "news") {
             return ((new App\Http\Controllers\NewsController())->create($type));
-        } elseif (Str::lower(Str::singular($type)) == "map") {
-            return ((new App\Http\Controllers\MapController())->create($type));
-        } elseif (Str::lower(Str::singular($type)) == "map_location") {
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
             return ((new App\Http\Controllers\MapLocationController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "page") {
             return ((new App\Http\Controllers\PageController())->create($type));
@@ -166,9 +162,7 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\HotelController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "news") {
             return ((new App\Http\Controllers\NewsController())->store($request, $type));
-        } elseif (Str::lower(Str::singular($type)) == "map") {
-            return ((new App\Http\Controllers\MapController())->store($request, $type));
-        } elseif (Str::lower(Str::singular($type)) == "map_location") {
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
             return ((new App\Http\Controllers\MapLocationController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "page") {
             return ((new App\Http\Controllers\PageController())->store($request, $type));
@@ -238,9 +232,7 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\HotelController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "news") {
             return ((new App\Http\Controllers\NewsController())->edit($type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "map") {
-            return ((new App\Http\Controllers\MapController())->edit($type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "map_location") {
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
             return ((new App\Http\Controllers\MapLocationController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "page") {
             return ((new App\Http\Controllers\PageController())->edit($type, $id));
@@ -285,9 +277,7 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\HotelController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "news") {
             return ((new App\Http\Controllers\NewsController())->update($request, $type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "map") {
-            return ((new App\Http\Controllers\MapController())->update($request, $type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "map_location") {
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
             return ((new App\Http\Controllers\MapLocationController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "page") {
             return ((new App\Http\Controllers\PageController())->update($request, $type, $id));
@@ -338,9 +328,7 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\HotelController())->destroy($request , $type));
         } elseif (Str::lower(Str::singular($type)) == "news") {
             return ((new App\Http\Controllers\NewsController())->destroy($request , $type));
-        } elseif (Str::lower(Str::singular($type)) == "map") {
-            return ((new App\Http\Controllers\MapController())->destroy($request , $type));
-        } elseif (Str::lower(Str::singular($type)) == "map_location") {
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
             return ((new App\Http\Controllers\MapLocationController())->destroy($request , $type));
         } elseif (Str::lower(Str::singular($type)) == "page") {
             return ((new App\Http\Controllers\PageController())->destroy($request , $type));

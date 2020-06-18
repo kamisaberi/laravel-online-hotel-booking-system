@@ -66,7 +66,7 @@ class RoomController extends Controller
             $r_id = $r->id;
 
             ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
-//            ItemUtility::storeData($type, $items, $separated_data['property']);
+            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }

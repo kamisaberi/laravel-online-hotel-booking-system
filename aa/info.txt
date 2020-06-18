@@ -12,14 +12,17 @@ CONTROLLERS
         website
         message
         review
-
-    TO DO
         customer
         gallery
         map location
         reserve
         slide
+
+    TO DO
         user
 
     TO DELETE
         map
+
+ERRORS:
+    user

@@ -432,54 +432,7 @@
             </script>
         @endisset
     @endcan
-    @if($type == 'hotel' or  $type == 'website')
-        @foreach($datas as $data)
-            @foreach($data->properties as $property)
-
-                @if($property->input_type == 'multi-text')
-                    <script>
-                        $("#btn-add-multi-text-{{$property->title}}").click(function () {
-
-                            var txt = $("#txt-add-multi-text-{{$property->title}}");
-                            var dv = $("#dv-multi-text-{{$property->title}}");
-
-                            if (txt.val().trim() == '')
-                                return;
-
-                            var s = "";
-                            s += '<div class="row" style="border: 1px dotted red;margin-bottom: 3px; ">';
-                            s += '<input type="hidden" id="{{$property->title}}[]" name="{{$property->title}}[]" value="' + txt.val().trim() + '">';
-                            s += '<div class="input-field col s12 m2">';
-                            s += '</div>';
-                            s += '<div class="input-field col s12 m6">';
-                            s += txt.val();
-                            s += '</div>';
-                            s += '<div class="input-field col s12 m2">';
-                            s += '<button type="button" class="btn button-delete">';
-                            s += 'X';
-                            s += '</button>';
-                            s += '</div>';
-                            s += '</div>';
-
-                            dv.append(s);
-                        });
-
-                        $("#dv-multi-text-{{$property->title}}").on('click', '.button-delete', function () {
-                            $(this).parent().parent().remove();
-                        });
-
-                    </script>
-                @endif
-            @endforeach
-        @endforeach
-    @endif
-
-
-
-
     <script>
-
-
         $(document).ready(function () {
 
 

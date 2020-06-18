@@ -632,8 +632,7 @@
             }
         </script>
 
-
-        @include('public.themes.hotel-new.scripts.mapbox')
+{{--        @include('public.themes.hotel-new.scripts.mapbox')--}}
 
         @yield('footer')
 

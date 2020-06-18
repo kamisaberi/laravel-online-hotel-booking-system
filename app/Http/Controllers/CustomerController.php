@@ -8,13 +8,10 @@ use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -62,11 +59,22 @@ class CustomerController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Customer();
+            $r->name = $request->input('name');
+            $r->email = $request->input('email');
+            $r->phone = $request->input('phone');
+            $r->mobile = $request->input('mobile');
+            $r->ssn = $request->input('ssn');
+            $r->password = bcrypt($request->input('password'));
+            $r->save();
+            $r_id = $r->id;
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
+            return response()->json(['success' => 'Added new records.']);
+//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
 
 //            dd($separated_data);
 
-            //            return response()->json(['success' => 'Added new records.']);
+            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -126,11 +134,17 @@ class CustomerController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
-
-//            dd($separated_data);
-
+            $r = Customer::find($id);
+            $r->name = $request->input('name');
+            $r->email = $request->input('email');
+            $r->phone = $request->input('phone');
+            $r->mobile = $request->input('mobile');
+            $r->ssn = $request->input('ssn');
+            $r->password = bcrypt($request->input('password'));
+            $r->save();
+            ItemUtility::storeProperties($type, $separated_data['property'], $id);
             return response()->json(['success' => 'Added new records.']);
+
         }
         return response()->json(['error' => $validator->errors()->all()]);
 //        return redirect()->route("data.index", ['type' => $type]);

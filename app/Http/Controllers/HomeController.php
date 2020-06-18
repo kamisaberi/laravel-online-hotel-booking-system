@@ -4,28 +4,19 @@ namespace App\Http\Controllers;
 
 use App;
 use App\Customer;
-use App\Data;
-use App\DataType;
 use App\Http\Controllers\Base\BaseController;
-use App\Http\Controllers\Item\ItemController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\Service\ServiceController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\DateUtility;
 use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TrackerUtility;
 use App\Reserve;
-use App\Service;
 use App\ServiceProperty;
 use Gateway;
 use http\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Larabookir\Gateway\Sadad\Sadad;
-use PHPUnit\Framework\Constraint\Count;
-use Route;
-use Kavenegar;
-use PragmaRX\Tracker\Vendor\Laravel\Facade as Tracker;
 
 
 class HomeController extends Controller
@@ -42,7 +33,7 @@ class HomeController extends Controller
         $data['website'] = ItemUtility::getItems('website')[0];
 
         $data['hotel'] = ItemUtility::getItems('hotel')[0];
-        $data['map'] = ItemUtility::getItems('map')[0];
+//        $data['map'] = ItemUtility::getItems('map')[0];
         $data['map_locations'] = ItemUtility::getItems('map_locations');
         $data['current_date'] = DateUtility::toJalali();
         $visits = [];
@@ -72,10 +63,7 @@ class HomeController extends Controller
         self::getBaseInformation($data);
 
         $data['home_page_middle_navigations'] = NavigationController::getNavigation('home-page-middle');
-        $data['rooms'] = ItemUtility::getItems('room');
-//        $data ['slides'] = DocumentController::getItems3('second-slide-show');
-//        $data ['galleries'] = DocumentController::getItems3('gallery');
-//        return $data;
+        $data['rooms'] = App\Room::all();
         return view('public.themes.hotel-new.views.index2', $data);
     }
 
@@ -233,7 +221,7 @@ class HomeController extends Controller
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data['datas'] = ItemUtility::getItems('room');
+        $data['datas'] = App\Room::all();
         return view('public.themes.hotel-new.views.data.rooms', $data);
     }
 

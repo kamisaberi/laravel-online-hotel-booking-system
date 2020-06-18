@@ -8,9 +8,7 @@ use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -52,16 +50,17 @@ class GalleryController extends Controller
         );
         if ($validator->passes()) {
 
-//            dd($request->toArray());
             $received_data = $request->toArray();
-//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Gallery();
+            $r->title = $request->input('title');
+            $r->save();
+            $r_id = $r->id;
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
 
-//            dd($separated_data);
+            return response()->json(['success' => 'Added new records.']);
 
-            //            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -121,9 +120,10 @@ class GalleryController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
-
-//            dd($separated_data);
+            $r = Gallery::find($id);
+            $r->title = $request->input('title');
+            $r->save();
+            ItemUtility::storeProperties($type, $separated_data['property'], $id);
 
             return response()->json(['success' => 'Added new records.']);
         }

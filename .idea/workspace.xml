@@ -2,16 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/aa/info.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/aa/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RatingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rating.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-hotel.sql" beforeDir="false" afterPath="$PROJECT_DIR$/online-hotel.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MapLocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MapLocationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Navigation/NavigationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Navigation/NavigationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReserveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReserveController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SlideController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/website.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/website.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/layouts/public.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/rooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/hotel-new/views/data/rooms.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1207,7 +1213,7 @@
       <workItem from="1592459495319" duration="100000" />
       <workItem from="1592459994738" duration="67000" />
       <workItem from="1592460122923" duration="174000" />
-      <workItem from="1592460325662" duration="7245000" />
+      <workItem from="1592460325662" duration="18941000" />
     </task>
     <servers />
   </component>
@@ -1231,10 +1237,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="438" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592469915000" />
-    <state x="690" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592469962071">
+    <state x="690" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592504499516">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592469962071" />
+    <state x="690" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592504499516" />
     <state x="60" y="25" width="1736" height="856" key="DiffContextDialog" timestamp="1592451932505">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -1251,10 +1257,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="35" y="73" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592460676812" />
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592469233820">
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592502337405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592469233820" />
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592502337405" />
     <state x="206" y="102" width="1114" height="801" key="find.popup" timestamp="1592461227532">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
