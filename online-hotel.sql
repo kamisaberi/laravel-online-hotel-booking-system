@@ -11,7 +11,7 @@
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 18/06/2020 13:17:34
+ Date: 19/06/2020 02:42:12
 */
 
 SET NAMES utf8mb4;
@@ -216,7 +216,6 @@ DROP TABLE IF EXISTS `galleries`;
 CREATE TABLE `galleries`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `images` int(11) NULL DEFAULT NULL COMMENT '{\"relation\":\"belongsToMany\",\"table\":\"images\",\"middle_table\":\"gallery_image\"}',
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -225,8 +224,8 @@ CREATE TABLE `galleries`  (
 -- ----------------------------
 -- Records of galleries
 -- ----------------------------
-INSERT INTO `galleries` VALUES (1, 'galley 1', 0, NULL, NULL);
-INSERT INTO `galleries` VALUES (2, 'gallery 2', 0, NULL, NULL);
+INSERT INTO `galleries` VALUES (1, 'galley 1', NULL, NULL);
+INSERT INTO `galleries` VALUES (2, 'gallery 2', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for gallery_image
@@ -528,26 +527,6 @@ INSERT INTO `map_locations` VALUES (2, '2', '2', '49.579670', '37.285303', NULL,
 INSERT INTO `map_locations` VALUES (3, '3', '3', '49.589293', '37.285306', NULL, NULL);
 
 -- ----------------------------
--- Table structure for map_map_location
--- ----------------------------
-DROP TABLE IF EXISTS `map_map_location`;
-CREATE TABLE `map_map_location`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `map` int(11) NOT NULL,
-  `map_location` int(11) NULL DEFAULT NULL,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of map_map_location
--- ----------------------------
-INSERT INTO `map_map_location` VALUES (1, 1, 1, NULL, NULL);
-INSERT INTO `map_map_location` VALUES (2, 1, 2, NULL, NULL);
-INSERT INTO `map_map_location` VALUES (3, 1, 3, NULL, NULL);
-
--- ----------------------------
 -- Table structure for maps
 -- ----------------------------
 DROP TABLE IF EXISTS `maps`;
@@ -743,8 +722,8 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (8, 3, 2, 'users.index'
 INSERT INTO `navigation_item_assigned_properties` VALUES (9, 3, 3, 'user_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (10, 3, 4, 'user', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (11, 4, 1, '{\"en\":\"Customers\",\"fa\":\"مشتریان\",\"ar\":\"الزبائن\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (12, 4, 2, 'users.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (13, 4, 3, 'user_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (12, 4, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (13, 4, 3, 'data_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (14, 4, 4, 'customer', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (15, 5, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (16, 5, 2, 'items.index', NULL, NULL);
@@ -760,10 +739,6 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (29, 9, 1, '{\"en\":\"R
 INSERT INTO `navigation_item_assigned_properties` VALUES (30, 9, 2, 'home.complaint.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (33, 10, 1, '{\"en\":\"Navigation\",\"fa\":\"منوها\",\"ar\":\"التنقل\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (34, 10, 2, 'navigation.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (37, 11, 1, '{\"en\":\"Room Properties\",\"fa\":\"خاصیت های اتاق ها\",\"ar\":\"خصائص الغرفة\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (38, 11, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (39, 11, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (40, 11, 4, 'room', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (41, 12, 1, '{\"en\":\"Reserve\",\"fa\":\"رزرو اتاق\",\"ar\":\"حجز\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (42, 12, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (43, 12, 3, 'service_type', NULL, NULL);
@@ -772,14 +747,10 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (45, 13, 1, '{\"en\":\"
 INSERT INTO `navigation_item_assigned_properties` VALUES (46, 13, 2, 'relations.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (47, 13, 3, 'relation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (48, 13, 4, 'offer', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (49, 14, 1, '{\"en\":\"Main Slide Show\",\"fa\":\"اسلاید صفحه اصلی\",\"ar\":\"الشريحة الرئيسية\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (49, 14, 1, '{\"en\":\"Slides\",\"fa\":\"اسلاید ها\",\"ar\":\"الشريحة الرئيسية\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (50, 14, 2, 'items.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (51, 14, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (52, 14, 4, 'main-slide-show', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (53, 15, 1, '{\"en\":\"Second Slide Show\",\"fa\":\"اسلاید صفحه دوم\",\"ar\":\"شريحة الصفحة الثانية\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (54, 15, 2, 'items.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (55, 15, 3, 'document_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (56, 15, 4, 'second-slide-show', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (51, 14, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (52, 14, 4, 'slide', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (57, 16, 1, '{\"en\":\"Home\",\"fa\":\"صفحه اصلی\",\"ar\":\"الصفحة الرئيسية\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (58, 16, 2, 'home.index2', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (61, 17, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
@@ -806,11 +777,9 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (127, 7, 9, '1', NULL, 
 INSERT INTO `navigation_item_assigned_properties` VALUES (128, 8, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (129, 9, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (130, 10, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (131, 11, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (132, 12, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (133, 13, 9, '0', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (134, 14, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (135, 15, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (136, 16, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (137, 17, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (138, 18, 9, '1', NULL, NULL);
@@ -830,11 +799,6 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (152, 29, 1, '{\"en\":\
 INSERT INTO `navigation_item_assigned_properties` VALUES (153, 29, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (154, 29, 3, 'document_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (155, 29, 4, 'image', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (156, 30, 1, '{\"en\":\"Hotel Properties\",\"fa\":\"خاصیت های هتل\",\"ar\":\"خصائص الفندق\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (157, 30, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (158, 30, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (159, 30, 4, 'hotel', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (160, 30, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (161, 31, 1, '{\"en\":\"Register Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"تسجيل الشكاوى\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (162, 31, 2, 'home.complaint.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (165, 31, 9, '1', NULL, NULL);
@@ -843,16 +807,6 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (167, 32, 2, 'users.pro
 INSERT INTO `navigation_item_assigned_properties` VALUES (168, 32, 3, 'user_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (169, 32, 4, 'user', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (170, 32, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (171, 33, 1, '{\"en\":\"Customer Properties\",\"fa\":\"خاصیت های مشتری\",\"ar\":\"خصائص المشتری\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (172, 33, 2, 'users.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (173, 33, 3, 'user_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (174, 33, 4, 'customer', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (175, 33, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (176, 34, 1, '{\"en\":\"Reserve Properties\",\"fa\":\"خاصیت های سیستم رزرو\",\"ar\":\"خصائص الرزرو\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (177, 34, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (178, 34, 3, 'service_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (179, 34, 4, 'reserve', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (180, 34, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (186, 29, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (187, 36, 1, '{\"en\":\"Pages\",\"fa\":\"برگه ها\",\"ar\":\"صفحات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (188, 36, 2, 'items.index', NULL, NULL);
@@ -864,41 +818,21 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (203, 39, 2, 'items.ind
 INSERT INTO `navigation_item_assigned_properties` VALUES (204, 39, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (205, 39, 4, 'message', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (206, 39, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (207, 40, 1, '{\"en\":\"Message Properties\",\"fa\":\"خصوصیات پیام ها\",\"ar\":\"خصائص الرسالة\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (208, 40, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (209, 40, 3, 'conversation_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (210, 40, 4, 'message', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (211, 40, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (212, 41, 1, '{\"en\":\"Comments\",\"fa\":\"دیدگاه ها\",\"ar\":\"تعليقات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (213, 41, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (214, 41, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (215, 41, 4, 'comment', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (216, 41, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (217, 42, 1, '{\"en\":\"Comment Properties\",\"fa\":\"خصوصیات دیدگاه ها\",\"ar\":\"خصائص التعليق\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (218, 42, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (219, 42, 3, 'conversation_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (220, 42, 4, 'comment', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (221, 42, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (222, 43, 1, '{\"en\":\"Complaints\",\"fa\":\"شکایات\",\"ar\":\"شكاوي\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (223, 43, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (224, 43, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (225, 43, 4, 'complaint', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (226, 43, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (227, 44, 1, '{\"en\":\"Complaint Properties\",\"fa\":\"خصوصیات شکایت ها\",\"ar\":\"خصائص الشكوى\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (228, 44, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (229, 44, 3, 'conversation_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (230, 44, 4, 'complaint', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (231, 44, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (232, 45, 1, '{\"en\":\"Ratings\",\"fa\":\"رتبه بندی ها\",\"ar\":\"تصنيفات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (233, 45, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (234, 45, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (235, 45, 4, 'rating', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (236, 45, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (237, 46, 1, '{\"en\":\"Rating Properties\",\"fa\":\"خصوصیات رتبه بندی ها\",\"ar\":\"خصائص التصنيف\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (238, 46, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (239, 46, 3, 'conversation_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (240, 46, 4, 'rating', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (241, 46, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (254, 49, 1, '{\"en\":\"Permissions\",\"fa\":\"سطح دسترسی\",\"ar\":\"أذونات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (255, 49, 2, 'permissions.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (256, 49, 9, '1', NULL, NULL);
@@ -917,15 +851,10 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (274, 53, 9, '1', NULL,
 INSERT INTO `navigation_item_assigned_properties` VALUES (275, 54, 1, '{\"en\":\"Contact Us\",\"fa\":\"تماس با ما\",\"ar\":\"اتصل بنا\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (276, 54, 2, 'home.contact.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (279, 54, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (285, 56, 1, '{\"fa\":\"نقشه ها\",\"en\":\"Maps\",\"ar\":\"النقشه ها\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (286, 56, 2, 'items.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (287, 56, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (288, 56, 4, 'map', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (289, 57, 1, '{\"fa\":\"مختصات نقشه\",\"en\":\"Map Locations\",\"ar\":\"النقشه ها المختصات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (290, 57, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (291, 57, 3, 'data_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (292, 57, 4, 'map-location', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (293, 56, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (294, 57, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (295, 58, 1, '{\"en\":\"Video Files\",\"fa\":\"فایل های ویدئو\",\"ar\":\"-\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (296, 58, 2, 'items.index', NULL, NULL);
@@ -937,54 +866,34 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (301, 59, 2, 'items.ind
 INSERT INTO `navigation_item_assigned_properties` VALUES (302, 59, 3, 'document_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (303, 59, 4, 'flash', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (304, 59, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (305, 60, 1, '{\"en\":\"External Chat System\",\"fa\":\"سیستم چت آنلاین\",\"ar\":\"-\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (306, 60, 2, 'items.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (307, 60, 3, 'comunication_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (308, 60, 4, 'external-chat-system', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (309, 60, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (328, 1, 20, 'dashboard', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (329, 2, 20, 'room', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (330, 3, 20, 'face', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (331, 4, 20, 'people', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (332, 5, 20, 'image', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (333, 10, 20, 'menu', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (334, 11, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (335, 12, 20, 'book', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (336, 13, 20, 'local_offer', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (337, 14, 20, 'slideshow', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (338, 15, 20, 'slideshow', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (337, 14, 20, 'slide', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (339, 20, 20, 'web', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (340, 28, 20, 'hotel', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (341, 29, 20, 'image', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (342, 30, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (343, 32, 20, 'grain', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (344, 33, 20, 'grain', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (345, 34, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (347, 36, 20, 'pages', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (348, 39, 20, 'message', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (349, 40, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (350, 41, 20, 'comment', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (351, 42, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (352, 43, 20, 'mode_comment', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (353, 44, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (354, 45, 20, 'rate_review', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (355, 46, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (356, 49, 20, 'accessibility', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (357, 56, 20, 'map', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (358, 57, 20, 'location_on', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (359, 58, 20, 'ondemand_video', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (360, 59, 20, 'flash_on', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (361, 60, 20, 'chat', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (368, 67, 1, '{\"en\":\"News\",\"fa\":\"اخبار\",\"ar\":\"الاخبار\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (369, 67, 2, 'items.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (370, 67, 3, 'data_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (371, 67, 4, 'news', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (372, 67, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (373, 68, 1, '{\"en\":\"News Properties\",\"fa\":\"خاصیت های اخبار\",\"ar\":\"الاخبار\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (374, 68, 2, 'items.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (375, 68, 3, 'data_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (376, 68, 4, 'news', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (377, 68, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (378, 69, 1, '{\"en\":\"News\",\"fa\":\"اخبار\",\"ar\":\"الاخبار\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (379, 69, 2, 'home.news.all', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (382, 69, 9, '1', NULL, NULL);
@@ -994,6 +903,269 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (388, 71, 13, '1', NULL
 INSERT INTO `navigation_item_assigned_properties` VALUES (404, 77, 11, '{\"en\":\"t1\",\"fa\":\"t1\",\"ar\":\"t1\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (405, 77, 12, 'http://localhost/online-service/data/news/%7B%22category%22%3A%7B%22values%22%3A%5B1%2C5%2C8%5D%2C%22operator%22%3A%22in%22%7D%7D', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (406, 77, 13, '1', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for navigation_item_assigned_properties_copy1
+-- ----------------------------
+DROP TABLE IF EXISTS `navigation_item_assigned_properties_copy1`;
+CREATE TABLE `navigation_item_assigned_properties_copy1`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `navigation_item` int(11) NOT NULL,
+  `property` int(11) NOT NULL,
+  `value` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 407 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of navigation_item_assigned_properties_copy1
+-- ----------------------------
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (1, 1, 1, '{\"en\":\"Dashboard\",\"fa\":\"داشبورد\",\"ar\":\"لوحة القيادة\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (2, 1, 2, 'admin.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (3, 2, 1, '{\"en\":\"Rooms\",\"fa\":\"فهرست اتاق ها\",\"ar\":\"غرف\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (4, 2, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (5, 2, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (6, 2, 4, 'room', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (7, 3, 1, '{\"en\":\"Users\",\"fa\":\"کاربران\",\"ar\":\"المستخدمين\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (8, 3, 2, 'users.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (9, 3, 3, 'user_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (10, 3, 4, 'user', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (11, 4, 1, '{\"en\":\"Customers\",\"fa\":\"مشتریان\",\"ar\":\"الزبائن\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (12, 4, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (13, 4, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (14, 4, 4, 'customer', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (15, 5, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (16, 5, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (17, 5, 3, 'document_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (18, 5, 4, 'gallery', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (19, 6, 1, '{\"en\":\"Home\",\"fa\":\"صفحه اصلی\",\"ar\":\"الصفحة الرئيسية\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (20, 6, 2, 'home.index2', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (21, 7, 1, '{\"en\":\"Rooms\",\"fa\":\"فهرست اتاق ها\",\"ar\":\"غرف\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (22, 7, 2, 'home.room.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (25, 8, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (26, 8, 2, 'home.gallery.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (29, 9, 1, '{\"en\":\"Register Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"تسجيل الشكاوى\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (30, 9, 2, 'home.complaint.send', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (33, 10, 1, '{\"en\":\"Navigation\",\"fa\":\"منوها\",\"ar\":\"التنقل\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (34, 10, 2, 'navigation.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (37, 11, 1, '{\"en\":\"Room Properties\",\"fa\":\"خاصیت های اتاق ها\",\"ar\":\"خصائص الغرفة\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (38, 11, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (39, 11, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (40, 11, 4, 'room', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (41, 12, 1, '{\"en\":\"Reserve\",\"fa\":\"رزرو اتاق\",\"ar\":\"حجز\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (42, 12, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (43, 12, 3, 'service_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (44, 12, 4, 'reserve', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (45, 13, 1, '{\"en\":\"Offers\",\"fa\":\"پکیج های ویژه\",\"ar\":\"عروض\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (46, 13, 2, 'relations.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (47, 13, 3, 'relation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (48, 13, 4, 'offer', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (49, 14, 1, '{\"en\":\"Slides\",\"fa\":\"اسلاید ها\",\"ar\":\"الشريحة الرئيسية\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (50, 14, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (51, 14, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (52, 14, 4, 'slide', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (57, 16, 1, '{\"en\":\"Home\",\"fa\":\"صفحه اصلی\",\"ar\":\"الصفحة الرئيسية\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (58, 16, 2, 'home.index2', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (61, 17, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (62, 17, 2, 'home.gallery.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (65, 18, 1, '{\"en\":\"Contact Us\",\"fa\":\"تماس با ما\",\"ar\":\"اتصل بنا\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (66, 18, 2, 'home.contact.send', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (73, 20, 1, '{\"en\":\"Website Settings\",\"fa\":\"تنظیمات وبسایت\",\"ar\":\"إعدادات الفندق\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (74, 20, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (75, 20, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (76, 20, 4, 'website', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (81, 22, 1, '{\"en\":\"Contact Us\",\"fa\":\"تماس با ما\",\"ar\":\"اتصل بنا\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (82, 22, 2, 'home.contact.send', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (85, 23, 1, '{\"en\":\"Rooms\",\"fa\":\"فهرست اتاق ها\",\"ar\":\"غرف\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (86, 23, 2, 'home.room.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (93, 25, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر هتل\",\"ar\":\"صالة عرض\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (94, 25, 2, 'home.gallery.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (121, 1, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (122, 2, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (123, 3, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (124, 4, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (125, 5, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (126, 6, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (127, 7, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (128, 8, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (129, 9, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (130, 10, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (131, 11, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (132, 12, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (133, 13, 9, '0', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (134, 14, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (136, 16, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (137, 17, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (138, 18, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (139, 20, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (140, 21, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (141, 22, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (142, 23, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (144, 25, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (145, 26, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (146, 27, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (147, 28, 1, '{\"en\":\"Hotel Settings\",\"fa\":\"تنظیمات هتل\",\"ar\":\"إعدادات الفندق\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (148, 28, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (149, 28, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (150, 28, 4, 'hotel', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (151, 28, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (152, 29, 1, '{\"en\":\"Media\",\"fa\":\"رسانه\",\"ar\":\"وسائل الإعلام\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (153, 29, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (154, 29, 3, 'document_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (155, 29, 4, 'image', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (156, 30, 1, '{\"en\":\"Hotel Properties\",\"fa\":\"خاصیت های هتل\",\"ar\":\"خصائص الفندق\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (157, 30, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (158, 30, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (159, 30, 4, 'hotel', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (160, 30, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (161, 31, 1, '{\"en\":\"Register Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"تسجيل الشكاوى\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (162, 31, 2, 'home.complaint.send', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (165, 31, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (166, 32, 1, '{\"en\":\"User Properties\",\"fa\":\"خاصیت های کاربر\",\"ar\":\"خصائص الکابر\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (167, 32, 2, 'users.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (168, 32, 3, 'user_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (169, 32, 4, 'user', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (170, 32, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (171, 33, 1, '{\"en\":\"Customer Properties\",\"fa\":\"خاصیت های مشتری\",\"ar\":\"خصائص المشتری\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (172, 33, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (173, 33, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (174, 33, 4, 'customer', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (175, 33, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (176, 34, 1, '{\"en\":\"Reserve Properties\",\"fa\":\"خاصیت های سیستم رزرو\",\"ar\":\"خصائص الرزرو\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (177, 34, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (178, 34, 3, 'service_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (179, 34, 4, 'reserve', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (180, 34, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (186, 29, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (187, 36, 1, '{\"en\":\"Pages\",\"fa\":\"برگه ها\",\"ar\":\"صفحات\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (188, 36, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (189, 36, 3, 'document_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (190, 36, 4, 'pages', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (191, 36, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (202, 39, 1, '{\"en\":\"Messages\",\"fa\":\"پیام ها\",\"ar\":\"رسائل\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (203, 39, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (204, 39, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (205, 39, 4, 'message', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (206, 39, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (207, 40, 1, '{\"en\":\"Message Properties\",\"fa\":\"خصوصیات پیام ها\",\"ar\":\"خصائص الرسالة\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (208, 40, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (209, 40, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (210, 40, 4, 'message', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (211, 40, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (212, 41, 1, '{\"en\":\"Comments\",\"fa\":\"دیدگاه ها\",\"ar\":\"تعليقات\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (213, 41, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (214, 41, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (215, 41, 4, 'comment', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (216, 41, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (217, 42, 1, '{\"en\":\"Comment Properties\",\"fa\":\"خصوصیات دیدگاه ها\",\"ar\":\"خصائص التعليق\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (218, 42, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (219, 42, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (220, 42, 4, 'comment', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (221, 42, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (222, 43, 1, '{\"en\":\"Complaints\",\"fa\":\"شکایات\",\"ar\":\"شكاوي\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (223, 43, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (224, 43, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (225, 43, 4, 'complaint', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (226, 43, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (227, 44, 1, '{\"en\":\"Complaint Properties\",\"fa\":\"خصوصیات شکایت ها\",\"ar\":\"خصائص الشكوى\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (228, 44, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (229, 44, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (230, 44, 4, 'complaint', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (231, 44, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (232, 45, 1, '{\"en\":\"Ratings\",\"fa\":\"رتبه بندی ها\",\"ar\":\"تصنيفات\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (233, 45, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (234, 45, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (235, 45, 4, 'rating', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (236, 45, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (237, 46, 1, '{\"en\":\"Rating Properties\",\"fa\":\"خصوصیات رتبه بندی ها\",\"ar\":\"خصائص التصنيف\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (238, 46, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (239, 46, 3, 'conversation_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (240, 46, 4, 'rating', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (241, 46, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (254, 49, 1, '{\"en\":\"Permissions\",\"fa\":\"سطح دسترسی\",\"ar\":\"أذونات\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (255, 49, 2, 'permissions.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (256, 49, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (257, 50, 1, '{\"en\":\"Home\",\"fa\":\"صفحه اصلی\",\"ar\":\"الصفحة الرئيسية\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (258, 50, 2, 'home.index2', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (259, 51, 1, '{\"en\":\"Rooms\",\"fa\":\"اتاق ها\",\"ar\":\"غرف\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (260, 51, 2, 'home.room.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (263, 52, 1, '{\"en\":\"Gallery\",\"fa\":\"گالری تصاویر\",\"ar\":\"صالة عرض\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (264, 52, 2, 'home.gallery.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (267, 53, 1, '{\"en\":\"Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"شكاوي\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (268, 53, 2, 'home.complaint.send', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (271, 50, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (272, 51, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (273, 52, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (274, 53, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (275, 54, 1, '{\"en\":\"Contact Us\",\"fa\":\"تماس با ما\",\"ar\":\"اتصل بنا\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (276, 54, 2, 'home.contact.send', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (279, 54, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (289, 57, 1, '{\"fa\":\"مختصات نقشه\",\"en\":\"Map Locations\",\"ar\":\"النقشه ها المختصات\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (290, 57, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (291, 57, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (292, 57, 4, 'map-location', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (294, 57, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (295, 58, 1, '{\"en\":\"Video Files\",\"fa\":\"فایل های ویدئو\",\"ar\":\"-\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (296, 58, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (297, 58, 3, 'document_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (298, 58, 4, 'video', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (299, 58, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (300, 59, 1, '{\"en\":\"SWF Files\",\"fa\":\"فایل های فلش\",\"ar\":\"-\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (301, 59, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (302, 59, 3, 'document_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (303, 59, 4, 'flash', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (304, 59, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (328, 1, 20, 'dashboard', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (329, 2, 20, 'room', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (330, 3, 20, 'face', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (331, 4, 20, 'people', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (332, 5, 20, 'image', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (333, 10, 20, 'menu', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (334, 11, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (335, 12, 20, 'book', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (336, 13, 20, 'local_offer', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (337, 14, 20, 'slide', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (339, 20, 20, 'web', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (340, 28, 20, 'hotel', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (341, 29, 20, 'image', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (342, 30, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (343, 32, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (344, 33, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (345, 34, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (347, 36, 20, 'pages', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (348, 39, 20, 'message', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (349, 40, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (350, 41, 20, 'comment', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (351, 42, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (352, 43, 20, 'mode_comment', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (353, 44, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (354, 45, 20, 'rate_review', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (355, 46, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (356, 49, 20, 'accessibility', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (357, 56, 20, 'map', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (358, 57, 20, 'location_on', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (359, 58, 20, 'ondemand_video', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (360, 59, 20, 'flash_on', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (368, 67, 1, '{\"en\":\"News\",\"fa\":\"اخبار\",\"ar\":\"الاخبار\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (369, 67, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (370, 67, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (371, 67, 4, 'news', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (372, 67, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (373, 68, 1, '{\"en\":\"News Properties\",\"fa\":\"خاصیت های اخبار\",\"ar\":\"الاخبار\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (374, 68, 2, 'items.properties.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (375, 68, 3, 'data_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (376, 68, 4, 'news', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (377, 68, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (378, 69, 1, '{\"en\":\"News\",\"fa\":\"اخبار\",\"ar\":\"الاخبار\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (379, 69, 2, 'home.news.all', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (382, 69, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (386, 71, 11, '{\"en\":\"22\",\"fa\":\"22\",\"ar\":\"22\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (387, 71, 12, 'http://localhost/online-service/document/pages/217', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (388, 71, 13, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (404, 77, 11, '{\"en\":\"t1\",\"fa\":\"t1\",\"ar\":\"t1\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (405, 77, 12, 'http://localhost/online-service/data/news/%7B%22category%22%3A%7B%22values%22%3A%5B1%2C5%2C8%5D%2C%22operator%22%3A%22in%22%7D%7D', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties_copy1` VALUES (406, 77, 13, '1', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for navigation_item_properties
@@ -1042,6 +1214,52 @@ INSERT INTO `navigation_item_properties` VALUES (20, 'materialize_icon', 'dashbo
 INSERT INTO `navigation_item_properties` VALUES (21, 'title', '-', 'text', 1, 1, 0, 'section', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
 
 -- ----------------------------
+-- Table structure for navigation_item_properties_copy1
+-- ----------------------------
+DROP TABLE IF EXISTS `navigation_item_properties_copy1`;
+CREATE TABLE `navigation_item_properties_copy1`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `default_value` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `input_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `level` int(11) NOT NULL,
+  `navigation` int(10) UNSIGNED NOT NULL,
+  `is_setting` tinyint(255) NULL DEFAULT 0,
+  `link_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `should_be_validated` tinyint(255) NOT NULL DEFAULT 0,
+  `validation_rules` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `is_key` tinyint(255) NOT NULL DEFAULT 0,
+  `is_fillable` tinyint(255) NOT NULL DEFAULT 0,
+  `fillation_rules` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'direct',
+  `have_child` tinyint(255) NULL DEFAULT 0,
+  `can_be_filled` tinyint(255) NULL DEFAULT 1,
+  `parent` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of navigation_item_properties_copy1
+-- ----------------------------
+INSERT INTO `navigation_item_properties_copy1` VALUES (1, 'title', '-', 'text', 1, 1, 0, 'route', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (2, 'route', '', 'text', 1, 1, 0, 'route', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (3, 'key', '', 'text', 1, 1, 0, 'route', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (4, 'value', '', 'text', 1, 1, 0, 'route', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (9, 'enabled', '', 'check', 1, 1, 0, 'route', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (11, 'title', '', 'text', 1, 1, 0, 'url', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (12, 'url', '', 'text', 1, 1, 0, 'url', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (13, 'enabled', '', 'check', 1, 1, 0, 'url', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (14, 'max-navigation-items', '0', 'number', 1, 1, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (15, 'max-navigation-items', '4', 'number', 1, 2, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (16, 'max-navigation-items', '3', 'number', 1, 3, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (17, 'max-navigation-items', '10', 'number', 1, 4, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (18, 'max-navigation-items', '2', 'number', 1, 5, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (19, 'max-navigation-items', '0', 'number', 1, 6, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (20, 'materialize_icon', 'dashboard', 'select-icon', 1, 1, 0, 'route', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties_copy1` VALUES (21, 'title', '-', 'text', 1, 1, 0, 'section', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+
+-- ----------------------------
 -- Table structure for navigation_items
 -- ----------------------------
 DROP TABLE IF EXISTS `navigation_items`;
@@ -1069,11 +1287,9 @@ INSERT INTO `navigation_items` VALUES (7, 2, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (8, 2, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (9, 2, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (10, 1, 'route', 'section:navigation|g_order:12&g_name:navigation|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (11, 1, 'route', 'section:main_info|g_order:2&g_name:rooms&g_icon:room|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (12, 1, 'route', 'section:main_info|g_order:3&g_name:reserve&g_icon:book|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (13, 1, 'route', 'section:main_info|g_order:2&g_name:rooms&g_icon:room|order:3', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (14, 1, 'route', 'section:media|g_order:6&g_name:slideshow&g_icon:slideshow|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (15, 1, 'route', 'section:media|g_order:6&g_name:slideshow&g_icon:slideshow|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (16, 3, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (17, 3, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (18, 3, 'route', NULL, 0, NULL, NULL);
@@ -1084,36 +1300,97 @@ INSERT INTO `navigation_items` VALUES (24, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (25, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (28, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (29, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (30, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:3', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (31, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (32, 1, 'route', 'section:users|g_order:11&g_name:users&g_icon:face|order:2', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (33, 1, 'route', 'section:main_info|g_order:4&g_name:customers&g_icon:people|order:2', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (34, 1, 'route', 'section:main_info|g_order:3&g_name:reserve&g_icon:book|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (36, 1, 'route', 'section:pages|g_order:13&g_name:pages|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (39, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (40, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (41, 1, 'route', 'section:conversations|g_order:8&g_name:comments&g_icon:comment|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (42, 1, 'route', 'section:conversations|g_order:8&g_name:comments&g_icon:comment|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (43, 1, 'route', 'section:conversations|g_order:9&g_name:complaints&g_icon:mode_comment|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (44, 1, 'route', 'section:conversations|g_order:9&g_name:complaints&g_icon:mode_comment|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (45, 1, 'route', 'section:conversations|g_order:10&g_name:rating&g_icon:rate_review|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (46, 1, 'route', 'section:conversations|g_order:10&g_name:rating&g_icon:rate_review|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (49, 1, 'route', 'section:permissions|g_order:14&g_name:permissions|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (50, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (51, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (52, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (53, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (54, 6, 'route', NULL, 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (56, 1, 'route', 'section:extra_info|g_order:15&g_name:map&g_icon:map|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (57, 1, 'route', 'section:extra_info|g_order:15&g_name:map&g_icon:map|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (58, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:3', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (59, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:4', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (60, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:5', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (67, 1, 'route', 'section:news|g_order:18&g_name:news&g_icon:news|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (68, 1, 'route', 'section:news|g_order:18&g_name:news&g_icon:news|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (69, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (71, 5, 'url', '', 0, '2019-11-16 12:21:51', '2019-11-16 12:21:51');
 INSERT INTO `navigation_items` VALUES (77, 7, 'url', '', 0, '2019-11-20 15:12:25', '2019-11-20 15:12:25');
+
+-- ----------------------------
+-- Table structure for navigation_items_copy1
+-- ----------------------------
+DROP TABLE IF EXISTS `navigation_items_copy1`;
+CREATE TABLE `navigation_items_copy1`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `navigation` int(10) UNSIGNED NOT NULL,
+  `link_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `display_rules` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `parent` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of navigation_items_copy1
+-- ----------------------------
+INSERT INTO `navigation_items_copy1` VALUES (1, 1, 'route', 'g_order:1&g_name:dashboard|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (2, 1, 'route', 'section:main_info|g_order:2&g_name:rooms&g_icon:room|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (3, 1, 'route', 'section:users|g_order:11&g_name:users&g_icon:face|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (4, 1, 'route', 'section:main_info|g_order:4&g_name:customers&g_icon:people|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (5, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (6, 2, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (7, 2, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (8, 2, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (9, 2, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (10, 1, 'route', 'section:navigation|g_order:12&g_name:navigation|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (11, 1, 'route', 'section:main_info|g_order:2&g_name:rooms&g_icon:room|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (12, 1, 'route', 'section:main_info|g_order:3&g_name:reserve&g_icon:book|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (13, 1, 'route', 'section:main_info|g_order:2&g_name:rooms&g_icon:room|order:3', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (14, 1, 'route', 'section:media|g_order:6&g_name:slideshow&g_icon:slideshow|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (16, 3, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (17, 3, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (18, 3, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (20, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (22, 4, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (23, 4, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (24, 4, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (25, 4, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (28, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (29, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (30, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:3', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (31, 4, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (32, 1, 'route', 'section:users|g_order:11&g_name:users&g_icon:face|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (33, 1, 'route', 'section:main_info|g_order:4&g_name:customers&g_icon:people|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (34, 1, 'route', 'section:main_info|g_order:3&g_name:reserve&g_icon:book|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (36, 1, 'route', 'section:pages|g_order:13&g_name:pages|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (39, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (40, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (41, 1, 'route', 'section:conversations|g_order:8&g_name:comments&g_icon:comment|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (42, 1, 'route', 'section:conversations|g_order:8&g_name:comments&g_icon:comment|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (43, 1, 'route', 'section:conversations|g_order:9&g_name:complaints&g_icon:mode_comment|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (44, 1, 'route', 'section:conversations|g_order:9&g_name:complaints&g_icon:mode_comment|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (45, 1, 'route', 'section:conversations|g_order:10&g_name:rating&g_icon:rate_review|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (46, 1, 'route', 'section:conversations|g_order:10&g_name:rating&g_icon:rate_review|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (49, 1, 'route', 'section:permissions|g_order:14&g_name:permissions|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (50, 6, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (51, 6, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (52, 6, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (53, 6, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (54, 6, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (57, 1, 'route', 'section:extra_info|g_order:15&g_name:map&g_icon:map|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (58, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:3', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (59, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:4', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (67, 1, 'route', 'section:news|g_order:18&g_name:news&g_icon:news|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (68, 1, 'route', 'section:news|g_order:18&g_name:news&g_icon:news|order:2', 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (69, 4, 'route', NULL, 0, NULL, NULL);
+INSERT INTO `navigation_items_copy1` VALUES (71, 5, 'url', '', 0, '2019-11-16 12:21:51', '2019-11-16 12:21:51');
+INSERT INTO `navigation_items_copy1` VALUES (77, 7, 'url', '', 0, '2019-11-20 15:12:25', '2019-11-20 15:12:25');
 
 -- ----------------------------
 -- Table structure for navigations
@@ -1125,6 +1402,7 @@ CREATE TABLE `navigations`  (
   `can_have_item` tinyint(255) NULL DEFAULT 2,
   `can_have_child` tinyint(255) NULL DEFAULT 0,
   `parent` int(255) NULL DEFAULT 0,
+  `max_items` int(255) NULL DEFAULT 0,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -1133,13 +1411,40 @@ CREATE TABLE `navigations`  (
 -- ----------------------------
 -- Records of navigations
 -- ----------------------------
-INSERT INTO `navigations` VALUES (1, 'admin', 2, 0, 0, NULL, NULL);
-INSERT INTO `navigations` VALUES (2, 'public', 2, 0, 0, NULL, NULL);
-INSERT INTO `navigations` VALUES (3, 'index', 2, 0, 0, NULL, NULL);
-INSERT INTO `navigations` VALUES (4, 'useful-links', 2, 0, 0, NULL, NULL);
-INSERT INTO `navigations` VALUES (5, 'facility-links', 2, 0, 0, NULL, NULL);
-INSERT INTO `navigations` VALUES (6, 'mobile', 2, 0, 0, NULL, NULL);
-INSERT INTO `navigations` VALUES (7, 'home-page-middle', 2, 0, 0, NULL, NULL);
+INSERT INTO `navigations` VALUES (1, 'admin', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations` VALUES (2, 'public', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations` VALUES (3, 'index', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations` VALUES (4, 'useful-links', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations` VALUES (5, 'facility-links', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations` VALUES (6, 'mobile', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations` VALUES (7, 'home-page-middle', 2, 0, 0, 0, NULL, NULL);
+
+-- ----------------------------
+-- Table structure for navigations_copy1
+-- ----------------------------
+DROP TABLE IF EXISTS `navigations_copy1`;
+CREATE TABLE `navigations_copy1`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `can_have_item` tinyint(255) NULL DEFAULT 2,
+  `can_have_child` tinyint(255) NULL DEFAULT 0,
+  `parent` int(255) NULL DEFAULT 0,
+  `max_items` int(255) NULL DEFAULT 0,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of navigations_copy1
+-- ----------------------------
+INSERT INTO `navigations_copy1` VALUES (1, 'admin', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations_copy1` VALUES (2, 'public', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations_copy1` VALUES (3, 'index', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations_copy1` VALUES (4, 'useful-links', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations_copy1` VALUES (5, 'facility-links', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations_copy1` VALUES (6, 'mobile', 2, 0, 0, 0, NULL, NULL);
+INSERT INTO `navigations_copy1` VALUES (7, 'home-page-middle', 2, 0, 0, 0, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for news
@@ -1335,13 +1640,13 @@ INSERT INTO `permissions` VALUES (68, 'users.store:user', 'web', '-', '{\"fa\":\
 INSERT INTO `permissions` VALUES (69, 'users.edit:user', 'web', 'edit items', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (70, 'users.update:user', 'web', '-', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 69, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (71, 'users.destroy:user', 'web', 'delete item', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (72, 'users.index:customer', 'web', 'access items', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
-INSERT INTO `permissions` VALUES (73, 'users.show:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 72, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (74, 'users.create:customer', 'web', 'create new item', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (75, 'users.store:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 74, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (76, 'users.edit:customer', 'web', 'edit items', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (77, 'users.update:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 76, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (78, 'users.destroy:customer', 'web', 'delete item', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (72, 'items.index:customer', 'web', 'access items', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
+INSERT INTO `permissions` VALUES (73, 'items.show:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 72, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (74, 'items.create:customer', 'web', 'create new item', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (75, 'items.store:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 74, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (76, 'items.edit:customer', 'web', 'edit items', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (77, 'items.update:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 76, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (78, 'items.destroy:customer', 'web', 'delete item', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (79, 'users.properties.index:user', 'web', 'access properties', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
 INSERT INTO `permissions` VALUES (80, 'users.properties.show:user', 'web', '-', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 79, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
 INSERT INTO `permissions` VALUES (81, 'users.properties.create:user', 'web', 'create new property', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
@@ -1349,17 +1654,17 @@ INSERT INTO `permissions` VALUES (82, 'users.properties.store:user', 'web', '-',
 INSERT INTO `permissions` VALUES (83, 'users.properties.edit:user', 'web', 'edit properties', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (84, 'users.properties.update:user', 'web', '-', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 83, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (85, 'users.properties.destroy:user', 'web', 'delete property', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (86, 'users.properties.index:customer', 'web', 'access properties', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
-INSERT INTO `permissions` VALUES (87, 'users.properties.show:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 86, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (88, 'users.properties.create:customer', 'web', 'create new property', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (89, 'users.properties.store:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 88, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (90, 'users.properties.edit:customer', 'web', 'edit properties', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (91, 'users.properties.update:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 90, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (92, 'users.properties.destroy:customer', 'web', 'delete property', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (86, 'items.properties.index:customer', 'web', 'access properties', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
+INSERT INTO `permissions` VALUES (87, 'items.properties.show:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 86, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (88, 'items.properties.create:customer', 'web', 'create new property', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (89, 'items.properties.store:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 88, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (90, 'items.properties.edit:customer', 'web', 'edit properties', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (91, 'items.properties.update:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 90, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (92, 'items.properties.destroy:customer', 'web', 'delete property', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (93, 'users.settings:user', 'web', 'access settings', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (94, 'users.settings.update:user', 'web', '-', '{\"fa\":\"کاربر\",\"en\":\"user\",\"ar\":\"الکاربر\"}', 93, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (95, 'users.settings:customer', 'web', 'access settings', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (96, 'users.settings.update:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 95, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (95, 'items.settings:customer', 'web', 'access settings', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (96, 'items.settings.update:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 95, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (97, 'items.index:image', 'web', 'access items', '{\"fa\":\"تصویر\",\"en\":\"image file\",\"ar\":\"-\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
 INSERT INTO `permissions` VALUES (98, 'items.show:image', 'web', '-', '{\"fa\":\"تصویر\",\"en\":\"image file\",\"ar\":\"-\"}', 97, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
 INSERT INTO `permissions` VALUES (99, 'items.create:image', 'web', 'create new item', '{\"fa\":\"تصویر\",\"en\":\"image file\",\"ar\":\"-\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
@@ -1374,20 +1679,13 @@ INSERT INTO `permissions` VALUES (107, 'items.store:gallery', 'web', '-', '{\"fa
 INSERT INTO `permissions` VALUES (108, 'items.edit:gallery', 'web', 'edit items', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (109, 'items.update:gallery', 'web', '-', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 108, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (110, 'items.destroy:gallery', 'web', 'delete item', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (111, 'items.index:main-slide-show', 'web', 'access items', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
-INSERT INTO `permissions` VALUES (112, 'items.show:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 111, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (113, 'items.create:main-slide-show', 'web', 'create new item', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (114, 'items.store:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 113, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (115, 'items.edit:main-slide-show', 'web', 'edit items', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (116, 'items.update:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 115, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (117, 'items.destroy:main-slide-show', 'web', 'delete item', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (118, 'items.index:second-slide-show', 'web', 'access items', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
-INSERT INTO `permissions` VALUES (119, 'items.show:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 118, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (120, 'items.create:second-slide-show', 'web', 'create new item', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (121, 'items.store:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 120, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (122, 'items.edit:second-slide-show', 'web', 'edit items', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (123, 'items.update:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 122, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (124, 'items.destroy:second-slide-show', 'web', 'delete item', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (111, 'items.index:slide', 'web', 'access items', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
+INSERT INTO `permissions` VALUES (112, 'items.show:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 111, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (113, 'items.create:slide', 'web', 'create new item', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (114, 'items.store:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 113, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (115, 'items.edit:slide', 'web', 'edit items', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (116, 'items.update:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 115, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (117, 'items.destroy:slide', 'web', 'delete item', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (125, 'items.index:pages', 'web', 'access items', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
 INSERT INTO `permissions` VALUES (126, 'items.show:pages', 'web', '-', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 125, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
 INSERT INTO `permissions` VALUES (127, 'items.create:pages', 'web', 'create new item', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
@@ -1409,20 +1707,13 @@ INSERT INTO `permissions` VALUES (142, 'items.properties.store:gallery', 'web', 
 INSERT INTO `permissions` VALUES (143, 'items.properties.edit:gallery', 'web', 'edit properties', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (144, 'items.properties.update:gallery', 'web', '-', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 143, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (145, 'items.properties.destroy:gallery', 'web', 'delete property', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (146, 'items.properties.index:main-slide-show', 'web', 'access properties', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
-INSERT INTO `permissions` VALUES (147, 'items.properties.show:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 146, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (148, 'items.properties.create:main-slide-show', 'web', 'create new property', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (149, 'items.properties.store:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 148, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (150, 'items.properties.edit:main-slide-show', 'web', 'edit properties', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (151, 'items.properties.update:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 150, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (152, 'items.properties.destroy:main-slide-show', 'web', 'delete property', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (153, 'items.properties.index:second-slide-show', 'web', 'access properties', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 1, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
-INSERT INTO `permissions` VALUES (154, 'items.properties.show:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 153, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (155, 'items.properties.create:second-slide-show', 'web', 'create new property', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
-INSERT INTO `permissions` VALUES (156, 'items.properties.store:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 155, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (157, 'items.properties.edit:second-slide-show', 'web', 'edit properties', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (158, 'items.properties.update:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 157, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (159, 'items.properties.destroy:second-slide-show', 'web', 'delete property', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (146, 'items.properties.index:slide', 'web', 'access properties', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
+INSERT INTO `permissions` VALUES (147, 'items.properties.show:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 146, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (148, 'items.properties.create:slide', 'web', 'create new property', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
+INSERT INTO `permissions` VALUES (149, 'items.properties.store:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 148, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (150, 'items.properties.edit:slide', 'web', 'edit properties', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (151, 'items.properties.update:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 150, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (152, 'items.properties.destroy:slide', 'web', 'delete property', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (160, 'items.properties.index:pages', 'web', 'access properties', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 0, 1, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
 INSERT INTO `permissions` VALUES (161, 'items.properties.show:pages', 'web', '-', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 160, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
 INSERT INTO `permissions` VALUES (162, 'items.properties.create:pages', 'web', 'create new property', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 0, 1, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
@@ -1434,10 +1725,8 @@ INSERT INTO `permissions` VALUES (167, 'items.settings:general', 'web', 'access 
 INSERT INTO `permissions` VALUES (168, 'items.settings.update:general', 'web', '-', '{\"fa\":\"تصویر\",\"en\":\"image file\",\"ar\":\"-\"}', 167, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (169, 'items.settings:gallery', 'web', 'access settings', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (170, 'items.settings.update:gallery', 'web', '-', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 169, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (171, 'items.settings:main-slide-show', 'web', 'access settings', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (172, 'items.settings.update:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 171, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (173, 'items.settings:second-slide-show', 'web', 'access settings', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (174, 'items.settings.update:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 173, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (171, 'items.settings:slide', 'web', 'access settings', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (172, 'items.settings.update:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 171, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (175, 'items.settings:pages', 'web', 'access settings', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (176, 'items.settings.update:pages', 'web', '-', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 175, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (177, 'permissions.index', 'web', 'access items', '{\"fa\":\"سطح دسترسی\",\"en\":\"permissions\",\"ar\":\"السطح الدسترسی\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
@@ -1492,8 +1781,7 @@ INSERT INTO `permissions` VALUES (225, 'users.properties.ajax.destroy:user', 'we
 INSERT INTO `permissions` VALUES (226, 'users.properties.ajax.destroy:customer', 'web', '-', '{\"fa\":\"مشتری\",\"en\":\"customer\",\"ar\":\"المشتری\"}', 92, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (227, 'items.properties.ajax.destroy:general', 'web', '-', '{\"fa\":\"تصویر\",\"en\":\"image file\",\"ar\":\"-\"}', 138, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (228, 'items.properties.ajax.destroy:gallery', 'web', '-', '{\"fa\":\"گالری\",\"en\":\"gallery\",\"ar\":\"-\"}', 145, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (229, 'items.properties.ajax.destroy:main-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 152, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (230, 'items.properties.ajax.destroy:second-slide-show', 'web', '-', '{\"fa\":\"اسلاید صفحه دوم\",\"en\":\"second slide\",\"ar\":\"-\"}', 159, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (229, 'items.properties.ajax.destroy:slide', 'web', '-', '{\"fa\":\"اسلاید صفحه اصلی\",\"en\":\"main slide\",\"ar\":\"-\"}', 152, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (231, 'items.properties.ajax.destroy:pages', 'web', '-', '{\"fa\":\"برگه\",\"en\":\"page\",\"ar\":\"-\"}', 166, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (232, 'navigation.change', 'web', '-', '{\"fa\":\"منوها\",\"en\":\"navigations\",\"ar\":\"المنو ها\"}', 188, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (233, 'navigation.get', 'web', '-', '{\"fa\":\"منوها\",\"en\":\"navigations\",\"ar\":\"المنو ها\"}', 184, 2, NULL, NULL);
@@ -1502,23 +1790,6 @@ INSERT INTO `permissions` VALUES (235, 'services.get:reserve', 'web', '-', '{\"f
 INSERT INTO `permissions` VALUES (236, 'services.change:reserve', 'web', '-', '{\"fa\":\"رزرو\",\"en\":\"reserve\",\"ar\":\"-\"}', 195, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (237, 'services.refresh:reserve', 'web', '-', '{\"fa\":\"رزرو\",\"en\":\"reserve\",\"ar\":\"-\"}', 191, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (238, 'relations.get:offer', 'web', '-', '{\"fa\":\"پیشنهاد ویژه\",\"en\":\"offers\",\"ar\":\"البیشنهاد ویزه\"}', 212, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (239, 'items.index:map', 'web', 'access items', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (240, 'items.show:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 239, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (241, 'items.create:map', 'web', 'create new item', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (242, 'items.store:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 241, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (243, 'items.edit:map', 'web', 'edit items', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (244, 'items.update:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 243, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (245, 'items.destroy:map', 'web', 'delete item', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (246, 'items.properties.index:map', 'web', 'access properties', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (247, 'items.properties.show:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 246, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (248, 'items.properties.create:map', 'web', 'create new property', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (249, 'items.properties.store:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 248, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (250, 'items.properties.edit:map', 'web', 'edit properties', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (251, 'items.properties.update:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 250, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (252, 'items.properties.destroy:map', 'web', 'delete property', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (253, 'items.properties.ajax.destroy:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 252, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (254, 'items.settings:map', 'web', 'access settings', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (255, 'items.settings.update:map', 'web', '-', '{\"fa\":\"نقشه\",\"en\":\"map\",\"ar\":\"النقشه\"}', 253, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (256, 'items.index:map-location', 'web', 'access items', '{\"fa\":\"مکان نقشه\",\"en\":\"map location\",\"ar\":\"المکان النقشه\"}', 0, 2, '2019-05-28 08:57:42', '2019-05-28 08:57:42');
 INSERT INTO `permissions` VALUES (257, 'items.show:map-location', 'web', '-', '{\"fa\":\"مکان نقشه\",\"en\":\"map location\",\"ar\":\"المکان النقشه\"}', 256, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
 INSERT INTO `permissions` VALUES (258, 'items.create:map-location', 'web', 'create new item', '{\"fa\":\"مکان نقشه\",\"en\":\"map location\",\"ar\":\"المکان النقشه\"}', 0, 2, '2019-05-28 11:28:20', '2019-05-28 11:28:20');
@@ -1570,23 +1841,6 @@ INSERT INTO `permissions` VALUES (303, 'items.properties.destroy:flash', 'web', 
 INSERT INTO `permissions` VALUES (304, 'items.properties.ajax.destroy:flash', 'web', '-', '{\"fa\":\"فایل فلش\",\"en\":\"swf file\",\"ar\":\"-\"}', 303, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (305, 'items.settings:flash', 'web', 'access settings', '{\"fa\":\"فایل فلش\",\"en\":\"swf file\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (306, 'items.settings.update:flash', 'web', '-', '{\"fa\":\"فایل فلش\",\"en\":\"swf file\",\"ar\":\"-\"}', 305, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (307, 'items.index:external-chat-system', 'web', 'access items', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (308, 'items.show:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 307, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (309, 'items.create:external-chat-system', 'web', 'create new item', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (310, 'items.store:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 309, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (311, 'items.edit:external-chat-system', 'web', 'edit items', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (312, 'items.update:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 311, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (313, 'items.destroy:external-chat-system', 'web', 'delete item', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (314, 'items.properties.index:external-chat-system', 'web', 'access properties', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (315, 'items.properties.show:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 314, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (316, 'items.properties.create:external-chat-system', 'web', 'create new property', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (317, 'items.properties.store:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 316, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (318, 'items.properties.edit:external-chat-system', 'web', 'edit properties', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (319, 'items.properties.update:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 318, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (320, 'items.properties.destroy:external-chat-system', 'web', 'delete property', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (321, 'items.properties.ajax.destroy:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 320, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (322, 'items.settings:external-chat-system', 'web', 'access settings', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (323, 'items.settings.update:external-chat-system', 'web', '-', '{\"fa\":\"سامانه چت\",\"en\":\"external chat system\",\"ar\":\"-\"}', 322, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (324, 'items.index:message', 'web', 'access items', '{\"fa\":\"پیام\",\"en\":\"message\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (325, 'items.show:message', 'web', '-', '{\"fa\":\"پیام\",\"en\":\"message\",\"ar\":\"-\"}', 324, 2, NULL, NULL);
 INSERT INTO `permissions` VALUES (326, 'items.create:message', 'web', 'create new item', '{\"fa\":\"پیام\",\"en\":\"message\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
@@ -2044,20 +2298,6 @@ INSERT INTO `role_has_permissions` VALUES (116, 1);
 INSERT INTO `role_has_permissions` VALUES (116, 2);
 INSERT INTO `role_has_permissions` VALUES (117, 1);
 INSERT INTO `role_has_permissions` VALUES (117, 2);
-INSERT INTO `role_has_permissions` VALUES (118, 1);
-INSERT INTO `role_has_permissions` VALUES (118, 2);
-INSERT INTO `role_has_permissions` VALUES (119, 1);
-INSERT INTO `role_has_permissions` VALUES (119, 2);
-INSERT INTO `role_has_permissions` VALUES (120, 1);
-INSERT INTO `role_has_permissions` VALUES (120, 2);
-INSERT INTO `role_has_permissions` VALUES (121, 1);
-INSERT INTO `role_has_permissions` VALUES (121, 2);
-INSERT INTO `role_has_permissions` VALUES (122, 1);
-INSERT INTO `role_has_permissions` VALUES (122, 2);
-INSERT INTO `role_has_permissions` VALUES (123, 1);
-INSERT INTO `role_has_permissions` VALUES (123, 2);
-INSERT INTO `role_has_permissions` VALUES (124, 1);
-INSERT INTO `role_has_permissions` VALUES (124, 2);
 INSERT INTO `role_has_permissions` VALUES (125, 1);
 INSERT INTO `role_has_permissions` VALUES (125, 2);
 INSERT INTO `role_has_permissions` VALUES (126, 1);
@@ -2093,13 +2333,6 @@ INSERT INTO `role_has_permissions` VALUES (149, 1);
 INSERT INTO `role_has_permissions` VALUES (150, 1);
 INSERT INTO `role_has_permissions` VALUES (151, 1);
 INSERT INTO `role_has_permissions` VALUES (152, 1);
-INSERT INTO `role_has_permissions` VALUES (153, 1);
-INSERT INTO `role_has_permissions` VALUES (154, 1);
-INSERT INTO `role_has_permissions` VALUES (155, 1);
-INSERT INTO `role_has_permissions` VALUES (156, 1);
-INSERT INTO `role_has_permissions` VALUES (157, 1);
-INSERT INTO `role_has_permissions` VALUES (158, 1);
-INSERT INTO `role_has_permissions` VALUES (159, 1);
 INSERT INTO `role_has_permissions` VALUES (160, 1);
 INSERT INTO `role_has_permissions` VALUES (161, 1);
 INSERT INTO `role_has_permissions` VALUES (162, 1);
@@ -2119,10 +2352,6 @@ INSERT INTO `role_has_permissions` VALUES (171, 1);
 INSERT INTO `role_has_permissions` VALUES (171, 2);
 INSERT INTO `role_has_permissions` VALUES (172, 1);
 INSERT INTO `role_has_permissions` VALUES (172, 2);
-INSERT INTO `role_has_permissions` VALUES (173, 1);
-INSERT INTO `role_has_permissions` VALUES (173, 2);
-INSERT INTO `role_has_permissions` VALUES (174, 1);
-INSERT INTO `role_has_permissions` VALUES (174, 2);
 INSERT INTO `role_has_permissions` VALUES (175, 1);
 INSERT INTO `role_has_permissions` VALUES (175, 2);
 INSERT INTO `role_has_permissions` VALUES (176, 1);
@@ -2221,7 +2450,6 @@ INSERT INTO `role_has_permissions` VALUES (226, 2);
 INSERT INTO `role_has_permissions` VALUES (227, 1);
 INSERT INTO `role_has_permissions` VALUES (228, 1);
 INSERT INTO `role_has_permissions` VALUES (229, 1);
-INSERT INTO `role_has_permissions` VALUES (230, 1);
 INSERT INTO `role_has_permissions` VALUES (231, 1);
 INSERT INTO `role_has_permissions` VALUES (232, 1);
 INSERT INTO `role_has_permissions` VALUES (232, 2);
@@ -2237,23 +2465,6 @@ INSERT INTO `role_has_permissions` VALUES (237, 1);
 INSERT INTO `role_has_permissions` VALUES (237, 2);
 INSERT INTO `role_has_permissions` VALUES (238, 1);
 INSERT INTO `role_has_permissions` VALUES (238, 2);
-INSERT INTO `role_has_permissions` VALUES (239, 1);
-INSERT INTO `role_has_permissions` VALUES (240, 1);
-INSERT INTO `role_has_permissions` VALUES (241, 1);
-INSERT INTO `role_has_permissions` VALUES (242, 1);
-INSERT INTO `role_has_permissions` VALUES (243, 1);
-INSERT INTO `role_has_permissions` VALUES (244, 1);
-INSERT INTO `role_has_permissions` VALUES (245, 1);
-INSERT INTO `role_has_permissions` VALUES (246, 1);
-INSERT INTO `role_has_permissions` VALUES (247, 1);
-INSERT INTO `role_has_permissions` VALUES (248, 1);
-INSERT INTO `role_has_permissions` VALUES (249, 1);
-INSERT INTO `role_has_permissions` VALUES (250, 1);
-INSERT INTO `role_has_permissions` VALUES (251, 1);
-INSERT INTO `role_has_permissions` VALUES (252, 1);
-INSERT INTO `role_has_permissions` VALUES (253, 1);
-INSERT INTO `role_has_permissions` VALUES (254, 1);
-INSERT INTO `role_has_permissions` VALUES (255, 1);
 INSERT INTO `role_has_permissions` VALUES (256, 1);
 INSERT INTO `role_has_permissions` VALUES (257, 1);
 INSERT INTO `role_has_permissions` VALUES (258, 1);
@@ -2305,23 +2516,6 @@ INSERT INTO `role_has_permissions` VALUES (303, 1);
 INSERT INTO `role_has_permissions` VALUES (304, 1);
 INSERT INTO `role_has_permissions` VALUES (305, 1);
 INSERT INTO `role_has_permissions` VALUES (306, 1);
-INSERT INTO `role_has_permissions` VALUES (307, 1);
-INSERT INTO `role_has_permissions` VALUES (308, 1);
-INSERT INTO `role_has_permissions` VALUES (309, 1);
-INSERT INTO `role_has_permissions` VALUES (310, 1);
-INSERT INTO `role_has_permissions` VALUES (311, 1);
-INSERT INTO `role_has_permissions` VALUES (312, 1);
-INSERT INTO `role_has_permissions` VALUES (313, 1);
-INSERT INTO `role_has_permissions` VALUES (314, 1);
-INSERT INTO `role_has_permissions` VALUES (315, 1);
-INSERT INTO `role_has_permissions` VALUES (316, 1);
-INSERT INTO `role_has_permissions` VALUES (317, 1);
-INSERT INTO `role_has_permissions` VALUES (318, 1);
-INSERT INTO `role_has_permissions` VALUES (319, 1);
-INSERT INTO `role_has_permissions` VALUES (320, 1);
-INSERT INTO `role_has_permissions` VALUES (321, 1);
-INSERT INTO `role_has_permissions` VALUES (322, 1);
-INSERT INTO `role_has_permissions` VALUES (323, 1);
 INSERT INTO `role_has_permissions` VALUES (324, 1);
 INSERT INTO `role_has_permissions` VALUES (325, 1);
 INSERT INTO `role_has_permissions` VALUES (326, 1);
@@ -2777,10 +2971,10 @@ INSERT INTO `routes` VALUES (59, 'items.index', '{\"type\":\"website\"}');
 INSERT INTO `routes` VALUES (60, 'items.index', '{\"type\":\"application\"}');
 
 -- ----------------------------
--- Table structure for slides
+-- Table structure for slide_images
 -- ----------------------------
-DROP TABLE IF EXISTS `slides`;
-CREATE TABLE `slides`  (
+DROP TABLE IF EXISTS `slide_images`;
+CREATE TABLE `slide_images`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `path` int(11) NULL DEFAULT NULL,
@@ -2792,14 +2986,14 @@ CREATE TABLE `slides`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
--- Records of slides
+-- Records of slide_images
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for slides_types
+-- Table structure for slides
 -- ----------------------------
-DROP TABLE IF EXISTS `slides_types`;
-CREATE TABLE `slides_types`  (
+DROP TABLE IF EXISTS `slides`;
+CREATE TABLE `slides`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
@@ -2808,10 +3002,10 @@ CREATE TABLE `slides_types`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
--- Records of slides_types
+-- Records of slides
 -- ----------------------------
-INSERT INTO `slides_types` VALUES (1, 'main-slide-show', NULL, NULL);
-INSERT INTO `slides_types` VALUES (2, 'second-slide-show', NULL, NULL);
+INSERT INTO `slides` VALUES (1, 'main-slide-show', NULL, NULL);
+INSERT INTO `slides` VALUES (2, 'second-slide-show', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for template_properties
@@ -3158,7 +3352,7 @@ CREATE TABLE `tracker_log`  (
   CONSTRAINT `tracker_log_query_id_foreign` FOREIGN KEY (`query_id`) REFERENCES `tracker_queries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_session_id_foreign` FOREIGN KEY (`session_id`) REFERENCES `tracker_sessions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 10502 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 10564 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_log
@@ -13629,6 +13823,68 @@ INSERT INTO `tracker_log` VALUES (10498, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, N
 INSERT INTO `tracker_log` VALUES (10499, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 06:21:51', '2020-06-18 06:21:51', 125);
 INSERT INTO `tracker_log` VALUES (10500, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 06:21:52', '2020-06-18 06:21:52', 125);
 INSERT INTO `tracker_log` VALUES (10501, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 06:22:23', '2020-06-18 06:22:23', NULL);
+INSERT INTO `tracker_log` VALUES (10502, 32, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-06-18 15:43:28', '2020-06-18 15:43:29', 126);
+INSERT INTO `tracker_log` VALUES (10503, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 15:43:30', '2020-06-18 15:43:30', 115);
+INSERT INTO `tracker_log` VALUES (10504, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 15:43:30', '2020-06-18 15:43:30', 115);
+INSERT INTO `tracker_log` VALUES (10505, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 15:43:31', '2020-06-18 15:43:31', 115);
+INSERT INTO `tracker_log` VALUES (10506, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 15:43:31', '2020-06-18 15:43:31', 115);
+INSERT INTO `tracker_log` VALUES (10507, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 15:43:32', '2020-06-18 15:43:32', 115);
+INSERT INTO `tracker_log` VALUES (10508, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 15:43:33', '2020-06-18 15:43:33', 115);
+INSERT INTO `tracker_log` VALUES (10509, 32, 5, NULL, 'POST', 6, 0, 0, 0, 0, NULL, '2020-06-18 15:43:41', '2020-06-18 15:43:41', 115);
+INSERT INTO `tracker_log` VALUES (10510, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:24', '2020-06-18 16:09:24', 133);
+INSERT INTO `tracker_log` VALUES (10511, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:24', '2020-06-18 16:09:24', 133);
+INSERT INTO `tracker_log` VALUES (10512, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:25', '2020-06-18 16:09:25', 133);
+INSERT INTO `tracker_log` VALUES (10513, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:25', '2020-06-18 16:09:25', 133);
+INSERT INTO `tracker_log` VALUES (10514, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:26', '2020-06-18 16:09:26', 133);
+INSERT INTO `tracker_log` VALUES (10515, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:27', '2020-06-18 16:09:27', 133);
+INSERT INTO `tracker_log` VALUES (10516, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:27', '2020-06-18 16:09:27', 133);
+INSERT INTO `tracker_log` VALUES (10517, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:09:28', '2020-06-18 16:09:28', 133);
+INSERT INTO `tracker_log` VALUES (10518, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:14', '2020-06-18 16:41:14', 131);
+INSERT INTO `tracker_log` VALUES (10519, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:14', '2020-06-18 16:41:14', 131);
+INSERT INTO `tracker_log` VALUES (10520, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:15', '2020-06-18 16:41:15', 131);
+INSERT INTO `tracker_log` VALUES (10521, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:15', '2020-06-18 16:41:15', 131);
+INSERT INTO `tracker_log` VALUES (10522, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:16', '2020-06-18 16:41:16', 131);
+INSERT INTO `tracker_log` VALUES (10523, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:16', '2020-06-18 16:41:16', 131);
+INSERT INTO `tracker_log` VALUES (10524, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:17', '2020-06-18 16:41:17', 131);
+INSERT INTO `tracker_log` VALUES (10525, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:41:17', '2020-06-18 16:41:17', 131);
+INSERT INTO `tracker_log` VALUES (10526, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:13', '2020-06-18 16:45:13', 131);
+INSERT INTO `tracker_log` VALUES (10527, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:13', '2020-06-18 16:45:13', 131);
+INSERT INTO `tracker_log` VALUES (10528, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:14', '2020-06-18 16:45:14', 131);
+INSERT INTO `tracker_log` VALUES (10529, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:14', '2020-06-18 16:45:14', 131);
+INSERT INTO `tracker_log` VALUES (10530, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:15', '2020-06-18 16:45:15', 131);
+INSERT INTO `tracker_log` VALUES (10531, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:15', '2020-06-18 16:45:15', 131);
+INSERT INTO `tracker_log` VALUES (10532, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:16', '2020-06-18 16:45:16', 131);
+INSERT INTO `tracker_log` VALUES (10533, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:17', '2020-06-18 16:45:17', 131);
+INSERT INTO `tracker_log` VALUES (10534, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:19', '2020-06-18 16:45:19', 131);
+INSERT INTO `tracker_log` VALUES (10535, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:20', '2020-06-18 16:45:20', 131);
+INSERT INTO `tracker_log` VALUES (10536, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:20', '2020-06-18 16:45:20', 131);
+INSERT INTO `tracker_log` VALUES (10537, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:21', '2020-06-18 16:45:21', 131);
+INSERT INTO `tracker_log` VALUES (10538, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:21', '2020-06-18 16:45:21', 131);
+INSERT INTO `tracker_log` VALUES (10539, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:22', '2020-06-18 16:45:22', 131);
+INSERT INTO `tracker_log` VALUES (10540, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 16:45:22', '2020-06-18 16:45:22', 131);
+INSERT INTO `tracker_log` VALUES (10541, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 18:23:44', '2020-06-18 18:23:44', 131);
+INSERT INTO `tracker_log` VALUES (10542, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 18:23:44', '2020-06-18 18:23:44', 131);
+INSERT INTO `tracker_log` VALUES (10543, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 18:23:45', '2020-06-18 18:23:45', 131);
+INSERT INTO `tracker_log` VALUES (10544, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 18:23:45', '2020-06-18 18:23:45', 131);
+INSERT INTO `tracker_log` VALUES (10545, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 18:23:46', '2020-06-18 18:23:46', 131);
+INSERT INTO `tracker_log` VALUES (10546, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 18:23:46', '2020-06-18 18:23:46', 131);
+INSERT INTO `tracker_log` VALUES (10547, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-18 18:23:47', '2020-06-18 18:23:47', 131);
+INSERT INTO `tracker_log` VALUES (10548, 32, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-06-18 19:14:45', '2020-06-18 19:14:46', NULL);
+INSERT INTO `tracker_log` VALUES (10549, 32, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-06-18 19:17:51', '2020-06-18 19:17:51', NULL);
+INSERT INTO `tracker_log` VALUES (10550, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:17:55', '2020-06-18 19:17:55', 119);
+INSERT INTO `tracker_log` VALUES (10551, 32, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-06-18 19:18:08', '2020-06-18 19:18:08', NULL);
+INSERT INTO `tracker_log` VALUES (10552, 32, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-06-18 19:18:10', '2020-06-18 19:18:10', NULL);
+INSERT INTO `tracker_log` VALUES (10553, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:18:13', '2020-06-18 19:18:13', 119);
+INSERT INTO `tracker_log` VALUES (10554, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:19:13', '2020-06-18 19:19:13', 119);
+INSERT INTO `tracker_log` VALUES (10555, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:19:23', '2020-06-18 19:19:24', 119);
+INSERT INTO `tracker_log` VALUES (10556, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:20:50', '2020-06-18 19:20:50', 119);
+INSERT INTO `tracker_log` VALUES (10557, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:21:09', '2020-06-18 19:21:09', 119);
+INSERT INTO `tracker_log` VALUES (10558, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:21:27', '2020-06-18 19:21:28', 119);
+INSERT INTO `tracker_log` VALUES (10559, 32, 186, NULL, 'GET', 187, 0, 0, 0, 0, NULL, '2020-06-18 19:22:15', '2020-06-18 19:22:15', 120);
+INSERT INTO `tracker_log` VALUES (10560, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-06-18 19:22:18', '2020-06-18 19:22:19', 119);
+INSERT INTO `tracker_log` VALUES (10561, 32, 184, NULL, 'GET', 185, 0, 0, 0, 0, NULL, '2020-06-18 19:27:51', '2020-06-18 19:27:51', 120);
+INSERT INTO `tracker_log` VALUES (10562, 32, 184, NULL, 'GET', 185, 0, 0, 0, 0, NULL, '2020-06-18 19:28:13', '2020-06-18 19:28:14', 120);
+INSERT INTO `tracker_log` VALUES (10563, 32, 184, NULL, 'GET', 185, 0, 0, 0, 0, NULL, '2020-06-18 19:28:43', '2020-06-18 19:28:43', 120);
 
 -- ----------------------------
 -- Table structure for tracker_paths
@@ -14252,7 +14508,7 @@ CREATE TABLE `tracker_route_path_parameters`  (
   INDEX `tracker_route_path_parameters_parameter_index`(`parameter`) USING BTREE,
   INDEX `tracker_route_path_parameters_value_index`(`value`) USING BTREE,
   CONSTRAINT `tracker_route_path_parameters_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 254 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 262 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_path_parameters
@@ -14510,6 +14766,14 @@ INSERT INTO `tracker_route_path_parameters` VALUES (250, 196, 'situations', '1,5
 INSERT INTO `tracker_route_path_parameters` VALUES (251, 197, 'type', 'room', '2020-06-18 04:11:55', '2020-06-18 04:11:55');
 INSERT INTO `tracker_route_path_parameters` VALUES (252, 197, 'id', '1', '2020-06-18 04:11:55', '2020-06-18 04:11:55');
 INSERT INTO `tracker_route_path_parameters` VALUES (253, 198, 'type', 'rating', '2020-06-18 05:44:03', '2020-06-18 05:44:03');
+INSERT INTO `tracker_route_path_parameters` VALUES (254, 199, 'type', 'room', '2020-06-18 15:46:01', '2020-06-18 15:46:01');
+INSERT INTO `tracker_route_path_parameters` VALUES (255, 200, 'type', 'customer', '2020-06-18 15:53:27', '2020-06-18 15:53:27');
+INSERT INTO `tracker_route_path_parameters` VALUES (256, 201, 'type', 'customer', '2020-06-18 15:55:13', '2020-06-18 15:55:13');
+INSERT INTO `tracker_route_path_parameters` VALUES (257, 202, 'type', 'slide', '2020-06-18 16:05:34', '2020-06-18 16:05:34');
+INSERT INTO `tracker_route_path_parameters` VALUES (258, 203, 'type', 'complaint', '2020-06-18 16:08:46', '2020-06-18 16:08:46');
+INSERT INTO `tracker_route_path_parameters` VALUES (259, 204, 'type', 'hotel', '2020-06-18 16:15:10', '2020-06-18 16:15:10');
+INSERT INTO `tracker_route_path_parameters` VALUES (260, 205, 'type', 'room', '2020-06-18 19:41:09', '2020-06-18 19:41:09');
+INSERT INTO `tracker_route_path_parameters` VALUES (261, 205, 'id', '12', '2020-06-18 19:41:09', '2020-06-18 19:41:09');
 
 -- ----------------------------
 -- Table structure for tracker_route_paths
@@ -14527,7 +14791,7 @@ CREATE TABLE `tracker_route_paths`  (
   INDEX `tracker_route_paths_route_id_index`(`route_id`) USING BTREE,
   INDEX `tracker_route_paths_path_index`(`path`) USING BTREE,
   CONSTRAINT `tracker_route_paths_route_id_foreign` FOREIGN KEY (`route_id`) REFERENCES `tracker_routes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 199 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 206 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_paths
@@ -14730,6 +14994,13 @@ INSERT INTO `tracker_route_paths` VALUES (195, 51, 'admin/items/message/create',
 INSERT INTO `tracker_route_paths` VALUES (196, 80, 'admin/reserves/get/1,5', '2020-06-12 15:09:16', '2020-06-12 15:09:16');
 INSERT INTO `tracker_route_paths` VALUES (197, 81, 'admin/items/room/1/update', '2020-06-18 04:11:55', '2020-06-18 04:11:55');
 INSERT INTO `tracker_route_paths` VALUES (198, 50, 'admin/items/rating', '2020-06-18 05:44:03', '2020-06-18 05:44:03');
+INSERT INTO `tracker_route_paths` VALUES (199, 82, 'admin/items/room/properties', '2020-06-18 15:46:01', '2020-06-18 15:46:01');
+INSERT INTO `tracker_route_paths` VALUES (200, 50, 'admin/items/customer', '2020-06-18 15:53:27', '2020-06-18 15:53:27');
+INSERT INTO `tracker_route_paths` VALUES (201, 82, 'admin/items/customer/properties', '2020-06-18 15:55:13', '2020-06-18 15:55:13');
+INSERT INTO `tracker_route_paths` VALUES (202, 50, 'admin/items/slide', '2020-06-18 16:05:34', '2020-06-18 16:05:34');
+INSERT INTO `tracker_route_paths` VALUES (203, 50, 'admin/items/complaint', '2020-06-18 16:08:46', '2020-06-18 16:08:46');
+INSERT INTO `tracker_route_paths` VALUES (204, 82, 'admin/items/hotel/properties', '2020-06-18 16:15:10', '2020-06-18 16:15:10');
+INSERT INTO `tracker_route_paths` VALUES (205, 58, 'admin/items/room/12/edit', '2020-06-18 19:41:09', '2020-06-18 19:41:09');
 
 -- ----------------------------
 -- Table structure for tracker_routes
@@ -14746,7 +15017,7 @@ CREATE TABLE `tracker_routes`  (
   INDEX `tracker_routes_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_routes_name_index`(`name`) USING BTREE,
   INDEX `tracker_routes_action_index`(`action`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 82 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_routes
@@ -14832,6 +15103,7 @@ INSERT INTO `tracker_routes` VALUES (78, 'home.customer.login', 'App\\Http\\Cont
 INSERT INTO `tracker_routes` VALUES (79, 'home.customer.register', 'App\\Http\\Controllers\\HomeController@showRegisterPage', '2020-06-12 13:42:24', '2020-06-12 13:42:24');
 INSERT INTO `tracker_routes` VALUES (80, 'admin.reserves.get.with.situations', 'App\\Http\\Controllers\\ReserveController@getReserves', '2020-06-12 15:09:16', '2020-06-12 15:09:16');
 INSERT INTO `tracker_routes` VALUES (81, 'items.update', 'App\\Http\\Controllers\\Item\\ItemController@update', '2020-06-18 04:11:54', '2020-06-18 04:11:54');
+INSERT INTO `tracker_routes` VALUES (82, 'items.properties.index', 'App\\Http\\Controllers\\Item\\ItemPropertyController@index', '2020-06-18 15:46:01', '2020-06-18 15:46:01');
 
 -- ----------------------------
 -- Table structure for tracker_sessions
@@ -14905,7 +15177,7 @@ INSERT INTO `tracker_sessions` VALUES (28, '34750a21-2ae4-4c86-b7af-5277e08a324c
 INSERT INTO `tracker_sessions` VALUES (29, 'bf01ba87-6b07-4f16-b57c-d177098c92e1', NULL, 1, 4, '::1', NULL, NULL, NULL, 0, '2020-02-01 08:07:22', '2020-02-08 01:35:43', 1);
 INSERT INTO `tracker_sessions` VALUES (30, 'b0639941-726b-4f22-83b4-199e20e87b45', NULL, 1, 5, '::1', 90, NULL, NULL, 0, '2020-02-28 23:27:46', '2020-03-04 06:33:04', 1);
 INSERT INTO `tracker_sessions` VALUES (31, '9d3ad913-b8de-4049-8685-e8df61097282', NULL, 1, 7, '::1', NULL, NULL, NULL, 0, '2020-03-04 08:32:40', '2020-04-15 12:15:50', 1);
-INSERT INTO `tracker_sessions` VALUES (32, '042c17eb-cbaa-4559-8821-bfce6cf0734b', NULL, 1, 9, '::1', 125, NULL, NULL, 0, '2020-03-15 15:01:42', '2020-06-18 06:22:23', 1);
+INSERT INTO `tracker_sessions` VALUES (32, '042c17eb-cbaa-4559-8821-bfce6cf0734b', NULL, 1, 9, '::1', 120, NULL, NULL, 0, '2020-03-15 15:01:42', '2020-06-18 19:28:42', 1);
 INSERT INTO `tracker_sessions` VALUES (33, '4d6da350-f56a-4755-9961-bd47441e82c5', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-03 05:07:00', '2020-04-04 14:51:29', 1);
 INSERT INTO `tracker_sessions` VALUES (34, '7f1cba7a-ed56-4dd1-8dc8-0fc83ec0db6b', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-05 04:38:48', '2020-04-06 12:58:12', 1);
 INSERT INTO `tracker_sessions` VALUES (35, '58426c97-776d-4c37-9d98-837f78a083ff', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-06 16:08:03', '2020-04-10 17:49:11', 1);
