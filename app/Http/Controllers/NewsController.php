@@ -7,14 +7,11 @@ use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use App\News;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -23,7 +20,7 @@ class NewsController extends Controller
     public function index(Request $request, $type, $filters = null)
     {
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = News::all();
         return view("admin.items.views.subviews.news", $data);
     }
 
@@ -61,11 +58,17 @@ class NewsController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
 
-//            dd($separated_data);
+            $r = new News();
+            $r->title = $request->input('title');
+            $r->excerpt = $request->input('excerpt');
+            $r->content = $request->input('content');
+            $r->category = 0;
+            $r->save();
+            $r_id = $r->id;
 
-            //            return response()->json(['success' => 'Added new records.']);
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
+
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -126,7 +129,13 @@ class NewsController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+            $r = News::find($id);
+            $r->title = $request->input('title');
+            $r->excerpt = $request->input('excerpt');
+            $r->content = $request->input('content');
+            $r->category = 0;
+            $r->save();
+            ItemUtility::storeProperties($type, $separated_data['property'], $id);
 
 //            dd($separated_data);
 

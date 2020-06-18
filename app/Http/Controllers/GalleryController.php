@@ -19,7 +19,7 @@ class GalleryController extends Controller
     public function index(Request $request, $type, $filters = null)
     {
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Gallery::all();
         return view("admin.items.views.subviews.gallery", $data);
     }
 

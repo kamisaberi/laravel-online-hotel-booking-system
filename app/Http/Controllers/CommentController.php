@@ -21,7 +21,7 @@ class CommentController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Comment::all();
         return view("admin.items.views.subviews.comment", $data);
     }
 

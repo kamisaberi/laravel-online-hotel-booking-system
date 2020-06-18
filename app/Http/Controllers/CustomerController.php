@@ -24,7 +24,7 @@ class CustomerController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Customer::all();
         return view("admin.items.views.subviews.customer", $data);
     }
 

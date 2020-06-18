@@ -24,7 +24,7 @@ class SlideController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Slide::all();
         return view("admin.items.views.subviews.slide", $data);
     }
 

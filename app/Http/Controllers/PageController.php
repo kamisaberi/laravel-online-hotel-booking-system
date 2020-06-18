@@ -7,14 +7,11 @@ use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use App\Page;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -24,7 +21,7 @@ class PageController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Page::all();
         return view("admin.items.views.subviews.page", $data);
     }
 
@@ -62,11 +59,17 @@ class PageController extends Controller
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
+            $r = new Page();
+            $r->title = $request->input('title');
+            $r->keywords = $request->input('keywords');
+            $r->description = $request->input('description');
+            $r->content = $request->input('content');
+            $r->template = $request->input('template');
+            $r->save();
+            $r_id = $r->id;
 
-//            dd($separated_data);
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
 
-            //            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -124,11 +127,15 @@ class PageController extends Controller
         if ($validator->passes()) {
 
             $received_data = $request->toArray();
-//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
-
-//            dd($separated_data);
+            $r = Page::find($id);
+            $r->title = $request->input('title');
+            $r->keywords = $request->input('keywords');
+            $r->description = $request->input('description');
+            $r->content = $request->input('content');
+            $r->template = $request->input('template');
+            $r->save();
+            ItemUtility::storeProperties($type, $separated_data['property'], $id);
 
             return response()->json(['success' => 'Added new records.']);
         }

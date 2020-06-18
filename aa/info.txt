@@ -1,0 +1,25 @@
+CONTROLLERS
+    FINISHED
+        comment
+        complaint
+        flash
+        hotel
+        image
+        news
+        page
+        room
+        video
+        website
+        message
+        review
+
+    TO DO
+        customer
+        gallery
+        map location
+        reserve
+        slide
+        user
+
+    TO DELETE
+        map

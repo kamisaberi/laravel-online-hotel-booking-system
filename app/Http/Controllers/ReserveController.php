@@ -7,14 +7,11 @@ use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use App\Reserve;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -24,7 +21,7 @@ class ReserveController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Reserve::all();
         return view("admin.items.views.subviews.reserve", $data);
     }
 
@@ -205,7 +202,7 @@ class ReserveController extends Controller
     {
         $sits = explode(',', $situations);
         $ress = DB::table('reserves')->whereIn('situation', $sits)->get();
-        return response()->json(["error" => 0, 'message' => 'success' , 'reserves'=>$ress]);
+        return response()->json(["error" => 0, 'message' => 'success', 'reserves' => $ress]);
 
     }
 

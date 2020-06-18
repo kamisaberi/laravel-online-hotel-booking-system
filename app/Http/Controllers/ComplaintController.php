@@ -21,7 +21,7 @@ class ComplaintController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Complaint::all();
         return view("admin.items.views.subviews.complaint", $data);
     }
 

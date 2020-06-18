@@ -11,20 +11,21 @@ use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\NavigationUtility;
-use App\Rating;
+use App\Message;
+use App\Review;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Route;
 use Validator;
 
-class RatingController extends Controller
+class ReviewController extends Controller
 {
     public function index(Request $request, $type, $filters = null)
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Review::all();
         return view("admin.items.views.subviews.rating", $data);
     }
 
@@ -61,12 +62,15 @@ class RatingController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
+            $r = new Review();
+            $r->content = $request->input('content');
+            $r->sender = $request->input('sender');
+            $r->date = $request->input('date');
+            $r->rating = $request->input('rating');
+            $r->save();
+            $r_id = $r->id;
 
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
 
-//            dd($separated_data);
-
-            //            return response()->json(['success' => 'Added new records.']);
         }
         return response()->json(['error' => $validator->errors()->all()]);
     }
@@ -126,9 +130,13 @@ class RatingController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
+            $r = Review::find($id);
+            $r->content = $request->input('content');
+            $r->sender = $request->input('sender');
+            $r->date = $request->input('date');
+            $r->rating = $request->input('rating');
+            $r->save();
 
-//            dd($separated_data);
 
             return response()->json(['success' => 'Added new records.']);
         }

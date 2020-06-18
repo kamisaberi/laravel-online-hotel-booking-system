@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Complaint;
 use App\Data;
 use App\DataProperty;
 use App\Flash;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -25,7 +21,7 @@ class FlashController extends Controller
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = ItemUtility::getItems($type);
+        $data ['datas'] = Flash::all();
         return view("admin.items.views.subviews.flash", $data);
     }
 
