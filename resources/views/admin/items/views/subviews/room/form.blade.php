@@ -40,8 +40,6 @@
                                             <div class="form-body">
                                                 {{--                                                <h4 class="form-section"><i class="ft-user"></i>داده ها</h4>--}}
                                                 {{@csrf_field()}}
-
-
                                                 <div class="row">
                                                     <div class="col col-md-12">
                                                         <h4 class="form-section"><i class="ft-user"></i>main</h4>
@@ -49,11 +47,11 @@
                                                     @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
                                                     @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>''])
                                                     @include('admin.inputs.new2.tinymce', ['field'=>'content', 'value'=>''])
-                                                    @include('admin.inputs.new2.select', ['field'=>'content', 'value'=>''])
+                                                    @include('admin.inputs.new2.select', ['field'=>'floor', 'value'=>''])
                                                     @include('admin.inputs.new2.select_image', ['field'=>'image', 'value'=>''])
-                                                    @include('admin.inputs.new2.select_video', ['field'=>'image', 'value'=>''])
+                                                    @include('admin.inputs.new2.select_video', ['field'=>'video', 'value'=>''])
+                                                    @include('admin.inputs.new2.select_flash', ['field'=>'flash', 'value'=>''])
                                                 </div>
-
                                                 <div class="form-actions">
                                                     <button type="reset" class="btn btn-warning mr-1">
                                                         <i class="ft-x"></i> Cancel

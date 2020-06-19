@@ -40,7 +40,17 @@
                                             <div class="form-body">
                                                 {{--                                                <h4 class="form-section"><i class="ft-user"></i>داده ها</h4>--}}
                                                 {{@csrf_field()}}
-                                                @include('admin.items.forms.input_form',['groups'=> $groups])
+                                                <div class="row">
+                                                    <div class="col col-md-12">
+                                                        <h4 class="form-section"><i class="ft-user"></i>main</h4>
+                                                    </div>
+                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
+                                                    @include('admin.inputs.new2.tinymce', ['field'=>'content', 'value'=>''])
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'keywords', 'value'=>''])
+                                                    @include('admin.inputs.new2.select', ['field'=>'template', 'value'=>''])
+                                                </div>
+
 
                                                 <div class="form-actions">
                                                     <button type="reset" class="btn btn-warning mr-1">
