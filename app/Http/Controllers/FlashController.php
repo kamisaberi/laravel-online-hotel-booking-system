@@ -22,7 +22,7 @@ class FlashController extends Controller
 
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = Flash::all();
-        return view("admin.items.views.subviews.flash", $data);
+        return view("admin.items.views.subviews.flash.index", $data);
     }
 
     public function create($type)
@@ -30,7 +30,7 @@ class FlashController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.flash.form", $data);
 
     }
 
@@ -94,7 +94,8 @@ class FlashController extends Controller
     {
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        return view("admin.items.views.edit", $data);
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.flash.form", $data);
     }
 
     /**

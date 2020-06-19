@@ -22,7 +22,7 @@ class MapLocationController extends Controller
 
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = MapLocation::all();
-        return view("admin.items.views.subviews.map_location", $data);
+        return view("admin.items.views.subviews.map_location.index", $data);
     }
 
     public function create($type)
@@ -30,7 +30,7 @@ class MapLocationController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.map_location.form", $data);
 
     }
 
@@ -97,7 +97,8 @@ class MapLocationController extends Controller
     {
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        return view("admin.items.views.edit", $data);
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.map_location.form", $data);
     }
 
     /**

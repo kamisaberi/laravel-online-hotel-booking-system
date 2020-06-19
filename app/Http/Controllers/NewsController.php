@@ -21,7 +21,7 @@ class NewsController extends Controller
     {
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = News::all();
-        return view("admin.items.views.subviews.news", $data);
+        return view("admin.items.views.subviews.news.index", $data);
     }
 
     public function create($type)
@@ -29,7 +29,7 @@ class NewsController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.news.form", $data);
 
     }
 
@@ -103,7 +103,8 @@ class NewsController extends Controller
     {
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        return view("admin.items.views.edit", $data);
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.news.form", $data);
 
     }
 

@@ -22,7 +22,7 @@ class PageController extends Controller
 
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = Page::all();
-        return view("admin.items.views.subviews.page", $data);
+        return view("admin.items.views.subviews.page.index", $data);
     }
 
     public function create($type)
@@ -30,7 +30,7 @@ class PageController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.page.form", $data);
 
     }
 
@@ -104,7 +104,8 @@ class PageController extends Controller
     {
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        return view("admin.items.views.edit", $data);
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.page.form", $data);
     }
 
     /**

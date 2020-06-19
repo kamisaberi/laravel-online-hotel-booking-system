@@ -26,7 +26,7 @@ class ReviewController extends Controller
 
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = Review::all();
-        return view("admin.items.views.subviews.rating", $data);
+        return view("admin.items.views.subviews.review.index", $data);
     }
 
     public function create($type)
@@ -34,7 +34,7 @@ class ReviewController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.review.form", $data);
 
     }
 
@@ -105,7 +105,8 @@ class ReviewController extends Controller
     {
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        return view("admin.items.views.edit", $data);
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.review.form", $data);
     }
 
     /**

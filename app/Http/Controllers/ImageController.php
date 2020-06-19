@@ -26,7 +26,7 @@ class ImageController extends Controller
         $data = BaseUtility::generateForIndex($type);
 //        $data ['datas'] = ItemUtility::getItems($type);
         $data ['datas'] = Image::all();
-        return view("admin.items.views.subviews.image", $data);
+        return view("admin.items.views.subviews.image.index", $data);
     }
 
     public function create($type)
@@ -34,7 +34,7 @@ class ImageController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.image.form", $data);
 
     }
 
@@ -107,7 +107,8 @@ class ImageController extends Controller
     {
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        return view("admin.items.views.edit", $data);
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.image.form", $data);
     }
 
     /**

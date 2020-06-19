@@ -22,7 +22,7 @@ class ReserveController extends Controller
 
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = Reserve::all();
-        return view("admin.items.views.subviews.reserve", $data);
+        return view("admin.items.views.subviews.reserve.index", $data);
     }
 
     public function create($type)
@@ -30,7 +30,7 @@ class ReserveController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.reserve.form", $data);
 
     }
 
@@ -107,7 +107,8 @@ class ReserveController extends Controller
     {
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        return view("admin.items.views.edit", $data);
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.reserve.form", $data);
     }
 
     /**

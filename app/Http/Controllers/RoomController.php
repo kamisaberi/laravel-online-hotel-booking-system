@@ -19,7 +19,7 @@ class RoomController extends Controller
     {
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = Room::all();
-        return view("admin.items.views.subviews.room", $data);
+        return view("admin.items.views.subviews.room.index", $data);
     }
 
     public function create($type)
@@ -27,7 +27,7 @@ class RoomController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.create", $data);
+        return view("admin.items.views.subviews.room.form", $data);
     }
 
     /**
@@ -87,8 +87,7 @@ class RoomController extends Controller
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters(), $id);
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-//        return $data;
-        return view("admin.items.views.edit", $data);
+        return view("admin.items.views.subviews.room.form", $data);
     }
 
     public function update(Request $request, $type, $id)
