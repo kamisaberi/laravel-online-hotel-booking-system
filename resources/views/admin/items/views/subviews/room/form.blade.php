@@ -36,9 +36,8 @@
                                                 <ul></ul>
                                             </div>
                                         </div>
-                                        <form id="form" action="{{$urls['store']}}" method="post">
+                                        <form id="form" action="{{$urls['form_action']}}" method="post">
                                             <div class="form-body">
-                                                {{--                                                <h4 class="form-section"><i class="ft-user"></i>داده ها</h4>--}}
                                                 {{@csrf_field()}}
                                                 <div class="row">
                                                     <div class="col col-md-12">

@@ -415,6 +415,13 @@ class ItemUtility
         $urls['properties.store'] = route("items.properties.store", ['type' => $type]);
         $urls['settings.edit'] = route("items.settings.edit", ['type' => $type]);
 
+        if ($id == 0) {
+            $urls['form_action'] = $urls['store'];
+        } else {
+            $urls['form_action'] = $urls['update'];
+        }
+
+
         return $urls;
 
     }

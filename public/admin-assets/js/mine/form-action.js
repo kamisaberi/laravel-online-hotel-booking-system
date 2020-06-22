@@ -22,7 +22,6 @@ var FORM_ACTION = FORM_ACTION || (function () {
             // form.submit(function (e) {
             $(document).on('submit', form, function (e) {
 
-                // return;
 
                 if ($(".featured_image > img").length) {
                     var $image = $(".featured_image > img");
@@ -30,7 +29,7 @@ var FORM_ACTION = FORM_ACTION || (function () {
                     $('#path').val(originalData.toDataURL());
                 }
 
-                e.preventDefault();
+                // e.preventDefault();
                 // alert("fffffffff");
                 // return;
 

@@ -70,6 +70,11 @@
                                                         </td>
                                                         <td>
                                                             @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'room'])
+                                                            <a href="#mdl-set-price" data-toggle="modal" data-target="#mdl-set-price"
+                                                               class="primary show mr-1">
+                                                                <i class="fa fa-adjust"></i>
+                                                            </a>
+
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -156,6 +161,7 @@
         </div>
     </div>
 
+
     @isset($modals)
         @foreach($modals as $modal)
             @include('admin.components.modal-form', ['modal'=>$modal])
@@ -164,11 +170,131 @@
 
     @include('admin.components.modal-reserve-action')
     @include('admin.components.mdl-show-check')
+    @include('admin.components.modal-set-price')
 
 @endsection
 @section('sub-vendor-js')
 
+    {{--        <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
+    <script src="{{asset('vendors/vue/dist/vue.js')}}"></script>
+    {{--        <script src="https://cdn.jsdelivr.net/npm/moment"></script>--}}
+    <script src="{{asset('vendors/moment/min/moment.min.js')}}"></script>
+    <script src="{{asset('vendors/moment-jalaali/build/moment-jalaali.js')}}"></script>
+    <script src="{{asset('vendors/vue-persian-datetime-picker-master/dist/vue-persian-datetime-picker-browser.js')}}"></script>
+
 @endsection
 @section('sub-footer')
+
+    <script>
+        $('a[href$="#mdl-set-price"]').on("click", function () {
+            $('#mdl-set-price').modal('show');
+        });
+    </script>
+
+    <script>
+        var tbody_set_price = $('#mdl-set-price').find('tbody');
+        $('#mdl-set-price').on('show.bs.modal', function (e) {
+            $('#mdl-set-price').find('tbody').html('');
+            var vl = $('input[type=hidden]', this).val();
+            if (vl.trim() == '' || vl.trim() == '0' || vl.trim() == '-')
+                return;
+
+            var arr = vl.trim().split('|');
+
+            var assigned = arr[0].trim().split('==')[1];
+            var action = arr[1].trim().split('==')[1];
+            var display_history_at_modal = arr[2].trim().split('==')[1];
+
+            if (display_history_at_modal == 1) {
+                if (assigned.trim() != '' && assigned.trim() != '0' && assigned.trim() != '-') {
+
+                    var arr2 = assigned.split(',');
+                    for (i = 0; i < arr2.length; i++) {
+
+                        var ii = `<input type="hidden" name="price[]" value="${arr2[i]}">`;
+                        $('#mdl-set-price').find('tbody').append(`<tr>${ii}<td>${arr2[i]}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
+                    }
+                }
+
+            }
+            var form = $('form', this);
+            if (form.attr('action').trim() == '') {
+                form.attr('action', action);
+            }
+
+        });
+
+
+        var start_date_price = new Vue({
+            el: '#start-date-price',
+            data: {
+                date: moment().format('jYYYY/jMM/jDD'),
+                today: moment().format('jYYYY/jMM/jDD'),
+            },
+            components: {
+                DatePicker: VuePersianDatetimePicker
+            },
+            methods: {
+                onChange(picker) {
+                    end_date_price.date = picker;
+                    end_date_price.min = moment(picker).format('jYYYY/jMM/jDD');
+                    end_date_price.disabled = false;
+                    end_date_price.update();
+                }
+            }
+        });
+
+
+        var end_date_price = new Vue({
+            el: '#end-date-price',
+            data: {
+                date: moment().format('jYYYY/jMM/jDD'),
+                today: moment().format('jYYYY/jMM/jDD'),
+                disabled: true,
+            },
+            components: {
+                DatePicker: VuePersianDatetimePicker
+            },
+            methods: {
+                onChange1(picker) {
+                    // alert(picker.value);
+                }
+            }
+        });
+
+
+        $("#btn-add-range-price").click(function () {
+
+            var st = start_date_price.date;
+            var en = end_date_price.date;
+            // alert(st + ":" + en);
+            var s = '';
+            if (st.trim() == en.trim()) {
+                s = st;
+            } else {
+                s = st + ":" + en;
+            }
+
+            var i = `<input type="hidden" name="price[]" value="${s}">`;
+            $('#mdl-set-price tbody').append(`<tr>${i}<td>${s}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
+
+        });
+
+        $("#btn-add-weekday-price").click(function () {
+            var to_add = $(this).parent().parent().find('select[name=weekdays]').val();
+            if (to_add == null)
+                return;
+
+            var i = `<input type="hidden" name="price[]" value="${to_add}">`;
+            $('#mdl-set-price tbody').append(`<tr>${i}<td>${to_add}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
+        });
+
+        $('#mdl-set-price').on('click', 'a i.ft-delete', function () {
+            $(this).parent().parent().parent().remove();
+        });
+
+    </script>
+
+
 
 @endsection

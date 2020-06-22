@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/responsive.dataTables.min.css')}}">
-{{--    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/icheck.css')}}">--}}
+    {{--    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/icheck.css')}}">--}}
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/custom.css')}}">
     <!-- END: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/toggle/switchery.min.css')}}">
@@ -66,13 +66,12 @@
 
 
 
-    {{--        <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
-    <script src="{{asset('vendors/vue/dist/vue.js')}}"></script>
-    {{--        <script src="https://cdn.jsdelivr.net/npm/moment"></script>--}}
-    <script src="{{asset('vendors/moment/min/moment.min.js')}}"></script>
-    <script src="{{asset('vendors/moment-jalaali/build/moment-jalaali.js')}}"></script>
-    <script
-        src="{{asset('vendors/vue-persian-datetime-picker-master/dist/vue-persian-datetime-picker-browser.js')}}"></script>
+{{--    --}}{{--        <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
+{{--    <script src="{{asset('vendors/vue/dist/vue.js')}}"></script>--}}
+{{--    --}}{{--        <script src="https://cdn.jsdelivr.net/npm/moment"></script>--}}
+{{--    <script src="{{asset('vendors/moment/min/moment.min.js')}}"></script>--}}
+{{--    <script src="{{asset('vendors/moment-jalaali/build/moment-jalaali.js')}}"></script>--}}
+{{--    <script src="{{asset('vendors/vue-persian-datetime-picker-master/dist/vue-persian-datetime-picker-browser.js')}}"></script>--}}
 
 
 @endsection

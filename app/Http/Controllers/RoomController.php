@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Flash;
+use App\Hotel;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
+use App\Image;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
 use App\Room;
+use App\Video;
 use Illuminate\Http\Request;
 use Route;
 use Validator;
@@ -43,25 +47,36 @@ class RoomController extends Controller
             $received_data = $request->toArray();
             $received_data['available'] = 1;
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-//            foreach ($separated_data['item'] as $k => $v) {
-//                if (!is_array($v)) {
-//                    $items[$k] = "'$v'";
-//                } else {
-//                    $items[$k] = "'0'";
-//                }
-//            }
 
             $r = new Room();
             $r->title = $request->input('title');
             $r->description = $request->input('description');
             $r->content = $request->input('content');
             $r->floor = $request->input('floor');
-            $r->image = 0;
-            $r->video = 0;
-            $r->flash = 0;
-            $r->price = 0;
-            $r->hotel = 1;
-            $r->available = 1;
+            if ($request->input('image') != null && count($request->input('image')) != 0) {
+                $r->image = Image::where('path', '=', $request->input('image')[0])->get(['id'])[0]['id'];
+            } else {
+                $r->image = 0;
+            }
+            if ($request->input('video') != null && count($request->input('video')) != 0) {
+                $r->video = Video::where('path', '=', $request->input('video')[0])->get(['id'])[0]['id'];
+            } else {
+                $r->video = 0;
+            }
+
+            if ($request->input('flash') != null && count($request->input('flash')) != 0) {
+                $r->flash = Flash::where('path', '=', $request->input('flash')[0])->get(['id'])[0]['id'];
+            } else {
+                $r->flash = 0;
+            }
+
+            if ($request->input('hotel') != null) {
+                $r->hotel = $request->input('hotel');
+            } else {
+                $r->hotel = Hotel::all()[0]->id;
+            }
+
+            $r->available = 0;
             $r->save();
             $r_id = $r->id;
             ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
@@ -102,12 +117,22 @@ class RoomController extends Controller
             $r->description = $request->input('description');
             $r->content = $request->input('content');
             $r->floor = $request->input('floor');
-            $r->image = 0;
-            $r->video = 0;
-            $r->flash = 0;
-            $r->price = 0;
-            $r->hotel = 1;
-            $r->available = 1;
+            if ($request->input('image') != null && count($request->input('image')) != 0) {
+                $r->image = Image::where('path', '=', $request->input('image')[0])->get(['id'])[0]['id'];
+            } else {
+                $r->image = 0;
+            }
+            if ($request->input('video') != null && count($request->input('video')) != 0) {
+                $r->video = Video::where('path', '=', $request->input('video')[0])->get(['id'])[0]['id'];
+            } else {
+                $r->video = 0;
+            }
+
+            if ($request->input('flash') != null && count($request->input('flash')) != 0) {
+                $r->flash = Flash::where('path', '=', $request->input('flash')[0])->get(['id'])[0]['id'];
+            } else {
+                $r->flash = 0;
+            }
             $r->save();
 
             ItemUtility::storeProperties($type, $separated_data['property'], $id);
@@ -123,6 +148,15 @@ class RoomController extends Controller
         $id = $request->input('id');
         ItemUtility::deleteData($type, $id);
         return response()->json(['error' => 0, 'message' => 'id is : ' . $id]);
+    }
+
+
+    public function setProperty(Request $request, $type, $property)
+    {
+        if ($property == "price") {
+
+
+        }
     }
 
 

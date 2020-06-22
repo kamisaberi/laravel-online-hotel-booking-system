@@ -117,6 +117,8 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     Route::post('/admin/items/{type}/{id}/update', 'Item\ItemController@update')->name('items.update')->where('id', '[0-9]+');
     Route::post('/admin/items/{type}/ajax/destroy', 'Item\ItemController@destroy')->name('items.destroy');
     Route::post('/admin/items/{type}/change', 'Item\ItemController@changeProperty')->name('items.change');
+    Route::post('/admin/items/{type}/{property}/set', 'Item\ItemController@setProperty')->name('items.set.property');
+
     /////////////***************ITEM**********************
 
     //***************USERS**********************
