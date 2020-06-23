@@ -91,12 +91,24 @@ class RoomController extends Controller
 
     public function show($type, $id)
     {
+
+
         $data = BaseController::createBaseInformations();
         $user = UserController::getCurrentUserData();
         $data ['user'] = $user;
         $data['navigations'] = NavigationController::getNavigation('admin');
         return view("items.index", $data);
     }
+
+    public function get($type, $id)
+    {
+        $data = BaseController::createBaseInformations();
+        $user = UserController::getCurrentUserData();
+        $data ['user'] = $user;
+        $data['navigations'] = NavigationController::getNavigation('admin');
+        return view("items.index", $data);
+    }
+
 
     public function edit($type, $id)
     {

@@ -109,9 +109,17 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     Route::get('/admin/items/{type}/settings', 'Item\ItemPropertyController@settings')->name('items.settings.edit');
     Route::post('/admin/items/{type}/settings/update', 'Item\ItemPropertyController@updateSettings')->name('items.settings.update');
     //ITEM
+
+
+
     Route::get('/admin/items/{type}/create', 'Item\ItemController@create')->name('items.create');
     Route::get('/admin/items/{type}/{id}/edit', 'Item\ItemController@edit')->name('items.edit')->where('id', '[0-9]+');
     Route::get('/admin/items/{type}/{id}', 'Item\ItemController@show')->name('items.show')->where('id', '[0-9]+');
+
+
+    Route::post('/admin/items/{type}/ajax', 'Item\ItemController@get')->name('items.ajax.get')->where('id', '[0-9]+');
+
+
     Route::get('/admin/items/{type}/{filters?}', 'Item\ItemController@index')->name('items.index')->where('filters', '^(?!properties)$');
     Route::post('/admin/items/{type}/store', 'Item\ItemController@store')->name('items.store');
     Route::post('/admin/items/{type}/{id}/update', 'Item\ItemController@update')->name('items.update')->where('id', '[0-9]+');
@@ -119,6 +127,9 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     Route::post('/admin/items/{type}/change', 'Item\ItemController@changeProperty')->name('items.change');
     Route::post('/admin/items/{type}/{property}/set', 'Item\ItemController@setProperty')->name('items.set.property');
     Route::post('/admin/items/{type}/{property}/get', 'Item\ItemController@getProperty')->name('items.get.property');
+
+
+
 
     /////////////***************ITEM**********************
 

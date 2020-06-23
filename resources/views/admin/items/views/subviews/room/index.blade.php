@@ -228,9 +228,6 @@
 
         $('#mdl-set-price').on('show.bs.modal', function (e) {
             $('#mdl-set-price').modal('hide');
-
-
-
         });
     </script>
 

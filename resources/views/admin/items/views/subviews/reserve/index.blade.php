@@ -44,62 +44,68 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="table-responsive">
-
                                             <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
                                                 <thead>
-                                                    <tr>
-                                                        <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
-                                                        <th>
-                                                            start date
-                                                        </th>
-                                                        <th>
-                                                            end date
-                                                        </th>
-                                                        <th>
-                                                            price
-                                                        </th>
-                                                        <th>Actions</th>
-                                                    </tr>
+                                                <tr>
+                                                    <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
+                                                    <th>
+                                                        start date
+                                                    </th>
+                                                    <th>
+                                                        end date
+                                                    </th>
+                                                    <th>
+                                                        price
+                                                    </th>
+                                                    <th>Actions</th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($datas as $data)
-                                                        <tr>
-                                                            <td>
-                                                                <input type="checkbox" class="input-chk check">
-                                                            </td>
-                                                            <td>
-                                                                {{$data->start_date}}
-                                                            </td>
+                                                @foreach($datas as $data)
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" class="input-chk check">
+                                                        </td>
+                                                        <td>
+                                                            {{$data->start_date}}
+                                                        </td>
 
-                                                            <td>
-                                                                {{$data->end_date}}
-                                                            </td>
+                                                        <td>
+                                                            {{$data->end_date}}
+                                                        </td>
 
-                                                            <td>
-                                                                {{$data->price}}
-                                                            </td>
+                                                        <td>
+                                                            {{$data->price}}
+                                                        </td>
 
-                                                            <td>
-                                                                @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'reserve'])
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
+                                                        <td>
+                                                            @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'reserve'])
+                                                            @if($data->situation == 1 || $data->situation == 5)
+                                                                <a href="#" data-toggle="modal" data-target="#mdl-reserve-actions"
+                                                                   data-content="{{$data->id}}"
+                                                                   class="danger show mr-1">
+                                                                    <i class="fa fa-check-circle"></i>
+                                                                </a>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                                 </tbody>
                                                 <tfoot>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>
-                                                            start date
-                                                        </th>
-                                                        <th>
-                                                            end date
-                                                        </th>
-                                                        <th>
-                                                            price
-                                                        </th>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>
+                                                        start date
+                                                    </th>
+                                                    <th>
+                                                        end date
+                                                    </th>
+                                                    <th>
+                                                        price
+                                                    </th>
 
-                                                        <th>Actions</th>
-                                                    </tr>
+                                                    <th>Actions</th>
+                                                </tr>
                                                 </tfoot>
                                             </table>
                                         </div>
@@ -128,9 +134,9 @@
                                 <p class="lead">اطلاعات:</p>
                                 <ul class="list-group">
                                     <li class="list-group-item">
-<span class="badge badge-primary badge-pill float-right">
-{{count($datas)}}
-</span>
+                                        <span class="badge badge-primary badge-pill float-right">
+                                            {{count($datas)}}
+                                        </span>
                                         <a href="#">
                                             تعداد آیتم ها
                                         </a>
@@ -175,17 +181,8 @@
     </div>
 
 
-    @isset($modals)
-        @foreach($modals as $modal)
-            @include('admin.components.modal-form', ['modal'=>$modal])
-        @endforeach
-    @endisset
-
     @include('admin.components.modal-reserve-action')
     @include('admin.components.mdl-show-check')
-
-
-
 
 
 @endsection
@@ -193,5 +190,74 @@
 
 @endsection
 @section('sub-footer')
+    <script>
+        $('a[data-target="#mdl-reserve-actions"]').on("click", function () {
+            $('#mdl-reserve-actions').modal('show');
+            $('#mdl-reserve-actions input[name=data-content]').val($(this).attr("data-content"));
+        });
+
+        $('#mdl-reserve-actions').on('shown.bs.modal', function (e) {
+
+            var id = $('#mdl-reserve-actions  input[name=data-content]').val();
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '{{route('items.ajax.get' , ['type'=>'reserve'])}}',
+                method: 'post',
+                data: {
+                    'id': id
+                },
+                success: function (result) {
+                    var reserve = result.reserve;
+                    $('#td-start-date').html(reserve.start_date);
+                    $('#td-end-date').html(reserve.end_date);
+                    $('#td-price').html(reserve.price);
+                    $('#dv-request-title').html(result.request_title);
+                    $('#dv-extra-data').html("");
+
+                },
+                error: function (result) {
+                    alert(result.status);
+                }
+            });
+        });
+
+        $('#btn-confirm').click(function () {
+            id = $('#mdl-reserve-actions input[name=data-content]').val();
+            setProperty(id, "confirm");
+        });
+
+        $('#btn-reject').click(function () {
+            id = $('#mdl-reserve-actions input[name=data-content]').val();
+            setProperty(id, "reject");
+        });
+
+        function setProperty(id, value) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '{{route('items.set.property' , ['type'=>'reserve' , 'property'=>'situation'])}}',
+                method: 'post',
+                data: {
+                    'id': id,
+                    'value': value
+                },
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function (result) {
+                    alert(result.status);
+                }
+            });
+        }
+
+    </script>
 
 @endsection

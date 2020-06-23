@@ -298,8 +298,6 @@
         });
 
         $('#mdl-reserve-actions .modal-footer').on('click', 'button', function (e) {
-
-
             var url = $('#mdl-reserve-actions input[name=mdl-update-url]').val();
             var value = $(this).attr('data-content');
 

@@ -1,0 +1,10 @@
+
+1	room requested	8
+2	room rejected	8
+3	room confirmed	8
+4	room time out	8
+5	pay off requested	8
+6	pay off rejected	8
+7	pay off confirmed	8
+8	pay off timeout	8
+9	pay off online confirmed	8

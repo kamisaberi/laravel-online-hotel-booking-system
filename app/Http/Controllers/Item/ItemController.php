@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Item;
 
 use App;
-use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Navigation\NavigationController;
-use App\Http\Controllers\User\UserController;
 use App\Libraries\MyLib\PluralUtility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -163,16 +160,89 @@ class ItemController extends Controller
      */
     public function show($type, $id)
     {
-        $data = BaseController::createBaseInformations();
+        if (Str::lower(Str::singular($type)) == "room") {
+            return ((new App\Http\Controllers\RoomController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "reserve") {
+            return ((new App\Http\Controllers\ReserveController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "customer") {
+            return ((new App\Http\Controllers\CustomerController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "image") {
+            return ((new App\Http\Controllers\ImageController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "video") {
+            return ((new App\Http\Controllers\VideoController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "flash") {
+            return ((new App\Http\Controllers\FlashController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "slide") {
+            return ((new App\Http\Controllers\SlideController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "message") {
+            return ((new App\Http\Controllers\MessageController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "comment") {
+            return ((new App\Http\Controllers\CommentController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "complaint") {
+            return ((new App\Http\Controllers\ComplaintController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "rating") {
+            return ((new App\Http\Controllers\ReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "user") {
+            return ((new App\Http\Controllers\User\UserController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "website") {
+            return ((new App\Http\Controllers\WebsiteController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "hotel") {
+            return ((new App\Http\Controllers\HotelController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "news") {
+            return ((new App\Http\Controllers\NewsController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
+            return ((new App\Http\Controllers\MapLocationController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "page") {
+            return ((new App\Http\Controllers\PageController())->edit($type, $id));
+        } else {
+            abort("404");
+        }
+    }
 
-        $user = UserController::getCurrentUserData();
-        $data ['user'] = $user;
 
-        $data['navigations'] = NavigationController::getNavigation('admin');
-
-        return view("items.index", $data);
-
-        //
+    public function get(Request $request, $type)
+    {
+        if (Str::lower(Str::singular($type)) == "room") {
+            return ((new App\Http\Controllers\RoomController())->get($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "reserve") {
+            return ((new App\Http\Controllers\ReserveController())->get($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "customer") {
+            return ((new App\Http\Controllers\CustomerController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "image") {
+            return ((new App\Http\Controllers\ImageController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "video") {
+            return ((new App\Http\Controllers\VideoController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "flash") {
+            return ((new App\Http\Controllers\FlashController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "slide") {
+            return ((new App\Http\Controllers\SlideController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "message") {
+            return ((new App\Http\Controllers\MessageController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "comment") {
+            return ((new App\Http\Controllers\CommentController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "complaint") {
+            return ((new App\Http\Controllers\ComplaintController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "rating") {
+            return ((new App\Http\Controllers\ReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "user") {
+            return ((new App\Http\Controllers\User\UserController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "website") {
+            return ((new App\Http\Controllers\WebsiteController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "hotel") {
+            return ((new App\Http\Controllers\HotelController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "news") {
+            return ((new App\Http\Controllers\NewsController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
+            return ((new App\Http\Controllers\MapLocationController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "page") {
+            return ((new App\Http\Controllers\PageController())->edit($type, $id));
+        } else {
+            abort("404");
+        }
     }
 
     /**
@@ -322,7 +392,6 @@ class ItemController extends Controller
     }
 
 
-
     public function getProperty(Request $request, $type, $property)
     {
         if (Str::lower(Str::singular($type)) == "room") {
@@ -372,7 +441,7 @@ class ItemController extends Controller
         if (Str::lower(Str::singular($type)) == "room") {
             return ((new App\Http\Controllers\RoomController())->setProperty($request, $type, $property));
         } elseif (Str::lower(Str::singular($type)) == "reserve") {
-            return ((new App\Http\Controllers\ReserveController())->destroy($request, $type));
+            return ((new App\Http\Controllers\ReserveController())->setProperty($request, $type, $property));
         } elseif (Str::lower(Str::singular($type)) == "customer") {
             return ((new App\Http\Controllers\CustomerController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "image") {

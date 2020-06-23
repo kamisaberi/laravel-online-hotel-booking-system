@@ -96,6 +96,21 @@ class ReserveController extends Controller
         //
     }
 
+    public function get(Request $request, $type)
+    {
+
+        $id = $request->input('id');
+        $r = Reserve::find($id);
+        if ($r->situation == 1) {
+            $request_title = 'درخواست تایید اتاق';
+        } elseif ($r->situation == 4) {
+            $request_title = 'درخواست تایید فیش پرداختی';
+        }
+
+        return response()->json(['error' => false, 'message' => 'success', 'reserve' => $r, 'request_title' => $request_title]);
+
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -223,6 +238,36 @@ class ReserveController extends Controller
         $ress = DB::table('reserves')->whereIn('situation', $sits)->get();
         return response()->json(["error" => 0, 'message' => 'success', 'reserves' => $ress]);
 
+    }
+
+    public function setProperty(Request $request, $type, $property)
+    {
+        if ($property == "situation") {
+
+            $id = $request->input('id');
+            $value = $request->input('value');
+
+            $r = Reserve::find($id);
+
+            if ($r->situation == 1) {
+                if ($value == "confirm") {
+                    $r->situation = 3;
+                    $r->save();
+                } elseif ($value == "reject") {
+                    $r->situation = 2;
+                    $r->save();
+                }
+            } elseif ($r->situation == 5) {
+                if ($value == "confirm") {
+                    $r->situation = 7;
+                    $r->save();
+                } elseif ($value == "reject") {
+                    $r->situation = 6;
+                    $r->save();
+                }
+            }
+            return response()->json(["error" => 0, 'message' => "success"]);
+        }
     }
 
 }
