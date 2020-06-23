@@ -70,7 +70,8 @@
                                                         </td>
                                                         <td>
                                                             @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'room'])
-                                                            <a href="#mdl-set-price" data-toggle="modal" data-target="#mdl-set-price"
+                                                            <a href="#" data-toggle="modal" data-target="#mdl-set-price"
+                                                               data-content="{{$data->id}}"
                                                                class="primary show mr-1">
                                                                 <i class="fa fa-adjust"></i>
                                                             </a>
@@ -186,45 +187,54 @@
 @section('sub-footer')
 
     <script>
-        $('a[href$="#mdl-set-price"]').on("click", function () {
+        $('a[data-target="#mdl-set-price"]').on("click", function () {
             $('#mdl-set-price').modal('show');
+            $('#mdl-set-price input[name=data-content]').val($(this).attr("data-content"));
+        });
+
+        $('#mdl-set-price').on('shown.bs.modal', function (e) {
+
+            var id = $('#mdl-set-price input[name=data-content]').val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '{{route('items.get.property' , ['type'=>'room' , 'property'=>'price'])}}',
+                method: 'post',
+                data: {
+                    'id': id
+                },
+                success: function (result) {
+                    var prices= result.prices;
+
+                    var tbody_set_price = $('#mdl-set-price').find('tbody');
+                    $('#mdl-set-price').find('tbody').html('');
+
+                    $.each(prices, function (key, value) {
+                        var ii = `<input type="hidden" name="price[]" value="${value['id']}">`;
+                        $('#mdl-set-price').find('tbody').append(`<tr>${ii}<td>${value['dates']}</td><td>${value['value']}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
+                    });
+
+                    // console.log(prices);
+
+                },
+                error: function (result) {
+                    alert(result.status);
+                }
+            });
+        });
+
+        $('#mdl-set-price').on('show.bs.modal', function (e) {
+            $('#mdl-set-price').modal('hide');
+
+
+
         });
     </script>
 
     <script>
-        var tbody_set_price = $('#mdl-set-price').find('tbody');
-        $('#mdl-set-price').on('show.bs.modal', function (e) {
-            $('#mdl-set-price').find('tbody').html('');
-            var vl = $('input[type=hidden]', this).val();
-            if (vl.trim() == '' || vl.trim() == '0' || vl.trim() == '-')
-                return;
-
-            var arr = vl.trim().split('|');
-
-            var assigned = arr[0].trim().split('==')[1];
-            var action = arr[1].trim().split('==')[1];
-            var display_history_at_modal = arr[2].trim().split('==')[1];
-
-            if (display_history_at_modal == 1) {
-                if (assigned.trim() != '' && assigned.trim() != '0' && assigned.trim() != '-') {
-
-                    var arr2 = assigned.split(',');
-                    for (i = 0; i < arr2.length; i++) {
-
-                        var ii = `<input type="hidden" name="price[]" value="${arr2[i]}">`;
-                        $('#mdl-set-price').find('tbody').append(`<tr>${ii}<td>${arr2[i]}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
-                    }
-                }
-
-            }
-            var form = $('form', this);
-            if (form.attr('action').trim() == '') {
-                form.attr('action', action);
-            }
-
-        });
-
-
         var start_date_price = new Vue({
             el: '#start-date-price',
             data: {
@@ -257,7 +267,6 @@
             },
             methods: {
                 onChange1(picker) {
-                    // alert(picker.value);
                 }
             }
         });
@@ -276,7 +285,7 @@
             }
 
             var i = `<input type="hidden" name="price[]" value="${s}">`;
-            $('#mdl-set-price tbody').append(`<tr>${i}<td>${s}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
+            $('#mdl-set-price tbody').append(`<tr>${i}<td>${$('#new-price').val()}</td><td>${s}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
 
         });
 
@@ -286,7 +295,7 @@
                 return;
 
             var i = `<input type="hidden" name="price[]" value="${to_add}">`;
-            $('#mdl-set-price tbody').append(`<tr>${i}<td>${to_add}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
+            $('#mdl-set-price tbody').append(`<tr>${i}<td>${$('#new-price').val()}</td><td>${to_add}</td><td><a href="#" class="danger"><i class="ft-delete"></i></a></td></tr>`);
         });
 
         $('#mdl-set-price').on('click', 'a i.ft-delete', function () {

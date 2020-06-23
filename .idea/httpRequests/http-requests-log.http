@@ -1,3 +1,30 @@
+POST http://localhost/online-hotel//admin/items/room/price/get?id=1
+Accept: */*
+Cache-Control: no-cache
+X-CSRF-TOKEN: nEtXUhcELEmIzCq3lsWbUslZqjYqwFz2QJlMeJ5H
+
+<> 2020-06-23T053425.419.html
+
+###
+
+POST http://localhost/online-hotel//admin/items/room/price/get?id=1
+Accept: */*
+Cache-Control: no-cache
+X-CSRF-TOKEN: 1ODJ16LmsQlYeNJvZFsbGORmb11vLmVs067O7ihE
+
+<> 2020-06-23T053313.419.html
+
+###
+
+POST http://localhost/online-hotel//admin/items/room/price/get
+Accept: */*
+Cache-Control: no-cache
+X-CSRF-TOKEN: 1ODJ16LmsQlYeNJvZFsbGORmb11vLmVs067O7ihE
+
+<> 2020-06-23T053256.419.html
+
+###
+
 GET https://hamrahcard.efarda.net/hc/
 Accept: */*
 Cache-Control: no-cache

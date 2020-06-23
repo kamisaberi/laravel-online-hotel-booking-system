@@ -23,6 +23,8 @@ class RoomController extends Controller
     {
         $data = BaseUtility::generateForIndex($type);
         $data ['datas'] = Room::all();
+//        dd($data['datas'][0]->prices());
+//        return $data['datas'][0]->prices()->get();
         return view("admin.items.views.subviews.room.index", $data);
     }
 
@@ -150,14 +152,30 @@ class RoomController extends Controller
         return response()->json(['error' => 0, 'message' => 'id is : ' . $id]);
     }
 
+    public function getProperty(Request $request, $type, $property)
+    {
+        if ($property == "price") {
+            $r = Room::find($request->input('id'));
+            $prices = $r->prices()->get();
+            return response()->json(['error' => false, 'message' => "success for ID :" . $request->input('id'), 'prices' => $prices]);
+        }
+    }
+
 
     public function setProperty(Request $request, $type, $property)
     {
         if ($property == "price") {
-
 
         }
     }
 
 
 }
+
+
+
+
+
+
+
+

@@ -118,6 +118,7 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     Route::post('/admin/items/{type}/ajax/destroy', 'Item\ItemController@destroy')->name('items.destroy');
     Route::post('/admin/items/{type}/change', 'Item\ItemController@changeProperty')->name('items.change');
     Route::post('/admin/items/{type}/{property}/set', 'Item\ItemController@setProperty')->name('items.set.property');
+    Route::post('/admin/items/{type}/{property}/get', 'Item\ItemController@getProperty')->name('items.get.property');
 
     /////////////***************ITEM**********************
 

@@ -16,6 +16,20 @@
                         <div class="row">
                             <div class="col col-md-12">
                                 <h4 class="form-section">
+                                    قیمت:
+                                </h4>
+                            </div>
+                            <div class="col col-md-12 col-sm-12">
+                                <div class="row">
+                                    <div class="col col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input class="form-control" type="number" name="new-price" id="new-price">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-md-12">
+                                <h4 class="form-section">
                                     {{__('layout.public.select week days')}}
                                 </h4>
                             </div>
@@ -70,6 +84,7 @@
                                     <thead>
                                     <tr>
                                         <th>زمان</th>
+                                        <th>قیمت</th>
                                         <th>عملیات</th>
                                     </tr>
                                     </thead>
@@ -90,3 +105,9 @@
         </div>
     </div>
 </div>
+<script>
+    import Index from "../../../../public/vendors/vue/src/platforms/web/server/directives";
+    export default {
+        components: {Index}
+    }
+</script>

@@ -16,6 +16,12 @@ class Room extends Model
     {
         $this->hasOne('App\Image');
     }
+    public function prices(){
+
+        return $this->hasMany('App\RoomPrice', 'room');
+
+    }
+
 
 
     //
