@@ -66,7 +66,11 @@
                                                             <input type="checkbox" class="input-chk check">
                                                         </td>
                                                         <td>
-                                                            {{$data->title}}
+                                                            @if(\App\Libraries\Utilities\TextUtility::isJsonText($data->title))
+                                                                {{json_decode($data->title,true)[$base_locale]}}
+                                                            @else
+                                                                {{$data->title}}
+                                                            @endif
                                                         </td>
                                                         <td>
                                                             @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'room'])
@@ -75,7 +79,6 @@
                                                                class="primary show mr-1">
                                                                 <i class="fa fa-adjust"></i>
                                                             </a>
-
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -207,7 +210,7 @@
                     'id': id
                 },
                 success: function (result) {
-                    var prices= result.prices;
+                    var prices = result.prices;
 
                     var tbody_set_price = $('#mdl-set-price').find('tbody');
                     $('#mdl-set-price').find('tbody').html('');

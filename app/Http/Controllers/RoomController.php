@@ -33,6 +33,7 @@ class RoomController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+
         return view("admin.items.views.subviews.room.form", $data);
     }
 
@@ -44,6 +45,7 @@ class RoomController extends Controller
      */
     public function store(Request $request, $type)
     {
+        $locales_and_flags = config('base.locales_and_flags');
         $validator = Validator::make($request->all(), ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters()));
         if ($validator->passes()) {
             $received_data = $request->toArray();
@@ -51,9 +53,25 @@ class RoomController extends Controller
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
             $r = new Room();
-            $r->title = $request->input('title');
-            $r->description = $request->input('description');
-            $r->content = $request->input('content');
+
+            $titles = [];
+            foreach ($locales_and_flags as $k => $v) {
+                $titles[$k] = $request->input('title' . '-' . $k);
+            }
+            $r->title = json_encode($titles, JSON_UNESCAPED_UNICODE);
+
+            $descriptions = [];
+            foreach ($locales_and_flags as $k => $v) {
+                $descriptions[$k] = $request->input('description' . '-' . $k);
+            }
+            $r->description = json_encode($descriptions, JSON_UNESCAPED_UNICODE);
+
+            $contents = [];
+            foreach ($locales_and_flags as $k => $v) {
+                $contents[$k] = $request->input('content' . '-' . $k);
+            }
+            $r->content = json_encode($contents, JSON_UNESCAPED_UNICODE);
+
             $r->floor = $request->input('floor');
             if ($request->input('image') != null && count($request->input('image')) != 0) {
                 $r->image = Image::where('path', '=', $request->input('image')[0])->get(['id'])[0]['id'];
@@ -116,20 +134,39 @@ class RoomController extends Controller
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters(), $id);
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $data['room'] = Room::find($id);
         return view("admin.items.views.subviews.room.form", $data);
     }
 
     public function update(Request $request, $type, $id)
     {
+        $locales_and_flags = config('base.locales_and_flags');
         $validator = Validator::make($request->all(), ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters()));
         if ($validator->passes()) {
             $received_data = $request->toArray();
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
             $r = Room::find($id);
-            $r->title = $request->input('title');
-            $r->description = $request->input('description');
-            $r->content = $request->input('content');
+
+            $titles = [];
+            foreach ($locales_and_flags as $k => $v) {
+                $titles[$k] = $request->input('title' . '-' . $k);
+            }
+            $r->title = json_encode($titles, JSON_UNESCAPED_UNICODE);
+
+            $descriptions = [];
+            foreach ($locales_and_flags as $k => $v) {
+                $descriptions[$k] = $request->input('description' . '-' . $k);
+            }
+            $r->description = json_encode($descriptions, JSON_UNESCAPED_UNICODE);
+
+            $contents = [];
+            foreach ($locales_and_flags as $k => $v) {
+                $contents[$k] = $request->input('content' . '-' . $k);
+            }
+            $r->content = json_encode($contents, JSON_UNESCAPED_UNICODE);
+
+
             $r->floor = $request->input('floor');
             if ($request->input('image') != null && count($request->input('image')) != 0) {
                 $r->image = Image::where('path', '=', $request->input('image')[0])->get(['id'])[0]['id'];

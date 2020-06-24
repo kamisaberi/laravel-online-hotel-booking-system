@@ -43,10 +43,10 @@
                                                     <div class="col col-md-12">
                                                         <h4 class="form-section"><i class="ft-user"></i>main</h4>
                                                     </div>
-                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
-                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>''])
-                                                    @include('admin.inputs.new2.tinymce', ['field'=>'content', 'value'=>''])
-                                                    @include('admin.inputs.new2.select', ['field'=>'floor', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=> ($form_type == 'edit' ? $room->title : ''), 'locales'=> true])
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>($form_type == 'edit' ? $room->description : ''), 'locales'=> true])
+                                                    @include('admin.inputs.new2.tinymce', ['field'=>'content', 'value'=>($form_type == 'edit' ? $room->content : ''), 'locales'=> true])
+                                                    @include('admin.inputs.new2.select', ['field'=>'floor', 'value'=>($form_type == 'edit' ? $room->floor : '')])
                                                     @include('admin.inputs.new2.select_image', ['field'=>'image', 'value'=>''])
                                                     @include('admin.inputs.new2.select_video', ['field'=>'video', 'value'=>''])
                                                     @include('admin.inputs.new2.select_flash', ['field'=>'flash', 'value'=>''])

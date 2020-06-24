@@ -47,6 +47,7 @@ class BaseUtility
         $data['permissions'] = ItemUtility::getPermissions($type);
         $data['page_title'] = trans('messages.list of') . PluralUtility::plural(trans("items." . $type));
         $data['breadcrumbs'] = BreadcrumbsUtility::createForCreate($type);
+        $data['form_type'] = 'create';
         return $data;
     }
 
@@ -60,6 +61,7 @@ class BaseUtility
         $data['permissions'] = ItemUtility::getPermissions($type);
         $data['page_title'] = trans('messages.list of') . PluralUtility::plural(trans("items." . $type));
         $data['breadcrumbs'] = BreadcrumbsUtility::createForEdit($type);
+        $data['form_type'] = 'edit';
         return $data;
 
     }
