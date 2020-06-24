@@ -17,6 +17,9 @@ return [
     'base_locale'=> 'Base Locale',
     'email'=> 'Email',
     'template'=> 'Template',
+    'excerpt'=> 'Excerpt',
+    'category'=> 'Category',
+
 
 
 

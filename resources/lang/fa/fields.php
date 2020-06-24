@@ -17,5 +17,7 @@ return [
     'base_locale' => 'زبان پیشفرض',
     'email' => 'ایمیل',
     'template' => 'قالب',
+    'excerpt'=> 'خلاصه',
+    'category'=> 'دسته بندی',
 
 ];

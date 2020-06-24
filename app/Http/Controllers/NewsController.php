@@ -104,6 +104,7 @@ class NewsController extends Controller
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $data['news'] = News::find($id);
         return view("admin.items.views.subviews.news.form", $data);
 
     }

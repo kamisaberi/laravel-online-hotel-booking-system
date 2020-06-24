@@ -126,8 +126,6 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     Route::post('/admin/items/{type}/{property}/get', 'Item\ItemController@getProperty')->name('items.get.property');
 
 
-
-
     /////////////***************ITEM**********************
 
     //***************USERS**********************
