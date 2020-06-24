@@ -3,7 +3,7 @@
 
 @endsection
 @section("sub-header")
-
+    <script src="{{asset('vendors/tinymce/tinymce.min.js')}}"></script>
 @endsection
 
 @section("sub-main")
@@ -44,10 +44,10 @@
                                                     <div class="col col-md-12">
                                                         <h4 class="form-section"><i class="ft-user"></i>main</h4>
                                                     </div>
-                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
-                                                    @include('admin.inputs.new2.tinymce', ['field'=>'content', 'value'=>''])
-                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'keywords', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=> ($form_type == 'edit' ? $page->title : ''), 'locales'=> true])
+                                                    @include('admin.inputs.new2.tinymce', ['field'=>'content', 'value'=>($form_type == 'edit' ? $page->content : ''), 'locales'=> true])
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'meta_description', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'meta_keywords', 'value'=>''])
                                                     @include('admin.inputs.new2.select', ['field'=>'template', 'value'=>''])
                                                 </div>
 

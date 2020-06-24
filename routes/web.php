@@ -117,7 +117,6 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
 
     Route::post('/admin/items/{type}/ajax', 'Item\ItemController@get')->name('items.ajax.get')->where('id', '[0-9]+');
 
-
     Route::get('/admin/items/{type}/{filters?}', 'Item\ItemController@index')->name('items.index')->where('filters', '^(?!properties)$');
     Route::post('/admin/items/{type}/store', 'Item\ItemController@store')->name('items.store');
     Route::post('/admin/items/{type}/{id}/update', 'Item\ItemController@update')->name('items.update')->where('id', '[0-9]+');

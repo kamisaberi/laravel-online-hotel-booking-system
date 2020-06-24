@@ -61,8 +61,8 @@ class PageController extends Controller
 
             $r = new Page();
             $r->title = $request->input('title');
-            $r->keywords = $request->input('keywords');
-            $r->description = $request->input('description');
+            $r->meta_keywords = $request->input('keywords');
+            $r->meta_description = $request->input('description');
             $r->content = $request->input('content');
             $r->template = $request->input('template');
             $r->save();
@@ -105,6 +105,7 @@ class PageController extends Controller
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $data['page'] = Page::find($id);
         return view("admin.items.views.subviews.page.form", $data);
     }
 
@@ -131,8 +132,8 @@ class PageController extends Controller
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
             $r = Page::find($id);
             $r->title = $request->input('title');
-            $r->keywords = $request->input('keywords');
-            $r->description = $request->input('description');
+            $r->meta_keywords = $request->input('keywords');
+            $r->meta_description = $request->input('description');
             $r->content = $request->input('content');
             $r->template = $request->input('template');
             $r->save();
