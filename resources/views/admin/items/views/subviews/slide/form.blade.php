@@ -7,7 +7,6 @@
 @endsection
 
 @section("sub-main")
-
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-wrapper">
@@ -44,10 +43,9 @@
                                                     <div class="col col-md-12">
                                                         <h4 class="form-section"><i class="ft-user"></i>main</h4>
                                                     </div>
-                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=> ($form_type == 'edit' ? $slide->title : ''), 'locales'=> false])
+                                                    @include('admin.inputs.new2.select_image', ['field'=>'image', 'value'=>''])
                                                 </div>
-
-
                                                 <div class="form-actions">
                                                     <button type="reset" class="btn btn-warning mr-1">
                                                         <i class="ft-x"></i> Cancel
@@ -74,8 +72,8 @@
         @include('admin.components.file-manager', ['images'=>$components['files']['images']]);
     @endisset
 
-    @include('admin.components.add-new-property');
-    @include('admin.components.mdl-category-selector');
+{{--    @include('admin.components.add-new-property');--}}
+{{--    @include('admin.components.mdl-category-selector');--}}
 
 @endsection
 

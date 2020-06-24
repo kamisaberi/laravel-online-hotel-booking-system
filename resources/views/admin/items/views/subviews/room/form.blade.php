@@ -3,7 +3,7 @@
 
 @endsection
 @section("sub-header")
-
+    <script src="{{asset('vendors/tinymce/tinymce.min.js')}}"></script>
 @endsection
 
 @section("sub-main")
@@ -73,9 +73,9 @@
     </div>
 
 
-    @isset($components['files'])
-        @include('admin.components.file-manager', ['images'=>$components['files']['images']]);
-    @endisset
+    {{--    @isset($components['files'])--}}
+    @include('admin.components.file-manager', ['images'=>$components['files']['images']]);
+    {{--    @endisset--}}
 
     @include('admin.components.add-new-property');
     @include('admin.components.mdl-category-selector');
@@ -83,6 +83,8 @@
 @endsection
 
 @section("sub-vendor-js")
+
+
 
 @endsection
 @section("sub-footer")

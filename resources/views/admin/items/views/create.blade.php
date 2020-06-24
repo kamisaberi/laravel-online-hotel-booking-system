@@ -47,15 +47,15 @@
     @endif
 
 
-    @foreach($groups as $group)
-        @foreach($group->properties as $property)
-            @if($property->rules['type']== 'cropper')
-                <link href="{{asset('vendors/cropper/cropper.css')}}" type="text/css" rel="stylesheet">
-            @elseif($property->rules['type']== 'tinymce')
-                <script src="{{asset('vendors/tinymce/tinymce.min.js')}}"></script>
-            @endif
-        @endforeach
-    @endforeach
+{{--    @foreach($groups as $group)--}}
+{{--        @foreach($group->properties as $property)--}}
+{{--            @if($property->rules['type']== 'cropper')--}}
+{{--                <link href="{{asset('vendors/cropper/cropper.css')}}" type="text/css" rel="stylesheet">--}}
+{{--            @elseif($property->rules['type']== 'tinymce')--}}
+{{--                <script src="{{asset('vendors/tinymce/tinymce.min.js')}}"></script>--}}
+{{--            @endif--}}
+{{--        @endforeach--}}
+{{--    @endforeach--}}
 
     @yield('sub-header')
 
@@ -150,163 +150,162 @@
     </script>
 
 
+{{--    @foreach($groups as $group)--}}
+{{--        @foreach($group->properties as $property)--}}
+{{--            @if($property->rules['type'] == 'cropper')--}}
+{{--                <script type="text/javascript" src="{{asset('vendors/cropper/cropper.js')}}"></script>--}}
+{{--                <script type="text/javascript" src="{{asset('vendors/cropper/jquery-cropper.js')}}"></script>--}}
 
-    @foreach($groups as $group)
-        @foreach($group->properties as $property)
-            @if($property->rules['type'] == 'cropper')
-                <script type="text/javascript" src="{{asset('vendors/cropper/cropper.js')}}"></script>
-                <script type="text/javascript" src="{{asset('vendors/cropper/jquery-cropper.js')}}"></script>
+{{--                <script>--}}
 
-                <script>
+{{--                    var $image = $(".featured_image > img");--}}
+{{--                    originalData = {};--}}
 
-                    var $image = $(".featured_image > img");
-                    originalData = {};
+{{--                    $image.cropper({--}}
+{{--                        aspectRatio: '{{$settings->aspect_ratio}}',--}}
+{{--                        resizable: true,--}}
+{{--                        zoomable: false,--}}
+{{--                        rotatable: false,--}}
+{{--                        multiple: true,--}}
+{{--                        dragend: function (data) {--}}
+{{--                            originalData = $image.cropper("getCroppedCanvas");--}}
+{{--                            console.log(originalData.toDataURL());--}}
+{{--                            $('.data-url').text(originalData.toDataURL());--}}
+{{--                            $('#path').val(originalData.toDataURL());--}}
+{{--                        }--}}
+{{--                    });--}}
 
-                    $image.cropper({
-                        aspectRatio: '{{$settings->aspect_ratio}}',
-                        resizable: true,
-                        zoomable: false,
-                        rotatable: false,
-                        multiple: true,
-                        dragend: function (data) {
-                            originalData = $image.cropper("getCroppedCanvas");
-                            console.log(originalData.toDataURL());
-                            $('.data-url').text(originalData.toDataURL());
-                            $('#path').val(originalData.toDataURL());
-                        }
-                    });
+{{--                    $('#submit').click(function () {--}}
+{{--                        var $image = $(".featured_image > img");--}}
+{{--                        originalData = $image.cropper("getCroppedCanvas");--}}
+{{--                        $('#path').val(originalData.toDataURL());--}}
+{{--                    });--}}
 
-                    $('#submit').click(function () {
-                        var $image = $(".featured_image > img");
-                        originalData = $image.cropper("getCroppedCanvas");
-                        $('#path').val(originalData.toDataURL());
-                    });
+{{--                    $('#send').click(function () {--}}
 
-                    $('#send').click(function () {
+{{--                        $.ajaxSetup({--}}
+{{--                            headers: {--}}
+{{--                                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')--}}
+{{--                            }--}}
+{{--                        });--}}
+{{--                        $.ajax({--}}
+{{--                            url: "{{url("/cropper/save")}}",--}}
+{{--                            method: 'post',--}}
+{{--                            data: {'file': $image.cropper("getCroppedCanvas").toDataURL()},--}}
+{{--                            success: function (result) {--}}
+{{--//                        alert(result);--}}
+{{--                                alert(result.message);--}}
 
-                        $.ajaxSetup({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                            }
-                        });
-                        $.ajax({
-                            url: "{{url("/cropper/save")}}",
-                            method: 'post',
-                            data: {'file': $image.cropper("getCroppedCanvas").toDataURL()},
-                            success: function (result) {
-//                        alert(result);
-                                alert(result.message);
+{{--                            },--}}
+{{--                            error: function (result) {--}}
+{{--                                alert("error code :" + result.status);--}}
 
-                            },
-                            error: function (result) {
-                                alert("error code :" + result.status);
-
-                            }
-                        });
-                    });
-
-
-                    var $inputImage = $("#inputImage");
-                    if (window.FileReader) {
-                        $inputImage.change(function () {
-                            var fileReader = new FileReader(),
-                                files = this.files,
-                                file;
-
-                            if (!files.length) {
-                                return;
-                            }
-
-                            file = files[0];
-
-                            if (/^image\/\w+$/.test(file.type)) {
-                                fileReader.readAsDataURL(file);
-                                fileReader.onload = function () {
-                                    $inputImage.val("");
-                                    $image.cropper("reset", true).cropper("replace", this.result);
-                                };
-                            } else {
-                                showMessage("Please choose an image file.");
-                            }
-                        });
-                    } else {
-                        $inputImage.addClass("hide");
-                    }
-
-                </script>
-
-            @elseif($property->rules['type'] == 'nestable')
-
-                <script>
-                    NESTABLE_ACTION.init({'nestable': "#nestable3", 'url_update': "{{$property->url}}"});
-                </script>
-                {{--            <script>--}}
-                {{--                var lastId = 0;--}}
-                {{--                $(document).ready(function () {--}}
-                {{--                    $('#nestable3').nestable();--}}
-                {{--                    var obj = '{{$property->values}}';--}}
-                {{--                    var obj = obj.replace(/&quot;/g, '\"');--}}
-
-                {{--                    $.each(JSON.parse(obj), function (index, item) {--}}
-                {{--                        $('#nestable3').nestable('add', item);--}}
-                {{--                    });--}}
-                {{--                    $('#nestable3 .dd-empty').remove();--}}
-                {{--                });--}}
-                {{--            </script>--}}
-
-                <script>
-                    var lastId = 0;
-                    $(document).ready(function () {
-                        var obj = '{{$property->values}}';
-                        var obj = obj.replace(/&quot;/g, '\"');
-                        var output = '';
-
-                        function buildItem(item) {
-
-                            lastId = Math.max(item.id, lastId);
-
-                            $ttles = item.title.split(',');
-                            $title_to_print = '';
-                            $.each($ttles, function (indx, val) {
-                                $ttl = val.split(':');
-                                if ($ttl[0] == base_locale) {
-                                    $title_to_print = $ttl[1];
-                                }
-                            });
-
-                            var html = "<li class='dd-item dd3-item' data-id='" + item.id + "' data-title='" + item.title + "'>";
-                            html += "<div class='dd-handle dd3-handle'></div>";
-                            html += `<div class="dd3-content" name="1"><div class="row"><div class="col col-md-1"><a href="#" class="delete-item"><i class="fa fa-remove"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-edit-category" data-backdrop="true" class="edit-item"><i class="fa fa-edit"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-add-category" data-backdrop="true"class="add-item"><i class="fa fa-plus"></i></a></div><div class="col col-md-9 item" style="text-align: left">${$title_to_print}</div></div></div>`;
-
-                            if (item.children) {
-
-                                html += "<ol class='dd-list outer'>";
-                                $.each(item.children, function (index, sub) {
-                                    html += buildItem(sub);
-                                });
-                                html += "</ol>";
-
-                            }
-
-                            html += "</li>";
-
-                            return html;
-                        }
+{{--                            }--}}
+{{--                        });--}}
+{{--                    });--}}
 
 
-                        $.each(JSON.parse(obj), function (index, item) {
-                            output += buildItem(item);
-                        });
+{{--                    var $inputImage = $("#inputImage");--}}
+{{--                    if (window.FileReader) {--}}
+{{--                        $inputImage.change(function () {--}}
+{{--                            var fileReader = new FileReader(),--}}
+{{--                                files = this.files,--}}
+{{--                                file;--}}
 
-                        $('#nestable3 > .dd-list.dd3-list').html(output);
-                        $('#nestable3').nestable();
-                    });
-                </script>
+{{--                            if (!files.length) {--}}
+{{--                                return;--}}
+{{--                            }--}}
+
+{{--                            file = files[0];--}}
+
+{{--                            if (/^image\/\w+$/.test(file.type)) {--}}
+{{--                                fileReader.readAsDataURL(file);--}}
+{{--                                fileReader.onload = function () {--}}
+{{--                                    $inputImage.val("");--}}
+{{--                                    $image.cropper("reset", true).cropper("replace", this.result);--}}
+{{--                                };--}}
+{{--                            } else {--}}
+{{--                                showMessage("Please choose an image file.");--}}
+{{--                            }--}}
+{{--                        });--}}
+{{--                    } else {--}}
+{{--                        $inputImage.addClass("hide");--}}
+{{--                    }--}}
+
+{{--                </script>--}}
+
+{{--            @elseif($property->rules['type'] == 'nestable')--}}
+
+{{--                <script>--}}
+{{--                    NESTABLE_ACTION.init({'nestable': "#nestable3", 'url_update': "{{$property->url}}"});--}}
+{{--                </script>--}}
+{{--                --}}{{--            <script>--}}
+{{--                --}}{{--                var lastId = 0;--}}
+{{--                --}}{{--                $(document).ready(function () {--}}
+{{--                --}}{{--                    $('#nestable3').nestable();--}}
+{{--                --}}{{--                    var obj = '{{$property->values}}';--}}
+{{--                --}}{{--                    var obj = obj.replace(/&quot;/g, '\"');--}}
+
+{{--                --}}{{--                    $.each(JSON.parse(obj), function (index, item) {--}}
+{{--                --}}{{--                        $('#nestable3').nestable('add', item);--}}
+{{--                --}}{{--                    });--}}
+{{--                --}}{{--                    $('#nestable3 .dd-empty').remove();--}}
+{{--                --}}{{--                });--}}
+{{--                --}}{{--            </script>--}}
+
+{{--                <script>--}}
+{{--                    var lastId = 0;--}}
+{{--                    $(document).ready(function () {--}}
+{{--                        var obj = '{{$property->values}}';--}}
+{{--                        var obj = obj.replace(/&quot;/g, '\"');--}}
+{{--                        var output = '';--}}
+
+{{--                        function buildItem(item) {--}}
+
+{{--                            lastId = Math.max(item.id, lastId);--}}
+
+{{--                            $ttles = item.title.split(',');--}}
+{{--                            $title_to_print = '';--}}
+{{--                            $.each($ttles, function (indx, val) {--}}
+{{--                                $ttl = val.split(':');--}}
+{{--                                if ($ttl[0] == base_locale) {--}}
+{{--                                    $title_to_print = $ttl[1];--}}
+{{--                                }--}}
+{{--                            });--}}
+
+{{--                            var html = "<li class='dd-item dd3-item' data-id='" + item.id + "' data-title='" + item.title + "'>";--}}
+{{--                            html += "<div class='dd-handle dd3-handle'></div>";--}}
+{{--                            html += `<div class="dd3-content" name="1"><div class="row"><div class="col col-md-1"><a href="#" class="delete-item"><i class="fa fa-remove"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-edit-category" data-backdrop="true" class="edit-item"><i class="fa fa-edit"></i></a></div><div class="col col-md-1"><a href="#" data-toggle="modal" data-target="#mdl-add-category" data-backdrop="true"class="add-item"><i class="fa fa-plus"></i></a></div><div class="col col-md-9 item" style="text-align: left">${$title_to_print}</div></div></div>`;--}}
+
+{{--                            if (item.children) {--}}
+
+{{--                                html += "<ol class='dd-list outer'>";--}}
+{{--                                $.each(item.children, function (index, sub) {--}}
+{{--                                    html += buildItem(sub);--}}
+{{--                                });--}}
+{{--                                html += "</ol>";--}}
+
+{{--                            }--}}
+
+{{--                            html += "</li>";--}}
+
+{{--                            return html;--}}
+{{--                        }--}}
 
 
-            @endif
-        @endforeach
-    @endforeach
+{{--                        $.each(JSON.parse(obj), function (index, item) {--}}
+{{--                            output += buildItem(item);--}}
+{{--                        });--}}
+
+{{--                        $('#nestable3 > .dd-list.dd3-list').html(output);--}}
+{{--                        $('#nestable3').nestable();--}}
+{{--                    });--}}
+{{--                </script>--}}
+
+
+{{--            @endif--}}
+{{--        @endforeach--}}
+{{--    @endforeach--}}
 
 
     {{--    <script>--}}

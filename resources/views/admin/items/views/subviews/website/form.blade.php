@@ -44,18 +44,17 @@
                                                     <div class="col col-md-12">
                                                         <h4 class="form-section"><i class="ft-user"></i>main</h4>
                                                     </div>
-                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=> ($form_type == 'edit' ? $website->title : ''), 'locales'=> true])
                                                     @include('admin.inputs.new2.select', ['field'=>'base_locale', 'value'=>''])
-                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>''])
-                                                    @include('admin.inputs.new2.textarea', ['field'=>'meta_description', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'meta_keywords', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'telegram', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'instagram', 'value'=>''])
-                                                    @include('admin.inputs.new2.textarea', ['field'=>'enamad', 'value'=>''])
-                                                    @include('admin.inputs.new2.textarea', ['field'=>'samandehi', 'value'=>''])
+
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>($form_type == 'edit' ? $website->description : ''), 'locales'=> true])
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'meta_description', 'value'=>($form_type == 'edit' ? $website->meta_description : ''), 'locales'=> false])
+                                                    @include('admin.inputs.new2.text', ['field'=>'meta_keywords', 'value'=>($form_type == 'edit' ? $website->meta_keywords : ''), 'locales'=> false])
+                                                    @include('admin.inputs.new2.text', ['field'=>'telegram', 'value'=>($form_type == 'edit' ? $website->telegram : ''), 'locales'=> false])
+                                                    @include('admin.inputs.new2.text', ['field'=>'instagram', 'value'=>($form_type == 'edit' ? $website->instagram : ''), 'locales'=> false])
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'enamad', 'value'=>($form_type == 'edit' ? $website->enamad : ''), 'locales'=> false])
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'samandehi', 'value'=>($form_type == 'edit' ? $website->samandehi : ''), 'locales'=> false])
                                                 </div>
-
-
                                                 <div class="form-actions">
                                                     <button type="reset" class="btn btn-warning mr-1">
                                                         <i class="ft-x"></i> Cancel

@@ -111,6 +111,7 @@ class WebsiteController extends Controller
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $data['website'] = Website::find($id);
         return view("admin.items.views.subviews.website.form", $data);
     }
 

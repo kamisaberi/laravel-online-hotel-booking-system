@@ -40,7 +40,8 @@
                                             <div class="form-body">
                                                 {{--                                                <h4 class="form-section"><i class="ft-user"></i>داده ها</h4>--}}
                                                 {{@csrf_field()}}
-                                                @include('admin.items.forms.input_form',['groups'=> $groups])
+                                                @include('admin.inputs.new2.text', ['field'=>'title', 'value'=> ($form_type == 'edit' ? $room->title : ''), 'locales'=> true])
+                                                @include('admin.inputs.new2.select_flash', ['field'=>'path', 'value'=>''])
 
                                                 <div class="form-actions">
                                                     <button type="reset" class="btn btn-warning mr-1">

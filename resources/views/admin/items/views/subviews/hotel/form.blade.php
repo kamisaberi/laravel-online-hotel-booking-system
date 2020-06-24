@@ -44,13 +44,13 @@
                                                     <div class="col col-md-12">
                                                         <h4 class="form-section"><i class="ft-user"></i>main</h4>
                                                     </div>
-                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'address', 'value'=>''])
-                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'phone', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'mobile', 'value'=>''])
-                                                    @include('admin.inputs.new2.email', ['field'=>'email', 'value'=>''])
-                                                    @include('admin.inputs.new2.text', ['field'=>'manager', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>($form_type == 'edit' ? $hotel->title : '') , 'locales'=>true])
+                                                    @include('admin.inputs.new2.text', ['field'=>'address', 'value'=>($form_type == 'edit' ? $hotel->address : ''), 'locales'=>true])
+                                                    @include('admin.inputs.new2.textarea', ['field'=>'description', 'value'=>($form_type == 'edit' ? $hotel->description : ''), 'locales'=>true])
+                                                    @include('admin.inputs.new2.text', ['field'=>'phone', 'value'=>($form_type == 'edit' ? $hotel->phone : ''), 'locales'=>false])
+                                                    @include('admin.inputs.new2.text', ['field'=>'mobile', 'value'=>($form_type == 'edit' ? $hotel->mobile : ''), 'locales'=>false])
+                                                    @include('admin.inputs.new2.email', ['field'=>'email', 'value'=>($form_type == 'edit' ? $hotel->email : ''), 'locales'=>false])
+                                                    @include('admin.inputs.new2.text', ['field'=>'manager', 'value'=>($form_type == 'edit' ? $hotel->manager : ''), 'locales'=>true])
                                                 </div>
 
                                                 <div class="form-actions">

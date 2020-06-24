@@ -44,7 +44,8 @@
                                                     <div class="col col-md-12">
                                                         <h4 class="form-section"><i class="ft-user"></i>main</h4>
                                                     </div>
-                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=>''])
+                                                    @include('admin.inputs.new2.text', ['field'=>'title', 'value'=> ($form_type == 'edit' ? $room->title : ''), 'locales'=> true])
+                                                    @include('admin.inputs.new2.select_image', ['field'=>'image', 'value'=>''])
                                                 </div>
 
                                                 <div class="form-actions">

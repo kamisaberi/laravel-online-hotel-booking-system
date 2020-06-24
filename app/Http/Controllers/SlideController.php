@@ -4,18 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Data;
 use App\DataProperty;
-use App\Gallery;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
-use App\Libraries\Utilities\NavigationUtility;
 use App\Slide;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Route;
 use Validator;
 
@@ -103,8 +99,10 @@ class SlideController extends Controller
     public function edit($type, $id)
     {
         $data = BaseUtility::generateForEdit($type, $id);
-        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+//        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters(), $id);
+//        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $data['components']['files']['images']  = DB::table('images')->get(['id', 'title', 'path']);
+        $data['slide'] = Slide::find($id);
         return view("admin.items.views.subviews.slide.form", $data);
     }
 

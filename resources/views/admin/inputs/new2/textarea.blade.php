@@ -1,4 +1,4 @@
-@if ($locales == true)
+@if (isset($locales) &&  $locales == true)
     @if(\App\Libraries\Utilities\TextUtility::isJsonText($value))
         @php($value = json_decode($value, JSON_UNESCAPED_UNICODE))
     @else
@@ -11,7 +11,7 @@
 @endif
 <div class="col col-md-12">
     <div class="form-group">
-        <label for="{{$field}}">{{$field}}</label>
+        <label for="{{$field}}">{{isset(__("fields")[$field]) ? __("fields")[$field] :  $field }} :</label>
         @if ($locales == true)
             <textarea id="{{$field}}" rows="5" placeholder="{{$field}}" class="form-control" name="{{$field}}">{{$value[$base_locale]}}</textarea>
         @else

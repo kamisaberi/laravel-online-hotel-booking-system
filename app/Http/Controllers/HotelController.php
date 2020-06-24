@@ -10,6 +10,7 @@ use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
+use App\Website;
 use DB;
 use Illuminate\Http\Request;
 use Route;
@@ -107,8 +108,9 @@ class HotelController extends Controller
     public function edit($type, $id)
     {
         $data = BaseUtility::generateForEdit($type, $id);
-        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+//        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
+//        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $data['hotel'] = Hotel::find($id);
         return view("admin.items.views.subviews.hotel.form", $data);
     }
 

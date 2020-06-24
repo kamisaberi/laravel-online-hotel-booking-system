@@ -110,8 +110,6 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
     Route::post('/admin/items/{type}/settings/update', 'Item\ItemPropertyController@updateSettings')->name('items.settings.update');
     //ITEM
 
-
-
     Route::get('/admin/items/{type}/create', 'Item\ItemController@create')->name('items.create');
     Route::get('/admin/items/{type}/{id}/edit', 'Item\ItemController@edit')->name('items.edit')->where('id', '[0-9]+');
     Route::get('/admin/items/{type}/{id}', 'Item\ItemController@show')->name('items.show')->where('id', '[0-9]+');

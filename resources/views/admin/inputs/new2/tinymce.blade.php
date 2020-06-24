@@ -1,4 +1,4 @@
-@if ($locales == true)
+@if (isset($locales) && $locales == true)
     @if(\App\Libraries\Utilities\TextUtility::isJsonText($value))
         @php($value = json_decode($value, JSON_UNESCAPED_UNICODE))
     @else
@@ -11,7 +11,7 @@
 @endif
 <div class="input-field col col-md-12">
     <p style="text-align: right; direction: rtl;">
-        {{$field}}
+        {{isset(__("fields")[$field]) ? __("fields")[$field] :  $field }} :
     </p>
     @if ($locales == true)
         <textarea class="tinymce" id="{{$field}}" name="{{$field}}">{{$value[$base_locale]}}</textarea>

@@ -201,7 +201,6 @@ class ItemController extends Controller
         }
     }
 
-
     public function get(Request $request, $type)
     {
         if (Str::lower(Str::singular($type)) == "room") {
