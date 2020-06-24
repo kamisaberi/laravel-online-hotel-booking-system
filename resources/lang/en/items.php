@@ -21,5 +21,6 @@ return [
     'user' => 'User',
     'video' => 'Video',
     'website' => 'Website',
+    'gallery' => 'Gallery',
 
 ];

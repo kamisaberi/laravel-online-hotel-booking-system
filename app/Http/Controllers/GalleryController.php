@@ -9,6 +9,7 @@ use App\Http\Controllers\User\UserController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Route;
 use Validator;
 
@@ -25,8 +26,9 @@ class GalleryController extends Controller
     public function create($type)
     {
         $data = BaseUtility::generateForCreate($type);
-        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+//        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
+//        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $data['components']['files']['images'] = DB::table('images')->get(['id', 'title', 'path']);
         return view("admin.items.views.subviews.gallery.form", $data);
     }
 
@@ -94,8 +96,13 @@ class GalleryController extends Controller
     public function edit($type, $id)
     {
         $data = BaseUtility::generateForEdit($type, $id);
-        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
-        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+//        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
+//        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        $g= Gallery::find($id);
+        $g->images = $g->images()->get();
+        $data['gallery'] =$g;
+
+        $data['components']['files']['images'] = DB::table('images')->get(['id', 'title', 'path']);
         return view("admin.items.views.subviews.gallery.form", $data);
     }
 

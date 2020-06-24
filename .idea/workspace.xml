@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Gallery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/fields.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fields.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/fa/fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fa/fields.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/news/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/news/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/gallery/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/gallery/form.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1364,7 +1361,7 @@
       <workItem from="1592460325662" duration="43689000" />
       <workItem from="1592775231084" duration="12152000" />
       <workItem from="1592870594186" duration="16278000" />
-      <workItem from="1592970577348" duration="15094000" />
+      <workItem from="1592970577348" duration="19476000" />
     </task>
     <servers />
   </component>
