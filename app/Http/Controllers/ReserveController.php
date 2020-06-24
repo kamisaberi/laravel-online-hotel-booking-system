@@ -99,12 +99,16 @@ class ReserveController extends Controller
     public function get(Request $request, $type)
     {
 
+
         $id = $request->input('id');
+
         $r = Reserve::find($id);
         if ($r->situation == 1) {
             $request_title = 'درخواست تایید اتاق';
-        } elseif ($r->situation == 4) {
+        } elseif ($r->situation == 5) {
             $request_title = 'درخواست تایید فیش پرداختی';
+        } else {
+            $request_title = 'مشخص نیست';
         }
 
         return response()->json(['error' => false, 'message' => 'success', 'reserve' => $r, 'request_title' => $request_title]);
