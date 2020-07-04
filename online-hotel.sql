@@ -11,7 +11,7 @@
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 24/06/2020 23:07:06
+ Date: 04/07/2020 14:34:34
 */
 
 SET NAMES utf8mb4;
@@ -45,17 +45,18 @@ CREATE TABLE `complaints`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `content` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `sender` int(11) NULL DEFAULT NULL,
-  `date` varchar(0) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `reply_to` int(255) NULL DEFAULT NULL,
   `hotel` int(255) NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of complaints
 -- ----------------------------
+INSERT INTO `complaints` VALUES (1, 'this is a test', 1, '2020', 0, 1, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for customers
@@ -70,11 +71,12 @@ CREATE TABLE `customers`  (
   `ssn` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of customers
 -- ----------------------------
+INSERT INTO `customers` VALUES (1, 'ali', 'ali@gmail.com', '09365982334', '01342547908', '2708354109', '1234');
 
 -- ----------------------------
 -- Table structure for field_actions
@@ -366,6 +368,26 @@ INSERT INTO `hotel_properties` VALUES (25, 'floors-count', '', '', 'text', NULL,
 INSERT INTO `hotel_properties` VALUES (26, 'rooms-count', '', '', 'text', NULL, '', '', 0, '', 'direct', 0, NULL, NULL);
 
 -- ----------------------------
+-- Table structure for hotel_reviews
+-- ----------------------------
+DROP TABLE IF EXISTS `hotel_reviews`;
+CREATE TABLE `hotel_reviews`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `content` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `sender` int(11) NULL DEFAULT NULL,
+  `date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `rating` int(255) NULL DEFAULT NULL,
+  `hotel` int(255) NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of hotel_reviews
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for hotels
 -- ----------------------------
 DROP TABLE IF EXISTS `hotels`;
@@ -554,16 +576,18 @@ CREATE TABLE `messages`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `content` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `sender` int(11) NULL DEFAULT NULL,
-  `date` varchar(0) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `reply_to` int(255) NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of messages
 -- ----------------------------
+INSERT INTO `messages` VALUES (1, 'this is a test', 1, '', 0, NULL, NULL);
+INSERT INTO `messages` VALUES (3, 'eeewr', 1, '1593845687', 1, '2020-07-04 06:54:47', '2020-07-04 06:54:47');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -706,7 +730,7 @@ CREATE TABLE `navigation_item_assigned_properties`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 407 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 413 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of navigation_item_assigned_properties
@@ -823,10 +847,10 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (223, 43, 2, 'items.ind
 INSERT INTO `navigation_item_assigned_properties` VALUES (224, 43, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (225, 43, 4, 'complaint', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (226, 43, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (232, 45, 1, '{\"en\":\"Ratings\",\"fa\":\"رتبه بندی ها\",\"ar\":\"تصنيفات\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (232, 45, 1, '{\"en\":\"Room Reviews\",\"fa\":\"نظر های اتاقها\",\"ar\":\"تصنيفات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (233, 45, 2, 'items.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (234, 45, 3, 'conversation_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (235, 45, 4, 'rating', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (234, 45, 3, 'type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (235, 45, 4, 'room_review', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (236, 45, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (254, 49, 1, '{\"en\":\"Permissions\",\"fa\":\"سطح دسترسی\",\"ar\":\"أذونات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (255, 49, 2, 'permissions.index', NULL, NULL);
@@ -897,6 +921,12 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (388, 71, 13, '1', NULL
 INSERT INTO `navigation_item_assigned_properties` VALUES (404, 77, 11, '{\"en\":\"t1\",\"fa\":\"t1\",\"ar\":\"t1\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (405, 77, 12, 'http://localhost/online-service/data/news/%7B%22category%22%3A%7B%22values%22%3A%5B1%2C5%2C8%5D%2C%22operator%22%3A%22in%22%7D%7D', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (406, 77, 13, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (407, 46, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (408, 46, 4, 'hotel_review', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (409, 46, 3, 'type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (410, 46, 2, 'items.index', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (411, 46, 1, '{\"en\":\"Hotel Reviews\",\"fa\":\"نظر های هتلها\",\"ar\":\"تصنيفات\"}', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (412, 46, 20, 'rate_review', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for navigation_item_assigned_properties_copy1
@@ -1299,7 +1329,8 @@ INSERT INTO `navigation_items` VALUES (36, 1, 'route', 'section:pages|g_order:13
 INSERT INTO `navigation_items` VALUES (39, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (41, 1, 'route', 'section:conversations|g_order:8&g_name:comments&g_icon:comment|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (43, 1, 'route', 'section:conversations|g_order:9&g_name:complaints&g_icon:mode_comment|order:1', 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (45, 1, 'route', 'section:conversations|g_order:10&g_name:rating&g_icon:rate_review|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items` VALUES (45, 1, 'route', 'section:reviews|g_order:30&g_name:room_rating&g_icon:rate_review|order:1', 0, NULL, NULL);
+INSERT INTO `navigation_items` VALUES (46, 1, 'route', 'section:reviews|g_order:31&g_name:hotel_rating&g_icon:rate_review|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (49, 1, 'route', 'section:permissions|g_order:14&g_name:permissions|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (50, 6, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (51, 6, 'route', NULL, 0, NULL, NULL);
@@ -1557,7 +1588,7 @@ CREATE TABLE `permissions`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 451 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 485 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of permissions
@@ -1885,23 +1916,23 @@ INSERT INTO `permissions` VALUES (371, 'items.properties.destroy:complaint', 'we
 INSERT INTO `permissions` VALUES (372, 'items.properties.ajax.destroy:complaint', 'web', '-', '{\"fa\":\"شکایت\",\"en\":\"complaint\",\"ar\":\"-\"}', 371, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (373, 'items.settings:complaint', 'web', 'access settings', '{\"fa\":\"شکایت\",\"en\":\"complaint\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (374, 'items.settings.update:complaint', 'web', '-', '{\"fa\":\"شکایت\",\"en\":\"complaint\",\"ar\":\"-\"}', 373, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (375, 'items.index:rating', 'web', 'access items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (376, 'items.show:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 375, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (377, 'items.create:rating', 'web', 'create new item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (378, 'items.store:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 377, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (379, 'items.edit:rating', 'web', 'edit items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (380, 'items.update:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 379, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (381, 'items.destroy:rating', 'web', 'delete item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
-INSERT INTO `permissions` VALUES (382, 'items.properties.index:rating', 'web', 'access properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (383, 'items.properties.show:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 382, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (384, 'items.properties.create:rating', 'web', 'create new property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (385, 'items.properties.store:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 384, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (386, 'items.properties.edit:rating', 'web', 'edit properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (387, 'items.properties.update:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 386, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (388, 'items.properties.destroy:rating', 'web', 'delete property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (389, 'items.properties.ajax.destroy:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 388, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (390, 'items.settings:rating', 'web', 'access settings', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
-INSERT INTO `permissions` VALUES (391, 'items.settings.update:rating', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 390, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (375, 'items.index:review', 'web', 'access items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (376, 'items.show:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 375, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (377, 'items.create:review', 'web', 'create new item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (378, 'items.store:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 377, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (379, 'items.edit:review', 'web', 'edit items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (380, 'items.update:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 379, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (381, 'items.destroy:review', 'web', 'delete item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (382, 'items.properties.index:review', 'web', 'access properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (383, 'items.properties.show:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 382, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (384, 'items.properties.create:review', 'web', 'create new property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (385, 'items.properties.store:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 384, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (386, 'items.properties.edit:review', 'web', 'edit properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (387, 'items.properties.update:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 386, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (388, 'items.properties.destroy:review', 'web', 'delete property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (389, 'items.properties.ajax.destroy:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 388, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (390, 'items.settings:review', 'web', 'access settings', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (391, 'items.settings.update:review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 390, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (392, 'items.types.index', 'web', 'access types', '{\"en\":\"Data Types\",\"fa\":\"انواع داده\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (393, 'items.types.show', 'web', '-', '{\"en\":\"Data Types\",\"fa\":\"انواع داده\",\"ar\":\"-\"}', 392, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (394, 'items.types.create', 'web', 'create new type', '{\"en\":\"Data Types\",\"fa\":\"انواع داده\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
@@ -1961,6 +1992,40 @@ INSERT INTO `permissions` VALUES (447, 'items.properties.destroy:news', 'web', '
 INSERT INTO `permissions` VALUES (448, 'items.properties.ajax.destroy:news', 'web', '-', '{\"fa\":\"اخبار\",\"en\":\"news\",\"ar\":\" الاخبار\"}', 447, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (449, 'items.settings:news', 'web', 'access settings', '{\"fa\":\"اخبار\",\"en\":\"news\",\"ar\":\" الاخبار\"}', 0, 1, NULL, NULL);
 INSERT INTO `permissions` VALUES (450, 'items.settings.update:news', 'web', '-', '{\"fa\":\"اخبار\",\"en\":\"news\",\"ar\":\" الاخبار\"}', 449, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (451, 'items.index:room_review', 'web', 'access items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (452, 'items.show:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 451, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (453, 'items.create:room_review', 'web', 'create new item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (454, 'items.store:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 453, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (455, 'items.edit:room_review', 'web', 'edit items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (456, 'items.update:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 455, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (457, 'items.destroy:room_review', 'web', 'delete item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (458, 'items.properties.index:room_review', 'web', 'access properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (459, 'items.properties.show:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 485, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (460, 'items.properties.create:room_review', 'web', 'create new property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (461, 'items.properties.store:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 460, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (462, 'items.properties.edit:room_review', 'web', 'edit properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (463, 'items.properties.update:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 462, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (464, 'items.properties.destroy:room_review', 'web', 'delete property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (465, 'items.properties.ajax.destroy:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 464, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (466, 'items.settings:room_review', 'web', 'access settings', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (467, 'items.settings.update:room_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 466, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (468, 'items.index:hotel_review', 'web', 'access items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (469, 'items.show:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 468, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (470, 'items.create:hotel_review', 'web', 'create new item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (471, 'items.store:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 470, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (472, 'items.edit:hotel_review', 'web', 'edit items', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (473, 'items.update:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 472, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (474, 'items.destroy:hotel_review', 'web', 'delete item', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 2, NULL, NULL);
+INSERT INTO `permissions` VALUES (475, 'items.properties.index:hotel_review', 'web', 'access properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (476, 'items.properties.show:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 475, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (477, 'items.properties.create:hotel_review', 'web', 'create new property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (478, 'items.properties.store:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 477, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (479, 'items.properties.edit:hotel_review', 'web', 'edit properties', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (480, 'items.properties.update:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 479, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (481, 'items.properties.destroy:hotel_review', 'web', 'delete property', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (482, 'items.properties.ajax.destroy:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 481, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (483, 'items.settings:hotel_review', 'web', 'access settings', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 0, 1, NULL, NULL);
+INSERT INTO `permissions` VALUES (484, 'items.settings.update:hotel_review', 'web', '-', '{\"fa\":\"رتبه بندی\",\"en\":\"rating\",\"ar\":\"-\"}', 483, 1, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for procedures
@@ -2025,7 +2090,7 @@ CREATE TABLE `reserves`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of reserves
@@ -2035,25 +2100,6 @@ INSERT INTO `reserves` VALUES (2, '1399/01/20', '1399/03/06', '1399/02/10', 2500
 INSERT INTO `reserves` VALUES (3, '1399/01/20', '1399/03/07', '1399/02/18', 330000, 1, 'BME0001', '8', NULL, NULL, NULL, NULL);
 INSERT INTO `reserves` VALUES (4, '1399/01/20', '1399/03/12', '1399/02/12', 150000, 1, 'BME0001', '4', NULL, NULL, NULL, NULL);
 INSERT INTO `reserves` VALUES (5, '1399/01/20', '1399/03/22', '1399/02/15', 200000, 1, 'BME0001', '6', NULL, NULL, NULL, NULL);
-
--- ----------------------------
--- Table structure for reviews
--- ----------------------------
-DROP TABLE IF EXISTS `reviews`;
-CREATE TABLE `reviews`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `content` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `sender` int(11) NULL DEFAULT NULL,
-  `date` varchar(0) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `rating` int(255) NULL DEFAULT NULL,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of reviews
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -2636,6 +2682,40 @@ INSERT INTO `role_has_permissions` VALUES (447, 1);
 INSERT INTO `role_has_permissions` VALUES (448, 1);
 INSERT INTO `role_has_permissions` VALUES (449, 1);
 INSERT INTO `role_has_permissions` VALUES (450, 1);
+INSERT INTO `role_has_permissions` VALUES (451, 1);
+INSERT INTO `role_has_permissions` VALUES (452, 1);
+INSERT INTO `role_has_permissions` VALUES (453, 1);
+INSERT INTO `role_has_permissions` VALUES (454, 1);
+INSERT INTO `role_has_permissions` VALUES (455, 1);
+INSERT INTO `role_has_permissions` VALUES (456, 1);
+INSERT INTO `role_has_permissions` VALUES (457, 1);
+INSERT INTO `role_has_permissions` VALUES (458, 1);
+INSERT INTO `role_has_permissions` VALUES (459, 1);
+INSERT INTO `role_has_permissions` VALUES (460, 1);
+INSERT INTO `role_has_permissions` VALUES (461, 1);
+INSERT INTO `role_has_permissions` VALUES (462, 1);
+INSERT INTO `role_has_permissions` VALUES (463, 1);
+INSERT INTO `role_has_permissions` VALUES (464, 1);
+INSERT INTO `role_has_permissions` VALUES (465, 1);
+INSERT INTO `role_has_permissions` VALUES (466, 1);
+INSERT INTO `role_has_permissions` VALUES (467, 1);
+INSERT INTO `role_has_permissions` VALUES (468, 1);
+INSERT INTO `role_has_permissions` VALUES (469, 1);
+INSERT INTO `role_has_permissions` VALUES (470, 1);
+INSERT INTO `role_has_permissions` VALUES (471, 1);
+INSERT INTO `role_has_permissions` VALUES (472, 1);
+INSERT INTO `role_has_permissions` VALUES (473, 1);
+INSERT INTO `role_has_permissions` VALUES (474, 1);
+INSERT INTO `role_has_permissions` VALUES (475, 1);
+INSERT INTO `role_has_permissions` VALUES (476, 1);
+INSERT INTO `role_has_permissions` VALUES (477, 1);
+INSERT INTO `role_has_permissions` VALUES (478, 1);
+INSERT INTO `role_has_permissions` VALUES (479, 1);
+INSERT INTO `role_has_permissions` VALUES (480, 1);
+INSERT INTO `role_has_permissions` VALUES (481, 1);
+INSERT INTO `role_has_permissions` VALUES (482, 1);
+INSERT INTO `role_has_permissions` VALUES (483, 1);
+INSERT INTO `role_has_permissions` VALUES (484, 1);
 
 -- ----------------------------
 -- Table structure for roles
@@ -2773,6 +2853,26 @@ INSERT INTO `room_properties` VALUES (1, 'internet', '', '', 'check', NULL, '', 
 INSERT INTO `room_properties` VALUES (2, 'parking', '', '', 'check', NULL, '', '', 0, '', 'direct', 0, NULL, NULL);
 
 -- ----------------------------
+-- Table structure for room_reviews
+-- ----------------------------
+DROP TABLE IF EXISTS `room_reviews`;
+CREATE TABLE `room_reviews`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `content` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `sender` int(11) NULL DEFAULT NULL,
+  `date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `rating` int(255) NULL DEFAULT NULL,
+  `room` int(255) NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of room_reviews
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for rooms
 -- ----------------------------
 DROP TABLE IF EXISTS `rooms`;
@@ -2831,35 +2931,6 @@ CREATE TABLE `rooms_copy1`  (
 INSERT INTO `rooms_copy1` VALUES (1, 'room 1', '-', '-', 1, 1, '0', 2, 1, 0, 1, b'1', NULL, NULL);
 INSERT INTO `rooms_copy1` VALUES (2, 'room 2', '-', '-', 2, 5, '0', 1, 1, 0, 1, b'1', NULL, NULL);
 INSERT INTO `rooms_copy1` VALUES (3, 'room 3', '-', '-', 3, 7, '0', 2, 1, 0, 1, b'1', NULL, NULL);
-
--- ----------------------------
--- Table structure for rooms_copy2
--- ----------------------------
-DROP TABLE IF EXISTS `rooms_copy2`;
-CREATE TABLE `rooms_copy2`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `description` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  `content` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  `floor` int(255) NULL DEFAULT NULL,
-  `image` int(11) NOT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"images\"}',
-  `video` int(11) NOT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"videos\"}',
-  `flash` int(11) NULL DEFAULT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"flashes\"}',
-  `price` int(10) NOT NULL COMMENT '{\"relation\":\"hasMany\",\"table\":\"room_prices\",\"field\":\"room\"}',
-  `hotel` int(255) NULL DEFAULT NULL COMMENT '{\"relation\":\"belongsTo\",\"table\":\"hotels\"}',
-  `available` bit(1) NULL DEFAULT NULL,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of rooms_copy2
--- ----------------------------
-INSERT INTO `rooms_copy2` VALUES (1, 'room 1', '-', '-', 1, 1, 2, 1, 0, 1, b'1', NULL, NULL);
-INSERT INTO `rooms_copy2` VALUES (2, 'room 2', '-', '-', 2, 5, 1, 1, 0, 1, b'1', NULL, NULL);
-INSERT INTO `rooms_copy2` VALUES (3, 'room 3', '-', '-', 3, 7, 2, 1, 0, 1, b'1', NULL, NULL);
-INSERT INTO `rooms_copy2` VALUES (12, 'dfgfdgf', 'fdgfdg', '<p>dfgfdgdfg</p>', 2, 0, 0, 0, 0, 1, b'1', '2020-06-12 16:23:29', '2020-06-12 16:23:29');
 
 -- ----------------------------
 -- Table structure for route_filling_group
@@ -3093,7 +3164,7 @@ CREATE TABLE `tracker_agents`  (
   INDEX `tracker_agents_created_at_index`(`created_at`) USING BTREE,
   INDEX `tracker_agents_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_agents_browser_index`(`browser`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_agents
@@ -3108,6 +3179,7 @@ INSERT INTO `tracker_agents` VALUES (7, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64
 INSERT INTO `tracker_agents` VALUES (8, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 Edg/83.0.478.37', 'Edge', '83.0.478', '2020-05-24 23:28:54', '2020-05-24 23:28:54', '1713e2fe98c480baddf1ec34cdbb5c7c6c127aed5777530bf106d452a2be8e79');
 INSERT INTO `tracker_agents` VALUES (9, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 Edg/83.0.478.45', 'Edge', '83.0.478', '2020-06-18 02:43:51', '2020-06-18 02:43:51', 'a03284cce5b3baabdb50744ed75035ce2a4675cd5851aad63d4f819306b4e087');
 INSERT INTO `tracker_agents` VALUES (10, 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1', 'Mobile Safari', '10.0', '2020-06-21 22:09:29', '2020-06-21 22:09:29', 'ae984a2a5fe1ae6dd7cf7a8deab5bea6845d7525ffb319121d43d6cf196d28e9');
+INSERT INTO `tracker_agents` VALUES (11, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.56', 'Edge', '83.0.478', '2020-07-04 05:14:26', '2020-07-04 05:14:26', 'f8e1449aac92764ac1f3a486b45c6202b9755608d261daab1b1aeddac2fca04b');
 
 -- ----------------------------
 -- Table structure for tracker_connections
@@ -3358,7 +3430,7 @@ CREATE TABLE `tracker_log`  (
   CONSTRAINT `tracker_log_query_id_foreign` FOREIGN KEY (`query_id`) REFERENCES `tracker_queries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_session_id_foreign` FOREIGN KEY (`session_id`) REFERENCES `tracker_sessions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 10793 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 10824 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_log
@@ -14120,6 +14192,37 @@ INSERT INTO `tracker_log` VALUES (10789, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, 
 INSERT INTO `tracker_log` VALUES (10790, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:12:19', '2020-06-24 11:12:19', NULL);
 INSERT INTO `tracker_log` VALUES (10791, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:12:32', '2020-06-24 11:12:32', NULL);
 INSERT INTO `tracker_log` VALUES (10792, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:12:38', '2020-06-24 11:12:38', NULL);
+INSERT INTO `tracker_log` VALUES (10793, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 05:14:29', '2020-07-04 05:14:30', NULL);
+INSERT INTO `tracker_log` VALUES (10794, 32, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-07-04 05:14:31', '2020-07-04 05:14:31', NULL);
+INSERT INTO `tracker_log` VALUES (10795, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 05:14:34', '2020-07-04 05:14:34', 115);
+INSERT INTO `tracker_log` VALUES (10796, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 05:14:35', '2020-07-04 05:14:35', 115);
+INSERT INTO `tracker_log` VALUES (10797, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 05:14:36', '2020-07-04 05:14:36', 115);
+INSERT INTO `tracker_log` VALUES (10798, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 05:14:37', '2020-07-04 05:14:37', 115);
+INSERT INTO `tracker_log` VALUES (10799, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 05:14:38', '2020-07-04 05:14:38', 115);
+INSERT INTO `tracker_log` VALUES (10800, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 05:14:38', '2020-07-04 05:14:38', 115);
+INSERT INTO `tracker_log` VALUES (10801, 32, 5, NULL, 'POST', 6, 0, 0, 0, 0, NULL, '2020-07-04 05:14:48', '2020-07-04 05:14:48', 115);
+INSERT INTO `tracker_log` VALUES (10802, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 05:14:50', '2020-07-04 05:14:50', 115);
+INSERT INTO `tracker_log` VALUES (10803, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 05:30:06', '2020-07-04 05:30:06', 121);
+INSERT INTO `tracker_log` VALUES (10804, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 06:34:08', '2020-07-04 06:34:08', NULL);
+INSERT INTO `tracker_log` VALUES (10805, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 08:54:39', '2020-07-04 08:54:40', 121);
+INSERT INTO `tracker_log` VALUES (10806, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 08:57:02', '2020-07-04 08:57:02', 121);
+INSERT INTO `tracker_log` VALUES (10807, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 08:58:56', '2020-07-04 08:58:56', 121);
+INSERT INTO `tracker_log` VALUES (10808, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 08:59:43', '2020-07-04 08:59:44', 121);
+INSERT INTO `tracker_log` VALUES (10809, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:00:06', '2020-07-04 09:00:06', 121);
+INSERT INTO `tracker_log` VALUES (10810, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:01:00', '2020-07-04 09:01:00', 121);
+INSERT INTO `tracker_log` VALUES (10811, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:01:25', '2020-07-04 09:01:25', 121);
+INSERT INTO `tracker_log` VALUES (10812, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:02:39', '2020-07-04 09:02:39', 121);
+INSERT INTO `tracker_log` VALUES (10813, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:06:53', '2020-07-04 09:06:53', 121);
+INSERT INTO `tracker_log` VALUES (10814, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:07:31', '2020-07-04 09:07:32', 121);
+INSERT INTO `tracker_log` VALUES (10815, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:07:46', '2020-07-04 09:07:46', 121);
+INSERT INTO `tracker_log` VALUES (10816, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:08:26', '2020-07-04 09:08:26', 121);
+INSERT INTO `tracker_log` VALUES (10817, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 09:08:37', '2020-07-04 09:08:37', NULL);
+INSERT INTO `tracker_log` VALUES (10818, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:09:32', '2020-07-04 09:09:32', 121);
+INSERT INTO `tracker_log` VALUES (10819, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-07-04 09:09:35', '2020-07-04 09:09:35', NULL);
+INSERT INTO `tracker_log` VALUES (10820, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:12:00', '2020-07-04 09:12:00', 121);
+INSERT INTO `tracker_log` VALUES (10821, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:12:20', '2020-07-04 09:12:20', 121);
+INSERT INTO `tracker_log` VALUES (10822, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:12:30', '2020-07-04 09:12:31', 121);
+INSERT INTO `tracker_log` VALUES (10823, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-07-04 09:13:48', '2020-07-04 09:13:48', 121);
 
 -- ----------------------------
 -- Table structure for tracker_paths
@@ -14743,7 +14846,7 @@ CREATE TABLE `tracker_route_path_parameters`  (
   INDEX `tracker_route_path_parameters_parameter_index`(`parameter`) USING BTREE,
   INDEX `tracker_route_path_parameters_value_index`(`value`) USING BTREE,
   CONSTRAINT `tracker_route_path_parameters_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 282 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 288 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_path_parameters
@@ -15029,6 +15132,12 @@ INSERT INTO `tracker_route_path_parameters` VALUES (278, 214, 'id', '1', '2020-0
 INSERT INTO `tracker_route_path_parameters` VALUES (279, 215, 'type', 'news', '2020-06-24 08:09:24', '2020-06-24 08:09:24');
 INSERT INTO `tracker_route_path_parameters` VALUES (280, 216, 'type', 'gallery', '2020-06-24 10:07:08', '2020-06-24 10:07:08');
 INSERT INTO `tracker_route_path_parameters` VALUES (281, 216, 'id', '1', '2020-06-24 10:07:08', '2020-06-24 10:07:08');
+INSERT INTO `tracker_route_path_parameters` VALUES (282, 217, 'type', 'room', '2020-07-04 05:27:43', '2020-07-04 05:27:43');
+INSERT INTO `tracker_route_path_parameters` VALUES (283, 217, 'id', '1', '2020-07-04 05:27:43', '2020-07-04 05:27:43');
+INSERT INTO `tracker_route_path_parameters` VALUES (284, 218, 'type', 'message', '2020-07-04 06:38:28', '2020-07-04 06:38:28');
+INSERT INTO `tracker_route_path_parameters` VALUES (285, 219, 'type', 'review', '2020-07-04 07:47:23', '2020-07-04 07:47:23');
+INSERT INTO `tracker_route_path_parameters` VALUES (286, 220, 'type', 'hotel_review', '2020-07-04 08:49:17', '2020-07-04 08:49:17');
+INSERT INTO `tracker_route_path_parameters` VALUES (287, 221, 'type', 'room_review', '2020-07-04 09:12:27', '2020-07-04 09:12:27');
 
 -- ----------------------------
 -- Table structure for tracker_route_paths
@@ -15046,7 +15155,7 @@ CREATE TABLE `tracker_route_paths`  (
   INDEX `tracker_route_paths_route_id_index`(`route_id`) USING BTREE,
   INDEX `tracker_route_paths_path_index`(`path`) USING BTREE,
   CONSTRAINT `tracker_route_paths_route_id_foreign` FOREIGN KEY (`route_id`) REFERENCES `tracker_routes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 217 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 222 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_paths
@@ -15267,6 +15376,11 @@ INSERT INTO `tracker_route_paths` VALUES (213, 58, 'admin/items/hotel/1/edit', '
 INSERT INTO `tracker_route_paths` VALUES (214, 58, 'admin/items/page/1/edit', '2020-06-24 07:59:42', '2020-06-24 07:59:42');
 INSERT INTO `tracker_route_paths` VALUES (215, 51, 'admin/items/news/create', '2020-06-24 08:09:24', '2020-06-24 08:09:24');
 INSERT INTO `tracker_route_paths` VALUES (216, 58, 'admin/items/gallery/1/edit', '2020-06-24 10:07:08', '2020-06-24 10:07:08');
+INSERT INTO `tracker_route_paths` VALUES (217, 86, 'admin/items/room/1', '2020-07-04 05:27:43', '2020-07-04 05:27:43');
+INSERT INTO `tracker_route_paths` VALUES (218, 52, 'admin/items/message/store', '2020-07-04 06:38:28', '2020-07-04 06:38:28');
+INSERT INTO `tracker_route_paths` VALUES (219, 50, 'admin/items/review', '2020-07-04 07:47:23', '2020-07-04 07:47:23');
+INSERT INTO `tracker_route_paths` VALUES (220, 50, 'admin/items/hotel_review', '2020-07-04 08:49:17', '2020-07-04 08:49:17');
+INSERT INTO `tracker_route_paths` VALUES (221, 50, 'admin/items/room_review', '2020-07-04 09:12:27', '2020-07-04 09:12:27');
 
 -- ----------------------------
 -- Table structure for tracker_routes
@@ -15283,7 +15397,7 @@ CREATE TABLE `tracker_routes`  (
   INDEX `tracker_routes_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_routes_name_index`(`name`) USING BTREE,
   INDEX `tracker_routes_action_index`(`action`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 87 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_routes
@@ -15373,6 +15487,7 @@ INSERT INTO `tracker_routes` VALUES (82, 'items.properties.index', 'App\\Http\\C
 INSERT INTO `tracker_routes` VALUES (83, 'items.get.property', 'App\\Http\\Controllers\\Item\\ItemController@getProperty', '2020-06-23 00:21:55', '2020-06-23 00:21:55');
 INSERT INTO `tracker_routes` VALUES (84, 'items.ajax.get', 'App\\Http\\Controllers\\Item\\ItemController@get', '2020-06-23 02:37:20', '2020-06-23 02:37:20');
 INSERT INTO `tracker_routes` VALUES (85, 'items.set.property', 'App\\Http\\Controllers\\Item\\ItemController@setProperty', '2020-06-23 04:24:14', '2020-06-23 04:24:14');
+INSERT INTO `tracker_routes` VALUES (86, 'items.show', 'App\\Http\\Controllers\\Item\\ItemController@show', '2020-07-04 05:27:43', '2020-07-04 05:27:43');
 
 -- ----------------------------
 -- Table structure for tracker_sessions
@@ -15446,7 +15561,7 @@ INSERT INTO `tracker_sessions` VALUES (28, '34750a21-2ae4-4c86-b7af-5277e08a324c
 INSERT INTO `tracker_sessions` VALUES (29, 'bf01ba87-6b07-4f16-b57c-d177098c92e1', NULL, 1, 4, '::1', NULL, NULL, NULL, 0, '2020-02-01 08:07:22', '2020-02-08 01:35:43', 1);
 INSERT INTO `tracker_sessions` VALUES (30, 'b0639941-726b-4f22-83b4-199e20e87b45', NULL, 1, 5, '::1', 90, NULL, NULL, 0, '2020-02-28 23:27:46', '2020-03-04 06:33:04', 1);
 INSERT INTO `tracker_sessions` VALUES (31, '9d3ad913-b8de-4049-8685-e8df61097282', NULL, 1, 7, '::1', NULL, NULL, NULL, 0, '2020-03-04 08:32:40', '2020-04-15 12:15:50', 1);
-INSERT INTO `tracker_sessions` VALUES (32, '042c17eb-cbaa-4559-8821-bfce6cf0734b', NULL, 3, 9, '::1', 133, NULL, NULL, 0, '2020-03-15 15:01:42', '2020-06-24 11:12:37', 1);
+INSERT INTO `tracker_sessions` VALUES (32, '042c17eb-cbaa-4559-8821-bfce6cf0734b', NULL, 3, 11, '::1', NULL, NULL, NULL, 0, '2020-03-15 15:01:42', '2020-07-04 09:13:48', 1);
 INSERT INTO `tracker_sessions` VALUES (33, '4d6da350-f56a-4755-9961-bd47441e82c5', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-03 05:07:00', '2020-04-04 14:51:29', 1);
 INSERT INTO `tracker_sessions` VALUES (34, '7f1cba7a-ed56-4dd1-8dc8-0fc83ec0db6b', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-05 04:38:48', '2020-04-06 12:58:12', 1);
 INSERT INTO `tracker_sessions` VALUES (35, '58426c97-776d-4c37-9d98-837f78a083ff', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-06 16:08:03', '2020-04-10 17:49:11', 1);
