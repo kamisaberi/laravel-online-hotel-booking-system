@@ -38,8 +38,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->index($request, $type, $filters));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->index($request, $type, $filters));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->index($request, $type, $filters));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->index($request, $type, $filters));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -82,8 +84,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->create($type));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->create($type));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->create($type));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->create($type));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -133,8 +137,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->store($request, $type));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->store($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->store($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\hotelReviewController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->store($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -182,8 +188,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->edit($type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -225,8 +233,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->edit($type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\hotelReviewController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -275,8 +285,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->edit($type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->edit($type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\hotelReviewController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->edit($type, $id));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -320,8 +332,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->update($request, $type, $id));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->update($request, $type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->update($request, $type, $id));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->update($request, $type, $id));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -371,8 +385,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->destroy($request, $type));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -415,8 +431,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->destroy($request, $type));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "website") {
@@ -459,8 +477,10 @@ class ItemController extends Controller
             return ((new App\Http\Controllers\CommentController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "complaint") {
             return ((new App\Http\Controllers\ComplaintController())->destroy($request, $type));
-        } elseif (Str::lower(Str::singular($type)) == "rating") {
-            return ((new App\Http\Controllers\ReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "user") {
             return ((new App\Http\Controllers\User\UserController())->destroy($request, $type));
         } elseif (Str::lower(Str::singular($type)) == "website") {

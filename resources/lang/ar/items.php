@@ -15,6 +15,9 @@ return [
     'news' => 'News',
     'page' => 'Page',
     'rating' => 'Rating',
+    'room_review' => 'Room Review',
+    'hotel_review' => 'Hotel Review',
+
     'reserve' => 'Reserve',
     'room' => 'Room',
     'slide' => 'Slide',

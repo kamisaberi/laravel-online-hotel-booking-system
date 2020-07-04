@@ -138,6 +138,8 @@ class NavigationController extends Controller
         }
 
 
+//        dd($ex_items);
+
         if ($should_group) {
             return self::reGroup($ex_items);
         }

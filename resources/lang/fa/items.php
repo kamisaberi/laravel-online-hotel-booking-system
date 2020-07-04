@@ -14,6 +14,8 @@ return [
     'news' => 'خبر',
     'page' => 'برگه',
     'rating' => 'امتیاز',
+    'room_review' => 'نظر اتاقها',
+    'hotel_review' => 'نظر هتل ها',
     'reserve' => 'رزرو',
     'room' => 'اتاق',
     'slide' => 'اسلاید',

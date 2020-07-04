@@ -11,7 +11,7 @@
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 19/06/2020 02:42:12
+ Date: 24/06/2020 23:07:06
 */
 
 SET NAMES utf8mb4;
@@ -802,11 +802,6 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (155, 29, 4, 'image', N
 INSERT INTO `navigation_item_assigned_properties` VALUES (161, 31, 1, '{\"en\":\"Register Complaints\",\"fa\":\"ثبت شکایات\",\"ar\":\"تسجيل الشكاوى\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (162, 31, 2, 'home.complaint.send', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (165, 31, 9, '1', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (166, 32, 1, '{\"en\":\"User Properties\",\"fa\":\"خاصیت های کاربر\",\"ar\":\"خصائص الکابر\"}', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (167, 32, 2, 'users.properties.index', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (168, 32, 3, 'user_type', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (169, 32, 4, 'user', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (170, 32, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (186, 29, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (187, 36, 1, '{\"en\":\"Pages\",\"fa\":\"برگه ها\",\"ar\":\"صفحات\"}', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (188, 36, 2, 'items.index', NULL, NULL);
@@ -878,7 +873,6 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (337, 14, 20, 'slide', 
 INSERT INTO `navigation_item_assigned_properties` VALUES (339, 20, 20, 'web', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (340, 28, 20, 'hotel', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (341, 29, 20, 'image', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (343, 32, 20, 'grain', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (347, 36, 20, 'pages', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (348, 39, 20, 'message', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (350, 41, 20, 'comment', NULL, NULL);
@@ -1301,7 +1295,6 @@ INSERT INTO `navigation_items` VALUES (25, 4, 'route', NULL, 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (28, 1, 'route', 'section:settings|g_order:16&g_name:settings&g_icon:settings|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (29, 1, 'route', 'section:media|g_order:5&g_name:media&g_icon:perm_media|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (31, 4, 'route', NULL, 0, NULL, NULL);
-INSERT INTO `navigation_items` VALUES (32, 1, 'route', 'section:users|g_order:11&g_name:users&g_icon:face|order:2', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (36, 1, 'route', 'section:pages|g_order:13&g_name:pages|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (39, 1, 'route', 'section:conversations|g_order:7&g_name:messages&g_icon:message|order:1', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (41, 1, 'route', 'section:conversations|g_order:8&g_name:comments&g_icon:comment|order:1', 0, NULL, NULL);
@@ -1520,8 +1513,8 @@ DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `keywords` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `description` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `meta_keywords` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `meta_description` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `template` int(255) NULL DEFAULT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"templates\"}',
   `content` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
@@ -2037,11 +2030,11 @@ CREATE TABLE `reserves`  (
 -- ----------------------------
 -- Records of reserves
 -- ----------------------------
-INSERT INTO `reserves` VALUES (58, '1399/01/20', '1399/03/05', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL, NULL);
-INSERT INTO `reserves` VALUES (59, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL, NULL);
-INSERT INTO `reserves` VALUES (60, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL, NULL);
-INSERT INTO `reserves` VALUES (61, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL, NULL);
-INSERT INTO `reserves` VALUES (62, '1399/01/20', '1399/03/06', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (1, '1399/01/20', '1399/03/01', '1399/02/16', 120000, 1, 'BME0001', '3', NULL, NULL, NULL, '2020-06-23 04:48:27');
+INSERT INTO `reserves` VALUES (2, '1399/01/20', '1399/03/06', '1399/02/10', 250000, 1, 'BME0001', '5', NULL, NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (3, '1399/01/20', '1399/03/07', '1399/02/18', 330000, 1, 'BME0001', '8', NULL, NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (4, '1399/01/20', '1399/03/12', '1399/02/12', 150000, 1, 'BME0001', '4', NULL, NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (5, '1399/01/20', '1399/03/22', '1399/02/15', 200000, 1, 'BME0001', '6', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for reviews
@@ -2678,7 +2671,7 @@ CREATE TABLE `room_assigned_properties`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of room_assigned_properties
@@ -2689,6 +2682,16 @@ INSERT INTO `room_assigned_properties` VALUES (5, 3, 1, '1', NULL, NULL);
 INSERT INTO `room_assigned_properties` VALUES (6, 3, 1, '1', NULL, NULL);
 INSERT INTO `room_assigned_properties` VALUES (17, 1, 1, '0', NULL, NULL);
 INSERT INTO `room_assigned_properties` VALUES (18, 1, 2, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (19, 13, 1, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (20, 13, 2, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (21, 14, 1, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (22, 14, 2, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (23, 15, 1, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (24, 15, 2, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (25, 16, 1, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (26, 16, 2, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (27, 17, 1, '0', NULL, NULL);
+INSERT INTO `room_assigned_properties` VALUES (28, 17, 2, '0', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for room_image
@@ -2782,21 +2785,23 @@ CREATE TABLE `rooms`  (
   `image` int(11) NOT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"images\"}',
   `video` int(11) NOT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"videos\"}',
   `flash` int(11) NULL DEFAULT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"flashes\"}',
-  `price` int(10) NOT NULL COMMENT '{\"relation\":\"hasMany\",\"table\":\"room_prices\",\"field\":\"room\"}',
   `hotel` int(255) NULL DEFAULT NULL COMMENT '{\"relation\":\"belongsTo\",\"table\":\"hotels\"}',
   `available` bit(1) NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of rooms
 -- ----------------------------
-INSERT INTO `rooms` VALUES (1, '11111111', '11111111', '<p>1111111111111</p>', 2, 0, 0, 0, 0, 1, b'1', NULL, '2020-06-18 04:11:55');
-INSERT INTO `rooms` VALUES (2, 'room 2', '-', '-', 2, 5, 1, 1, 0, 1, b'1', NULL, NULL);
-INSERT INTO `rooms` VALUES (3, 'room 3', '-', '-', 3, 7, 2, 1, 0, 1, b'1', NULL, NULL);
-INSERT INTO `rooms` VALUES (12, 'dfgfdgf', 'fdgfdg', '<p>dfgfdgdfg</p>', 2, 0, 0, 0, 0, 1, b'1', '2020-06-12 16:23:29', '2020-06-12 16:23:29');
+INSERT INTO `rooms` VALUES (1, '11111111', '11111111', '<p>1111111111111</p>', 2, 0, 0, 0, 1, b'1', NULL, '2020-06-18 04:11:55');
+INSERT INTO `rooms` VALUES (2, 'room 2', '-', '-', 2, 5, 1, 1, 1, b'1', NULL, NULL);
+INSERT INTO `rooms` VALUES (3, 'room 3', '-', '-', 3, 7, 2, 1, 1, b'1', NULL, NULL);
+INSERT INTO `rooms` VALUES (12, 'dfgfdgf', 'fdgfdg', '<p>dfgfdgdfg</p>', 2, 0, 0, 0, 1, b'1', '2020-06-12 16:23:29', '2020-06-12 16:23:29');
+INSERT INTO `rooms` VALUES (13, 'rretret', 'retert', '<p>ertertertre</p>', 1, 7, 0, 0, 1, b'1', '2020-06-21 22:26:57', '2020-06-21 22:26:57');
+INSERT INTO `rooms` VALUES (14, 'pubg free gift card', 'dsfdsf', '<p>sdfsdfdsfd</p>', 1, 5, 0, 0, 1, b'0', '2020-06-21 22:41:23', '2020-06-21 22:41:23');
+INSERT INTO `rooms` VALUES (17, '{\"fa\":\"ششش\",\"en\":\"سسسسس\",\"ar\":\"یییییی\"}', 'ثثثثث', '<p>ظظظظظظظظظظظظظظظظظظظظظظظظظ</p>', 2, 5, 0, 0, 1, b'0', '2020-06-24 04:42:14', '2020-06-24 04:42:14');
 
 -- ----------------------------
 -- Table structure for rooms_copy1
@@ -2977,9 +2982,8 @@ DROP TABLE IF EXISTS `slide_images`;
 CREATE TABLE `slide_images`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `path` int(11) NULL DEFAULT NULL,
-  `date` varchar(0) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `type` int(255) NULL DEFAULT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"slide_types\"}',
+  `image` int(11) NULL DEFAULT NULL,
+  `slide` int(255) NULL DEFAULT NULL COMMENT '{\"relation\":\"hasOne\",\"table\":\"slide_types\"}',
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -3089,7 +3093,7 @@ CREATE TABLE `tracker_agents`  (
   INDEX `tracker_agents_created_at_index`(`created_at`) USING BTREE,
   INDEX `tracker_agents_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_agents_browser_index`(`browser`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_agents
@@ -3103,6 +3107,7 @@ INSERT INTO `tracker_agents` VALUES (6, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64
 INSERT INTO `tracker_agents` VALUES (7, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0', 'Firefox', '75.0', '2020-04-14 12:23:58', '2020-04-14 12:23:58', '2d4211b2cce6b9c3c1e157d9f086acfc05eaa27ecd2f57803177fa17adcd04da');
 INSERT INTO `tracker_agents` VALUES (8, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 Edg/83.0.478.37', 'Edge', '83.0.478', '2020-05-24 23:28:54', '2020-05-24 23:28:54', '1713e2fe98c480baddf1ec34cdbb5c7c6c127aed5777530bf106d452a2be8e79');
 INSERT INTO `tracker_agents` VALUES (9, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 Edg/83.0.478.45', 'Edge', '83.0.478', '2020-06-18 02:43:51', '2020-06-18 02:43:51', 'a03284cce5b3baabdb50744ed75035ce2a4675cd5851aad63d4f819306b4e087');
+INSERT INTO `tracker_agents` VALUES (10, 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1', 'Mobile Safari', '10.0', '2020-06-21 22:09:29', '2020-06-21 22:09:29', 'ae984a2a5fe1ae6dd7cf7a8deab5bea6845d7525ffb319121d43d6cf196d28e9');
 
 -- ----------------------------
 -- Table structure for tracker_connections
@@ -3163,7 +3168,7 @@ CREATE TABLE `tracker_devices`  (
   INDEX `tracker_devices_model_index`(`model`) USING BTREE,
   INDEX `tracker_devices_platform_index`(`platform`) USING BTREE,
   INDEX `tracker_devices_platform_version_index`(`platform_version`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_devices
@@ -3171,6 +3176,7 @@ CREATE TABLE `tracker_devices`  (
 INSERT INTO `tracker_devices` VALUES (1, 'Computer', '0', 'Windows', '8.1', 0, '2019-10-28 18:41:02', '2019-10-28 18:41:02');
 INSERT INTO `tracker_devices` VALUES (2, 'Computer', '0', 'Other', '', 0, '2019-10-28 22:25:01', '2019-10-28 22:25:01');
 INSERT INTO `tracker_devices` VALUES (3, 'Computer', 'WebKit', 'Windows', '8.1', 0, '2020-05-24 23:28:53', '2020-05-24 23:28:53');
+INSERT INTO `tracker_devices` VALUES (4, 'Phone', 'iPhone', 'iOS', '10.3.1', 1, '2020-06-21 22:09:27', '2020-06-21 22:09:27');
 
 -- ----------------------------
 -- Table structure for tracker_domains
@@ -3352,7 +3358,7 @@ CREATE TABLE `tracker_log`  (
   CONSTRAINT `tracker_log_query_id_foreign` FOREIGN KEY (`query_id`) REFERENCES `tracker_queries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_session_id_foreign` FOREIGN KEY (`session_id`) REFERENCES `tracker_sessions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 10564 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 10793 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_log
@@ -13885,6 +13891,235 @@ INSERT INTO `tracker_log` VALUES (10560, 32, 1, NULL, 'GET', 161, 0, 0, 0, 0, NU
 INSERT INTO `tracker_log` VALUES (10561, 32, 184, NULL, 'GET', 185, 0, 0, 0, 0, NULL, '2020-06-18 19:27:51', '2020-06-18 19:27:51', 120);
 INSERT INTO `tracker_log` VALUES (10562, 32, 184, NULL, 'GET', 185, 0, 0, 0, 0, NULL, '2020-06-18 19:28:13', '2020-06-18 19:28:14', 120);
 INSERT INTO `tracker_log` VALUES (10563, 32, 184, NULL, 'GET', 185, 0, 0, 0, 0, NULL, '2020-06-18 19:28:43', '2020-06-18 19:28:43', 120);
+INSERT INTO `tracker_log` VALUES (10564, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-19 01:22:45', '2020-06-19 01:22:45', NULL);
+INSERT INTO `tracker_log` VALUES (10565, 32, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-06-19 07:01:59', '2020-06-19 07:01:59', 121);
+INSERT INTO `tracker_log` VALUES (10566, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-19 07:02:01', '2020-06-19 07:02:01', 115);
+INSERT INTO `tracker_log` VALUES (10567, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-19 07:02:02', '2020-06-19 07:02:02', 115);
+INSERT INTO `tracker_log` VALUES (10568, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-19 07:02:02', '2020-06-19 07:02:02', 115);
+INSERT INTO `tracker_log` VALUES (10569, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-19 07:02:03', '2020-06-19 07:02:03', 115);
+INSERT INTO `tracker_log` VALUES (10570, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-19 07:02:04', '2020-06-19 07:02:04', 115);
+INSERT INTO `tracker_log` VALUES (10571, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-19 07:02:04', '2020-06-19 07:02:04', 115);
+INSERT INTO `tracker_log` VALUES (10572, 32, 5, NULL, 'POST', 6, 0, 0, 0, 0, NULL, '2020-06-19 07:02:12', '2020-06-19 07:02:12', 115);
+INSERT INTO `tracker_log` VALUES (10573, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-06-21 21:49:58', '2020-06-21 21:49:59', NULL);
+INSERT INTO `tracker_log` VALUES (10574, 32, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-06-21 21:50:02', '2020-06-21 21:50:02', NULL);
+INSERT INTO `tracker_log` VALUES (10575, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 21:50:06', '2020-06-21 21:50:06', 115);
+INSERT INTO `tracker_log` VALUES (10576, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 21:50:13', '2020-06-21 21:50:13', 115);
+INSERT INTO `tracker_log` VALUES (10577, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 21:50:18', '2020-06-21 21:50:18', 115);
+INSERT INTO `tracker_log` VALUES (10578, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 21:50:21', '2020-06-21 21:50:21', 115);
+INSERT INTO `tracker_log` VALUES (10579, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 21:50:22', '2020-06-21 21:50:22', 115);
+INSERT INTO `tracker_log` VALUES (10580, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 21:50:23', '2020-06-21 21:50:23', 115);
+INSERT INTO `tracker_log` VALUES (10581, 32, 5, NULL, 'POST', 6, 0, 0, 0, 0, NULL, '2020-06-21 21:50:32', '2020-06-21 21:50:32', 115);
+INSERT INTO `tracker_log` VALUES (10582, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-06-21 21:50:34', '2020-06-21 21:50:34', 115);
+INSERT INTO `tracker_log` VALUES (10583, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 22:09:33', '2020-06-21 22:09:33', NULL);
+INSERT INTO `tracker_log` VALUES (10584, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 23:09:19', '2020-06-21 23:09:19', NULL);
+INSERT INTO `tracker_log` VALUES (10585, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 23:09:34', '2020-06-21 23:09:34', NULL);
+INSERT INTO `tracker_log` VALUES (10586, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 23:09:40', '2020-06-21 23:09:40', NULL);
+INSERT INTO `tracker_log` VALUES (10587, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-21 23:09:48', '2020-06-21 23:09:48', NULL);
+INSERT INTO `tracker_log` VALUES (10588, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-06-23 00:06:01', '2020-06-23 00:06:03', NULL);
+INSERT INTO `tracker_log` VALUES (10589, 32, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-06-23 00:06:06', '2020-06-23 00:06:06', NULL);
+INSERT INTO `tracker_log` VALUES (10590, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:06:10', '2020-06-23 00:06:10', 115);
+INSERT INTO `tracker_log` VALUES (10591, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:06:24', '2020-06-23 00:06:24', 115);
+INSERT INTO `tracker_log` VALUES (10592, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:06:26', '2020-06-23 00:06:26', 115);
+INSERT INTO `tracker_log` VALUES (10593, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:06:30', '2020-06-23 00:06:30', 115);
+INSERT INTO `tracker_log` VALUES (10594, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:06:32', '2020-06-23 00:06:32', 115);
+INSERT INTO `tracker_log` VALUES (10595, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:06:33', '2020-06-23 00:06:33', 115);
+INSERT INTO `tracker_log` VALUES (10596, 32, 5, NULL, 'POST', 6, 0, 0, 0, 0, NULL, '2020-06-23 00:06:46', '2020-06-23 00:06:46', 115);
+INSERT INTO `tracker_log` VALUES (10597, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-06-23 00:06:48', '2020-06-23 00:06:49', 115);
+INSERT INTO `tracker_log` VALUES (10598, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:15:10', '2020-06-23 00:15:10', NULL);
+INSERT INTO `tracker_log` VALUES (10599, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:16:42', '2020-06-23 00:16:42', NULL);
+INSERT INTO `tracker_log` VALUES (10600, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:17:40', '2020-06-23 00:17:40', NULL);
+INSERT INTO `tracker_log` VALUES (10601, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:30:51', '2020-06-23 00:30:51', NULL);
+INSERT INTO `tracker_log` VALUES (10602, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:31:30', '2020-06-23 00:31:30', NULL);
+INSERT INTO `tracker_log` VALUES (10603, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:32:23', '2020-06-23 00:32:23', NULL);
+INSERT INTO `tracker_log` VALUES (10604, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:32:44', '2020-06-23 00:32:44', NULL);
+INSERT INTO `tracker_log` VALUES (10605, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:33:31', '2020-06-23 00:33:31', NULL);
+INSERT INTO `tracker_log` VALUES (10606, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:33:43', '2020-06-23 00:33:43', NULL);
+INSERT INTO `tracker_log` VALUES (10607, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:34:33', '2020-06-23 00:34:33', NULL);
+INSERT INTO `tracker_log` VALUES (10608, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:36:00', '2020-06-23 00:36:00', NULL);
+INSERT INTO `tracker_log` VALUES (10609, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:36:25', '2020-06-23 00:36:25', NULL);
+INSERT INTO `tracker_log` VALUES (10610, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:36:51', '2020-06-23 00:36:51', NULL);
+INSERT INTO `tracker_log` VALUES (10611, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:57:49', '2020-06-23 00:57:49', NULL);
+INSERT INTO `tracker_log` VALUES (10612, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:58:52', '2020-06-23 00:58:52', NULL);
+INSERT INTO `tracker_log` VALUES (10613, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 00:59:14', '2020-06-23 00:59:14', NULL);
+INSERT INTO `tracker_log` VALUES (10614, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:00:51', '2020-06-23 01:00:51', NULL);
+INSERT INTO `tracker_log` VALUES (10615, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:05:22', '2020-06-23 01:05:22', NULL);
+INSERT INTO `tracker_log` VALUES (10616, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:05:51', '2020-06-23 01:05:51', NULL);
+INSERT INTO `tracker_log` VALUES (10617, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:06:29', '2020-06-23 01:06:29', NULL);
+INSERT INTO `tracker_log` VALUES (10618, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:07:49', '2020-06-23 01:07:49', NULL);
+INSERT INTO `tracker_log` VALUES (10619, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:11:51', '2020-06-23 01:11:51', NULL);
+INSERT INTO `tracker_log` VALUES (10620, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:26:50', '2020-06-23 01:26:50', NULL);
+INSERT INTO `tracker_log` VALUES (10621, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 01:27:49', '2020-06-23 01:27:49', NULL);
+INSERT INTO `tracker_log` VALUES (10622, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 02:37:15', '2020-06-23 02:37:15', NULL);
+INSERT INTO `tracker_log` VALUES (10623, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 02:38:26', '2020-06-23 02:38:26', NULL);
+INSERT INTO `tracker_log` VALUES (10624, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 02:39:43', '2020-06-23 02:39:43', NULL);
+INSERT INTO `tracker_log` VALUES (10625, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 02:42:09', '2020-06-23 02:42:09', NULL);
+INSERT INTO `tracker_log` VALUES (10626, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 02:42:59', '2020-06-23 02:42:59', NULL);
+INSERT INTO `tracker_log` VALUES (10627, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:01:37', '2020-06-23 03:01:37', NULL);
+INSERT INTO `tracker_log` VALUES (10628, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:02:24', '2020-06-23 03:02:24', NULL);
+INSERT INTO `tracker_log` VALUES (10629, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:04:53', '2020-06-23 03:04:53', NULL);
+INSERT INTO `tracker_log` VALUES (10630, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:05:32', '2020-06-23 03:05:32', NULL);
+INSERT INTO `tracker_log` VALUES (10631, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:07:12', '2020-06-23 03:07:12', NULL);
+INSERT INTO `tracker_log` VALUES (10632, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:07:58', '2020-06-23 03:07:58', NULL);
+INSERT INTO `tracker_log` VALUES (10633, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:29:17', '2020-06-23 03:29:17', NULL);
+INSERT INTO `tracker_log` VALUES (10634, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:29:31', '2020-06-23 03:29:31', NULL);
+INSERT INTO `tracker_log` VALUES (10635, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:30:12', '2020-06-23 03:30:12', NULL);
+INSERT INTO `tracker_log` VALUES (10636, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:35:50', '2020-06-23 03:35:50', NULL);
+INSERT INTO `tracker_log` VALUES (10637, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:36:15', '2020-06-23 03:36:15', NULL);
+INSERT INTO `tracker_log` VALUES (10638, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:43:25', '2020-06-23 03:43:25', NULL);
+INSERT INTO `tracker_log` VALUES (10639, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:44:36', '2020-06-23 03:44:36', NULL);
+INSERT INTO `tracker_log` VALUES (10640, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:45:39', '2020-06-23 03:45:39', NULL);
+INSERT INTO `tracker_log` VALUES (10641, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:46:07', '2020-06-23 03:46:07', NULL);
+INSERT INTO `tracker_log` VALUES (10642, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 03:46:24', '2020-06-23 03:46:24', NULL);
+INSERT INTO `tracker_log` VALUES (10643, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:24:11', '2020-06-23 04:24:11', NULL);
+INSERT INTO `tracker_log` VALUES (10644, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:29:57', '2020-06-23 04:29:57', NULL);
+INSERT INTO `tracker_log` VALUES (10645, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:45:23', '2020-06-23 04:45:23', NULL);
+INSERT INTO `tracker_log` VALUES (10646, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:45:30', '2020-06-23 04:45:30', NULL);
+INSERT INTO `tracker_log` VALUES (10647, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:45:43', '2020-06-23 04:45:43', NULL);
+INSERT INTO `tracker_log` VALUES (10648, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:46:03', '2020-06-23 04:46:03', NULL);
+INSERT INTO `tracker_log` VALUES (10649, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:48:22', '2020-06-23 04:48:22', NULL);
+INSERT INTO `tracker_log` VALUES (10650, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-23 04:48:33', '2020-06-23 04:48:33', NULL);
+INSERT INTO `tracker_log` VALUES (10651, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-06-24 03:43:23', '2020-06-24 03:43:25', NULL);
+INSERT INTO `tracker_log` VALUES (10652, 32, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-06-24 03:43:27', '2020-06-24 03:43:27', NULL);
+INSERT INTO `tracker_log` VALUES (10653, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:43:30', '2020-06-24 03:43:30', 115);
+INSERT INTO `tracker_log` VALUES (10654, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:43:31', '2020-06-24 03:43:31', 115);
+INSERT INTO `tracker_log` VALUES (10655, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:43:31', '2020-06-24 03:43:31', 115);
+INSERT INTO `tracker_log` VALUES (10656, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:43:33', '2020-06-24 03:43:33', 115);
+INSERT INTO `tracker_log` VALUES (10657, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:43:35', '2020-06-24 03:43:35', 115);
+INSERT INTO `tracker_log` VALUES (10658, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:43:35', '2020-06-24 03:43:35', 115);
+INSERT INTO `tracker_log` VALUES (10659, 32, 5, NULL, 'POST', 6, 0, 0, 0, 0, NULL, '2020-06-24 03:44:23', '2020-06-24 03:44:23', 115);
+INSERT INTO `tracker_log` VALUES (10660, 32, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-06-24 03:44:25', '2020-06-24 03:44:25', 115);
+INSERT INTO `tracker_log` VALUES (10661, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:45:06', '2020-06-24 03:45:06', NULL);
+INSERT INTO `tracker_log` VALUES (10662, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:46:31', '2020-06-24 03:46:31', NULL);
+INSERT INTO `tracker_log` VALUES (10663, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:50:57', '2020-06-24 03:50:57', NULL);
+INSERT INTO `tracker_log` VALUES (10664, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:51:57', '2020-06-24 03:51:57', NULL);
+INSERT INTO `tracker_log` VALUES (10665, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:52:18', '2020-06-24 03:52:18', NULL);
+INSERT INTO `tracker_log` VALUES (10666, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:52:41', '2020-06-24 03:52:41', NULL);
+INSERT INTO `tracker_log` VALUES (10667, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:53:09', '2020-06-24 03:53:09', NULL);
+INSERT INTO `tracker_log` VALUES (10668, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:53:57', '2020-06-24 03:53:57', NULL);
+INSERT INTO `tracker_log` VALUES (10669, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:55:33', '2020-06-24 03:55:33', NULL);
+INSERT INTO `tracker_log` VALUES (10670, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:55:41', '2020-06-24 03:55:41', NULL);
+INSERT INTO `tracker_log` VALUES (10671, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 03:56:46', '2020-06-24 03:56:46', NULL);
+INSERT INTO `tracker_log` VALUES (10672, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:04:12', '2020-06-24 04:04:12', NULL);
+INSERT INTO `tracker_log` VALUES (10673, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:04:16', '2020-06-24 04:04:16', NULL);
+INSERT INTO `tracker_log` VALUES (10674, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:16:30', '2020-06-24 04:16:30', NULL);
+INSERT INTO `tracker_log` VALUES (10675, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:38:09', '2020-06-24 04:38:09', NULL);
+INSERT INTO `tracker_log` VALUES (10676, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:38:43', '2020-06-24 04:38:43', NULL);
+INSERT INTO `tracker_log` VALUES (10677, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:39:28', '2020-06-24 04:39:28', NULL);
+INSERT INTO `tracker_log` VALUES (10678, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:41:29', '2020-06-24 04:41:29', NULL);
+INSERT INTO `tracker_log` VALUES (10679, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:41:33', '2020-06-24 04:41:33', NULL);
+INSERT INTO `tracker_log` VALUES (10680, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:42:17', '2020-06-24 04:42:17', NULL);
+INSERT INTO `tracker_log` VALUES (10681, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:49:23', '2020-06-24 04:49:23', NULL);
+INSERT INTO `tracker_log` VALUES (10682, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:50:34', '2020-06-24 04:50:34', NULL);
+INSERT INTO `tracker_log` VALUES (10683, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 04:57:54', '2020-06-24 04:57:54', NULL);
+INSERT INTO `tracker_log` VALUES (10684, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:09:39', '2020-06-24 05:09:39', NULL);
+INSERT INTO `tracker_log` VALUES (10685, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:11:28', '2020-06-24 05:11:28', NULL);
+INSERT INTO `tracker_log` VALUES (10686, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:22:34', '2020-06-24 05:22:34', NULL);
+INSERT INTO `tracker_log` VALUES (10687, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:26:00', '2020-06-24 05:26:00', NULL);
+INSERT INTO `tracker_log` VALUES (10688, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:26:43', '2020-06-24 05:26:43', NULL);
+INSERT INTO `tracker_log` VALUES (10689, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:38:01', '2020-06-24 05:38:01', NULL);
+INSERT INTO `tracker_log` VALUES (10690, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:41:13', '2020-06-24 05:41:13', NULL);
+INSERT INTO `tracker_log` VALUES (10691, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:43:47', '2020-06-24 05:43:47', NULL);
+INSERT INTO `tracker_log` VALUES (10692, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 05:44:12', '2020-06-24 05:44:12', NULL);
+INSERT INTO `tracker_log` VALUES (10693, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:02', '2020-06-24 06:14:02', NULL);
+INSERT INTO `tracker_log` VALUES (10694, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:43', '2020-06-24 06:14:43', NULL);
+INSERT INTO `tracker_log` VALUES (10695, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:53', '2020-06-24 06:14:53', 131);
+INSERT INTO `tracker_log` VALUES (10696, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:54', '2020-06-24 06:14:54', 131);
+INSERT INTO `tracker_log` VALUES (10697, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:55', '2020-06-24 06:14:55', 131);
+INSERT INTO `tracker_log` VALUES (10698, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:55', '2020-06-24 06:14:55', 131);
+INSERT INTO `tracker_log` VALUES (10699, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:56', '2020-06-24 06:14:56', 131);
+INSERT INTO `tracker_log` VALUES (10700, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:57', '2020-06-24 06:14:57', 131);
+INSERT INTO `tracker_log` VALUES (10701, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:58', '2020-06-24 06:14:58', 131);
+INSERT INTO `tracker_log` VALUES (10702, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:14:59', '2020-06-24 06:14:59', NULL);
+INSERT INTO `tracker_log` VALUES (10703, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:15:00', '2020-06-24 06:15:00', 131);
+INSERT INTO `tracker_log` VALUES (10704, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:15:08', '2020-06-24 06:15:08', NULL);
+INSERT INTO `tracker_log` VALUES (10705, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:15:13', '2020-06-24 06:15:13', NULL);
+INSERT INTO `tracker_log` VALUES (10706, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:15:17', '2020-06-24 06:15:17', NULL);
+INSERT INTO `tracker_log` VALUES (10707, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:15:22', '2020-06-24 06:15:22', NULL);
+INSERT INTO `tracker_log` VALUES (10708, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:15:46', '2020-06-24 06:15:46', NULL);
+INSERT INTO `tracker_log` VALUES (10709, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:17:53', '2020-06-24 06:17:53', NULL);
+INSERT INTO `tracker_log` VALUES (10710, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:58:26', '2020-06-24 06:58:26', NULL);
+INSERT INTO `tracker_log` VALUES (10711, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 06:59:41', '2020-06-24 06:59:41', NULL);
+INSERT INTO `tracker_log` VALUES (10712, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:03:52', '2020-06-24 07:03:52', NULL);
+INSERT INTO `tracker_log` VALUES (10713, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:03:56', '2020-06-24 07:03:56', NULL);
+INSERT INTO `tracker_log` VALUES (10714, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:03:59', '2020-06-24 07:03:59', NULL);
+INSERT INTO `tracker_log` VALUES (10715, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:04:04', '2020-06-24 07:04:04', NULL);
+INSERT INTO `tracker_log` VALUES (10716, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:04:07', '2020-06-24 07:04:07', NULL);
+INSERT INTO `tracker_log` VALUES (10717, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:04:44', '2020-06-24 07:04:44', NULL);
+INSERT INTO `tracker_log` VALUES (10718, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:04:57', '2020-06-24 07:04:57', NULL);
+INSERT INTO `tracker_log` VALUES (10719, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:05:08', '2020-06-24 07:05:08', NULL);
+INSERT INTO `tracker_log` VALUES (10720, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:06:39', '2020-06-24 07:06:39', NULL);
+INSERT INTO `tracker_log` VALUES (10721, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:07:05', '2020-06-24 07:07:05', NULL);
+INSERT INTO `tracker_log` VALUES (10722, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:07:20', '2020-06-24 07:07:20', NULL);
+INSERT INTO `tracker_log` VALUES (10723, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:08:18', '2020-06-24 07:08:18', NULL);
+INSERT INTO `tracker_log` VALUES (10724, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:08:44', '2020-06-24 07:08:44', NULL);
+INSERT INTO `tracker_log` VALUES (10725, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:09:08', '2020-06-24 07:09:08', NULL);
+INSERT INTO `tracker_log` VALUES (10726, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:10:48', '2020-06-24 07:10:48', NULL);
+INSERT INTO `tracker_log` VALUES (10727, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:12:32', '2020-06-24 07:12:32', NULL);
+INSERT INTO `tracker_log` VALUES (10728, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:12:34', '2020-06-24 07:12:34', NULL);
+INSERT INTO `tracker_log` VALUES (10729, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:12:50', '2020-06-24 07:12:50', NULL);
+INSERT INTO `tracker_log` VALUES (10730, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:12:56', '2020-06-24 07:12:56', NULL);
+INSERT INTO `tracker_log` VALUES (10731, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:13:10', '2020-06-24 07:13:10', NULL);
+INSERT INTO `tracker_log` VALUES (10732, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:14:05', '2020-06-24 07:14:05', NULL);
+INSERT INTO `tracker_log` VALUES (10733, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:18:13', '2020-06-24 07:18:13', NULL);
+INSERT INTO `tracker_log` VALUES (10734, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:20:19', '2020-06-24 07:20:19', NULL);
+INSERT INTO `tracker_log` VALUES (10735, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:20:29', '2020-06-24 07:20:29', NULL);
+INSERT INTO `tracker_log` VALUES (10736, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:21:08', '2020-06-24 07:21:08', NULL);
+INSERT INTO `tracker_log` VALUES (10737, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:22:31', '2020-06-24 07:22:31', NULL);
+INSERT INTO `tracker_log` VALUES (10738, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:22:51', '2020-06-24 07:22:51', NULL);
+INSERT INTO `tracker_log` VALUES (10739, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:22:56', '2020-06-24 07:22:56', NULL);
+INSERT INTO `tracker_log` VALUES (10740, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:25:42', '2020-06-24 07:25:42', NULL);
+INSERT INTO `tracker_log` VALUES (10741, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:26:22', '2020-06-24 07:26:22', NULL);
+INSERT INTO `tracker_log` VALUES (10742, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:37:56', '2020-06-24 07:37:56', NULL);
+INSERT INTO `tracker_log` VALUES (10743, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:38:01', '2020-06-24 07:38:01', NULL);
+INSERT INTO `tracker_log` VALUES (10744, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:38:12', '2020-06-24 07:38:12', NULL);
+INSERT INTO `tracker_log` VALUES (10745, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:38:41', '2020-06-24 07:38:41', NULL);
+INSERT INTO `tracker_log` VALUES (10746, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:39:01', '2020-06-24 07:39:01', NULL);
+INSERT INTO `tracker_log` VALUES (10747, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:39:55', '2020-06-24 07:39:55', NULL);
+INSERT INTO `tracker_log` VALUES (10748, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:54:00', '2020-06-24 07:54:00', NULL);
+INSERT INTO `tracker_log` VALUES (10749, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:54:04', '2020-06-24 07:54:04', NULL);
+INSERT INTO `tracker_log` VALUES (10750, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:54:08', '2020-06-24 07:54:08', NULL);
+INSERT INTO `tracker_log` VALUES (10751, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:55:52', '2020-06-24 07:55:52', NULL);
+INSERT INTO `tracker_log` VALUES (10752, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:57:12', '2020-06-24 07:57:12', NULL);
+INSERT INTO `tracker_log` VALUES (10753, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:57:24', '2020-06-24 07:57:24', NULL);
+INSERT INTO `tracker_log` VALUES (10754, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:57:29', '2020-06-24 07:57:29', NULL);
+INSERT INTO `tracker_log` VALUES (10755, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:58:10', '2020-06-24 07:58:10', NULL);
+INSERT INTO `tracker_log` VALUES (10756, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:58:15', '2020-06-24 07:58:15', NULL);
+INSERT INTO `tracker_log` VALUES (10757, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:58:18', '2020-06-24 07:58:18', NULL);
+INSERT INTO `tracker_log` VALUES (10758, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:59:10', '2020-06-24 07:59:10', NULL);
+INSERT INTO `tracker_log` VALUES (10759, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:59:41', '2020-06-24 07:59:41', NULL);
+INSERT INTO `tracker_log` VALUES (10760, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 07:59:44', '2020-06-24 07:59:44', NULL);
+INSERT INTO `tracker_log` VALUES (10761, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:00:18', '2020-06-24 08:00:18', NULL);
+INSERT INTO `tracker_log` VALUES (10762, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:02:40', '2020-06-24 08:02:40', NULL);
+INSERT INTO `tracker_log` VALUES (10763, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:03:36', '2020-06-24 08:03:36', NULL);
+INSERT INTO `tracker_log` VALUES (10764, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:04:36', '2020-06-24 08:04:36', NULL);
+INSERT INTO `tracker_log` VALUES (10765, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:08:37', '2020-06-24 08:08:37', NULL);
+INSERT INTO `tracker_log` VALUES (10766, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:08:41', '2020-06-24 08:08:41', NULL);
+INSERT INTO `tracker_log` VALUES (10767, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:09:20', '2020-06-24 08:09:20', NULL);
+INSERT INTO `tracker_log` VALUES (10768, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:09:26', '2020-06-24 08:09:26', NULL);
+INSERT INTO `tracker_log` VALUES (10769, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:11:58', '2020-06-24 08:11:58', NULL);
+INSERT INTO `tracker_log` VALUES (10770, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:12:52', '2020-06-24 08:12:52', NULL);
+INSERT INTO `tracker_log` VALUES (10771, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:13:56', '2020-06-24 08:13:56', NULL);
+INSERT INTO `tracker_log` VALUES (10772, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:14:32', '2020-06-24 08:14:32', NULL);
+INSERT INTO `tracker_log` VALUES (10773, 32, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:00', '2020-06-24 08:15:00', 133);
+INSERT INTO `tracker_log` VALUES (10774, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:01', '2020-06-24 08:15:01', 133);
+INSERT INTO `tracker_log` VALUES (10775, 32, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:01', '2020-06-24 08:15:01', 133);
+INSERT INTO `tracker_log` VALUES (10776, 32, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:02', '2020-06-24 08:15:02', 133);
+INSERT INTO `tracker_log` VALUES (10777, 32, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:02', '2020-06-24 08:15:02', 133);
+INSERT INTO `tracker_log` VALUES (10778, 32, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:03', '2020-06-24 08:15:03', 133);
+INSERT INTO `tracker_log` VALUES (10779, 32, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:03', '2020-06-24 08:15:03', 133);
+INSERT INTO `tracker_log` VALUES (10780, 32, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:05', '2020-06-24 08:15:05', 133);
+INSERT INTO `tracker_log` VALUES (10781, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:05', '2020-06-24 08:15:05', NULL);
+INSERT INTO `tracker_log` VALUES (10782, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 08:15:26', '2020-06-24 08:15:26', NULL);
+INSERT INTO `tracker_log` VALUES (10783, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 09:57:59', '2020-06-24 09:57:59', NULL);
+INSERT INTO `tracker_log` VALUES (10784, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 10:07:02', '2020-06-24 10:07:02', NULL);
+INSERT INTO `tracker_log` VALUES (10785, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 10:08:23', '2020-06-24 10:08:23', NULL);
+INSERT INTO `tracker_log` VALUES (10786, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 10:09:23', '2020-06-24 10:09:23', NULL);
+INSERT INTO `tracker_log` VALUES (10787, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 10:23:55', '2020-06-24 10:23:55', NULL);
+INSERT INTO `tracker_log` VALUES (10788, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:11:24', '2020-06-24 11:11:24', NULL);
+INSERT INTO `tracker_log` VALUES (10789, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:12:03', '2020-06-24 11:12:03', NULL);
+INSERT INTO `tracker_log` VALUES (10790, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:12:19', '2020-06-24 11:12:19', NULL);
+INSERT INTO `tracker_log` VALUES (10791, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:12:32', '2020-06-24 11:12:32', NULL);
+INSERT INTO `tracker_log` VALUES (10792, 32, 69, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-06-24 11:12:38', '2020-06-24 11:12:38', NULL);
 
 -- ----------------------------
 -- Table structure for tracker_paths
@@ -14508,7 +14743,7 @@ CREATE TABLE `tracker_route_path_parameters`  (
   INDEX `tracker_route_path_parameters_parameter_index`(`parameter`) USING BTREE,
   INDEX `tracker_route_path_parameters_value_index`(`value`) USING BTREE,
   CONSTRAINT `tracker_route_path_parameters_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 262 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 282 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_path_parameters
@@ -14774,6 +15009,26 @@ INSERT INTO `tracker_route_path_parameters` VALUES (258, 203, 'type', 'complaint
 INSERT INTO `tracker_route_path_parameters` VALUES (259, 204, 'type', 'hotel', '2020-06-18 16:15:10', '2020-06-18 16:15:10');
 INSERT INTO `tracker_route_path_parameters` VALUES (260, 205, 'type', 'room', '2020-06-18 19:41:09', '2020-06-18 19:41:09');
 INSERT INTO `tracker_route_path_parameters` VALUES (261, 205, 'id', '12', '2020-06-18 19:41:09', '2020-06-18 19:41:09');
+INSERT INTO `tracker_route_path_parameters` VALUES (262, 206, 'type', 'room', '2020-06-21 23:09:36', '2020-06-21 23:09:36');
+INSERT INTO `tracker_route_path_parameters` VALUES (263, 206, 'id', '14', '2020-06-21 23:09:37', '2020-06-21 23:09:37');
+INSERT INTO `tracker_route_path_parameters` VALUES (264, 207, 'type', 'room', '2020-06-23 00:21:56', '2020-06-23 00:21:56');
+INSERT INTO `tracker_route_path_parameters` VALUES (265, 207, 'property', 'price', '2020-06-23 00:21:56', '2020-06-23 00:21:56');
+INSERT INTO `tracker_route_path_parameters` VALUES (266, 208, 'type', 'reserve', '2020-06-23 02:37:20', '2020-06-23 02:37:20');
+INSERT INTO `tracker_route_path_parameters` VALUES (267, 209, 'type', 'reserve', '2020-06-23 04:24:14', '2020-06-23 04:24:14');
+INSERT INTO `tracker_route_path_parameters` VALUES (268, 209, 'property', 'situation', '2020-06-23 04:24:14', '2020-06-23 04:24:14');
+INSERT INTO `tracker_route_path_parameters` VALUES (269, 210, 'type', 'room', '2020-06-24 04:57:51', '2020-06-24 04:57:51');
+INSERT INTO `tracker_route_path_parameters` VALUES (270, 210, 'id', '17', '2020-06-24 04:57:51', '2020-06-24 04:57:51');
+INSERT INTO `tracker_route_path_parameters` VALUES (271, 211, 'type', 'slide', '2020-06-24 06:57:56', '2020-06-24 06:57:56');
+INSERT INTO `tracker_route_path_parameters` VALUES (272, 211, 'id', '1', '2020-06-24 06:57:56', '2020-06-24 06:57:56');
+INSERT INTO `tracker_route_path_parameters` VALUES (273, 212, 'type', 'website', '2020-06-24 07:18:16', '2020-06-24 07:18:16');
+INSERT INTO `tracker_route_path_parameters` VALUES (274, 212, 'id', '1', '2020-06-24 07:18:16', '2020-06-24 07:18:16');
+INSERT INTO `tracker_route_path_parameters` VALUES (275, 213, 'type', 'hotel', '2020-06-24 07:22:53', '2020-06-24 07:22:53');
+INSERT INTO `tracker_route_path_parameters` VALUES (276, 213, 'id', '1', '2020-06-24 07:22:53', '2020-06-24 07:22:53');
+INSERT INTO `tracker_route_path_parameters` VALUES (277, 214, 'type', 'page', '2020-06-24 07:59:42', '2020-06-24 07:59:42');
+INSERT INTO `tracker_route_path_parameters` VALUES (278, 214, 'id', '1', '2020-06-24 07:59:42', '2020-06-24 07:59:42');
+INSERT INTO `tracker_route_path_parameters` VALUES (279, 215, 'type', 'news', '2020-06-24 08:09:24', '2020-06-24 08:09:24');
+INSERT INTO `tracker_route_path_parameters` VALUES (280, 216, 'type', 'gallery', '2020-06-24 10:07:08', '2020-06-24 10:07:08');
+INSERT INTO `tracker_route_path_parameters` VALUES (281, 216, 'id', '1', '2020-06-24 10:07:08', '2020-06-24 10:07:08');
 
 -- ----------------------------
 -- Table structure for tracker_route_paths
@@ -14791,7 +15046,7 @@ CREATE TABLE `tracker_route_paths`  (
   INDEX `tracker_route_paths_route_id_index`(`route_id`) USING BTREE,
   INDEX `tracker_route_paths_path_index`(`path`) USING BTREE,
   CONSTRAINT `tracker_route_paths_route_id_foreign` FOREIGN KEY (`route_id`) REFERENCES `tracker_routes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 206 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 217 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_paths
@@ -15001,6 +15256,17 @@ INSERT INTO `tracker_route_paths` VALUES (202, 50, 'admin/items/slide', '2020-06
 INSERT INTO `tracker_route_paths` VALUES (203, 50, 'admin/items/complaint', '2020-06-18 16:08:46', '2020-06-18 16:08:46');
 INSERT INTO `tracker_route_paths` VALUES (204, 82, 'admin/items/hotel/properties', '2020-06-18 16:15:10', '2020-06-18 16:15:10');
 INSERT INTO `tracker_route_paths` VALUES (205, 58, 'admin/items/room/12/edit', '2020-06-18 19:41:09', '2020-06-18 19:41:09');
+INSERT INTO `tracker_route_paths` VALUES (206, 58, 'admin/items/room/14/edit', '2020-06-21 23:09:35', '2020-06-21 23:09:35');
+INSERT INTO `tracker_route_paths` VALUES (207, 83, 'admin/items/room/price/get', '2020-06-23 00:21:56', '2020-06-23 00:21:56');
+INSERT INTO `tracker_route_paths` VALUES (208, 84, 'admin/items/reserve/ajax', '2020-06-23 02:37:20', '2020-06-23 02:37:20');
+INSERT INTO `tracker_route_paths` VALUES (209, 85, 'admin/items/reserve/situation/set', '2020-06-23 04:24:14', '2020-06-23 04:24:14');
+INSERT INTO `tracker_route_paths` VALUES (210, 58, 'admin/items/room/17/edit', '2020-06-24 04:57:51', '2020-06-24 04:57:51');
+INSERT INTO `tracker_route_paths` VALUES (211, 58, 'admin/items/slide/1/edit', '2020-06-24 06:57:55', '2020-06-24 06:57:55');
+INSERT INTO `tracker_route_paths` VALUES (212, 58, 'admin/items/website/1/edit', '2020-06-24 07:18:16', '2020-06-24 07:18:16');
+INSERT INTO `tracker_route_paths` VALUES (213, 58, 'admin/items/hotel/1/edit', '2020-06-24 07:22:53', '2020-06-24 07:22:53');
+INSERT INTO `tracker_route_paths` VALUES (214, 58, 'admin/items/page/1/edit', '2020-06-24 07:59:42', '2020-06-24 07:59:42');
+INSERT INTO `tracker_route_paths` VALUES (215, 51, 'admin/items/news/create', '2020-06-24 08:09:24', '2020-06-24 08:09:24');
+INSERT INTO `tracker_route_paths` VALUES (216, 58, 'admin/items/gallery/1/edit', '2020-06-24 10:07:08', '2020-06-24 10:07:08');
 
 -- ----------------------------
 -- Table structure for tracker_routes
@@ -15017,7 +15283,7 @@ CREATE TABLE `tracker_routes`  (
   INDEX `tracker_routes_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_routes_name_index`(`name`) USING BTREE,
   INDEX `tracker_routes_action_index`(`action`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_routes
@@ -15104,6 +15370,9 @@ INSERT INTO `tracker_routes` VALUES (79, 'home.customer.register', 'App\\Http\\C
 INSERT INTO `tracker_routes` VALUES (80, 'admin.reserves.get.with.situations', 'App\\Http\\Controllers\\ReserveController@getReserves', '2020-06-12 15:09:16', '2020-06-12 15:09:16');
 INSERT INTO `tracker_routes` VALUES (81, 'items.update', 'App\\Http\\Controllers\\Item\\ItemController@update', '2020-06-18 04:11:54', '2020-06-18 04:11:54');
 INSERT INTO `tracker_routes` VALUES (82, 'items.properties.index', 'App\\Http\\Controllers\\Item\\ItemPropertyController@index', '2020-06-18 15:46:01', '2020-06-18 15:46:01');
+INSERT INTO `tracker_routes` VALUES (83, 'items.get.property', 'App\\Http\\Controllers\\Item\\ItemController@getProperty', '2020-06-23 00:21:55', '2020-06-23 00:21:55');
+INSERT INTO `tracker_routes` VALUES (84, 'items.ajax.get', 'App\\Http\\Controllers\\Item\\ItemController@get', '2020-06-23 02:37:20', '2020-06-23 02:37:20');
+INSERT INTO `tracker_routes` VALUES (85, 'items.set.property', 'App\\Http\\Controllers\\Item\\ItemController@setProperty', '2020-06-23 04:24:14', '2020-06-23 04:24:14');
 
 -- ----------------------------
 -- Table structure for tracker_sessions
@@ -15177,7 +15446,7 @@ INSERT INTO `tracker_sessions` VALUES (28, '34750a21-2ae4-4c86-b7af-5277e08a324c
 INSERT INTO `tracker_sessions` VALUES (29, 'bf01ba87-6b07-4f16-b57c-d177098c92e1', NULL, 1, 4, '::1', NULL, NULL, NULL, 0, '2020-02-01 08:07:22', '2020-02-08 01:35:43', 1);
 INSERT INTO `tracker_sessions` VALUES (30, 'b0639941-726b-4f22-83b4-199e20e87b45', NULL, 1, 5, '::1', 90, NULL, NULL, 0, '2020-02-28 23:27:46', '2020-03-04 06:33:04', 1);
 INSERT INTO `tracker_sessions` VALUES (31, '9d3ad913-b8de-4049-8685-e8df61097282', NULL, 1, 7, '::1', NULL, NULL, NULL, 0, '2020-03-04 08:32:40', '2020-04-15 12:15:50', 1);
-INSERT INTO `tracker_sessions` VALUES (32, '042c17eb-cbaa-4559-8821-bfce6cf0734b', NULL, 1, 9, '::1', 120, NULL, NULL, 0, '2020-03-15 15:01:42', '2020-06-18 19:28:42', 1);
+INSERT INTO `tracker_sessions` VALUES (32, '042c17eb-cbaa-4559-8821-bfce6cf0734b', NULL, 3, 9, '::1', 133, NULL, NULL, 0, '2020-03-15 15:01:42', '2020-06-24 11:12:37', 1);
 INSERT INTO `tracker_sessions` VALUES (33, '4d6da350-f56a-4755-9961-bd47441e82c5', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-03 05:07:00', '2020-04-04 14:51:29', 1);
 INSERT INTO `tracker_sessions` VALUES (34, '7f1cba7a-ed56-4dd1-8dc8-0fc83ec0db6b', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-05 04:38:48', '2020-04-06 12:58:12', 1);
 INSERT INTO `tracker_sessions` VALUES (35, '58426c97-776d-4c37-9d98-837f78a083ff', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-06 16:08:03', '2020-04-10 17:49:11', 1);

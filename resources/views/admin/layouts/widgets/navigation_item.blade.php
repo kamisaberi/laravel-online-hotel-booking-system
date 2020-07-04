@@ -1,7 +1,12 @@
 @if($navigation->link_type == "route")
 
     @if(isset($navigation->properties->key) and  isset($navigation->properties->value) )
+{{--        {{ $navigation->properties->route . ":" . $navigation->properties->value }}--}}
+{{--        <br>--}}
+
+
         @can($navigation->properties->route . ":" . $navigation->properties->value)
+{{--            {{ $navigation->properties->key . ":" . $navigation->properties->value }}--}}
             <li class=" nav-item {{isset($navigation->active) &&  $navigation->active ? 'active' : ''}}">
                 <a href="{{route($navigation->properties->route, [$navigation->properties->key=>$navigation->properties->value])}}">
                     @if($show_icon == true)

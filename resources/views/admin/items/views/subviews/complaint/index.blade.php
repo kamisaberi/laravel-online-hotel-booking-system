@@ -47,39 +47,43 @@
 
                                             <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
                                                 <thead>
-                                                    <tr>
-                                                        <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
-                                                        <th>
-                                                            title
-                                                        </th>
-                                                        <th>Actions</th>
-                                                    </tr>
+                                                <tr>
+                                                    <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
+                                                    <th>
+                                                        title
+                                                    </th>
+                                                    <th>Actions</th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($datas as $data)
-                                                        <tr>
-                                                            <td>
-                                                                <input type="checkbox" class="input-chk check">
-                                                            </td>
-                                                            <td>
-                                                                {{$data->title}}
-                                                            </td>
-
-                                                            <td>
-                                                                @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'complaint'])
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
+                                                @foreach($datas as $data)
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" class="input-chk check">
+                                                        </td>
+                                                        <td>
+                                                            {{$data->content}}
+                                                        </td>
+                                                        <td>
+                                                            @include('admin.layouts.widgets.actions', ['permissions'=>$permissions , 'type'=>'complaint'])
+                                                            <a href="#" data-toggle="modal" data-target="#mdl-reply-complaint"
+                                                               data-content="{{$data->id}}"
+                                                               class="primary show mr-1">
+                                                                <i class="fa fa-reply"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                                 </tbody>
                                                 <tfoot>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>
-                                                            title
-                                                        </th>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>
+                                                        title
+                                                    </th>
 
-                                                        <th>Actions</th>
-                                                    </tr>
+                                                    <th>Actions</th>
+                                                </tr>
                                                 </tfoot>
                                             </table>
 
@@ -165,7 +169,7 @@
 
     @include('admin.components.modal-reserve-action')
     @include('admin.components.mdl-show-check')
-
+    @include('admin.components.modal-reply-complaint')
 
 
 
@@ -175,5 +179,42 @@
 
 @endsection
 @section('sub-footer')
+
+    <script>
+        $('a[data-target="#mdl-reply-complaint"]').on("click", function () {
+            $('#mdl-reply-complaint').modal('show');
+            $('#mdl-reply-complaint input[name=reply_to]').val($(this).attr("data-content"));
+            $('#mdl-reply-complaint input[name=sender]').val('{{$user->id}}');
+            $('#mdl-reply-complaint input[name=hotel]').val('1');
+        });
+
+
+        $('#reply-complaint-form').submit(function (e) {
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                url: '{{route('items.store' , ['type'=>'complaint'])}}',
+                method: 'post',
+                data: $('#reply-message-form').serialize(),
+                success: function (result) {
+                    console.log(result);
+                    alert("replied");
+                    $('#mdl-reply-complaint').modal('hide');
+                },
+                error: function (result) {
+                    alert(result.status);
+                }
+            });
+        });
+
+    </script>
+
+
+
 
 @endsection

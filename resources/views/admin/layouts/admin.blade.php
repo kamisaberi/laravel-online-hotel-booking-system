@@ -402,6 +402,7 @@
 
                     @isset($navigations )
 
+
                         @php($section="none")
                         @php($g_name="none")
                         @foreach($navigations as $k=>$nav)

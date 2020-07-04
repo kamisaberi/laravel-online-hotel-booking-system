@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Complaint;
 use App\Data;
 use App\DataProperty;
 use App\Http\Controllers\Base\BaseController;
@@ -10,19 +9,20 @@ use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\User\UserController;
 use App\Libraries\Utilities\BaseUtility;
 use App\Libraries\Utilities\ItemUtility;
+use App\Review;
+use App\RoomReview;
 use DB;
 use Illuminate\Http\Request;
 use Route;
-use Validator;
 
-class ComplaintController extends Controller
+class RoomReviewController extends Controller
 {
     public function index(Request $request, $type, $filters = null)
     {
 
         $data = BaseUtility::generateForIndex($type);
-        $data ['datas'] = Complaint::all();
-        return view("admin.items.views.subviews.complaint.index", $data);
+        $data ['datas'] = RoomReview::all();
+        return view("admin.items.views.subviews.room_review.index", $data);
     }
 
     public function create($type)
@@ -30,7 +30,7 @@ class ComplaintController extends Controller
         $data = BaseUtility::generateForCreate($type);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.subviews.complaint.form", $data);
+        return view("admin.items.views.subviews.room_review.form", $data);
 
     }
 
@@ -42,23 +42,29 @@ class ComplaintController extends Controller
      */
     public function store(Request $request, $type)
     {
-        $validator = Validator::make($request->all(), ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
+
+//        self::checkType($type);
+//        self::checkTables();
+
+//        $ruels = self::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters());
+//        dd($ruels);
+        $validator = Validator::make(
+            $request->all(),
+            ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
         );
         if ($validator->passes()) {
 
+//            dd($request->toArray());
             $received_data = $request->toArray();
+//            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-
-            $r = new Complaint();
+            $r = new RoomReview();
             $r->content = $request->input('content');
             $r->sender = $request->input('sender');
             $r->date = $request->input('date');
-            $r->hotel = $request->input('hotel');
-            $r->reply_to = $request->input('reply_to');
+            $r->rating = $request->input('rating');
             $r->save();
             $r_id = $r->id;
-
-            return response()->json(['success' => 'Added new records.']);
 
 
         }
@@ -96,7 +102,7 @@ class ComplaintController extends Controller
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        return view("admin.items.views.subviews.complaint.form", $data);
+        return view("admin.items.views.subviews.room_review.form", $data);
     }
 
     /**
@@ -121,18 +127,13 @@ class ComplaintController extends Controller
             $received_data = $request->toArray();
 //            $separated_data = self::separateReceivedData($received_data);
             $separated_data = ItemUtility::separateReceivedData($type, $received_data);
-            $r = Complaint::find($id);
+            $r = RoomReview::find($id);
             $r->content = $request->input('content');
             $r->sender = $request->input('sender');
             $r->date = $request->input('date');
-            $r->hotel = $request->input('hotel');
-            $r->reply_to = $request->input('reply_to');
+            $r->rating = $request->input('rating');
             $r->save();
-            $r_id = $r->id;
 
-//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property'], $id);
-
-//            dd($separated_data);
 
             return response()->json(['success' => 'Added new records.']);
         }

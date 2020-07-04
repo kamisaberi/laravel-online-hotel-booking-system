@@ -119,6 +119,7 @@ return [
             'settings'=>'Settings',
             'su'=>'Super Admin',
             'news'=>'News',
+            'reviews'=>'Reviews',
         ],
         'groups' => [
             'rooms' => 'Rooms',

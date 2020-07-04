@@ -61,10 +61,12 @@ class MessageController extends Controller
             $r = new Message();
             $r->content = $request->input('content');
             $r->sender = $request->input('sender');
-            $r->date = $request->input('date');
-            $r->reply_to = $request->input('reply_to');
+            $r->date = $request->input('date') == null ? time() :  $request->input('date') ;
+            $r->reply_to = $request->input('reply_to') == null ? 0 : $request->input('reply_to');
             $r->save();
             $r_id = $r->id;
+
+            return response()->json(['success' => 'Added new records.']);
 
         }
         return response()->json(['error' => $validator->errors()->all()]);
