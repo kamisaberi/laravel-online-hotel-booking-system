@@ -50,7 +50,10 @@
                                                     <tr>
                                                         <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
                                                         <th>
-                                                            title
+                                                            name
+                                                        </th>
+                                                        <th>
+                                                            email
                                                         </th>
                                                         <th>Actions</th>
                                                     </tr>
@@ -62,7 +65,10 @@
                                                                 <input type="checkbox" class="input-chk check">
                                                             </td>
                                                             <td>
-                                                                {{$data->title}}
+                                                                {{$data->name}}
+                                                            </td>
+                                                            <td>
+                                                                {{$data->email}}
                                                             </td>
 
                                                             <td>
@@ -75,7 +81,10 @@
                                                     <tr>
                                                         <th></th>
                                                         <th>
-                                                            title
+                                                            name
+                                                        </th>
+                                                        <th>
+                                                            email
                                                         </th>
 
                                                         <th>Actions</th>
