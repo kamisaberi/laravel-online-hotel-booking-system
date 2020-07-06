@@ -27,17 +27,7 @@
     <!-- End section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
+        @include("public.themes.city_tours.widgets.breadcrumbs")
         <!-- End Position -->
 
         <div class="margin_60 container">
@@ -47,8 +37,7 @@
                 </p>
                 <h2>Madlene - Certified tourist guide</h2>
                 <p class="lead add_bottom_30">
-                    "Eu tota moderatius usu, ad putant aliquando constituam ius, <strong>commodo sententiae</strong> suscipiantur nam eu. Tamquam nominati abhorreant at vis, has id
-                    harum melius petentium. Mea wisi debet omnium ne, est ea graecis noluisse recusabo, denique deterruisset ius et."
+                    {{__("theme.lurem ipsum 1 sentence")}}
                 </p>
             </div>
             <div class="row">

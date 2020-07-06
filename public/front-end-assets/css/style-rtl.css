@@ -878,3 +878,10 @@ a.social_bt.facebook:before, a.social_bt.google:before, a.social_bt.linkedin:bef
     left: inherit;
     right: 12px;
 }
+
+/* MINE*/
+
+.score {
+    float: left;
+}
+

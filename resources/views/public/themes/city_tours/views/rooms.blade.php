@@ -15,25 +15,19 @@
     <section class="parallax-window" data-parallax="scroll" data-image-src="{{asset("front-end-assets/img/hotels_bg.jpg")}}" data-natural-width="1400" data-natural-height="470">
         <div class="parallax-content-1">
             <div class="animated fadeInDown">
-                <h1>Paris Hotels</h1>
-                <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+                <h1>
+                    {{__("theme.rooms")}}
+                </h1>
+                <p>
+                    {{__("theme.lurem ipsum 1 line")}}
+                </p>
             </div>
         </div>
     </section>
     <!-- End section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
+        @include("public.themes.city_tours.widgets.breadcrumbs")
         <!-- Position -->
 
         <div class="collapse" id="collapseMap">
@@ -108,27 +102,27 @@
                                 <ul>
                                     <li>
                                         <label>
-                                            <input type="checkbox">Superb: 9+ (77)
+                                            <input type="checkbox">{{__("theme.superb")}}: 9+ (77)
                                         </label>
                                     </li>
                                     <li>
                                         <label>
-                                            <input type="checkbox">Very good: 8+ (552)
+                                            <input type="checkbox">{{__("theme.Very good")}}: 8+ (552)
                                         </label>
                                     </li>
                                     <li>
                                         <label>
-                                            <input type="checkbox">Good: 7+ (909)
+                                            <input type="checkbox">{{__("theme.good")}}: 7+ (909)
                                         </label>
                                     </li>
                                     <li>
                                         <label>
-                                            <input type="checkbox">Pleasant: 6+ (1196)
+                                            <input type="checkbox">{{__("theme.pleasant")}}: 6+ (1196)
                                         </label>
                                     </li>
                                     <li>
                                         <label>
-                                            <input type="checkbox">No rating (198)
+                                            <input type="checkbox">{{__("theme.no rating")}} (198)
                                         </label>
                                     </li>
                                 </ul>
@@ -204,9 +198,9 @@
                     <!--End filters col-->
                     <div class="box_style_2">
                         <i class="icon_set_1_icon-57"></i>
-                        <h4>Need <span>Help?</span></h4>
+                        <h4><span>{{__("theme.need help")}}</span></h4>
                         <a href="tel://004542344599" class="phone">+45 423 445 99</a>
-                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                        <small>{{__("theme.support time")}}</small>
                     </div>
                 </aside>
                 <!--End aside -->
@@ -259,7 +253,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="tour_list_desc">
-                                        <div class="score">Superb<span>9.0</span>
+                                        <div class="score">{{__("theme.superb")}}<span>9.0</span>
                                         </div>
                                         <div class="rating">
                                             <i class="icon-star voted"></i>

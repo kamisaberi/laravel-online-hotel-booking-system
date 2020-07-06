@@ -48,17 +48,7 @@
     <!-- End Section hero_2 -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
+        @include("public.themes.city_tours.widgets.breadcrumbs")
         <!-- End position -->
 
         <div class="container margin_60">

@@ -26,17 +26,7 @@
     <!-- End Section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
+        @include("public.themes.city_tours.widgets.breadcrumbs")
         <!-- End Position -->
 
         <div class="container margin_60">
@@ -55,14 +45,14 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" id="name_contact" name="name_contact" placeholder="Enter Name">
+                                        <label>{{__("theme.first name")}}</label>
+                                        <input type="text" class="form-control" id="name_contact" name="name_contact" placeholder="{{__("theme.enter name")}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" id="lastname_contact" name="lastname_contact" placeholder="Enter Last Name">
+                                        <label>{{__("theme.last name")}}</label>
+                                        <input type="text" class="form-control" id="lastname_contact" name="lastname_contact" placeholder="{{__("theme.enter last name")}}">
                                     </div>
                                 </div>
                             </div>
@@ -70,22 +60,22 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" id="email_contact" name="email_contact" class="form-control" placeholder="Enter Email">
+                                        <label>{{__("theme.email")}}</label>
+                                        <input type="email" id="email_contact" name="email_contact" class="form-control" placeholder="{{__("theme.enter email")}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Phone</label>
-                                        <input type="text" id="phone_contact" name="phone_contact" class="form-control" placeholder="Enter Phone number">
+                                        <label>{{__("theme.phone")}}</label>
+                                        <input type="text" id="phone_contact" name="phone_contact" class="form-control" placeholder="{{__("theme.enter phone number")}}">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label>Message</label>
-                                        <textarea rows="5" id="message_contact" name="message_contact" class="form-control" placeholder="Write your message"
+                                        <label>{{__("theme.message")}}</label>
+                                        <textarea rows="5" id="message_contact" name="message_contact" class="form-control" placeholder="{{__("theme.write your message")}}"
                                                   style="height:200px;"></textarea>
                                     </div>
                                 </div>
@@ -94,7 +84,8 @@
                                 <div class="col-sm-6">
                                     <label>Human verification</label>
                                     <input type="text" id="verify_contact" class=" form-control add_bottom_30" placeholder="Are you human? 3 + 1 =">
-                                    <input type="submit" value="Submit" class="btn_1" id="submit-contact">
+
+                                    <input type="submit" value="{{__("theme.submit")}}" class="btn_1" id="submit-contact">
                                 </div>
                             </div>
                         </form>

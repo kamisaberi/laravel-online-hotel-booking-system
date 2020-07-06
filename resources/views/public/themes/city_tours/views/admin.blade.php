@@ -27,25 +27,17 @@
     <section class="parallax-window" data-parallax="scroll" data-image-src="{{asset("front-end-assets/img/admin_top.jpg")}}" data-natural-width="1400" data-natural-height="470">
         <div class="parallax-content-1">
             <div class="animated fadeInDown">
-                <h1>Hello Clara!</h1>
-                <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+                <h1>{{__("theme.temp name")}}</h1>
+                <p>
+                    {{__("theme.lurem ipsum 1 line")}}
+                </p>
             </div>
         </div>
     </section>
     <!-- End section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
+        @include("public.themes.city_tours.widgets.breadcrumbs")
         <!-- End Position -->
 
         <div class="margin_60 container">

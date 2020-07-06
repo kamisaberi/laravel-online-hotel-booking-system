@@ -26,25 +26,19 @@
     <section class="parallax-window" data-parallax="scroll" data-image-src="{{asset("front-end-assets/img/bg_blog.jpg")}}" data-natural-width="1400" data-natural-height="470">
         <div class="parallax-content-1">
             <div class="animated fadeInDown">
-                <h1>Tour Blog</h1>
-                <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+                <h1>
+                    {{__("theme.news")}}
+                </h1>
+                <p>
+                    {{__("theme.lurem ipsum 1 line")}}
+                </p>
             </div>
         </div>
     </section>
     <!-- End section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
+        @include("public.themes.city_tours.widgets.breadcrumbs")
         <!-- End position -->
 
         <div class="container margin_60">
@@ -116,7 +110,7 @@
 
                     <div class="widget">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search...">
+                            <input type="text" class="form-control" placeholder="{{__("theme.search...")}}">
                             <span class="input-group-btn">
 						<button class="btn btn-default" type="button" style="margin-left:0;"><i class="icon-search"></i></button>
 						</span>
@@ -126,7 +120,9 @@
                     <!-- End Search -->
                     <hr>
                     <div class="widget" id="cat_blog">
-                        <h4>Categories</h4>
+                        <h4>
+                            {{__("theme.categories")}}
+                        </h4>
                         <ul>
                             <li><a href="#">Places to visit</a>
                             </li>
@@ -143,21 +139,29 @@
                     <hr>
 
                     <div class="widget">
-                        <h4>Recent post</h4>
+                        <h4>
+                            {{__("theme.recent post")}}
+                        </h4>
                         <ul class="recent_post">
                             <li>
-                                <i class="icon-calendar-empty"></i> 16th July, 2020
-                                <div><a href="#">It is a long established fact that a reader will be distracted </a>
+                                <i class="icon-calendar-empty"></i>{{__("theme.temp date")}}
+                                <div><a href="#">
+                                        {{__("theme.lurem ipsum short")}}
+                                    </a>
                                 </div>
                             </li>
                             <li>
-                                <i class="icon-calendar-empty"></i> 16th July, 2020
-                                <div><a href="#">It is a long established fact that a reader will be distracted </a>
+                                <i class="icon-calendar-empty"></i>{{__("theme.temp date")}}
+                                <div><a href="#">
+                                        {{__("theme.lurem ipsum short")}}
+                                    </a>
                                 </div>
                             </li>
                             <li>
-                                <i class="icon-calendar-empty"></i> 16th July, 2020
-                                <div><a href="#">It is a long established fact that a reader will be distracted </a>
+                                <i class="icon-calendar-empty"></i> {{__("theme.temp date")}}
+                                <div><a href="#">
+                                        {{__("theme.lurem ipsum short")}}
+                                    </a>
                                 </div>
                             </li>
                         </ul>

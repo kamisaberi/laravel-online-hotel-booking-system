@@ -195,7 +195,9 @@
                 </ul>
             </div>
             <div class="col-md-3">
-                <h3>Discover</h3>
+                <h3>
+                    {{__("theme.discover")}}
+                </h3>
                 <ul>
                     <li><a href="#">{{__('theme.community blog')}}</a></li>
                     <li><a href="#">{{__('theme.tour guide')}}</a></li>
@@ -204,7 +206,9 @@
                 </ul>
             </div>
             <div class="col-md-2">
-                <h3>Settings</h3>
+                <h3>
+                    {{__("theme.settings")}}
+                </h3>
                 <div class="styled-select">
                     <select name="lang" id="lang">
                         <option value="English" selected>{{__('theme.english')}}</option>
@@ -263,7 +267,9 @@
         <div class="sign-in-wrapper">
             <a href="#0" class="social_bt facebook">{{__('theme.login with facebook')}}</a>
             <a href="#0" class="social_bt google">{{__('theme.login with google')}}</a>
-            <div class="divider"><span>Or</span></div>
+            <div class="divider"><span>
+                    {{__("theme.or")}}
+                </span></div>
             <div class="form-group">
                 <label>{{__('theme.email')}}</label>
                 <input type="email" class="form-control" name="email" id="email">
@@ -281,7 +287,9 @@
                 </div>
                 <div class="float-right"><a id="forgot" href="javascript:void(0);">{{__('theme.forgot password')}}</a></div>
             </div>
-            <div class="text-center"><input type="submit" value="Log In" class="btn_login"></div>
+            <div class="text-center">
+                <input type="submit" value="{{__("theme.login")}}" class="btn_login">
+            </div>
             <div class="text-center">
                 {{__('theme.don’t have an account')}}
                 <a href="javascript:void(0);">{{__('theme.sign up')}}</a>

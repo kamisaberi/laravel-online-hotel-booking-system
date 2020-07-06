@@ -45,17 +45,11 @@ Route::get('/', 'HomeController@index')->name('home.index');
 Route::any('/services/resume/{type}/{step?}/{refer?}', 'Service\ServiceController@resumeService')->name('home.services.resume');
 Route::any('/services/{type}/{step?}/{refer?}', 'Service\ServiceController@launchService')->name('home.services.launch');
 
-Route::get('/items/{type}', 'HomeController@showItems')->name('home.item.all');
-Route::get('/items/{type}/{id}', 'HomeController@showItem')->name('home.item.show');
-
-
 Route::get('/rooms', 'HomeController@showRooms')->name('home.room.all');
 Route::get('/rooms/{id}', 'HomeController@showRoom')->name('home.room.show');
 
-
 Route::get('/news', 'HomeController@showNewses')->name('home.news.all');
 Route::get('/news/{id}', 'HomeController@showNews')->name('home.news.show');
-
 
 Route::get('/galleries', 'HomeController@showGalleries')->name('home.gallery.all');
 Route::get('/galleries/{id}', 'HomeController@showGallery')->name('home.gallery.show');
@@ -66,7 +60,6 @@ Route::post('/complaints', 'HomeController@sendComplaint')->name('home.complaint
 Route::get('/contact', 'HomeController@sendContact')->name('home.contact');
 Route::post('/contact', 'HomeController@sendContact')->name('home.contact');
 
-
 Route::get('/faq', 'HomeController@faq')->name('home.faq');
 Route::get('/about', 'HomeController@about')->name('home.about');
 
@@ -75,10 +68,9 @@ Route::get('/cart', 'HomeController@cart')->name('home.cart');
 Route::get('/checkout', 'HomeController@checkout')->name('home.checkout');
 Route::get('/confirmation', 'HomeController@confirmation')->name('home.confirmation');
 
-
-
-
 Route::get('/page/{id}', 'HomeController@showPage')->name('home.page.show');
+
+
 
 
 Route::get('/booking/start/{room}', 'HomeController@startBooking')->name('home.booking.start');

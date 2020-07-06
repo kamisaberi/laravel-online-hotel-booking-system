@@ -91,6 +91,7 @@ return [
     'lurem ipsum 1 sentence'=>"Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.",
 
     'lurem ipsum 1 paragraph'=>"Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.",
+    'lurem ipsum 2 paragraph'=>"Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.",
 
 
 
@@ -128,7 +129,44 @@ return [
     'finish' => 'Finish!',
     'address' => 'Address',
     'help center' => 'Help center',
+    'gallery page' => 'GALLERY PAGE',
+    'settings' => 'Settings',
+    'discover' => 'Discover',
+    "frequently questions" => "Frequently questions",
+    "payments" => "Payments",
+    "suggestions and tips" => "Suggestions and tips",
 
+
+
+    "superb"=>"Superb",
+    "Very good"=>"Very good",
+    "good"=>"Good",
+    "pleasant"=>"Pleasant",
+    "no rating"=>"No rating",
+    "book by phone"=>"Book by phone",
+    "check now"=>"Check now",
+    "add to whislist"=>"Add to whislist",
+    "check availability"=>"Check Availability",
+    "view on map"=>"View on map",
+    "rooms types"=>"Rooms Types",
+    "single room"=>"Single Room",
+    "double room"=>"Double Room",
+    "or"=>"Or",
+    "news"=>"News",
+    "categories"=>"Categories",
+    "recent post"=>"Recent post",
+    "submit"=>"Submit",
+
+    "first name"=>"First Name",
+    "last name"=>"Last Name",
+    "phone"=>"Phone",
+    "message"=>"Message",
+
+    "enter name"=>"Enter Name",
+    "enter last name"=>"Enter Last Name",
+    "enter phone number"=>"Enter Phone Number",
+    "enter email"=>"Enter Email",
+    "write your message"=>"Write Your Message",
 
 
 
@@ -137,6 +175,11 @@ return [
 
     "support time" => "Monday to Friday 9.00am - 7.30pm",
     "temp address" => "Place Charles de Gaulle, 75008 Paris",
+    "temp date" => "10 March 2015",
+    "temp hotel" => "Mariott Hotel",
+    "temp name" => "Hello Clara!",
+    "page active" => "Page active",
+
 
 
 

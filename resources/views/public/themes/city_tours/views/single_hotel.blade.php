@@ -35,18 +35,8 @@
     <!-- End section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
-        <!-- End Position -->
+    @include("public.themes.city_tours.widgets.breadcrumbs")
+    <!-- End Position -->
 
         <div class="collapse" id="collapseMap">
             <div id="map" class="map"></div>

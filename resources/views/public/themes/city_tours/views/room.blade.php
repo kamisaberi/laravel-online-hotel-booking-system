@@ -20,8 +20,8 @@
                     <div class="col-md-8">
                     <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i
                             class=" icon-star-empty"></i></span>
-                        <h1>Mariott Hotel</h1>
-                        <span>Champ de Mars, 5 Avenue Anatole, 75007 Paris.</span>
+                        <h1>{{__("theme.temp hotel")}}</h1>
+                        <span>{{__("theme.temp address")}}</span>
                     </div>
                     <div class="col-md-4">
                         <div id="price_single_main" class="hotel">
@@ -35,18 +35,9 @@
     <!-- End section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
-        <!-- End Position -->
+    @include("public.themes.city_tours.widgets.breadcrumbs")
+
+    <!-- End Position -->
 
         <div class="collapse" id="collapseMap">
             <div id="map" class="map"></div>
@@ -67,8 +58,11 @@
                             <li><i class="icon_set_1_icon-27"></i>Parking</li>
                         </ul>
                     </div>
-                    <p class="d-none d-md-block d-block d-lg-none"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false"
-                                                                      aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+                    <p class="d-none d-md-block d-block d-lg-none">
+                        <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map"
+                           data-text-original="View on map">
+                            {{__("theme.view on map")}}
+                        </a>
                     </p>
                     <!-- Map button for tablets/mobiles -->
                     <div id="Img_carousel" class="slider-pro">
@@ -252,10 +246,10 @@
 
                     <div class="row">
                         <div class="col-lg-3">
-                            <h3>Rooms Types</h3>
+                            <h3>{{__("theme.rooms types")}}</h3>
                         </div>
                         <div class="col-lg-9">
-                            <h4>Single Room</h4>
+                            <h4>{{__("theme.single room")}}</h4>
                             <p>
                                 {{__('theme.lurem ipsum 1 sentence')}}
                             </p>
@@ -303,7 +297,7 @@
 
                             <hr>
 
-                            <h4>Double Room</h4>
+                            <h4>{{__("theme.double room")}}</h4>
                             <p>
                                 {{__('theme.lurem ipsum 1 sentence')}}
                             </p>
@@ -402,7 +396,7 @@
                             <hr>
                             <div class="review_strip_single">
                                 <img src="{{asset("front-end-assets/img/avatar1.jpg")}}" alt="Image" class="rounded-circle">
-                                <small> - 10 March 2015 -</small>
+                                <small> - {{__("theme.temp date")}} -</small>
                                 <h4>Jhon Doe</h4>
                                 <p>
                                     "{{__("theme.lurem ipsum 1 paragraph")}}"
@@ -416,7 +410,7 @@
 
                             <div class="review_strip_single">
                                 <img src="{{asset("front-end-assets/img/avatar2.jpg")}}" alt="Image" class="rounded-circle">
-                                <small> - 10 March 2015 -</small>
+                                <small> - {{__("theme.temp date")}} -</small>
                                 <h4>Jhon Doe</h4>
                                 <p>
                                     "{{__("theme.lurem ipsum 1 paragraph")}}"
@@ -430,7 +424,7 @@
 
                             <div class="review_strip_single last">
                                 <img src="{{asset("front-end-assets/img/avatar3.jpg")}}" alt="Image" class="rounded-circle">
-                                <small> - 10 March 2015 -</small>
+                                <small> - {{__("theme.temp date")}} -</small>
                                 <h4>Jhon Doe</h4>
                                 <p>
                                     "{{__("theme.lurem ipsum 1 paragraph")}}"
@@ -449,28 +443,29 @@
                 <aside class="col-lg-4">
                     <p class="d-none d-xl-block d-lg-block d-xl-none">
                         <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map"
-                           data-text-original="View on map">View on map</a>
+                           data-text-original="View on map">{{__("theme.view on map")}}</a>
                     </p>
                     <div class="box_style_1 expose">
-                        <h3 class="inner">Check Availability</h3>
+                        <h3 class="inner">{{__("theme.check availability")}}</h3>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label><i class="icon-calendar-7"></i> Check in</label>
+                                    <label><i class="icon-calendar-7"></i> {{__("theme.check in")}}</label>
                                     <input class="date-pick form-control" data-date-format="M d, D" type="text">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label><i class="icon-calendar-7"></i> Check out</label>
+                                    <label><i class="icon-calendar-7"></i> {{__("theme.check out")}}</label>
                                     <input class="date-pick form-control" data-date-format="M d, D" type="text">
                                 </div>
+                                ch
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>Adults</label>
+                                    <label>{{__("theme.adults")}}</label>
                                     <div class="numbers-row">
                                         <input type="text" value="1" id="adults" class="qty2 form-control" name="quantity">
                                     </div>
@@ -478,7 +473,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label>Children</label>
+                                    <label>{{__("theme.children")}}</label>
                                     <div class="numbers-row">
                                         <input type="text" value="0" id="children" class="qty2 form-control" name="quantity">
                                     </div>
@@ -487,16 +482,16 @@
                         </div>
                         <br>
 
-                        <a class="btn_full" href="#">Check now</a>
-                        <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
+                        <a class="btn_full" href="#">{{__("theme.check now")}}</a>
+                        <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> {{__("theme.add to whislist")}}</a>
                     </div>
                     <!--/box_style_1 -->
 
                     <div class="box_style_4">
                         <i class="icon_set_1_icon-90"></i>
-                        <h4><span>Book</span> by phone</h4>
+                        <h4><span>{{__("theme.book by phone")}}</span></h4>
                         <a href="tel://004542344599" class="phone">+45 423 445 99</a>
-                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                        <small>{{__("theme.support time")}}</small>
                     </div>
 
                 </aside>

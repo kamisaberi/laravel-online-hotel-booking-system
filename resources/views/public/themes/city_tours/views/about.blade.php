@@ -30,17 +30,8 @@
     <!-- End Section -->
 
     <main>
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Category</a>
-                    </li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div>
+        @include("public.themes.city_tours.widgets.breadcrumbs")
+
         <!-- End Position -->
 
         <div class="container margin_60">
@@ -56,8 +47,7 @@
                         <i class="icon_set_1_icon-30"></i>
                         <h3><span>+ 1000</span> Customers</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex,
-                            appareat similique an usu.
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                     </div>
                 </div>
@@ -66,8 +56,7 @@
                         <i class="icon_set_1_icon-41"></i>
                         <h3><span>+120</span> Premium city tours</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex,
-                            appareat similique an usu.
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                     </div>
                 </div>
@@ -79,8 +68,7 @@
                         <i class="icon_set_1_icon-57"></i>
                         <h3><span>H24</span> Support</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex,
-                            appareat similique an usu.
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                     </div>
                 </div>
@@ -89,8 +77,7 @@
                         <i class="icon_set_1_icon-61"></i>
                         <h3><span>10 Languages</span> available</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex,
-                            appareat similique an usu.
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                     </div>
                 </div>
@@ -102,8 +89,7 @@
                         <i class="icon_set_1_icon-13"></i>
                         <h3><span>Accesibility</span> managment</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex,
-                            appareat similique an usu.
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                     </div>
                 </div>
@@ -112,8 +98,7 @@
                         <i class="icon_set_1_icon-22"></i>
                         <h3><span>Pet</span> allowed</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex,
-                            appareat similique an usu.
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                     </div>
                 </div>
@@ -123,8 +108,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h4>Pertinax elaboraret sed</h4>
-                    <p>Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut <a href="#">utamur antiopam inciderint</a> sed. Ut iriure perpetua
-                        voluptaria has, vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at. </p>
+                    <p>
+                        {{__("theme.lurem ipsum 1 sentence")}}
+                    </p>
                     <div class="general_icons">
                         <ul>
                             <li><i class="icon_set_1_icon-59"></i>Breakfast</li>
@@ -136,8 +122,10 @@
                 </div>
                 <div class="col-lg-6">
                     <h4>Mel at vide soluta</h4>
-                    <p>Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut <strong>utamur antiopam inciderint</strong> sed. Ut iriure perpetua voluptaria has,
-                        vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at. </p>
+                    <p>
+                        {{__("theme.lurem ipsum 1 sentence")}}
+
+                    </p>
                     <div class="general_icons">
                         <ul>
                             <li><i class="icon_set_1_icon-98"></i>Audio guide</li>
@@ -162,8 +150,9 @@
                 <div class="col-lg-6 nopadding">
                     <div class="features-content">
                         <h3>"Ex vero mediocrem"</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada
-                            fames ac ante ipsum primis in faucibus.</p>
+                        <p>
+                            {{__("theme.lurem ipsum 1 sentence")}}
+                        </p>
                         <p><a href="#" class=" btn_1 white">Read more</a>
                         </p>
                     </div>
@@ -176,7 +165,10 @@
 
             <div class="main_title">
                 <h2>What <span>customers </span>says</h2>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+                <p>
+                    {{__("theme.lurem ipsum 1 line")}}
+
+                </p>
             </div>
 
             <div class="row">
@@ -185,8 +177,7 @@
                         <img src="{{asset("front-end-assets/img/avatar1.jpg")}}" alt="Image" class="rounded-circle">
                         <h4>Jhon Doe</h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada
-                            fames ac ante ipsum primis in faucibus."
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                         <div class="rating">
                             <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i
@@ -201,8 +192,7 @@
                         <img src="{{asset("front-end-assets/img/avatar2.jpg")}}" alt="Image" class="rounded-circle">
                         <h4>Frank Rosso</h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada
-                            fames ac ante ipsum primis in faucibus."
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                         <div class="rating">
                             <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i
@@ -219,8 +209,7 @@
                         <img src="{{asset("front-end-assets/img/avatar3.jpg")}}" alt="Image" class="rounded-circle">
                         <h4>Marc twain</h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada
-                            fames ac ante ipsum primis in faucibus."
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                         <div class="rating">
                             <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i
@@ -235,8 +224,7 @@
                         <img src="{{asset("front-end-assets/img/avatar1.jpg")}}" alt="Image" class="rounded-circle">
                         <h4>Peter Gabriel</h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada
-                            fames ac ante ipsum primis in faucibus."
+                            {{__("theme.lurem ipsum 1 sentence")}}
                         </p>
                         <div class="rating">
                             <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i
@@ -257,7 +245,7 @@
                 <div class="col-md-6">
                     <h3><span>Get started</span> with CityTours</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                        {{__("theme.lurem ipsum 1 line")}}
                     </p>
                     <ul class="list_order">
                         <li><span>1</span>Select your preferred tours</li>
