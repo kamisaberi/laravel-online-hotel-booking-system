@@ -2,9 +2,784 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/assets/contact.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/assets/newsletter.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/assets/review_restaurant.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/assets/review_tour.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/assets/review_transfer.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/assets/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/admin-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/blog-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/bootstrap-rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/extralayers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/finaltilesgallery.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_1.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_1.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_2.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_2.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/fontello/font/icon_set_2.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/icon_restaurant/fonts/Glyphter.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/icon_restaurant/fonts/Glyphter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/icon_restaurant/fonts/Glyphter.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/icon_restaurant/fonts/Glyphter.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/images/blank.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/images/closedhand.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/images/openhand.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/lightbox2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/ElegantIcons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/ElegantIcons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/ElegantIcons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/ElegantIcons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/Pe-icon-7-stroke.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/Pe-icon-7-stroke.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/Pe-icon-7-stroke.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/new_icons/font/Pe-icon-7-stroke.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/owl.video.play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/shop-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/shop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/src/datedropper.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/src/datedropper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/src/datedropper.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/src/datedropper.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/style-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/timeline-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/timeline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/css/vendors.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-bold-fd-wl.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-bold-fd-wl.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-bold-fd-wl.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-bold-fd-wl.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-fd-wl.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-fd-wl.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-fd-wl.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/fonts/vazir/vazir-fd-wl.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/admin_top.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/adventure_icon_1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/adventure_icon_2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/adventure_icon_3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/apple-touch-icon-114x114-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/apple-touch-icon-144x144-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/apple-touch-icon-57x57-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/apple-touch-icon-72x72-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/arrow_down_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/avatar1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/avatar2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/avatar3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/badge_save.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/bag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/banner_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/banner_bg_colored.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/banner_bg_desktop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/bg_blog.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/bg_login.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/blog-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/blog-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/blog-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/bus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/cards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/carousel/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/carousel/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/carousel/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/carousel/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/credit-card-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/down_arrow_select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/down_arrow_select_filters.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/drag_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/features-intro-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/footergallery1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/footergallery2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/footergallery3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/footergallery4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/footergallery5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/footergallery6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/gallery_grid/grid_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/grey@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/guide.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/guide_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/guide_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/header_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hero_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/home_bg_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/home_bg_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotel_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotel_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotel_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotel_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotel_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotel_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/hotels_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/icon_ccv.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/img_cat_home_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/img_cat_home_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/img_cat_home_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/img_cat_home_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/lang_de.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/lang_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/lang_es.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/lang_fr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/laptop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/logo (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/logo_2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/logo_sticky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/logo_sticky_2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/logo_sticky_colored.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/logo_sticky_colored_2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/minus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/news_home_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/news_home_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/news_home_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/news_home_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/notredame.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/pattern_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/pattern_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/pattern_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/payments.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/paypal_bt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/post-thumb-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/post-thumb-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/post-thumb-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/image-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/image-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/image-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/image-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/image-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/image-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/thumb-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/thumb-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/products/thumb-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_box_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_top.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/restaurant_top_in.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/ribbon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/ribbon_popular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/ribbon_top_rated.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/search-bt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/senna.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/shadow-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/single_hotel_bg_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/single_tour_bg_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slide_hero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slide_hero_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/1_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/2_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/3_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/4_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/5_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/6_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/7_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/8_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slider_single_tour/9_medium.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides/slide_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides/slide_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides/slide_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides/slide_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides/slide_home_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides/slide_home_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides/slide_home_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides_bg/dummy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/slides_bg/slide_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/sprite-skin-flat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tape.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_cart_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_cart_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_cart_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/thumb_home_tabs_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tour_box_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tourist_guide.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/tourist_guide_pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/transfer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/transfer_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/transfer_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/transfer_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/transfer_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/transfer_top.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/img/twitter_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/bootstrap-timepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/cat_nav_mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/common_scripts_min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/datepicker_advanced.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/infobox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/input_qty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/isotope.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery-2.2.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.bxslider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.cookiebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.ddslick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.finaltilesgallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.selectbox-0.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.simpleWeather.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.sliderPro.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.tweet.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/lightbox2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_full_page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_hotels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_listing_hotels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_listing_restaurants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_listing_tours.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_restaurants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_single_restaurant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/map_transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/modernizr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/morphext.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/notify_func.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/pop_up.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/pop_up_func.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/pw_strenght.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/revolution_func.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/switcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/theia-sticky-sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/js/video_header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/layerslider/css/layerslider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/layerslider/js/greensock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/layerslider/js/layerslider.kreaturamedia.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/layerslider/js/layerslider.transitions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/bg_footer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/blog_post.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/blog_post_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/fb_bt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/google_pl_bt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/green_line.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/hotel_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/hotel_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/hotel_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/hotel_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/icon_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/icon_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/icon_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/icon_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/img_large_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/img_large_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/logo_small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/main_banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/tour_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/tour_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/img/twitter_bt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/newsletter_template/newsletter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/bluebar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/blurflake1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/blurflake2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/blurflake3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/blurflake4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/iceberg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/newspaper_bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/newspaper_bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/newspaper_bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/notgeneric_bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/notgeneric_bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/notgeneric_bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/notgeneric_bg5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/transparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/travel1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/travel2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/travel3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/travel4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/vimeobg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/assets/youtubebg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/css/settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/fonts/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.kenburn.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.migration.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.navigation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.parallax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.slideanims.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/extensions/revolution.extension.video.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/jquery.themepunch.revolution.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rev-slider-files/js/jquery.themepunch.tools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rs-plugin/css/settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rs-plugin/js/jquery.themepunch.revolution.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/rs-plugin/js/jquery.themepunch.tools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/assets/newsletter.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/assets/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/fontello/css/animation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/fontello/css/fontello.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/apple-touch-icon-114x114-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/apple-touch-icon-144x144-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/apple-touch-icon-57x57-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/apple-touch-icon-72x72-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/slide_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/slide_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/img/slide_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/js/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/js/jquery-2.2.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/js/jquery.animate-enhanced.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/js/jquery.easing.1.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/js/jquery.superslides.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/ltr/site_launch/js/retina.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/assets/contact.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/assets/newsletter.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/assets/review_hotel.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/assets/review_restaurant.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/assets/review_transfer.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/assets/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/bootstrap-timepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/cat_nav_mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/common_scripts_min_rtl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/datepicker_advanced.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/functions_rtl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/infobox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/input_qty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/isotope.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery-2.2.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.bxslider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.cookiebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.ddslick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.finaltilesgallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.selectbox-0.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.sliderPro.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.tweet.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/lightbox2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_full_page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_hotels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_listing_hotels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_listing_restaurants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_listing_tours.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_restaurants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_single_restaurant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/map_transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/modernizr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/morphext.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/notify_func.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/pop_up.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/pop_up_func.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/pw_strenght.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/revolution_func.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/theia-sticky-sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/js/video_header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/layerslider/css/layerslider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/layerslider/js/greensock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/layerslider/js/layerslider.kreaturamedia.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/layerslider/js/layerslider.transitions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/bg_footer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/blog_post.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/blog_post_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/fb_bt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/google_pl_bt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/green_line.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/hotel_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/hotel_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/hotel_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/hotel_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/icon_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/icon_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/icon_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/icon_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/img_large_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/img_large_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/logo_small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/main_banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/tour_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/tour_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/img/twitter_bt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/newsletter_template/newsletter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/bluebar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/blurflake1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/blurflake2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/blurflake3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/blurflake4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/iceberg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/newspaper_bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/newspaper_bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/newspaper_bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/notgeneric_bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/notgeneric_bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/notgeneric_bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/notgeneric_bg5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/transparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/travel1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/travel2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/travel3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/travel4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/vimeobg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/assets/youtubebg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/css/settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/fonts/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.kenburn.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.migration.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.navigation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.parallax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.slideanims.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/extensions/revolution.extension.video.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/jquery.themepunch.revolution.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rev-slider-files/js/jquery.themepunch.tools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rs-plugin/css/settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rs-plugin/js/jquery.themepunch.revolution.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/rs-plugin/js/jquery.themepunch.tools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/assets/newsletter.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/assets/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/fontello/css/animation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/fontello/css/fontello.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/apple-touch-icon-114x114-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/apple-touch-icon-144x144-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/apple-touch-icon-57x57-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/apple-touch-icon-72x72-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/slide_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/slide_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/img/slide_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/js/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/js/jquery-2.2.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/js/jquery.animate-enhanced.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/js/jquery.easing.1.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/js/jquery.superslides.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front-end-assets/rtl/site_launch/js/retina.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/theme.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/theme.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/fa/theme.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/layout/public.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/about.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/admin.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/all_hotels_grid.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/all_hotels_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/card_hotel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/complaint.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/confirmation_hotel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/contact_us.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/faq.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/galleries.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/gallery.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/index1.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/new/empty.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/news.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/newses.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/payment_hotel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/room.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/rooms.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/single_hotel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/temp/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/temp/rooms.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/timeline.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/tourist_guide.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/layout/public.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_hotels_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_hotels_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_hotels_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_hotels_map_listing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_restaurants_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_restaurants_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_restaurants_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_restaurants_map_listing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_tours_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_tours_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_tours_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_tours_map_listing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_transfer_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_transfer_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/all_transfer_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/blog_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/blog_post_right_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/blog_right_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/cart_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/cart_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/cart_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/citytours.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/confirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/confirmation_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/confirmation_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/confirmation_restaurant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/confirmation_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/contact_us_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/contact_us_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/faq.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/faq_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/footer_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/footer_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/footer_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/footer_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/footer_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/footer_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/gallery_3_columns.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/gallery_4_columns.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/general_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/grid_gallery_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/grid_gallery_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/header_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/header_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/header_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/header_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/header_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/header_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/icon_pack_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/icon_pack_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/icon_pack_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/icon_pack_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/icon_pack_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_22.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_23.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_24.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/index_9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/invoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/page_with_map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/payment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/payment_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/payment_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/payment_restaurant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/payment_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/pricing_tables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/shop-single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/shop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/shopping-cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/shortcodes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_hotel_contact.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_hotel_datepicker_adv.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_hotel_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_hotel_working_booking.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_restaurant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_restaurant_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_tour.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_tour_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_tour_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_tour_with_gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_tour_with_gallery_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_tour_working_booking.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/single_transfer_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/timeline.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/tourist_guide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/ltr/wishlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_hotels_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_hotels_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_hotels_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_hotels_map_listing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_restaurants_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_restaurants_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_restaurants_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_restaurants_map_listing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_tours_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_tours_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_tours_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_tours_map_listing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_transfer_grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_transfer_grid_masonry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/all_transfer_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/blog_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/blog_post_right_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/blog_right_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/cart_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/cart_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/cart_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/confirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/confirmation_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/confirmation_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/confirmation_restaurant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/confirmation_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/contact_us_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/contact_us_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/faq.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/faq_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/footer_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/footer_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/footer_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/footer_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/footer_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/footer_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/gallery_3_columns.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/gallery_4_columns.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/general_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/grid_gallery_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/grid_gallery_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/header_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/header_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/header_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/header_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/header_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/header_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/html_rtl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/icon_pack_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/icon_pack_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/icon_pack_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/icon_pack_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/icon_pack_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_22.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_23.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_24.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/index_9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/invoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/page_with_map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/payment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/payment_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/payment_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/payment_restaurant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/payment_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/pricing_tables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/shop-single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/shop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/shopping-cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/shortcodes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_hotel_contact.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_hotel_datepicker_adv.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_hotel_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_hotel_working_booking.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_restaurant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_restaurant_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_tour.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_tour_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_tour_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_tour_with_gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_tour_with_gallery_fixed_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_tour_working_booking.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/single_transfer_datepicker_v2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/timeline.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/tourist_guide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/rtl/wishlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/all_hotels_grid.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/all_hotels_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/all_rooms_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/card_hotel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/confirmation_hotel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/index1.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/payment_hotel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/temp/city_tours/views/single_hotel.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa/city_tours/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa/city_tours/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa/city_tours/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa/city_tours/rtl/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/aa/city_tours/rtl/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa/city_tours/rtl/index_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/aa/city_tours/rtl/index_7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,25 +1023,25 @@
     <property name="add_unversioned_files" value="true" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/public/themes/city_tours/views" />
     <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../../Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\admin\to_delete" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\admin\items\views\subviews\website" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\admin\items\views\subviews\video" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\admin\items\views\subviews\user" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\admin\items\views\subviews\slide" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\city_tours\views" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\city_tours\views\new" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\temp\city_tours\views\new" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\city_tours" />
+      <recent name="C:\xampp\htdocs\online-hotel\public\front-end-assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\online-hotel" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\admin\items\views\subviews" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\views\admin\components" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\lang\ar" />
-      <recent name="C:\xampp\htdocs\online-hotel\resources\lang\fa" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\city_tours\views" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\public\themes\city_tours\views\temp" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\temp\city_tours\views\new" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\temp\city_tours\views" />
+      <recent name="C:\xampp\htdocs\online-hotel\resources\views\temp\city_tours" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -1360,7 +2135,9 @@
       <workItem from="1592775231084" duration="12152000" />
       <workItem from="1592870594186" duration="16278000" />
       <workItem from="1592970577348" duration="19617000" />
-      <workItem from="1593804794249" duration="17276000" />
+      <workItem from="1593804794249" duration="49046000" />
+      <workItem from="1593981709002" duration="11324000" />
+      <workItem from="1594027888091" duration="22635000" />
     </task>
     <servers />
   </component>
@@ -1388,30 +2165,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593851624525" />
-    <state x="60" y="25" width="1736" height="856" key="DiffContextDialog" timestamp="1592451932505">
+    <state x="60" y="25" width="1736" height="856" key="DiffContextDialog" timestamp="1593892467306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="60" y="25" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592451932505" />
+    <state x="60" y="25" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593892467306" />
     <state x="1045" y="235" key="FileChooserDialogImpl" timestamp="1592460506071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1045" y="235" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592460506071" />
-    <state x="795" y="442" key="NewPhpFileDialog" timestamp="1592984040174">
+    <state x="795" y="442" key="NewPhpFileDialog" timestamp="1594028038355">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="795" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592984040174" />
+    <state x="795" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594028038355" />
     <state x="35" y="73" key="SettingsEditor" timestamp="1592546557831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="35" y="73" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592546557831" />
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592983451809">
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594052562429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592983451809" />
-    <state x="206" y="102" width="1114" height="801" key="find.popup" timestamp="1592886389103">
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594052562429" />
+    <state x="206" y="102" width="1114" height="801" key="find.popup" timestamp="1593943747002">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="206" y="102" width="1114" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592886389103" />
+    <state x="206" y="102" width="1114" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593943747002" />
     <state x="616" y="161" width="672" height="676" key="search.everywhere.popup" timestamp="1592777810030">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

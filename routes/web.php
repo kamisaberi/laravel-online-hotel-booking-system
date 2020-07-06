@@ -14,6 +14,13 @@ use Spatie\Sitemap\SitemapGenerator;
 use PragmaRX\Tracker\Vendor\Laravel\Facade as Tracker;
 
 
+Route::get('city_tours/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    return view("temp.city_tours.pages.confirmation_hotel") ;
+});
+
+
+
 Route::get('locale/{locale}', function ($locale) {
     Session::put('locale', $locale);
 //    app()->setLocale($locale);
@@ -34,7 +41,7 @@ Route::get('/logout', 'CustomAuth\AuthController@logout')->name('auth.logout');
 //**********AUTH
 
 Route::get('/', 'HomeController@index')->name('home.index');
-Route::get('/home', 'HomeController@index2')->name('home.index2');
+//Route::get('/home', 'HomeController@index2')->name('home.index2');
 Route::any('/services/resume/{type}/{step?}/{refer?}', 'Service\ServiceController@resumeService')->name('home.services.resume');
 Route::any('/services/{type}/{step?}/{refer?}', 'Service\ServiceController@launchService')->name('home.services.launch');
 
@@ -45,6 +52,7 @@ Route::get('/items/{type}/{id}', 'HomeController@showItem')->name('home.item.sho
 Route::get('/rooms', 'HomeController@showRooms')->name('home.room.all');
 Route::get('/rooms/{id}', 'HomeController@showRoom')->name('home.room.show');
 
+
 Route::get('/news', 'HomeController@showNewses')->name('home.news.all');
 Route::get('/news/{id}', 'HomeController@showNews')->name('home.news.show');
 
@@ -52,12 +60,22 @@ Route::get('/news/{id}', 'HomeController@showNews')->name('home.news.show');
 Route::get('/galleries', 'HomeController@showGalleries')->name('home.gallery.all');
 Route::get('/galleries/{id}', 'HomeController@showGallery')->name('home.gallery.show');
 
+Route::get('/complaints', 'HomeController@sendComplaint')->name('home.complaint');
+Route::post('/complaints', 'HomeController@sendComplaint')->name('home.complaint');
 
-Route::get('/complaints/send', 'HomeController@sendComplaint')->name('home.complaint.send');
-Route::post('/complaints/send', 'HomeController@sendComplaint')->name('home.complaint.send');
+Route::get('/contact', 'HomeController@sendContact')->name('home.contact');
+Route::post('/contact', 'HomeController@sendContact')->name('home.contact');
 
-Route::get('/contact/send', 'HomeController@sendContact')->name('home.contact.send');
-Route::post('/contact/send', 'HomeController@sendContact')->name('home.contact.send');
+
+Route::get('/faq', 'HomeController@faq')->name('home.faq');
+Route::get('/about', 'HomeController@about')->name('home.about');
+
+
+Route::get('/cart', 'HomeController@cart')->name('home.cart');
+Route::get('/checkout', 'HomeController@checkout')->name('home.checkout');
+Route::get('/confirmation', 'HomeController@confirmation')->name('home.confirmation');
+
+
 
 
 Route::get('/page/{id}', 'HomeController@showPage')->name('home.page.show');

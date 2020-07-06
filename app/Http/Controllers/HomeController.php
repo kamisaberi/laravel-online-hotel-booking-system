@@ -47,26 +47,38 @@ class HomeController extends Controller
 
     public function index()
     {
-        $data = BaseController::createBaseInformations();
-        self::getBaseInformation($data);
-        $data['navigations'] = NavigationController::getNavigation('index');
-//        $data ['datas'] = DocumentController::getItems3('main-slide-show');
-        return view('public.themes.hotel-new.views.index', $data);
-
-    }
-
-    public function index2()
-    {
 
         $data = BaseController::createBaseInformations();
-
         self::getBaseInformation($data);
-
         $data['home_page_middle_navigations'] = NavigationController::getNavigation('home-page-middle');
         $data['rooms'] = App\Room::all();
-        return view('public.themes.hotel-new.views.index2', $data);
+        return view('public.themes.city_tours.views.index', $data);
+
     }
 
+    public  function cart(){
+
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        return view('public.themes.city_tours.views.card_hotel', $data);
+
+    }
+
+    public  function checkout(){
+
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        return view('public.themes.city_tours.views.payment_hotel', $data);
+
+    }
+
+    public  function confirmation(){
+
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        return view('public.themes.city_tours.views.confirmation_hotel', $data);
+
+    }
 
     //################## BOOKING START ##################//
     public function startBooking(Request $request, $room)
@@ -221,36 +233,32 @@ class HomeController extends Controller
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data['datas'] = App\Room::all();
-        return view('public.themes.hotel-new.views.data.rooms', $data);
+        $data['rooms'] = App\Room::all();
+        return view('public.themes.city_tours.views.rooms', $data);
     }
 
     public function showRoom($id)
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data = BaseController::createBaseInformations();
-        self::getBaseInformation($data);
-        $data['object'] = ItemUtility::getItem('room', $id);
-        return view('public.themes.hotel-new.views.data.room', $data);
+        $data['object'] = App\Room::find($id);
+        return view('public.themes.city_tours.views.room', $data);
     }
 
     public function showNewses()
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data['datas'] = ItemUtility::getItems('news');
-        return view('public.themes.hotel-new.views.data.newses', $data);
+        $data['newses'] = App\News::all();
+        return view('public.themes.city_tours.views.newses', $data);
     }
 
     public function showNews($id)
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data = BaseController::createBaseInformations();
-        self::getBaseInformation($data);
-        $data['object'] = ItemUtility::getItem('news', $id);
-        return view('public.themes.hotel-new.views.data.news', $data);
+        $data['object'] = App\News::find($id);
+        return view('public.themes.city_tours.views.news', $data);
     }
 
 
@@ -258,26 +266,28 @@ class HomeController extends Controller
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data['datas'] = ItemUtility::getItems('room');
-        return view('public.themes.hotel-new.views.data.rooms', $data);
+        $data['galleries'] = App\Gallery::all();
+        return view('public.themes.city_tours.views.galleries', $data);
     }
 
     public function showGallery($id)
     {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data = BaseController::createBaseInformations();
-        self::getBaseInformation($data);
-        $data['object'] = ItemUtility::getItem('room', $id);
-        return view('public.themes.hotel-new.views.data.room', $data);
+        $gallery = App\Gallery::find($id);
+        $gallery->images = $gallery->images()->get();
+        $data['gallery'] = $gallery;
+//        return  $data;
+        return view('public.themes.city_tours.views.gallery', $data);
     }
+
 
     public function sendComplaint(Request $request)
     {
         if ($request->getMethod() == "GET") {
             $data = BaseController::createBaseInformations();
             self::getBaseInformation($data);
-            return view('public.themes.hotel-new.views.documents.complaints', $data);
+            return view('public.themes.city_tours.views.complaint', $data);
         } elseif ($request->getMethod() == "POST") {
 
             $cc = Customer::where('mobile', '=', $request->mobile)->get();
@@ -310,7 +320,8 @@ class HomeController extends Controller
         if ($request->getMethod() == "GET") {
             $data = BaseController::createBaseInformations();
             self::getBaseInformation($data);
-            return view('public.themes.hotel-new.views.documents.contact_us', $data);
+            return view('public.themes.city_tours.views.contact_us', $data);
+
         } elseif ($request->getMethod() == "POST") {
 
             $cc = Customer::where('mobile', '=', $request->mobile)->get();
@@ -338,6 +349,23 @@ class HomeController extends Controller
         }
     }
 
+    public function faq()
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data['galleries'] = App\Gallery::all();
+        return view('public.themes.city_tours.views.faq', $data);
+    }
+
+    public function about()
+    {
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        return view('public.themes.city_tours.views.about', $data);
+    }
+
+
+
     public function showPage(Request $request, $id)
     {
 
@@ -349,7 +377,7 @@ class HomeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
         $data ['type'] = 'customer';
-        return view("public.themes.hotel-new.views.users.login", $data);
+        return view('public.themes.city_tours.views.login', $data);
     }
 
     public function showRegisterPage()
@@ -357,14 +385,21 @@ class HomeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
         $data ['type'] = 'customer';
-        return view("public.themes.hotel-new.views.users.register", $data);
+        return view('public.themes.city_tours.views.register', $data);
     }
 
     public function showHistory(Request $request)
     {
+
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $data ['type'] = 'customer';
+        return view('public.themes.city_tours.views.admin', $data);
+
         if (!\Auth::check()) {
             return response()->redirectToRoute("home.index2");
         }
+
     }
 
 
