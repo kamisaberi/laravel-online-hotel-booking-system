@@ -47,25 +47,25 @@
                                             <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
                                                 <thead>
                                                 <tr>
-                                                    <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
+{{--                                                    <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>--}}
                                                     <th>
-                                                        start date
+                                                        {{__("fields.check in")}}
                                                     </th>
                                                     <th>
-                                                        end date
+                                                        {{__("fields.check out")}}
                                                     </th>
                                                     <th>
-                                                        price
+                                                        {{__("fields.price")}}
                                                     </th>
-                                                    <th>Actions</th>
+                                                    <th>{{__("admin.actions")}}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 @foreach($datas as $data)
                                                     <tr>
-                                                        <td>
-                                                            <input type="checkbox" class="input-chk check">
-                                                        </td>
+{{--                                                        <td>--}}
+{{--                                                            <input type="checkbox" class="input-chk check">--}}
+{{--                                                        </td>--}}
                                                         <td>
                                                             {{$data->start_date}}
                                                         </td>
@@ -93,18 +93,18 @@
                                                 </tbody>
                                                 <tfoot>
                                                 <tr>
-                                                    <th></th>
+{{--                                                    <th></th>--}}
                                                     <th>
-                                                        start date
+                                                        {{__("fields.check in")}}
                                                     </th>
                                                     <th>
-                                                        end date
+                                                        {{__("fields.check out")}}
                                                     </th>
                                                     <th>
-                                                        price
+                                                        {{__("fields.price")}}
                                                     </th>
 
-                                                    <th>Actions</th>
+                                                    <th>{{__("admin.actions")}}</th>
                                                 </tr>
                                                 </tfoot>
                                             </table>

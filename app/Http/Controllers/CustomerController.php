@@ -43,11 +43,6 @@ class CustomerController extends Controller
     public function store(Request $request, $type)
     {
 
-//        self::checkType($type);
-//        self::checkTables();
-
-//        $ruels = self::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters());
-//        dd($ruels);
         $validator = Validator::make(
             $request->all(),
             ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())

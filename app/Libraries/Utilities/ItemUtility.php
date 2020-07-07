@@ -398,6 +398,7 @@ class ItemUtility
             $actions = ItemUtility::getItemActions($route_name, $route_parameters);
         }
 
+
         $urls = [];
         $urls['index'] = route("items.index", ['type' => $type]);
         if (!is_null($actions) && in_array('create', $actions)) {

@@ -48,22 +48,22 @@
                                             <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
                                                 <thead>
                                                     <tr>
-                                                        <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>
+{{--                                                        <th><input type="checkbox" class="input-chk" id="check-all" onclick="toggle();"></th>--}}
                                                         <th>
-                                                            name
+                                                            {{__("fields.name")}}
                                                         </th>
                                                         <th>
-                                                            email
+                                                            {{__("fields.email")}}
                                                         </th>
-                                                        <th>Actions</th>
+                                                        <th>{{__("admin.actions")}}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach($datas as $data)
                                                         <tr>
-                                                            <td>
-                                                                <input type="checkbox" class="input-chk check">
-                                                            </td>
+{{--                                                            <td>--}}
+{{--                                                                <input type="checkbox" class="input-chk check">--}}
+{{--                                                            </td>--}}
                                                             <td>
                                                                 {{$data->name}}
                                                             </td>
@@ -79,15 +79,15 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th></th>
+{{--                                                        <th></th>--}}
                                                         <th>
-                                                            name
+                                                            {{__("fields.name")}}
                                                         </th>
                                                         <th>
-                                                            email
+                                                            {{__("fields.email")}}
                                                         </th>
 
-                                                        <th>Actions</th>
+                                                        <th>{{__("admin.actions")}}</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>

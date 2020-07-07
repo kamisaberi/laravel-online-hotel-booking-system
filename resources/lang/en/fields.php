@@ -19,6 +19,11 @@ return [
     'template'=> 'Template',
     'excerpt'=> 'Excerpt',
     'category'=> 'Category',
+    'name'=> 'Name',
+
+    'price'=> 'Price',
+    'check in'=> 'Check in',
+    'check out'=> 'Check out',
 
 
 

@@ -140,29 +140,29 @@ Route::middleware(['auth', 'authAdmin'])->group(function () {
 
     //***************USERS**********************
 
-    //PROPERTY
-    Route::get('/admin/users/{type}/properties', 'User\UserPropertyController@index')->name('users.properties.index');
-    Route::get('/admin/users/{type}/properties/{id}', 'User\UserPropertyController@show')->name('users.properties.show')->where('id', '[0-9]+');
-    Route::get('/admin/users/{type}/properties/create', 'User\UserPropertyController@create')->name('users.properties.create');
-    Route::get('/admin/users/{type}/properties/{id}/edit', 'User\UserPropertyController@edit')->name('users.properties.edit');
-    Route::post('/admin/users/{type}/properties/store', 'User\UserPropertyController@store')->name('users.properties.store');
-    Route::post('/admin/users/{type}/properties/{id}/update', 'User\UserPropertyController@update')->name('users.properties.update');
-    Route::post('/admin/users/{type}/properties/{id}/destroy', 'User\UserPropertyController@destroy')->name('users.properties.destroy');
-    Route::post('/admin/ajax/users/{type}/properties/destroy', 'User\UserPropertyController@destroy_property')->name('users.properties.ajax.destroy');
-
-    //SETTING
-    Route::get('/admin/users/{type}/settings', 'User\UserPropertyController@settings')->name('users.settings.edit');
-    Route::post('/admin/users/{type}/settings/update', 'User\UserPropertyController@updateSettings')->name('users.settings.update');
-
-    //ITEM
-    Route::get('/admin/users/{type}/create', 'User\UserController@create')->name('users.create');
-    Route::get('/admin/users/{type}/{id}/edit', 'User\UserController@edit')->name('users.edit')->where('id', '[0-9]+');
-    Route::get('/admin/users/{type}/{id}', 'User\UserController@show')->name('users.show')->where('id', '[0-9]+');
-    Route::get('/admin/users/{type}/{filters?}', 'User\UserController@index')->name('users.index')->where('filters', '^(?!properties)$');
-    Route::post('/admin/users/{type}/store', 'User\UserController@store')->name('users.store');
-    Route::post('/admin/users/{type}/{id}/update', 'User\UserController@update')->name('users.update')->where('id', '[0-9]+');
-    Route::post('/admin/users/{type}/ajax/destroy', 'User\UserController@destroy')->name('users.destroy');
-    Route::post('/admin/users/{type}/change', 'User\UserController@changeProperty')->name('users.change');
+//    //PROPERTY
+//    Route::get('/admin/users/{type}/properties', 'User\UserPropertyController@index')->name('users.properties.index');
+//    Route::get('/admin/users/{type}/properties/{id}', 'User\UserPropertyController@show')->name('users.properties.show')->where('id', '[0-9]+');
+//    Route::get('/admin/users/{type}/properties/create', 'User\UserPropertyController@create')->name('users.properties.create');
+//    Route::get('/admin/users/{type}/properties/{id}/edit', 'User\UserPropertyController@edit')->name('users.properties.edit');
+//    Route::post('/admin/users/{type}/properties/store', 'User\UserPropertyController@store')->name('users.properties.store');
+//    Route::post('/admin/users/{type}/properties/{id}/update', 'User\UserPropertyController@update')->name('users.properties.update');
+//    Route::post('/admin/users/{type}/properties/{id}/destroy', 'User\UserPropertyController@destroy')->name('users.properties.destroy');
+//    Route::post('/admin/ajax/users/{type}/properties/destroy', 'User\UserPropertyController@destroy_property')->name('users.properties.ajax.destroy');
+//
+//    //SETTING
+//    Route::get('/admin/users/{type}/settings', 'User\UserPropertyController@settings')->name('users.settings.edit');
+//    Route::post('/admin/users/{type}/settings/update', 'User\UserPropertyController@updateSettings')->name('users.settings.update');
+//
+//    //ITEM
+//    Route::get('/admin/users/{type}/create', 'User\UserController@create')->name('users.create');
+//    Route::get('/admin/users/{type}/{id}/edit', 'User\UserController@edit')->name('users.edit')->where('id', '[0-9]+');
+//    Route::get('/admin/users/{type}/{id}', 'User\UserController@show')->name('users.show')->where('id', '[0-9]+');
+//    Route::get('/admin/users/{type}/{filters?}', 'User\UserController@index')->name('users.index')->where('filters', '^(?!properties)$');
+//    Route::post('/admin/users/{type}/store', 'User\UserController@store')->name('users.store');
+//    Route::post('/admin/users/{type}/{id}/update', 'User\UserController@update')->name('users.update')->where('id', '[0-9]+');
+//    Route::post('/admin/users/{type}/ajax/destroy', 'User\UserController@destroy')->name('users.destroy');
+//    Route::post('/admin/users/{type}/change', 'User\UserController@changeProperty')->name('users.change');
 
 
     /////////////***************USERS**********************

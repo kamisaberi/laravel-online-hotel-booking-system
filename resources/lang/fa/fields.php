@@ -19,5 +19,11 @@ return [
     'template' => 'قالب',
     'excerpt'=> 'خلاصه',
     'category'=> 'دسته بندی',
+    'name'=> 'نام',
+
+    'price'=> 'قیمت',
+    'check in'=> 'ورود',
+    'check out'=> 'خروج',
+
 
 ];

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App;
+use App\Customer;
 use App\Http\Controllers\Base\BaseController;
 use App\Http\Controllers\Base\ComponentController;
 use App\Http\Controllers\Base\PropertyController;
@@ -10,6 +11,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Navigation\NavigationController;
 use App\Http\Controllers\Widget\WidgetController;
 use App\Libraries\MyLib\PluralUtility;
+use App\Libraries\Utilities\BaseUtility;
+use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TextUtility;
 use App\Libraries\Utilities\TypeUtility;
 use App\User;
@@ -509,52 +512,11 @@ class UserController extends Controller
     public function index(Request $request, $type, $filters = null)
     {
 
-        $filts = $filters == null ? null : json_decode(urldecode($filters));
+        $data = BaseUtility::generateForIndex($type);
+        $data ['datas'] = User::all();
+//        return  $data;
+        return view("admin.items.views.subviews.user.index", $data);
 
-        $bt_id = UserType::where('title', '=', $type)->first();
-        $bt_id->actions = PropertyController::parseTypeActions($bt_id->actions);
-        $bt_id->triggers = TypeUtility::parseTriggers($bt_id->triggers);
-        $bt_id->locales = (array)json_decode($bt_id->locales);
-
-        if (!\Request::ajax()) {
-            $data = BaseController::createBaseInformations();
-            self::getBaseInforamation($data, $type);
-            $data ['widgets'] = WidgetController::getWidgets("users.index", 'user', $type);
-            $properties = self::getProperties($type);
-            $data['properties'] = $properties;
-            $props = unserialize(serialize($properties));
-            $data['groups'] = PropertyController::sortProperties($props);
-
-            $props2 = unserialize(serialize($properties));
-            $data['filters'] = PropertyController::getFilters($props2);
-
-            $data['permissions'] = self::getPermissions($type);
-            $data['urls'] = self::getUrls($type, $bt_id->actions);
-            $data['actions'] = $bt_id->actions;
-
-            $data['page_title'] = trans('messages.list of') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
-
-            $data['breadcrumbs'] = [
-                [
-                    'title' => trans('messages.navigation_titles.dashboard'),
-                    'url' => route('admin.index')
-                ],
-                [
-                    'title' => PluralUtility::plural($bt_id->locales[App::getLocale()]),
-                    'url' => ''
-                ]
-            ];
-        }
-
-        $data ['type'] = $bt_id;
-        $data ['datas'] = self::getItems2($type, $bt_id->actions, true, true, 'current', $filts);
-
-        if (!\Request::ajax()) {
-            return view("admin.items.views.index", $data);
-        } else {
-            return response()->json(['error' => 0, 'message' => $data]);
-        }
-        //
     }
 
     /**
@@ -564,94 +526,11 @@ class UserController extends Controller
      */
     public function create($type)
     {
+        $data = BaseUtility::generateForCreate($type);
+        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.user.form", $data);
 
-        $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data, $type);
-
-        $data['type'] = $type;
-        $properties = self::getProperties($type);
-
-        $r_std = PropertyController::createProperty(
-            [
-                'id' => -1,
-                'title' => 'role',
-                'default_value' => '-',
-                'input_type' => 'select',
-                'validation_rules' => 'required',
-                'fillation_rules' => PropertyController::parseFillingRules('routes:users.create,users.edit-->conditions=>*->width:m6 s12&type:text&method:direct&group:6&order:1'),
-                'locales' => ["fa" => "نقش", "en" => "role", "ar" => "النقش"],
-            ]
-        );
-
-
-        $user_roles = Auth::user()->getRoleNames();
-        $best_role_id = 100000;
-        foreach ($user_roles as $user_role) {
-            $rl = Role::findByName($user_role);
-            if ($rl->id < $best_role_id) {
-                $best_role_id = $rl->id;
-            }
-        }
-
-        if ($type == 'user') {
-
-            $roles = Role::all();
-            $values = [];
-            foreach ($roles as $role) {
-                if ($role->id <= $best_role_id)
-                    continue;
-
-                $s = new stdClass();
-                $s->title = $role->name;
-                $s->value = $role->name;
-                $values[] = $s;
-            }
-
-            $r_std->values = $values;
-            $r_std->assigned = "";
-            $properties[] = $r_std;
-        }
-
-        $bt_id = UserType::where('title', '=', $type)->first();
-        $bt_id->actions = PropertyController::parseTypeActions($bt_id->actions);
-        $bt_id->locales = (array)json_decode($bt_id->locales);
-
-        $data['properties'] = $properties;
-//        return $properties;
-        $props = unserialize(serialize($properties));
-        $data['groups'] = PropertyController::sortProperties($props);
-        ComponentController::getRequiredComponents($data['groups'], $data);
-
-
-        $components['files']['images'] = DB::table('images')->get(['id', 'title', 'path']);
-
-        $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = self::getUrls($type, $bt_id->actions);
-
-//        return $data;
-
-
-        $data['page_title'] = trans('messages.list of') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
-
-        $data['breadcrumbs'] = [
-            [
-                'title' => trans('messages.navigation_titles.dashboard'),
-                'url' => route('admin.index')
-            ],
-            [
-                'title' => PluralUtility::plural($bt_id->locales[App::getLocale()]),
-                'url' => route('users.index', ['type' => $type])
-            ],
-            [
-                'title' => trans('messages.create new item'),
-                'url' => ''
-            ]
-        ];
-
-
-        return view("admin.items.views.create", $data);
-
-        //
     }
 
     /**
@@ -662,61 +541,36 @@ class UserController extends Controller
      */
     public function store(Request $request, $type)
     {
-        $bt_id = UserType::where('title', '=', $type)->first();
-        $type_id = $bt_id->id;
-        $rules = UserPropertyController::createValidationRules($type_id);
-
-//        $rules['email'] = 'required';
-//        $rules['password'] = 'required';
-
-//        dd($rules);
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make(
+            $request->all(),
+            ItemUtility::getItemsValidationRules(Route::currentRouteName(), Route::current()->parameters())
+        );
         if ($validator->passes()) {
 
+//            dd($request->toArray());
+            $received_data = $request->toArray();
+//            $separated_data = self::separateReceivedData($received_data);
+            $separated_data = ItemUtility::separateReceivedData($type, $received_data);
 
-            $data = new User();
-            $data->type = $bt_id->id;
-//            $data->email = $request->input('email');
-//            $data->password = Hash::make($request->input('password'));
-            $data->save();
+            $r = new User();
+            $r->name = $request->input('name');
+            $r->email = $request->input('email');
+            $r->phone = $request->input('phone');
+            $r->mobile = $request->input('mobile');
+            $r->ssn = $request->input('ssn');
+            $r->password = bcrypt($request->input('password'));
+            $r->save();
+            $r_id = $r->id;
+            ItemUtility::storeProperties($type, $separated_data['property'], $r_id);
+            return response()->json(['success' => 'Added new records.']);
+//            ItemUtility::storeData($type, $separated_data['item'], $separated_data['property']);
 
-//        return;
-//        return $request->keys();
-
-            self::saveProperties($request, $type, $data->id);
-//        return;
-
-            if ($type == 'user') {
-                if ($request->input('role') != null) {
-                    $data->assignRole($request->input('role'));
-                }
-            } else {
-                $data->assignRole('customer');
-            }
-
-            $rels = [];
-            $rel_d = new stdClass();
-            $rel_d->object_id = $data->id;
-            $rel_d->object_type = config("base.object_types.user");
-            $rels[] = $rel_d;
-
-            $rel_u = new stdClass();
-            $rel_u->object_id = \Auth::id();
-            $rel_u->object_type = config("base.object_types.user");
-            $rels[] = $rel_u;
-
-            RelationController::createRelation($type, $rels);
-
+//            dd($separated_data);
 
             return response()->json(['success' => 'Added new records.']);
         }
-
         return response()->json(['error' => $validator->errors()->all()]);
 
-        //        return;
-//        return redirect()->route("users.index", ['type' => $type]);
-
-        //
     }
 
     /**
@@ -786,120 +640,11 @@ class UserController extends Controller
      */
     public function edit($type, $id)
     {
-        $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data, $type);
 
-        $data ['images'] = DocumentController::getItems('general');
-        $data['type'] = $type;
-        $s_user = User::find($id);
-        $data['s_user'] = $s_user;
-
-
-        $properties = self::getProperties($type, $id);
-
-//        $properties [] = PropertyController::createProperty(
-//            [
-//                'id' => -1,
-//                'title' => 'email',
-//                'default_value' => '-',
-//                'input_type' => 'text',
-//                'validation_rules' => 'required',
-//                'assigned' => $s_user->email,
-//                'fillation_rules' => PropertyController::parseFillingRules('routes:users.create,users.edit-->conditions=>*->width:m6 s12&type:text&method:direct&group:1&order:3'),
-//                'locales' => ["fa" => "ایمیل", "en" => "email", "ar" => "الایمیل"],
-//            ]
-//        );
-//
-//        $properties [] = PropertyController::createProperty(
-//            [
-//                'id' => -1,
-//                'title' => 'password',
-//                'default_value' => '-',
-//                'input_type' => 'password',
-//                'validation_rules' => 'required',
-//                'assigned' => "",
-//                'fillation_rules' => PropertyController::parseFillingRules('routes:users.create,users.edit-->conditions=>*->width:m6 s12&type:text&method:direct&group:1&order:4'),
-//                'locales' => ["fa" => "رمز عبور", "en" => "password", "ar" => "الرمز العبور"],
-//            ]
-//        );
-
-
-        $r_std = PropertyController::createProperty(
-            [
-                'id' => -1,
-                'title' => 'role',
-                'default_value' => '-',
-                'input_type' => 'select',
-                'validation_rules' => 'required',
-                'fillation_rules' => PropertyController::parseFillingRules('routes:users.create,users.edit-->conditions=>*->width:m6 s12&type:text&method:direct&group:6&order:1'),
-                'locales' => ["fa" => "نقش", "en" => "role", "ar" => "النقش"],
-            ]
-        );
-
-
-        $user_roles = Auth::user()->getRoleNames();
-        $best_role_id = 100000;
-        foreach ($user_roles as $user_role) {
-            $rl = Role::findByName($user_role);
-            if ($rl->id < $best_role_id) {
-                $best_role_id = $rl->id;
-            }
-        }
-
-        if ($type == 'user') {
-
-            $roles = Role::all();
-            $values = [];
-            foreach ($roles as $role) {
-                if ($role->id <= $best_role_id)
-                    continue;
-
-                $s = new stdClass();
-                $s->title = $role->name;
-                $s->value = $role->name;
-                $values[] = $s;
-            }
-
-            $r_std->values = $values;
-            $r_std->assigned = "";
-            $properties[] = $r_std;
-        }
-
-        $data['properties'] = $properties;
-        $props = unserialize(serialize($properties));
-        $data['groups'] = PropertyController::sortProperties($props);
-        ComponentController::getRequiredComponents($data['groups'], $data);
-
-
-        $data['id'] = $id;
-
-        $bt_id = UserType::where('title', '=', $type)->first();
-        $bt_id->actions = PropertyController::parseTypeActions($bt_id->actions);
-        $bt_id->locales = (array)json_decode($bt_id->locales);
-
-        $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = self::getUrls($type, $bt_id->actions, $id);
-
-
-        $data['page_title'] = trans('messages.list of') . PluralUtility::plural($bt_id->locales[App::getLocale()]);
-
-        $data['breadcrumbs'] = [
-            [
-                'title' => trans('messages.navigation_titles.dashboard'),
-                'url' => route('admin.index')
-            ],
-            [
-                'title' => PluralUtility::plural($bt_id->locales[App::getLocale()]),
-                'url' => route('users.index', ['type' => $type])
-            ],
-            [
-                'title' => trans('messages.edit existing item'),
-                'url' => ''
-            ]
-        ];
-
-
-        return view("admin.items.views.edit", $data);
+        $data = BaseUtility::generateForEdit($type, $id);
+        $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters());
+        $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
+        return view("admin.items.views.subviews.user.form", $data);
 
     }
 
