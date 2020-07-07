@@ -40,7 +40,7 @@
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="{{route("home.confirmation")}}" class="bs-wizard-dot"></a>
+                    <a href="{{route("home.booking.to.bank")}}" class="bs-wizard-dot"></a>
                 </div>
 
             </div>
@@ -243,7 +243,7 @@
                                 {{__("theme.i accept terms and conditions and general policy.")}}
                             </label>
                         </div>
-                        <a href="{{route("home.confirmation")}}" class="btn_1 green medium">{{__("theme.payout")}}</a>
+                        <a href="{{route("home.booking.to.bank")}}" class="btn_1 green medium">{{__("theme.payout")}}</a>
                     </div>
                 </div>
 
@@ -319,7 +319,7 @@
                             </tr>
                             </tbody>
                         </table>
-                        <a class="btn_full" href="{{route("home.confirmation")}}">{{__("theme.payout")}}</a>
+                        <a class="btn_full" href="{{route("home.booking.to.bank")}}">{{__("theme.payout")}}</a>
                         <a class="btn_full_outline" href="#"><i class="icon-right"></i> {{__("theme.modify your search")}}</a>
                     </div>
                     <div class="box_style_4">

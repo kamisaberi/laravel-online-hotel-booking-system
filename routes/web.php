@@ -82,9 +82,16 @@ Route::post('/booking/update/price/{type}', 'HomeController@updatePrices')->name
 Route::post('/booking/save/{room}', 'HomeController@saveBooking')->name('home.booking.save');
 Route::get('/booking/confirm/{code}', 'HomeController@confirmBooking')->name('home.booking.confirm');
 Route::post('/booking/check/room_verification', 'HomeController@checkRoomVerification')->name('home.booking.check.room');
-Route::get('/booking/payout/{code}', 'HomeController@payoutBooking')->name('home.booking.payout');
+
+
+//Route::get('/booking/payout/{code?}', 'HomeController@payoutBooking')->name('home.booking.payout');
+
 Route::get('/booking/bank/{code?}', 'HomeController@payout')->name('home.booking.to.bank');
+
+
 Route::any('/booking/returnFromBank/{code?}', 'HomeController@returnFromBank')->name('home.return.from.bank');
+
+
 Route::get('/booking/finish/{code}', 'HomeController@finishBooking')->name('home.booking.finish');
 
 

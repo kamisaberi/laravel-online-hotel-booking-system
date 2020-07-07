@@ -107,40 +107,42 @@ class HomeController extends Controller
     public function payout($code = null)
     {
 
-        if ($code != null) {
-            $sd = ServiceProperty::where('title', '=', 'code')
-                ->get();
+//        if ($code != null) {
+//            $sd = ServiceProperty::where('title', '=', 'code')
+//                ->get();
+//
+//            $sd_id = $sd[0]->id;
+//            $r = DB::table('service_assigned_properties')
+//                ->where('property', '=', $sd_id)
+//                ->where('value', '=', $code)
+//                ->get();
+//
+//            $reserve_id = $r[0]->service;
+//            $props = ServiceController::getDataProperties3('reserve', $reserve_id);
+//        }
+//
+//        try {
+//
+//            $gateway = Gateway::make(new Sadad());
+//            $gateway->setCallback(route('home.return.from.bank', ['code' => $code]));
+//
+//            if (env('PRICE_TEST_MODE') == 1) {
+//                $gateway->price(1000)->ready();
+//            } else {
+//                $gateway->price($props['price']->value * 10)->ready();
+//            }
+//
+////            $gateway->price(1000)->ready();
+//            $refId = $gateway->refId();
+//            $transID = $gateway->transactionId();
+//            // Your code here
+//            return $gateway->redirect();
+//
+//        } catch (Exception $e) {
+//            echo $e->getMessage();
+//        }
 
-            $sd_id = $sd[0]->id;
-            $r = DB::table('service_assigned_properties')
-                ->where('property', '=', $sd_id)
-                ->where('value', '=', $code)
-                ->get();
-
-            $reserve_id = $r[0]->service;
-            $props = ServiceController::getDataProperties3('reserve', $reserve_id);
-        }
-
-        try {
-
-            $gateway = Gateway::make(new Sadad());
-            $gateway->setCallback(route('home.return.from.bank', ['code' => $code]));
-
-            if (env('PRICE_TEST_MODE') == 1) {
-                $gateway->price(1000)->ready();
-            } else {
-                $gateway->price($props['price']->value * 10)->ready();
-            }
-
-//            $gateway->price(1000)->ready();
-            $refId = $gateway->refId();
-            $transID = $gateway->transactionId();
-            // Your code here
-            return $gateway->redirect();
-
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+        return redirect()->route("home.return.from.bank", ['code'=>"111111"]);
     }
 
 
@@ -148,15 +150,16 @@ class HomeController extends Controller
 
     public function returnFromBank($code)
     {
-        try {
-            $gateway = Gateway::verify();
-            $trackingCode = $gateway->trackingCode();
-            $refId = $gateway->refId();
-            $cardNumber = $gateway->cardNumber();
-            return redirect()->route('home.confirmation');
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+        return redirect()->route('home.confirmation');
+//        try {
+//            $gateway = Gateway::verify();
+//            $trackingCode = $gateway->trackingCode();
+//            $refId = $gateway->refId();
+//            $cardNumber = $gateway->cardNumber();
+//            return redirect()->route('home.confirmation');
+//        } catch (Exception $e) {
+//            echo $e->getMessage();
+//        }
     }
 
 

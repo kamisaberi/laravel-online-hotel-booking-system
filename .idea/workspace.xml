@@ -5,7 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/galleries.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/galleries.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/payment_hotel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/payment_hotel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1364,7 +1365,7 @@
       <workItem from="1593804794249" duration="49046000" />
       <workItem from="1593981709002" duration="11324000" />
       <workItem from="1594027888091" duration="41412000" />
-      <workItem from="1594118654517" duration="20235000" />
+      <workItem from="1594118654517" duration="22544000" />
     </task>
     <servers />
   </component>
@@ -1408,10 +1409,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="35" y="73" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592546557831" />
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594139842978">
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594145605981">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594139842978" />
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594145605981" />
     <state x="206" y="102" width="1114" height="801" key="find.popup" timestamp="1594129811581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
