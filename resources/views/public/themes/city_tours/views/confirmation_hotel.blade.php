@@ -96,36 +96,44 @@
                                     <strong>{{__("theme.check in")}}</strong>
                                 </td>
                                 <td>
-                                    10 April 2015
+                                    {{$check_in}}
                                 </td>
                             </tr>
                             <tr>
                                 <td><strong>{{__("theme.check out")}}</strong>
                                 </td>
                                 <td>
-                                    12 April 2015
+                                    {{$check_out}}
                                     <br>
                                 </td>
                             </tr>
                             <tr>
                                 <td><strong>{{__("theme.rooms")}}</strong>
                                 </td>
-                                <td>1 double room</td>
+                                <td>
+                                    {{$room->title}}
+                                </td>
                             </tr>
                             <tr>
                                 <td><strong>{{__("theme.nights")}}</strong>
                                 </td>
-                                <td>2</td>
+                                <td>
+                                    {{count($prices)}}
+                                </td>
                             </tr>
                             <tr>
                                 <td><strong>{{__("theme.adults")}}</strong>
                                 </td>
-                                <td>2</td>
+                                <td>
+                                    {{$adults}}
+                                </td>
                             </tr>
                             <tr>
                                 <td><strong>{{__("theme.children")}}</strong>
                                 </td>
-                                <td>0</td>
+                                <td>
+                                    {{$children}}
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -140,7 +148,7 @@
                                     <strong>{{__("theme.total cost")}}</strong>
                                 </td>
                                 <td>
-                                    $154
+                                    {{$total}}
                                 </td>
                             </tr>
                             </tbody>

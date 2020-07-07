@@ -368,7 +368,7 @@
                             <div id="recent-buyers" class="media-list height-300 position-relative">
 
                                 @foreach($customers as $customer)
-                                    <a href="{{route('users.index', ['type'=>'customer'])}}" class="media border-0">
+                                    <a href="{{route('items.index', ['type'=>'customer'])}}" class="media border-0">
                                         <div class="media-left pr-1">
                                         <span class="avatar avatar-md avatar-online">
                                             <img class="media-object rounded-circle" src="{{asset('admin-assets/images/portrait/small/avatar-s-7.png')}}"

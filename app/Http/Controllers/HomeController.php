@@ -12,6 +12,7 @@ use App\Libraries\Utilities\ItemUtility;
 use App\Libraries\Utilities\TrackerUtility;
 use App\Reserve;
 use App\ServiceProperty;
+use Carbon\Carbon;
 use Gateway;
 use http\Exception;
 use Illuminate\Http\Request;
@@ -56,26 +57,76 @@ class HomeController extends Controller
 
     }
 
-    public  function cart(){
-
+    public function cart()
+    {
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
+
+        $basket = session()->get('basket');
+        $room = App\Room::find($basket[0]['room']);
+        $room->image = App\Image::find($room->image);
+        $data['room'] = $room;
+        $data['prices'] = $basket[0]['prices'];
+        $data['min_price'] =min($basket[0]['prices']);
+        $data['max_price'] =max($basket[0]['prices']);
+        $data['total'] = array_sum($basket[0]['prices']);
+        $data['adults'] = $basket[0]['adults'];
+        $data['children'] = $basket[0]['children'];
+        $data['check_in'] = $basket[0]['check_in'];
+        $data['check_out'] = $basket[0]['check_out'];
+//        return  $data;
         return view('public.themes.city_tours.views.card_hotel', $data);
 
     }
 
-    public  function checkout(){
+    public function checkout()
+    {
 
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
+
+        $basket = session()->get('basket');
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $room = App\Room::find($basket[0]['room']);
+        $room->image = App\Image::find($room->image);
+
+        $data['room'] = $room;
+        $data['prices'] = $basket[0]['prices'];
+        $data['min_price'] =min($basket[0]['prices']);
+        $data['max_price'] =max($basket[0]['prices']);
+        $data['total'] = array_sum($basket[0]['prices']);
+        $data['adults'] = $basket[0]['adults'];
+        $data['children'] = $basket[0]['children'];
+        $data['check_in'] = $basket[0]['check_in'];
+        $data['check_out'] = $basket[0]['check_out'];
+
         return view('public.themes.city_tours.views.payment_hotel', $data);
 
     }
 
-    public  function confirmation(){
+    public function confirmation()
+    {
 
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
+
+        $basket = session()->get('basket');
+        $data = BaseController::createBaseInformations();
+        self::getBaseInformation($data);
+        $room = App\Room::find($basket[0]['room']);
+        $room->image = App\Image::find($room->image);
+
+        $data['room'] = $room;
+        $data['prices'] = $basket[0]['prices'];
+        $data['min_price'] =min($basket[0]['prices']);
+        $data['max_price'] =max($basket[0]['prices']);
+        $data['total'] = array_sum($basket[0]['prices']);
+        $data['adults'] = $basket[0]['adults'];
+        $data['children'] = $basket[0]['children'];
+        $data['check_in'] = $basket[0]['check_in'];
+        $data['check_out'] = $basket[0]['check_out'];
+
         return view('public.themes.city_tours.views.confirmation_hotel', $data);
 
     }
@@ -91,11 +142,48 @@ class HomeController extends Controller
         return view("public.themes.hotel-new.views.booking.booking_start", $data);
     }
 
+
     public function updatePrices(Request $request, $type = 'room')
     {
-        $data = [];
-        $data['prices'] = ["1399/02/02" => 120000, "1399/02/03" => 140000, "1399/02/04" => 220000, "1399/02/05" => 80000];
-        return response()->json(['result' => $data]);
+
+        session()->put('basket', []);
+
+        $id = $request->input('id');
+        $room = App\Room::find($id);
+        $prices = $room->prices()->get();
+
+        $start_day = trim(explode(' ', explode(',', $request->input('check_in'))[0])[1]);
+        $start_month_str = trim(explode(' ', explode(',', $request->input('check_in'))[0])[0]);
+
+        $end_day = trim(explode(' ', explode(',', $request->input('check_out'))[0])[1]);
+        $end_month_str = trim(explode(' ', explode(',', $request->input('check_out'))[0])[0]);
+
+        $days = App\Libraries\Utilities\CarbonDateUtility::generateDateRange(
+            Carbon::create(2020, config("base.months")[$start_month_str], $start_day),
+            Carbon::create(2020, config("base.months")[$end_month_str], $end_day),
+            true
+        );
+
+        $final = [];
+        foreach ($days as $day) {
+            $final[$day] = $prices[0]->value;
+        }
+
+        session()->push('basket', [
+            "room" => $id,
+            'prices' => $final ,
+            'adults'=> $request->input('adults'),
+            'children'=> $request->input('children'),
+            'check_in'=>$days[0],
+            'check_out'=>$days[count($days)-1]
+        ]);
+
+        return response()->json([
+            'error' => false,
+            'message' => "ok",
+            'prices' => $final,
+            'links' => ['cart' => route("home.cart")]
+        ]);
     }
 
     public function saveBooking(Request $request, $room)
@@ -239,9 +327,10 @@ class HomeController extends Controller
 
     public function showRoom($id)
     {
+
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
-        $data['object'] = App\Room::find($id);
+        $data['room'] = App\Room::find($id);
         return view('public.themes.city_tours.views.room', $data);
     }
 
@@ -363,7 +452,6 @@ class HomeController extends Controller
         self::getBaseInformation($data);
         return view('public.themes.city_tours.views.about', $data);
     }
-
 
 
     public function showPage(Request $request, $id)

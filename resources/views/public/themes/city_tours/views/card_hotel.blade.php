@@ -48,65 +48,61 @@
     </section>
     <!-- End Section hero_2 -->
     <main>
-        @include("public.themes.city_tours.widgets.breadcrumbs")
-        <!-- End position -->
+    @include("public.themes.city_tours.widgets.breadcrumbs")
+    <!-- End position -->
 
 
         <div class="container margin_60">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="alert alert-info" role="alert"><strong>Rooms available</strong> for the selected dates.
-                        <br>PLEASE SELECT YOUR QUANTITY.
-                    </div>
+{{--                    <div class="alert alert-info" role="alert"><strong>Rooms available</strong> for the selected dates.--}}
+{{--                        <br>PLEASE SELECT YOUR QUANTITY.--}}
+{{--                    </div>--}}
                     <table class="table table-striped cart-list add_bottom_30">
                         <thead>
                         <tr>
                             <th>
-                                Room Type
+                                {{__("theme.room type")}}
                             </th>
                             <th>
-                                Quantity
+                                {{__("theme.quantity")}}
                             </th>
                             <th>
-                                Per night
+                                {{__("theme.per night")}}
                             </th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>
-                                <div class="thumb_cart">
-                                    <a href="#" data-toggle="modal" data-target="#modal_single_room"><img src="{{asset("front-end-assets/img/thumb_cart_1.jpg")}}" alt="Image">
-                                    </a>
-                                </div>
-                                <span class="item_cart"><a href="#" data-toggle="modal" data-target="#modal_single_room">Single Room</a></span>
-                            </td>
-                            <td>
-                                <div class="numbers-row">
-                                    <input type="text" value="0" id="quantity_1" class="qty2 form-control" name="quantity_1">
-                                </div>
-                            </td>
-                            <td>
-                                <strong>€80</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="thumb_cart">
-                                    <a href="#" data-toggle="modal" data-target="#modal_double_room"><img src="{{asset("front-end-assets/img/thumb_cart_1.jpg")}}" alt="Image">
-                                    </a>
-                                </div>
-                                <span class="item_cart"><a href="#" data-toggle="modal" data-target="#modal_double_room">Double room</a></span>
-                            </td>
-                            <td>
-                                <div class="numbers-row">
-                                    <input type="text" value="0" id="quantity_2" class="qty2 form-control" name="quantity_2">
-                                </div>
-                            </td>
-                            <td>
-                                <strong>€130</strong>
-                            </td>
-                        </tr>
+                        @isset($room)
+                            <tr>
+                                <td>
+                                    <div class="thumb_cart">
+                                        <a href="#" data-toggle="modal" data-target="#modal_single_room">
+                                            <img src="{{$room->image->path}}" alt="Image">
+                                        </a>
+                                    </div>
+                                    <span class="item_cart"><a href="#" data-toggle="modal" data-target="#modal_single_room">
+                                            {{$room->title}}
+                                        </a></span>
+                                </td>
+                                <td>
+                                    <div class="numbers-row" >
+                                        <input type="text" min="1" max="1" step="1" value="1"
+                                               id="quantity_1" class="qty2 form-control" name="quantity_1">
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>
+                                        @if($min_price == $max_price)
+                                            {{number_format($min_price)}}
+                                        @else
+                                            {{number_format($min_price)}} -{{number_format($max_price)}}
+                                        @endif
+
+                                    </strong>
+                                </td>
+                            </tr>
+                        @endisset
                         </tbody>
                     </table>
                     <table class="table table-striped options_cart">
@@ -217,7 +213,7 @@
 
                 <aside class="col-lg-4">
                     <div class="box_style_1">
-                        <h3 class="inner">- Summary -</h3>
+                        <h3 class="inner">- {{__("theme.summary")}} -</h3>
                         <table class="table table_summary">
                             <tbody>
                             <tr>
@@ -225,7 +221,7 @@
                                     {{__("theme.check in")}}
                                 </td>
                                 <td class="text-right">
-                                    10 April 2015
+                                    {{$check_in}}
                                 </td>
                             </tr>
                             <tr>
@@ -233,7 +229,7 @@
                                     {{__("theme.check out")}}
                                 </td>
                                 <td class="text-right">
-                                    12 April 2015
+                                    {{$check_out}}
                                 </td>
                             </tr>
                             <tr>
@@ -241,7 +237,7 @@
                                     {{__("theme.rooms")}}
                                 </td>
                                 <td class="text-right">
-                                    1 double room
+                                    {{$room->title}}
                                 </td>
                             </tr>
                             <tr>
@@ -249,7 +245,7 @@
                                     {{__("theme.rooms")}}
                                 </td>
                                 <td class="text-right">
-                                    2
+                                    1
                                 </td>
                             </tr>
                             <tr>
@@ -257,7 +253,7 @@
                                     {{__("theme.adults")}}
                                 </td>
                                 <td class="text-right">
-                                    2
+                                    {{$adults}}
                                 </td>
                             </tr>
                             <tr>
@@ -265,23 +261,23 @@
                                     {{__("theme.children")}}
                                 </td>
                                 <td class="text-right">
-                                    0
+                                    {{$children}}
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    {{__("theme.welcome bottle")}}
-                                </td>
-                                <td class="text-right">
-                                    $34
-                                </td>
-                            </tr>
+{{--                            <tr>--}}
+{{--                                <td>--}}
+{{--                                    {{__("theme.welcome bottle")}}--}}
+{{--                                </td>--}}
+{{--                                <td class="text-right">--}}
+{{--                                    $34--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
                             <tr class="total">
                                 <td>
                                     {{__("theme.total cost")}}
                                 </td>
                                 <td class="text-right">
-                                    $154
+                                    {{number_format($total)}}
                                 </td>
                             </tr>
                             </tbody>

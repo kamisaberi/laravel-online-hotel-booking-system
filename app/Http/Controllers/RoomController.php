@@ -135,9 +135,9 @@ class RoomController extends Controller
         $data = BaseUtility::generateForEdit($type, $id);
         $data['groups'] = ItemUtility::getPropertiesForInput(Route::currentRouteName(), Route::current()->parameters(), $id);
         $data['components'] = ItemUtility::getRequiredComponents($data['groups']);
-        $data['components']['files']['images']  = DB::table('images')->get(['id', 'title', 'path']);
-        $data['components']['files']['videos']  = DB::table('videos')->get(['id', 'title', 'path']);
-        $data['components']['files']['swfs']  = DB::table('flashes')->get(['id', 'title', 'path']);
+        $data['components']['files']['images'] = DB::table('images')->get(['id', 'title', 'path']);
+        $data['components']['files']['videos'] = DB::table('videos')->get(['id', 'title', 'path']);
+        $data['components']['files']['swfs'] = DB::table('flashes')->get(['id', 'title', 'path']);
 
         $data['room'] = Room::find($id);
         return view("admin.items.views.subviews.room.form", $data);
@@ -219,6 +219,17 @@ class RoomController extends Controller
     public function setProperty(Request $request, $type, $property)
     {
         if ($property == "price") {
+
+        }
+    }
+
+
+    public function check(Request $request, $type, $command)
+    {
+        if ($command == "availability") {
+
+            $id = $request->input('id');
+
 
         }
     }

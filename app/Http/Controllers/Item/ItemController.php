@@ -499,4 +499,53 @@ class ItemController extends Controller
     }
 
 
+    public function check(Request $request, $type , $command)
+    {
+        if (Str::lower(Str::singular($type)) == "room") {
+            return ((new App\Http\Controllers\RoomController())->check($request, $type, $command));
+        } elseif (Str::lower(Str::singular($type)) == "reserve") {
+            return ((new App\Http\Controllers\ReserveController())->setProperty($request, $type, $property));
+        } elseif (Str::lower(Str::singular($type)) == "customer") {
+            return ((new App\Http\Controllers\CustomerController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "image") {
+            return ((new App\Http\Controllers\ImageController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "gallery") {
+            return ((new App\Http\Controllers\GalleryController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "video") {
+            return ((new App\Http\Controllers\VideoController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "flash") {
+            return ((new App\Http\Controllers\FlashController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "slide") {
+            return ((new App\Http\Controllers\SlideController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "message") {
+            return ((new App\Http\Controllers\MessageController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "comment") {
+            return ((new App\Http\Controllers\CommentController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "complaint") {
+            return ((new App\Http\Controllers\ComplaintController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "room_review") {
+            return ((new App\Http\Controllers\RoomReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "hotel_review") {
+            return ((new App\Http\Controllers\HotelReviewController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "user") {
+            return ((new App\Http\Controllers\User\UserController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "website") {
+            return ((new App\Http\Controllers\WebsiteController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "hotel") {
+            return ((new App\Http\Controllers\HotelController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "news") {
+            return ((new App\Http\Controllers\NewsController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "map-location") {
+            return ((new App\Http\Controllers\MapLocationController())->destroy($request, $type));
+        } elseif (Str::lower(Str::singular($type)) == "page") {
+            return ((new App\Http\Controllers\PageController())->destroy($request, $type));
+        } else {
+            abort("404");
+        }
+    }
+
+
+
+
+
 }

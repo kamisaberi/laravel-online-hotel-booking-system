@@ -53,7 +53,6 @@ return [
     'about' => 'About',
 
 
-
     'about us' => 'About us',
     'faq' => 'FAQ',
     'login' => 'Login',
@@ -83,26 +82,21 @@ return [
     "you will receive an email containing a link allowing you to reset your password to a new preferred one." => "You will receive an email containing a link allowing you to reset your password to a new preferred one.",
 
 
+    'lurem ipsum 1 line' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    'lurem ipsum short' => "Lorem ipsum dolor sit amet",
+
+    'lurem ipsum 1 sentence' => "Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.",
+
+    'lurem ipsum 1 paragraph' => "Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.",
+    'lurem ipsum 2 paragraph' => "Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.",
 
 
-    'lurem ipsum 1 line'=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    'lurem ipsum short'=>"Lorem ipsum dolor sit amet",
-
-    'lurem ipsum 1 sentence'=>"Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.",
-
-    'lurem ipsum 1 paragraph'=>"Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.",
-    'lurem ipsum 2 paragraph'=>"Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.",
-
-
-
-
-
-    "other popular tours" =>"Other <span>Popular</span> tours",
-    "details" =>"Details",
-    "reviews" =>"Reviews",
-    "leave a review" =>"Leave a review",
-    "description" =>"Description",
-    "hotel facilities" =>"Hotel facilities",
+    "other popular tours" => "Other <span>Popular</span> tours",
+    "details" => "Details",
+    "reviews" => "Reviews",
+    "leave a review" => "Leave a review",
+    "description" => "Description",
+    "hotel facilities" => "Hotel facilities",
     'send complaint' => 'Send Complaint',
     'admin panel' => 'Admin Panel',
     'newses' => 'News',
@@ -137,40 +131,41 @@ return [
     "suggestions and tips" => "Suggestions and tips",
 
 
+    "superb" => "Superb",
+    "Very good" => "Very good",
+    "good" => "Good",
+    "pleasant" => "Pleasant",
+    "no rating" => "No rating",
+    "book by phone" => "Book by phone",
+    "check now" => "Check now",
+    "add to whislist" => "Add to whislist",
+    "check availability" => "Check Availability",
+    "view on map" => "View on map",
+    "rooms types" => "Rooms Types",
+    "single room" => "Single Room",
+    "double room" => "Double Room",
+    "or" => "Or",
+    "news" => "News",
+    "categories" => "Categories",
+    "recent post" => "Recent post",
+    "submit" => "Submit",
 
-    "superb"=>"Superb",
-    "Very good"=>"Very good",
-    "good"=>"Good",
-    "pleasant"=>"Pleasant",
-    "no rating"=>"No rating",
-    "book by phone"=>"Book by phone",
-    "check now"=>"Check now",
-    "add to whislist"=>"Add to whislist",
-    "check availability"=>"Check Availability",
-    "view on map"=>"View on map",
-    "rooms types"=>"Rooms Types",
-    "single room"=>"Single Room",
-    "double room"=>"Double Room",
-    "or"=>"Or",
-    "news"=>"News",
-    "categories"=>"Categories",
-    "recent post"=>"Recent post",
-    "submit"=>"Submit",
+    "first name" => "First Name",
+    "last name" => "Last Name",
+    "phone" => "Phone",
+    "message" => "Message",
 
-    "first name"=>"First Name",
-    "last name"=>"Last Name",
-    "phone"=>"Phone",
-    "message"=>"Message",
-
-    "enter name"=>"Enter Name",
-    "enter last name"=>"Enter Last Name",
-    "enter phone number"=>"Enter Phone Number",
-    "enter email"=>"Enter Email",
-    "write your message"=>"Write Your Message",
-
+    "enter name" => "Enter Name",
+    "enter last name" => "Enter Last Name",
+    "enter phone number" => "Enter Phone Number",
+    "enter email" => "Enter Email",
+    "write your message" => "Write Your Message",
 
 
-
+    "price" => "Price",
+    "room type" => "Room Type",
+    "quantity" => "Quantity",
+    "per night" => "Per night",
 
 
     "support time" => "Monday to Friday 9.00am - 7.30pm",
@@ -179,12 +174,6 @@ return [
     "temp hotel" => "Mariott Hotel",
     "temp name" => "Hello Clara!",
     "page active" => "Page active",
-
-
-
-
-
-
 
 
 ];

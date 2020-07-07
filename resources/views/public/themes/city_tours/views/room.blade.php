@@ -451,15 +451,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label><i class="icon-calendar-7"></i> {{__("theme.check in")}}</label>
-                                    <input class="date-pick form-control" data-date-format="M d, D" type="text">
+                                    <input id="check_in" class="date-pick form-control" data-date-format="M d, D" type="text">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label><i class="icon-calendar-7"></i> {{__("theme.check out")}}</label>
-                                    <input class="date-pick form-control" data-date-format="M d, D" type="text">
+                                    <input id="check_out" class="date-pick form-control" data-date-format="M d, D" type="text">
                                 </div>
-                                ch
                             </div>
                         </div>
                         <div class="row">
@@ -482,10 +481,35 @@
                         </div>
                         <br>
 
-                        <a class="btn_full" href="#">{{__("theme.check now")}}</a>
+                        <a id="check_room" data-content="{{$room->id}}" class="btn_full" href="#">{{__("theme.check now")}}</a>
                         <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> {{__("theme.add to whislist")}}</a>
                     </div>
                     <!--/box_style_1 -->
+                    <div class="box_style_4" id="dv_prices">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>{{__('theme.date')}}</th>
+                                <th>{{__('theme.price')}}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="row" >
+                            <div class="col">
+                                <h4><span> {{__("theme.total cost")}}:</span></h4>
+                            </div>
+                            <div class="col" id="total_cost">
+                                <h4>120000000</h4>
+
+                            </div>
+                        </div>
+                        <br>
+                        <a id="payout" class="btn_full" href="{{route('home.cart')}}">{{__("theme.payout")}}</a>
+                    </div>
 
                     <div class="box_style_4">
                         <i class="icon_set_1_icon-90"></i>
@@ -581,19 +605,6 @@
 
     @else
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         <script src="{{asset("front-end-assets/ltr/js/jquery.sliderPro.min.js")}}"></script>
         <script type="text/javascript">
             $(document).ready(function ($) {
@@ -656,20 +667,62 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 @endsection
 
 @section("footer")
 
+
+    <script>
+        $("#dv_prices").hide();
+        $("#check_room").click(function (e) {
+
+            var dv_prices = $("#dv_prices");
+            dv_prices.hide();
+            var tbody = dv_prices.find("tbody");
+            tbody.html("");
+
+            e.preventDefault();
+            id = $(this).attr("data-content");
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '{{route('home.booking.update.price' , ['type'=>'room' ])}}',
+                method: 'post',
+                data: {
+                    'id': id,
+                    'check_in': $("#check_in").val(),
+                    'check_out': $("#check_out").val(),
+                    'adults': $("#adults").val(),
+                    'children': $("#children").val()
+                },
+                success: function (result) {
+
+                    total = 0;
+                    if (result.error === false) {
+
+                        $.each(result.prices, function (index, value) {
+                            tr = `<tr><td>${index}</td><td>${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td></tr>`;
+                            total += value;
+                            tbody.append(tr);
+                        });
+                        $("#total_cost").find("h4").html(total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                        dv_prices.slideDown(1000);
+
+                    } else {
+                        alert(result.message);
+                    }
+
+                },
+                error: function (result) {
+                    alert(result.status);
+                }
+            });
+        });
+
+    </script>
 
 @endsection

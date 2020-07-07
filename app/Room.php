@@ -9,12 +9,14 @@ class Room extends Model
 
     public function hotel()
     {
-        $this->belongsTo('App\Hotel');
+        return $this->belongsTo('App\Hotel');
     }
 
     public function image()
     {
-        $this->hasOne('App\Image');
+        return $this->belongsTo('App\Image','image');
+
+//        $this->hasOne('App\Image', 'id' , 'image' );
     }
 
     public function prices()

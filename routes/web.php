@@ -71,10 +71,14 @@ Route::get('/confirmation', 'HomeController@confirmation')->name('home.confirmat
 Route::get('/page/{id}', 'HomeController@showPage')->name('home.page.show');
 
 
-
-
 Route::get('/booking/start/{room}', 'HomeController@startBooking')->name('home.booking.start');
+
+
 Route::post('/booking/update/price/{type}', 'HomeController@updatePrices')->name("home.booking.update.price");
+
+
+
+
 Route::post('/booking/save/{room}', 'HomeController@saveBooking')->name('home.booking.save');
 Route::get('/booking/confirm/{code}', 'HomeController@confirmBooking')->name('home.booking.confirm');
 Route::post('/booking/check/room_verification', 'HomeController@checkRoomVerification')->name('home.booking.check.room');

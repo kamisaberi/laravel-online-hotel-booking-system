@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/fa/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Utilities/ItemUtility.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Utilities/ItemUtility.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Item/ItemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/base.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/sb-admin-2/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fields.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/fa/fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fa/fields.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/comment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/comment/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/complaint/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/complaint/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/customer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/gallery/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/gallery/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/hotel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/hotel/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/image/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/image/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/message/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/message/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/news/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/reserve/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/reserve/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/room/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/room/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/website/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/views/subviews/website/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/widgets/breadcrumbs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/widgets/breadcrumbs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/fa/theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fa/theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/subviews/modern_dashboard/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/subviews/modern_dashboard/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/city_tours/layout/public.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/layout/public.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/card_hotel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/card_hotel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/confirmation_hotel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/confirmation_hotel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/payment_hotel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/payment_hotel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/room.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/themes/city_tours/views/room.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1383,7 +1375,8 @@
       <workItem from="1592970577348" duration="19617000" />
       <workItem from="1593804794249" duration="49046000" />
       <workItem from="1593981709002" duration="11324000" />
-      <workItem from="1594027888091" duration="40735000" />
+      <workItem from="1594027888091" duration="41412000" />
+      <workItem from="1594118654517" duration="18414000" />
     </task>
     <servers />
   </component>
@@ -1427,14 +1420,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="35" y="73" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592546557831" />
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594079690869">
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594139756463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594079690869" />
-    <state x="206" y="102" width="1114" height="801" key="find.popup" timestamp="1594062775600">
+    <state x="566" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594139756463" />
+    <state x="206" y="102" width="1114" height="801" key="find.popup" timestamp="1594129811581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="206" y="102" width="1114" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594062775600" />
+    <state x="206" y="102" width="1114" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594129811581" />
     <state x="616" y="161" width="672" height="676" key="search.everywhere.popup" timestamp="1592777810030">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

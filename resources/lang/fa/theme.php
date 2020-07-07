@@ -158,8 +158,10 @@ return [
     "enter email"=>"ایمیل خود را وارد کنید",
     "write your message"=>"پیام خود را بنویسید",
 
-
-
+    "price" => "قیمت",
+    "room type" => "نوع اتاق",
+    "quantity" => "تعداد",
+    "per night" => "هزینه هر شب",
 
 
     "support time" => "شنبه تا پنجشنبه از ساعت 7 تا 19",
