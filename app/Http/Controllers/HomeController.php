@@ -67,8 +67,8 @@ class HomeController extends Controller
         $room->image = App\Image::find($room->image);
         $data['room'] = $room;
         $data['prices'] = $basket[0]['prices'];
-        $data['min_price'] =min($basket[0]['prices']);
-        $data['max_price'] =max($basket[0]['prices']);
+        $data['min_price'] = min($basket[0]['prices']);
+        $data['max_price'] = max($basket[0]['prices']);
         $data['total'] = array_sum($basket[0]['prices']);
         $data['adults'] = $basket[0]['adults'];
         $data['children'] = $basket[0]['children'];
@@ -93,8 +93,8 @@ class HomeController extends Controller
 
         $data['room'] = $room;
         $data['prices'] = $basket[0]['prices'];
-        $data['min_price'] =min($basket[0]['prices']);
-        $data['max_price'] =max($basket[0]['prices']);
+        $data['min_price'] = min($basket[0]['prices']);
+        $data['max_price'] = max($basket[0]['prices']);
         $data['total'] = array_sum($basket[0]['prices']);
         $data['adults'] = $basket[0]['adults'];
         $data['children'] = $basket[0]['children'];
@@ -102,8 +102,63 @@ class HomeController extends Controller
         $data['check_out'] = $basket[0]['check_out'];
 
         return view('public.themes.city_tours.views.payment_hotel', $data);
-
     }
+
+    public function payout($code = null)
+    {
+
+        if ($code != null) {
+            $sd = ServiceProperty::where('title', '=', 'code')
+                ->get();
+
+            $sd_id = $sd[0]->id;
+            $r = DB::table('service_assigned_properties')
+                ->where('property', '=', $sd_id)
+                ->where('value', '=', $code)
+                ->get();
+
+            $reserve_id = $r[0]->service;
+            $props = ServiceController::getDataProperties3('reserve', $reserve_id);
+        }
+
+        try {
+
+            $gateway = Gateway::make(new Sadad());
+            $gateway->setCallback(route('home.return.from.bank', ['code' => $code]));
+
+            if (env('PRICE_TEST_MODE') == 1) {
+                $gateway->price(1000)->ready();
+            } else {
+                $gateway->price($props['price']->value * 10)->ready();
+            }
+
+//            $gateway->price(1000)->ready();
+            $refId = $gateway->refId();
+            $transID = $gateway->transactionId();
+            // Your code here
+            return $gateway->redirect();
+
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+
+
+    public function returnFromBank($code)
+    {
+        try {
+            $gateway = Gateway::verify();
+            $trackingCode = $gateway->trackingCode();
+            $refId = $gateway->refId();
+            $cardNumber = $gateway->cardNumber();
+            return redirect()->route('home.confirmation');
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
 
     public function confirmation()
     {
@@ -119,8 +174,8 @@ class HomeController extends Controller
 
         $data['room'] = $room;
         $data['prices'] = $basket[0]['prices'];
-        $data['min_price'] =min($basket[0]['prices']);
-        $data['max_price'] =max($basket[0]['prices']);
+        $data['min_price'] = min($basket[0]['prices']);
+        $data['max_price'] = max($basket[0]['prices']);
         $data['total'] = array_sum($basket[0]['prices']);
         $data['adults'] = $basket[0]['adults'];
         $data['children'] = $basket[0]['children'];
@@ -141,7 +196,6 @@ class HomeController extends Controller
 
         return view("public.themes.hotel-new.views.booking.booking_start", $data);
     }
-
 
     public function updatePrices(Request $request, $type = 'room')
     {
@@ -171,11 +225,11 @@ class HomeController extends Controller
 
         session()->push('basket', [
             "room" => $id,
-            'prices' => $final ,
-            'adults'=> $request->input('adults'),
-            'children'=> $request->input('children'),
-            'check_in'=>$days[0],
-            'check_out'=>$days[count($days)-1]
+            'prices' => $final,
+            'adults' => $request->input('adults'),
+            'children' => $request->input('children'),
+            'check_in' => $days[0],
+            'check_out' => $days[count($days) - 1]
         ]);
 
         return response()->json([
@@ -250,61 +304,6 @@ class HomeController extends Controller
         return view("public.themes.hotel-new.views.booking.booking_payout", $data);
     }
 
-
-    public function payout($code = null)
-    {
-
-        if ($code != null) {
-
-            $sd = ServiceProperty::where('title', '=', 'code')
-                ->get();
-
-            $sd_id = $sd[0]->id;
-            $r = DB::table('service_assigned_properties')
-                ->where('property', '=', $sd_id)
-                ->where('value', '=', $code)
-                ->get();
-
-            $reserve_id = $r[0]->service;
-            $props = ServiceController::getDataProperties3('reserve', $reserve_id);
-
-        }
-
-
-        try {
-
-            $gateway = Gateway::make(new Sadad());
-            $gateway->setCallback(route('home.return.from.bank', ['code' => $code]));
-
-            if (env('PRICE_TEST_MODE') == 1) {
-                $gateway->price(1000)->ready();
-            } else {
-                $gateway->price($props['price']->value * 10)->ready();
-            }
-
-//            $gateway->price(1000)->ready();
-            $refId = $gateway->refId();
-            $transID = $gateway->transactionId();
-            // Your code here
-            return $gateway->redirect();
-
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
-    }
-
-    public function returnFromBank($code)
-    {
-        try {
-            $gateway = Gateway::verify();
-            $trackingCode = $gateway->trackingCode();
-            $refId = $gateway->refId();
-            $cardNumber = $gateway->cardNumber();
-            return redirect()->route('home.booking.finish', ['code' => $code]);
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
-    }
 
 
     public function finishBooking(Request $request, $code = 1)

@@ -32,11 +32,8 @@
     <!-- End Section -->
 
     <main>
-
         @include("public.themes.city_tours.widgets.breadcrumbs")
-
         <!-- End Position -->
-
         <div class="container margin_60">
             <div class="main_title">
                 <h2><span>{{__('theme.galleries')}}</span></h2>
@@ -56,6 +53,7 @@
                                 </a>
                             </div>
                         </div>
+                        <h3 class="text-center">{{$gallery->title}}</h3>
                     </div>
                 @endforeach
             </div>
